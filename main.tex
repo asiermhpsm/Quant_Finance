@@ -1,0 +1,86 @@
+\documentclass{article}
+\bibliography{references}
+
+\usepackage[spanish]{babel}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{listings}  % Para incluir código fuente
+\usepackage{xcolor}
+\usepackage{eurosym}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{tabularx} 
+\usepackage{array}
+
+
+
+\newtheorem*{remark}{Observación}
+\newtheorem*{proposition}{Proposición}
+
+
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+
+
+
+\title{Finanzas cuantitativas}
+\author{Asier Merino Herrán}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace{3cm}
+    {\includegraphics[width=0.9\textwidth]{newplot.png}\par}
+    \vspace{5cm}
+    {\scshape\Huge Finanzas cuantitativas \par}
+    \vspace{2cm}
+    {\scshape\LARGE Apuntes-esquema \par}
+    \vfill
+    {\Large Autor:  \par}
+    {\Large Asier Merino Herrán \par}
+    \vfill
+    {\Large \today \par}
+\end{titlepage}
+
+
+\cleardoublepage
+\tableofcontents
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\cleardoublepage
+
+\input{1_Conceptos_basicos}
+\newpage
+\input{2_Opciones}
+\newpage
+\input{3_ALetoriedad}
+\newpage
+\input{4_Black_Scholes}
+\newpage
+\input{5_EDPs}
+\newpage
+\input{6_Sols_deltas}
+
+
+\cleardoublepage
+%\input{Apendice A}
+
+
+
+
+\end{document}
