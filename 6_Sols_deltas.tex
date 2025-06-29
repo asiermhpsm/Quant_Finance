@@ -6,15 +6,17 @@
 \begin{center}
     \begin{tabularx}{\textwidth}{|c|X|}
         \hline
-        \textbf{Delta} $\Delta = \frac{\partial V}{\partial S}$ &  Lo que se tiene que comprar/vender en cada momento según el valor del subyacente para mantener la cartera libre de riesgo. \\
+        \textbf{Delta} $\Delta = \frac{\partial V}{\partial S}$ & Lo que se tiene que comprar/vender en cada momento según el valor del subyacente para mantener la cartera libre de riesgo. \\
         \hline
         \textbf{Gamma} $\Gamma = \frac{\partial^2 V}{\partial S^2}$ & Es una medida de cuánto y cuantas veces se tiene que \textit{rehedged} para mantener la cartera libre de riesgo. \\
         \hline
-        \textbf{Theta} $\Gamma = \frac{\partial V}{\partial t}$ & Contribuye a que la cartera gane el interés correspondiente. \\
+        \textbf{Theta} $\Theta = \frac{\partial V}{\partial t}$ & Contribuye a que la cartera gane el interés correspondiente. \\
         \hline
-        \textbf{Speed} $\frac{\partial V}{\partial t}$ & Como gamma, pero para mayor precisión. \\
+        \textbf{Speed} $\frac{\partial^3 V}{\partial S^3}$ & Como gamma, pero para mayor precisión. \\
         \hline
-        \textbf{Vega} $\frac{\partial V}{\partial \sigma}$ & ?? \\
+        \textbf{Vega} $\frac{\partial V}{\partial \sigma}$ & Variación con respecto a la volatilidad del subyacente. \\
+        \hline
+        \textbf{Rho} $\frac{\partial V}{\partial r}$ & Sensibilidad de la opción a cambios en la tasa de interés. En la práctica se usa la estructura temporal completa de tasas. \\
         \hline
     \end{tabularx}
 \end{center}
@@ -28,16 +30,16 @@
          & \textbf{Call} & \textbf{Put} \\
          \hline
          \textbf{Value (Black-Scholes value)} &  $S e^{-D(T-t)} N(d_1) - E e^{-r(T-t)} N(d_2)$  &  $-S e^{-D(T-t)} N(-d_1) + E e^{-r(T-t)} N(-d_2)$  \\
-        \hline
+         \hline
          \textbf{Delta } $\left( \frac{\partial V}{\partial S} \right)$ & $ e^{-D(T-t)} N(d_1) $ & $ e^{-D(T-t)} (N(d_1) - 1) $ \\
          \hline
-        \textbf{Gamma } $\left( \frac{\partial^2 V}{\partial S^2} \right)$ & $ \frac{e^{-D(T-t)} N'(d_1)}{\sigma S \sqrt{T - t}} $ & $ \frac{e^{-D(T-t)} N'(d_1)}{\sigma S \sqrt{T - t}} $ \\
+        \textbf{Gamma } $\left( \frac{\partial^2 V}{\partial S^2} \right)$ & \multicolumn{2}{c|}{$ \frac{e^{-D(T-t)} N'(d_1)}{\sigma S \sqrt{T - t}} $} \\
         \hline
         \textbf{Theta } $\left( \frac{\partial V}{\partial t} \right)$ & $ -\frac{\sigma S e^{-D(T-t)} N'(d_1)}{2 \sqrt{T - t}} + D S N(d_1) e^{-D(T-t)} - r E e^{-r(T-t)} N(d_2) $ & $ -\frac{\sigma S e^{-D(T-t)} N'(-d_1)}{2 \sqrt{T - t}} - D S N(-d_1) e^{-D(T-t)} + r E e^{-r(T-t)} N(-d_2) $ \\
         \hline
-        \textbf{Speed } $\left( \frac{\partial^3 V}{\partial S^3} \right)$ & $ -\frac{e^{-D(T-t)} N'(d_1)}{\sigma^2 S^2 (T - t)} (d_1 + \sigma \sqrt{T - t}) $ & $ -\frac{e^{-D(T-t)} N'(d_1)}{\sigma^2 S^2 (T - t)} (d_1 + \sigma \sqrt{T - t}) $ \\
+        \textbf{Speed } $\left( \frac{\partial^3 V}{\partial S^3} \right)$ & \multicolumn{2}{c|}{$ -\frac{e^{-D(T-t)} N'(d_1)}{\sigma^2 S^2 (T - t)} (d_1 + \sigma \sqrt{T - t}) $} \\
         \hline
-        \textbf{Vega } $\left( \frac{\partial V}{\partial \sigma} \right)$ & $ S \sqrt{T - t} e^{-D(T-t)} N'(d_1) $ & $ S \sqrt{T - t} e^{-D(T-t)} N'(d_1) $ \\
+        \textbf{Vega } $\left( \frac{\partial V}{\partial \sigma} \right)$ & \multicolumn{2}{c|}{$ S \sqrt{T - t} e^{-D(T-t)} N'(d_1) $} \\
         \hline
         \textbf{Rho } $\left( \frac{\partial V}{\partial r} \right)$ & $ E (T - t) e^{-r(T-t)} N(d_2) $ & $ -E (T - t) e^{-r(T-t)} N(-d_2) $ \\
         \hline
@@ -63,11 +65,11 @@
         \hline
         \textbf{Theta } $\left( \frac{\partial V}{\partial t} \right)$ & $ r e^{-r(T-t)} N(d_2) \left( \frac{d_1}{2 (T - t)} - \frac{r - D}{\sigma \sqrt{T - t}} \right) $ & $ r e^{-r(T-t)} (1 - N(d_2)) \left( \frac{d_1}{2 (T - t)} - \frac{r - D}{\sigma \sqrt{T - t}} \right) $ \\
         \hline
-        \textbf{Speed } $\left( \frac{\partial^3 V}{\partial S^3} \right)$ & $ \frac{e^{-r(T-t)} N'(d_2)}{\sigma^2 S (T - t)} \left( -2 d_1 + \frac{1 - d_1 d_2}{\sigma \sqrt{T - t}} \right) $ & $ \frac{e^{-r(T-t)} N'(d_2)}{\sigma^2 S (T - t)} \left( -2 d_1 + \frac{1 - d_1 d_2}{\sigma \sqrt{T - t}} \right) $ \\
+        \textbf{Speed } $\left( \frac{\partial^3 V}{\partial S^3} \right)$ & \multicolumn{2}{c|}{$ \frac{e^{-r(T-t)} N'(d_2)}{\sigma^3 S^3 (T - t)} \left( -2 d_1 + \frac{1 - d_1 d_2}{\sigma \sqrt{T - t}} \right) $} \\
         \hline
         \textbf{Vega } $\left( \frac{\partial V}{\partial \sigma} \right)$ & $ -\frac{e^{-r(T-t)} N'(d_2) d_1}{\sigma \sqrt{T - t}} $ & $ \frac{e^{-r(T-t)} N'(d_2) d_1}{\sigma \sqrt{T - t}} $ \\
         \hline
-        \textbf{Rho } $\left( \frac{\partial V}{\partial r} \right)$ & $ -(T - t) e^{-r(T-t)} N(d_2) + \frac{e^{-r(T-t)} N'(d_2)}{\sigma} $ & $ -(T - t) e^{-r(T-t)} (1 - N(d_2)) - \frac{e^{-r(T-t)} N'(d_2)}{\sigma} $ \\
+        \textbf{Rho } $\left( \frac{\partial V}{\partial r} \right)$ & $ -(T - t) e^{-r(T-t)} N(d_2) + \frac{\sqrt{T-t}}{\sigma}e^{-r(T-t)} N'(d_2) $ & $ -(T - t) e^{-r(T-t)} (1 - N(d_2)) - \frac{\sqrt{T-t}}{\sigma}e^{-r(T-t)} N'(d_2) $ \\
         \hline
         \textbf{Rho } $\left( \frac{\partial V}{\partial D} \right)$ & $ \frac{\sqrt{T - t}}{\sigma} e^{-r(T-t)} N'(d_2) $ & $ -\frac{\sqrt{T - t}}{\sigma} e^{-r(T-t)} N'(d_2) $ \\
         \hline
@@ -266,7 +268,6 @@ En este apartado se va a graficar cada una de las soluciones
         \caption{Rho (D)}
     \end{subfigure}
 \end{figure}
-
 
 
 

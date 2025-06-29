@@ -1,5 +1,4 @@
 \documentclass{article}
-\bibliography{references}
 
 \usepackage[spanish]{babel}
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
@@ -16,23 +15,25 @@
 \usepackage{xcolor}
 \usepackage{eurosym}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{float}
 \usepackage{subcaption}
 \usepackage[utf8]{inputenc}
 \usepackage{pdfpages}
-\usepackage{tabularx} 
+\usepackage{tabularx}
 \usepackage{array}
 
 
+% \bibliography{references}
 
 \newtheorem*{remark}{Observación}
 \newtheorem*{proposition}{Proposición}
 
-
+\pagestyle{fancy}
+\setlength{\headheight}{13.07225pt} % Fix for fancyhdr warning
 \fancyhf{}
 \fancyhead[L]{\leftmark}
 \fancyfoot[C]{\thepage}
+
 
 
 
@@ -58,13 +59,12 @@
 \end{titlepage}
 
 
-\cleardoublepage
-\tableofcontents
+\cleardoublepage\tableofcontents
 \setcounter{page}{1}
 \pagenumbering{arabic}
-\cleardoublepage
 
-\input{1_Conceptos_basicos}
+
+\cleardoublepage\input{1_Conceptos_basicos}
 \newpage
 \input{2_Opciones}
 \newpage
@@ -77,8 +77,7 @@
 \input{6_Sols_deltas}
 
 
-\cleardoublepage
-%\input{Apendice A}
+\cleardoublepage\input{Apendice A}
 
 
 
