@@ -2,11 +2,11 @@ PWD c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance
 INPUT C:\Users\Usuario Asier\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\main.tex
 OUTPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.log
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\generic\babel\txtbabel.def
@@ -270,6 +270,9 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabul
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT .\datos.tex
+INPUT .\datos.tex
+INPUT datos.tex
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.aux
@@ -310,6 +313,7 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\c
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.toc
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.toc
@@ -330,11 +334,14 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsf
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 OUTPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.toc
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\1_Conceptos_basicos.tex
 INPUT .\1_Conceptos_basicos.tex
 INPUT .\1_Conceptos_basicos.tex
 INPUT .\1_Conceptos_basicos.tex
 INPUT 1_Conceptos_basicos.tex
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
@@ -1049,6 +1056,35 @@ INPUT .\Imagenes\6_Sols\Binary_Put\Binary_Put_Rho_D-eps-converted-to.pdf
 INPUT .\Imagenes\6_Sols\Binary_Put\Binary_Put_Rho_D-eps-converted-to.pdf
 INPUT .\Imagenes\6_Sols\Binary_Put\Binary_Put_Rho_D-eps-converted-to.pdf
 INPUT .\Imagenes\6_Sols\Binary_Put\Binary_Put_Rho_D-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Strike.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Strike.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Strike.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Strike.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Strike.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Strike-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Strike-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Strike.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Strike-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Strike-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Strike-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Strike-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Delta.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Delta.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Delta.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Delta.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Delta.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Delta.eps
+INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\7_Volatilidad.tex
+INPUT .\7_Volatilidad.tex
+INPUT .\7_Volatilidad.tex
+INPUT .\7_Volatilidad.tex
+INPUT 7_Volatilidad.tex
 INPUT .\Apendice A.tex
 INPUT .\Apendice A.tex
 INPUT .\Apendice A.tex

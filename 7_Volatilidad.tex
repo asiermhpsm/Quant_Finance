@@ -1,0 +1,85 @@
+\section{Modelizar la volatilidad}
+Tipos de volatilidad:
+\begin{itemize}
+    \item \textbf{Actual volatility}: Es la medida de la cantidad de aleatoriedad en el retorno de un activo en un instante dado, variando de momento a momento sin asociarse a una escala temporal.
+    \item \textbf{Historical or realized volatility}: Es una medida de la aleatoriedad en un periodo pasado específico, calculada con métodos matemáticos y utilizada como estimación para la volatilidad futura.
+    \item \textbf{Implied volatility}: Es la volatilidad que, al ser introducida en el modelo de Black-Scholes, iguala el precio de mercado de la opción, reflejando la expectativa del mercado sobre la volatilidad futura.
+    \item \textbf{Forward volatility}: Es la volatilidad asociada a un periodo de tiempo futuro o a un instante futuro, ya sea actual o implícita.
+\end{itemize}
+
+
+
+\subsection{Volatilidad por media estadística}
+
+\subsubsection{Volatilidad constante}
+Para el caso de volatilidad constante o variaciones lentas, entonces se puede considerar:
+\[
+\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} R_i^2
+\]
+donde $ R_i = \frac{S_i - S_{i-1}}{S_{i-1}} $ representa el retorno del día $i$. Este método tiene limitaciones, como el efecto espurio que hace que por picos instantáneos muy altos o muy bajos, la volatilidad se mantendrá muy alta durante unos días.
+
+
+\subsubsection{Volatilidad con regresión a la media}
+Considerando una volatilidad dependiente del tiempo y para modelar que la volatilidad tiende a una media a largo plazo $\overline{\sigma}$, se usa el modelo \textbf{ARCH (Autoregressive Conditional Heteroscedasticity)} asigna un peso a cada estimación de volatilidad a largo plazo y a la estimación actual basada en los últimos $n$ retornos:
+\[
+\sigma_n^2 = \alpha \overline{\sigma}^2 + (1 - \alpha) \frac{1}{n} \sum_{i=1}^{n} R_i^2
+\]
+Donde $\alpha$ es el parámetro que controla la importancia relativa entre la volatilidad a largo plazo y la volatilidad basada en los retornos recientes.
+
+
+
+\subsubsection{Volatilidad con media móvil exponencialmente ponderada (EWMA)}
+Se utiliza el modelo:
+\[
+\sigma_n^2 = (1 - \lambda) \sum_{i=1}^{\infty} \lambda^{i-1} R_{n-i+1}^2
+\]
+donde $\lambda$ es un parámetro entre 0 y 1 que controla el peso de los retornos pasados. Este modelo asigna mayor peso a los retornos más recientes. La expresión puede simplificarse como:
+\[
+\sigma_n^2 = \lambda \sigma_{n-1}^2 + (1 - \lambda) R_n^2
+\]
+Esto utiliza el retorno más reciente y la estimación previa de la volatilidad, siendo conocido como la medida de volatilidad de RiskMetrics.
+
+
+\subsubsection{Modelo GARCH}
+El modelo GARCH (Generalized Autoregressive Conditional Heteroscedasticity) combina la volatilidad a largo plazo, la volatilidad previa y los retornos recientes para estimar la volatilidad actual:
+\[
+\sigma_n^2 = \alpha \overline{\sigma}^2 + (1 - \alpha) \left( \lambda \sigma_{n-1}^2 + (1 - \lambda) R_n^2 \right)
+\]
+Este modelo es útil para capturar la dinámica de la volatilidad en el tiempo, considerando tanto la persistencia como la regresión hacia una media a largo plazo.
+
+
+
+\subsubsection{Volatilidad futura esperada}
+Estando a día $n$ se quiere estimar la volatilidad en $k$ días, i.e.\ en el día $n+k$. Dos maneras de hacerlo son:
+\begin{itemize}
+    \item Modelo \textbf{EWMA}:
+    \begin{align*}
+        \sigma_{n+k}^2 &= \lambda \sigma_{n+k-1}^2 + (1 - \lambda) R_{n+k}^2 \Rightarrow \\
+        \Rightarrow \mathbb{E}[\sigma_{n+k}^2] &= \lambda \mathbb{E}[\sigma_{n+k-1}^2] + (1 - \lambda) \mathbb{E}[R_{n+k}^2] \Rightarrow \\
+        \Rightarrow \mathbb{E}[\sigma_{n+k}^2] &= \lambda \mathbb{E}[\sigma_{n+k-1}^2] + (1 - \lambda) \mathbb{E}[\sigma_{n+k}^2]
+    \end{align*}
+    luego
+    \[
+    \boxed{\mathbb{E}[\sigma_{n+k}^2] = \mathbb{E}[\sigma_{n+k-1}^2]}
+    \]
+    Esto implica que la volatilidad futura esperada es igual a la estimación de volatilidad del día anterior.
+    \item Modelo \textbf{GARCH}:
+    \begin{align*}
+        \sigma_{n+k}^2 &= \alpha \overline{\sigma}^2 + (1 - \alpha) \left( \lambda \sigma_{n+k-1}^2 + (1 - \lambda) R_{n+k}^2 \right) \Rightarrow \\
+        \Rightarrow \mathbb{E}[\sigma_{n+k}^2] &= \alpha \overline{\sigma}^2 + (1 - \alpha) \left( \lambda \mathbb{E}[\sigma_{n+k-1}^2] + (1 - \lambda) \mathbb{E}[R_{n+k}^2] \right) \Rightarrow\\
+        \Rightarrow \mathbb{E}[\sigma_{n+k}^2] &= \frac{\alpha \overline{\sigma}^2}{1 - (1 - \alpha)(1 - \lambda)} + \frac{\lambda (1 - \alpha)}{1 - (1 - \alpha)(1 - \lambda)} \mathbb{E}[\sigma_{n+k-1}^2]
+    \end{align*}
+    Mirando más hacia el futuro:
+    \[
+    \boxed{\mathbb{E}[\sigma_{n+k}^2] = \overline{\sigma}^2 + \left( \mathbb{E}[\sigma_{n}^2] - \overline{\sigma}^2 \right) (1 - \nu)^k} \text{ , } \qquad \nu = \frac{\alpha}{1 - (1 - \alpha)(1 - \lambda)}
+    \]
+\end{itemize}
+
+
+
+
+
+
+
+
+

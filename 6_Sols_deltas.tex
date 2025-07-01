@@ -20,6 +20,14 @@
         \hline
     \end{tabularx}
 \end{center}
+Sabiendo la \textit{call-put parity} $C(S,t)-P(S,t)=S-Ee^{-r(T-t)}$, las relaciones entre las griegas en opciones europeas Call y Put son:
+\begin{itemize}
+    \item \textbf{Delta}: $\boxed{\Delta_{Call} = 1 + \Delta_{Put}}$
+    \item \textbf{Gamma}: $\boxed{\Gamma_{Call} = \Gamma_{Put}}$
+    \item \textbf{Theta}: $\boxed{\Theta_{Call} = \Theta_{Put} - rEe^{-r(T-t)}}$
+    \item \textbf{Vega}: $\boxed{\nu_{Call} = \nu_{Put}}$
+    \item \textbf{Rho}: $\boxed{\rho_{Call} = \rho_{Put} + E(T-t)e^{-r(T-t)}}$
+\end{itemize}
 
 
 
@@ -273,7 +281,45 @@ En este apartado se va a graficar cada una de las soluciones
 
 
 
+\subsection{Volatilidad implícita}
+Valor de $\sigma$ que iguala precio teórico (Black-Scholes) al precio de mercado. Para su cálculo se utilizan métodos numéricos como Newton-Raphson usando vega.\\
+No es consistente si se calcula para diferentes strikes y vencimientos, lo que genera distintas curvas de volatilidad implícita:
+\begin{itemize}
+    \item \textbf{Smile:} Volatilidad más alta para opciones ITM y OTM, mínima en ATM.
+    \item \textbf{Skew:} Inclinación de la curva; típicamente negativa en mercados de acciones (mayor IV en puts OTM).
+    \item \textbf{Frown:} Forma invertida del smile; menos común.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{Imagenes/6_Sols/IV_vs_Strike.eps}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{Imagenes/6_Sols/IV_vs_Delta.eps}
+    \end{subfigure}
+    \caption{Algunas curvas de volatilidad implícita}
+\end{figure}
 
+
+
+
+
+
+\subsection{Tipos de coberturas}
+Según la independiencia con el modelo:
+\begin{itemize}
+    \item \textbf{Model-independent hedging:} Son pocos. No dependen de la dinámica del subyacente ni de la volatilidad. Por ejemplo la relación put-call parity.
+    \item \textbf{Model-dependent hedging:} Son muchos más. Ejemplo más tipico es la cobertura usada en el análisis de Black-Scholes. Al valorar el derivado se necesita al menos la volatilidad.
+\end{itemize}
+Otros tipos de coberturas son:
+\begin{itemize}
+    \item \textbf{Delta hedging}: es la perfecta eliminación teórica del riesgo usando cobertura entre la opción y el subyacente. Es un ejemplo de cobertura \textbf{dinámica}: la cobertura se debe monitorizar y ajustar todo el rato, por lo que en la vida real va a dar lugar a pérdidas por los costes de transacción.
+    \item \textbf{Gamma hedging}: usada para disminuir el tamaño de cada cobertura o para incrementar el tiempo entre coberturas (y así disminuir coste de transacción). Una cartera de este tipo es insensible a cambios del subyacente mientras sean movimientos pequeños. 
+    \item \textbf{Vega hedging}: usada para eliminar el riesgo de volatilidad. En realidad esto en ocasiones da lugar a inconsistencias y no se debe usar una volatilidad constante.
+    \item \textbf{Static hedging}: usada para reducir el riesgo de opciones exóticas mediante contratos más líquidos que se mantienen hasta el vencimiento, eliminando la necesidad de ajustes dinámicos.
+    \item \textbf{Margin hedging}: usada para equilibrar las llamadas de margen (depósitos obligatorios) en una parte del portafolio con los reembolsos de otras partes, evitando así grandes llamadas de margen que puedan ser difíciles de cumplir.
+    \item \textbf{Crash (Platinum) hedging}: diseñada para minimizar el peor resultado posible en mercados extremos (p.e. caídas), donde los movimientos son tan grandes que no se puede seguir el ritmo con las coberturas, y además las correlaciones normales se vuelven irrelevantes. Incluye dos tipos: cobertura del valor nominal del portafolio y cobertura de llamadas de margen.
+\end{itemize}
 
 
 
