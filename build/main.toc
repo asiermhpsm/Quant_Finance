@@ -44,11 +44,14 @@
 \contentsline {subsubsection}{Binary Put option}{25}{section*.26}%
 \contentsline {subsection}{\numberline {2.3.4}Volatilidad implícita}{26}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Tipos de coberturas}{26}{subsection.2.3.5}%
-\contentsline {section}{\numberline {2.4}Modelizar la volatilidad}{27}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Modelización la volatilidad}{27}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Volatilidad por media estadística}{27}{subsection.2.4.1}%
 \contentsline {subsubsection}{Volatilidad constante}{27}{section*.29}%
 \contentsline {subsubsection}{Volatilidad con regresión a la media}{27}{section*.30}%
 \contentsline {subsubsection}{Volatilidad con media móvil exponencialmente ponderada (EWMA)}{27}{section*.31}%
 \contentsline {subsubsection}{Modelo GARCH}{27}{section*.32}%
 \contentsline {subsubsection}{Volatilidad futura esperada}{28}{section*.33}%
-\contentsline {chapter}{\numberline {A}Ampliación del lema de Itô}{29}{appendix.Alph1}%
+\contentsline {subsubsection}{Estimación de volatilidad basada en rangos de tiempo}{29}{section*.35}%
+\contentsline {subsection}{\numberline {2.4.2}Estimar parámetros: maximum likelihood estimation (MLE)}{29}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Opciones americanas}{30}{section.2.5}%
+\contentsline {chapter}{\numberline {A}Ampliación del lema de Itô}{31}{appendix.Alph1}%
