@@ -30,6 +30,11 @@ por lo que
 \boxed{\frac{\partial V}{\partial t} + \frac{\sigma^2S^2}{2} \frac{\partial^2 V}{\partial S^2} + rS \frac{\partial V}{\partial S} -rV = 0}
 \]
 
+Se debe de tener en cuenta que esto calcula el valor justo de la opción, que es el valor actualizado de su payoff bajo una \textbf{risk-neutral random walk} para el subyacente. Este camino aleatorio es
+\[
+    dS = rSdt + \sigma S d\mathnormal{X}
+\]
+Por lo tanto no es lo mismo que la probabilidad de que la opción quede ITM calculada con lo expuesto en el apartado~\ref{sec:ExpectedFirstExitTimes}.
 
 
 \subsection{Opciones de activos con dividendos continuos}

@@ -318,6 +318,8 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\c
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.toc
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.toc
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.toc
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
@@ -341,8 +343,6 @@ INPUT .\1_Conceptos_basicos.tex
 INPUT .\1_Conceptos_basicos.tex
 INPUT .\1_Conceptos_basicos.tex
 INPUT 1_Conceptos_basicos.tex
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT .\2_Opciones.tex
@@ -520,6 +520,10 @@ INPUT .\Imagenes\2_Derivados\CondorsPayoff-eps-converted-to.pdf
 INPUT .\Imagenes\2_Derivados\CondorsPayoff-eps-converted-to.pdf
 INPUT .\Imagenes\2_Derivados\CondorsPayoff-eps-converted-to.pdf
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT .\11_Prods_renta_fija.tex
+INPUT .\11_Prods_renta_fija.tex
+INPUT 11_Prods_renta_fija.tex
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\eurosym\feymr10.tfm
 INPUT .\3_ALetoriedad.tex
 INPUT .\3_ALetoriedad.tex
 INPUT .\3_ALetoriedad.tex
@@ -561,6 +565,42 @@ INPUT .\Imagenes\3_Aleatoriedad\MeanRevertingWalk-eps-converted-to.pdf
 INPUT .\Imagenes\3_Aleatoriedad\MeanRevertingWalk-eps-converted-to.pdf
 INPUT .\Imagenes\3_Aleatoriedad\MeanRevertingWalk-eps-converted-to.pdf
 INPUT .\Imagenes\3_Aleatoriedad\MeanRevertingWalk-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_3D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D.eps
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\PDF_2D-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time.eps
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time.eps
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time.eps
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time.eps
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time.eps
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time.eps
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
 INPUT .\4_Black_Scholes.tex
 INPUT .\4_Black_Scholes.tex
 INPUT .\4_Black_Scholes.tex
@@ -1080,6 +1120,11 @@ INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
 INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
 INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
 INPUT .\Imagenes\6_Sols\IV_vs_Delta-eps-converted-to.pdf
+INPUT .\8_Generalizaciones.tex
+INPUT .\8_Generalizaciones.tex
+INPUT .\8_Generalizaciones.tex
+INPUT .\8_Generalizaciones.tex
+INPUT 8_Generalizaciones.tex
 INPUT .\7_Volatilidad.tex
 INPUT .\7_Volatilidad.tex
 INPUT .\7_Volatilidad.tex
@@ -1123,14 +1168,57 @@ INPUT .\Imagenes\7_Volatilidad\Accion-eps-converted-to.pdf
 INPUT .\Imagenes\7_Volatilidad\Accion-eps-converted-to.pdf
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
-INPUT .\8_Ops_Americanas.tex
-INPUT .\8_Ops_Americanas.tex
-INPUT 8_Ops_Americanas.tex
-INPUT .\Apendice A.tex
-INPUT .\Apendice A.tex
-INPUT .\Apendice A.tex
-INPUT .\Apendice A.tex
-INPUT Apendice A.tex
+INPUT .\10_Cobertura.tex
+INPUT .\10_Cobertura.tex
+INPUT .\10_Cobertura.tex
+INPUT .\10_Cobertura.tex
+INPUT 10_Cobertura.tex
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp.eps
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp.eps
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp.eps
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp.eps
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp.eps
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp-eps-converted-to.pdf
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp-eps-converted-to.pdf
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp.eps
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp-eps-converted-to.pdf
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp-eps-converted-to.pdf
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp-eps-converted-to.pdf
+INPUT .\Imagenes\10_Cobertura\Cobertura_Volat_Imp-eps-converted-to.pdf
+INPUT .\9_Ops_Americanas.tex
+INPUT .\9_Ops_Americanas.tex
+INPUT .\9_Ops_Americanas.tex
+INPUT .\9_Ops_Americanas.tex
+INPUT 9_Ops_Americanas.tex
+INPUT .\Imagenes\9_Americanas\One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call.eps
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call-eps-converted-to.pdf
+INPUT .\Imagenes\9_Americanas\Delta_One_Touch_Call-eps-converted-to.pdf
+INPUT .\Apendices\Apendice Ito.tex
+INPUT .\Apendices\Apendice Ito.tex
+INPUT .\Apendices\Apendice Ito.tex
+INPUT .\Apendices\Apendice Ito.tex
+INPUT Apendices\Apendice Ito.tex
 INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
 INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
 INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
@@ -1160,6 +1248,121 @@ INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
 INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
 INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
 INPUT .\Imagenes\3_Aleatoriedad\6-CalculoIto2425.pdf
+INPUT .\Apendices\Apendice generalizaciones.tex
+INPUT .\Apendices\Apendice generalizaciones.tex
+INPUT .\Apendices\Apendice generalizaciones.tex
+INPUT .\Apendices\Apendice generalizaciones.tex
+INPUT Apendices\Apendice generalizaciones.tex
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Imagenes\8_Generalizaciones\Exp_log_options.pdf
+INPUT .\Apendices\Apendice Make Your Mind Up.tex
+INPUT .\Apendices\Apendice Make Your Mind Up.tex
+INPUT .\Apendices\Apendice Make Your Mind Up.tex
+INPUT .\Apendices\Apendice Make Your Mind Up.tex
+INPUT Apendices\Apendice Make Your Mind Up.tex
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Imagenes\9_Americanas\Make_Your_Mind_Up_Instalment.pdf
+INPUT .\Apendices\Apendice var cob vol imp.tex
+INPUT .\Apendices\Apendice var cob vol imp.tex
+INPUT Apendices\Apendice var cob vol imp.tex
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.aux
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.out
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.out
@@ -1211,5 +1414,7 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\am
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\eurosym\feymr10.pfb
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\eurosym\feymr10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

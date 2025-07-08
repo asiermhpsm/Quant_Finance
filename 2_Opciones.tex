@@ -1,17 +1,17 @@
 
 
 \section{Opciones}
-Una \textbf{Call} option es el derecho a comprar un \textbf{underlying asset} por un \textbf{exercise/strike price} hasta o el \textbf{expiry/expiration date}. Una \textbf{put option} es lo mismo, pero te da derecho a vender. Muchas veces las opciones se agrupan en \textbf{series}, i.e. diferentes combinaciones de strike y vencimiento disponibles para un mismo activo. Su \textbf{payoff function} es:
+Una \textbf{Call} option es el derecho a comprar un \textbf{underlying asset} por un \textbf{exercise/strike price} hasta o el \textbf{expiry/expiration date}.\ Una \textbf{put option} es lo mismo, pero te da derecho a vender. Muchas veces las opciones se agrupan en \textbf{series}, i.e.\ diferentes combinaciones de strike y vencimiento disponibles para un mismo activo. Su \textbf{payoff function} es:
 \begin{itemize}
     \item \textbf{Call option}: Apuestas a que el mercado sube
-    \[\max(S-K, 0)\]
+    \[\boxed{\max(S-K, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/PayOffCall.eps}
         \caption{Payoff de opción Call a vencimiento}
     \end{figure}
     \item \textbf{Put option}: Apuestas a que el mercado baje
-    \[\max(K-S, 0)\]
+    \[\boxed{\max(K-S, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/PayOffPut.eps}
@@ -64,7 +64,9 @@ A veces el strike $K$ se representa con una $E$. Las opciones \textbf{vainilla} 
 
 \subsection{Call-Put Parity}
 La relación en cualquier tiempo $t$ entre una Call y una Put con los mismos parámetros es:
-\[C-P=S-Ke^{-r(T-t)}\]
+\[
+    \boxed{C-P=S-Ke^{-r(T-t)}}
+\]
 
 
 
@@ -92,7 +94,7 @@ Su relación de paridad se obtiene considerando que tienes una opción binary de
 Conjunto de opciones combinadas de manera estratégica para un objetivo concreto (maximizar ganancias, minimizar riesgos,\dots). Para saber su payoff se suman los payoff de las opciones que compras y se restan los payoff de las opciones que vendes. De forma genérica, las estrategias se pueden clasificar en \textbf{spread} que son estrategias que involucran opciones del mismo tipo (calls o puts), y \textbf{combinations} que combinan opciones de distinto tipo (calls o puts); también existen las \textbf{calendar spread}, que combinan opciones con distintas fechas de vencimiento. Algunos ejemplos son:
 \begin{itemize}
     \item \textbf{Bull Spread (Spread Alcista)}: consiste en comprar una opción \textbf{call} con un strike más bajo $E_1$ y veneder otra opción call con strike más alto $E_2$  ($E_1<E_2$). Hay beneficio si subyacente \textbf{sube}, pero está limitado a diferencia $E_2-E_1$. Su payoff es:
-    \[\max(S-E_1, 0) - \max(S-E_2, 0)\]
+    \[\boxed{\max(S-E_1, 0) - \max(S-E_2, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/BullPayoff.eps}
@@ -100,7 +102,7 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
     \end{figure}
     Para normalizarlo se divide por $E_2-E_1$
     \item \textbf{Bear Spread (Spread Bajista)}: consiste consiste en comprar opción \textbf{put} con strike más alto $E_2$ y vender otra con strike más bajo $E_1$ ($E_1<E_2$). Hay beneficio si el subyacente \textbf{baja}, pero está limitado a diferencia $E_2-E_1$. Su payoff es:
-     \[\max(E_2-S, 0) - \max(E_1-S, 0)\]
+     \[\boxed{\max(E_2-S, 0) - \max(E_1-S, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/BearPayoff.eps}
@@ -108,14 +110,14 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
     \end{figure}
     Para normalizarlo se divide por $E_2-E_1$
     \item \textbf{Straddles}: comprar una call y una put con mismo strike y mismo expirity. Beneficio depende de la magnitud del movimiento del subyacente, pero costo alto por primas de dos opciones. Se suele hacer cuando hay un anuncio importante. Su payoff es:
-    \[\max(S-E, 0) + \max(E-S, 0)\]
+    \[\boxed{\max(S-E, 0) + \max(E-S, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/StraddlePayoff.eps}
         \caption{Payoff de Straddle}
     \end{figure}
     \item \textbf{Strangle}: similar a straddles, pero con strikes distintos. Es más barato pero precisa de mayores cambios en el subyacente para que haya beneficios. Su payoff es:
-    \[\max(S-E_C, 0) + \max(E_P-S, 0)\]
+    \[\boxed{\max(S-E_C, 0) + \max(E_P-S, 0)}\]
     Según los strikes pueden ser:
     \begin{itemize}
         \item \textbf{Out-of-the-Money Strangle (OTM)}: se compra call con strike por encima de precio actual y put con strike por debajo de actual. Es más barato (primas bajas) pero se necesita un movimiento grande del subyacente.
@@ -132,21 +134,21 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
         \end{figure}
     \end{itemize}
     \item \textbf{Risk Reversal}: comprar una call con strike mayor que el precio actual y vender una put con un strike inferior al precio actual. Se apuesta a que el subyacente va a subir (y que como mucho no va a bajar demasiado). Si el activo baja se pierde dinero, pero las primas son más baratas. Su payoff sería:
-    \[\max(S-E_C, 0) - \max(E_P-S, 0)\]
+    \[\boxed{\max(S-E_C, 0) - \max(E_P-S, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/RiskReversalPayoff.eps}
         \caption{Payoff de Risk Reversal a vencimiento}
     \end{figure}
     \item \textbf{Butterflies}: se compra una call ITM ($E_{C_{ITM}}$), se venden dos calls ATM (at-the-money) ($E_{C_{ATM}}$) y se compra una call OTM ($E_{C_{OTM}}$). Es decir, $E_{C_{ITM}}<E_{C_{ATM}}<E_{C_{OTM}}$. Además, generalmente se cumple que $E_{C_{OTM}} - E_{C_{ATM}} = E_{C_{ATM}} - E_{C_{ITM}}$. Se usa cuando se espera que el subyacente esté cerca de cierto precio central y haya poca volatilidad. Su payoff es:
-    \[\max(S-E_{C_{ITM}}, 0) - 2\max(S-E_{C_{ATM}}, 0) + \max(S-E_{C_{OTM}}, 0)\]
+    \[\boxed{\max(S-E_{C_{ITM}}, 0) - 2\max(S-E_{C_{ATM}}, 0) + \max(S-E_{C_{OTM}}, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/ButterflyPayoff.eps}
         \caption{Payoff de Butterfly a vencimiento}
     \end{figure}
     \item \textbf{Condors}: parecido a butterflies, se compra call con strike $E_1$, se vende call con strike $E_2$, se vende call con strike $E_3$, y se compra call con strike $E_4$ tal que $E_1<E_2<E_3<E_4$. Además, generalmente se cumple que $E_2-E_1=E_4-E_3$. Se obtienen ganancias máximas si el subyacente se mantiene entre $E_2$ y $E_3$. Su payoff es:
-    \[\max(S-E_1), 0) - \max(S-E_2, 0) - \max(S-E_3, 0) + \max(S-E_4, 0)\]
+    \[\boxed{\max(S-E_1, 0) - \max(S-E_2, 0) - \max(S-E_3, 0) + \max(S-E_4, 0)}\]
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{Imagenes/2_Derivados/CondorsPayoff.eps}
@@ -168,6 +170,9 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
     \item \textbf{Warrants}: parecido a opciones call, pero emitido por la propia empresa del subyacente que da derecho a comprar acciones \textit{nuevas} (frente a acciones ya existentes en las opciones) emitidas por la empresa. Tiene plazos largos, de hasta 5 años.
     \item \textbf{Convertible bonds/ CBs}: bono normal que paga cupones y un capital a vencimiento, pero que tiene la opción de convertirse en acciones antes de vencimiento (perderías los cupones siguientes). Se comporta como una opción americana.
 \end{itemize}
+
+
+
 
 
 

@@ -55,10 +55,10 @@ Sabiendo la \textit{call-put parity} $C(S,t)-P(S,t)=S-Ee^{-r(T-t)}$, las relacio
         \hline
     \end{tabularx}
 \end{center}
-\begin{align*}
+\begin{align}
     d_1 &= \frac{\log \left( \frac{S}{E} \right) + \left( r - D + \frac{1}{2} \sigma^2 \right) (T - t)}{\sigma \sqrt{T - t}} && N(x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^x e^{- \frac{1}{2} y^2} \, dy \\
     d_2 &= d_1 - \sigma \sqrt{T - t} &&  N'(x) = \frac{1}{\sqrt{2 \pi}} e^{- \frac{1}{2} x^2}
-\end{align*}
+\end{align}\label{eq:d_sol_BS}
 
 \begin{center}
     \begin{tabularx}{\textwidth}{|X|X|X|}
@@ -281,7 +281,7 @@ En este apartado se va a graficar cada una de las soluciones
 
 
 
-\subsection{Volatilidad implícita}
+\subsection{Volatilidad implícita}\label{sec:vol_imp}
 Valor de $\sigma$ que iguala precio teórico (Black-Scholes) al precio de mercado. Para su cálculo se utilizan métodos numéricos como Newton-Raphson usando vega.\\
 No es consistente si se calcula para diferentes strikes y vencimientos, lo que genera distintas curvas de volatilidad implícita:
 \begin{itemize}

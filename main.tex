@@ -30,8 +30,12 @@
 %%-----------------------------------------------
 %% Definicion de entornos
 %%-----------------------------------------------
-\newtheorem*{remark}{Observación}
-\newtheorem*{proposition}{Proposición}
+\newtheorem{remark}{Observación}
+\newtheorem{proposition}{Proposición}
+\newtheorem{notation}{Notación}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
 
 %%-----------------------------------------------
@@ -95,23 +99,40 @@
 
 
     \clearpage%
+    \part{Fundamentos básicos de derivados, riesgo y rentabilidad}
     \chapter{Introducción}
     \input{1_Conceptos_basicos}
+    \newpage
     \input{2_Opciones}
+    \newpage
+    \input{11_Prods_renta_fija.tex}
+    \newpage
     \input{3_ALetoriedad}
 
     \clearpage%
-    \chapter{Modelos básicos de valoración}
+    \chapter{Modelación básica de derivados}
     \input{4_Black_Scholes}
+    \newpage
     \input{5_EDPs}
+    \newpage
     \input{6_Sols_deltas}
+    \newpage
+    \input{8_Generalizaciones}
+    \newpage
     \input{7_Volatilidad}
-    \input{8_Ops_Americanas.tex}
+    \newpage
+    \input{10_Cobertura}
+    \newpage
+    \input{9_Ops_Americanas}
+ 
 
 
     \clearpage%
     \appendix
-    \chapter{Ampliación del lema de Itô}
-    \input{Apendice A}\label{CalcIto}
+    \chapter{Apéndices}
+    \input{Apendices/Apendice Ito}
+    \input{Apendices/Apendice generalizaciones}
+    \input{Apendices/Apendice Make Your Mind Up}
+    \input{Apendices/Apendice var cob vol imp.tex}
 
 \end{document}
