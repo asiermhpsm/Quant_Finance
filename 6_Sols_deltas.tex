@@ -285,7 +285,7 @@ En este apartado se va a graficar cada una de las soluciones
 Valor de $\sigma$ que iguala precio teórico (Black-Scholes) al precio de mercado. Para su cálculo se utilizan métodos numéricos como Newton-Raphson usando vega.\\
 No es consistente si se calcula para diferentes strikes y vencimientos, lo que genera distintas curvas de volatilidad implícita:
 \begin{itemize}
-    \item \textbf{Smile:} Volatilidad más alta para opciones ITM y OTM, mínima en ATM.
+    \item \textbf{Smile:} Volatilidad más alta para opciones ITM y OTM, mínima en ATM.\@
     \item \textbf{Skew:} Inclinación de la curva; típicamente negativa en mercados de acciones (mayor IV en puts OTM).
     \item \textbf{Frown:} Forma invertida del smile; menos común.
 \end{itemize}
@@ -318,7 +318,7 @@ Otros tipos de coberturas son:
     \item \textbf{Vega hedging}: usada para eliminar el riesgo de volatilidad. En realidad esto en ocasiones da lugar a inconsistencias y no se debe usar una volatilidad constante.
     \item \textbf{Static hedging}: usada para reducir el riesgo de opciones exóticas mediante contratos más líquidos que se mantienen hasta el vencimiento, eliminando la necesidad de ajustes dinámicos.
     \item \textbf{Margin hedging}: usada para equilibrar las llamadas de margen (depósitos obligatorios) en una parte del portafolio con los reembolsos de otras partes, evitando así grandes llamadas de margen que puedan ser difíciles de cumplir.
-    \item \textbf{Crash (Platinum) hedging}: diseñada para minimizar el peor resultado posible en mercados extremos (p.e. caídas), donde los movimientos son tan grandes que no se puede seguir el ritmo con las coberturas, y además las correlaciones normales se vuelven irrelevantes. Incluye dos tipos: cobertura del valor nominal del portafolio y cobertura de llamadas de margen.
+    \item \textbf{Crash (Platinum) hedging}: diseñada para minimizar el peor resultado posible en mercados extremos (p.e.\ caídas), donde los movimientos son tan grandes que no se puede seguir el ritmo con las coberturas, y además las correlaciones normales se vuelven irrelevantes. Incluye dos tipos: cobertura del valor nominal del portafolio y cobertura de llamadas de margen.
 \end{itemize}
 
 

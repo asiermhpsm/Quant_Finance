@@ -25,6 +25,8 @@
 \usepackage{array}
 
 
+\input{datos.tex}
+
 
 
 %%-----------------------------------------------
@@ -71,68 +73,72 @@
 \makeatother
 
 
-\input{datos.tex}
-
 
 \begin{document}
 
-    \begin{titlepage}
-        \centering
-        \vspace{3cm}
-        {\includegraphics[width=0.9\textwidth]{newplot.png}\par}
-        \vspace{5cm}
-        {\scshape\Huge \Titulo\par}
-        \vspace{2cm}
-        {\scshape\LARGE Apuntes-esquema \par}
-        \vfill
-        {\Large Autor:  \par}
-        {\Large \NombreAutor\par}
-        \vfill
-        {\Large \today \par}
-    \end{titlepage}
+  \begin{titlepage}
+      \centering
+      \vspace{3cm}
+      {\includegraphics[width=0.9\textwidth]{newplot.png}\par}
+      \vspace{5cm}
+      {\scshape\Huge \Titulo\par}
+      \vspace{2cm}
+      {\scshape\LARGE Apuntes-esquema \par}
+      \vfill
+      {\Large Autor:  \par}
+      {\Large \NombreAutor\par}
+      \vfill
+      {\Large \today \par}
+  \end{titlepage}
 
 
-    \clearpage%
-    \tableofcontents
-    \setcounter{page}{1}
-    \pagenumbering{arabic}
+  \clearpage%
+  \tableofcontents
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
 
 
-    \clearpage%
-    \part{Fundamentos básicos de derivados, riesgo y rentabilidad}
-    \chapter{Introducción}
-    \input{1_Conceptos_basicos}
-    \newpage
-    \input{2_Opciones}
-    \newpage
-    \input{11_Prods_renta_fija.tex}
-    \newpage
-    \input{3_ALetoriedad}
+  \clearpage%
+  \part{Fundamentos básicos de derivados, riesgo y rentabilidad}
+  \chapter{Introducción}
+  \input{1_Conceptos_basicos}
+  \newpage
+  \input{2_Opciones}
+  \newpage
+  \input{11_Prods_renta_fija.tex}
+  \newpage
+  \input{12_swaps.tex}
+  \newpage
+  \input{3_ALetoriedad}
 
-    \clearpage%
-    \chapter{Modelación básica de derivados}
-    \input{4_Black_Scholes}
-    \newpage
-    \input{5_EDPs}
-    \newpage
-    \input{6_Sols_deltas}
-    \newpage
-    \input{8_Generalizaciones}
-    \newpage
-    \input{7_Volatilidad}
-    \newpage
-    \input{10_Cobertura}
-    \newpage
-    \input{9_Ops_Americanas}
- 
+  \clearpage%
+  \chapter{Modelación básica de derivados}
+  \input{4_Black_Scholes}
+  \newpage
+  \input{5_EDPs}
+  \newpage
+  \input{6_Sols_deltas}
+  \newpage
+  \input{8_Generalizaciones}
+  \newpage
+  \input{7_Volatilidad}
+  \newpage
+  \input{10_Cobertura}
+  \newpage
+  \input{9_Ops_Americanas}
 
 
-    \clearpage%
-    \appendix
-    \chapter{Apéndices}
-    \input{Apendices/Apendice Ito}
-    \input{Apendices/Apendice generalizaciones}
-    \input{Apendices/Apendice Make Your Mind Up}
-    \input{Apendices/Apendice var cob vol imp.tex}
+
+  \clearpage%
+  \appendix
+  \chapter{Apéndices Introducción}
+  \input{Apendices/Apendice Ito}
+  \input{Apendices/Apendice generalizaciones}
+  \input{Apendices/Apendice Make Your Mind Up}
+  \input{Apendices/Apendice var cob vol imp.tex}
+
+
+  \chapter{Apéndices extra}
+  \input{Apendices/Black_Jack.tex}
 
 \end{document}

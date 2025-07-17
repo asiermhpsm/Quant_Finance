@@ -122,7 +122,7 @@ donde $A_\infty$ y $B_\infty$ son los valores de los coeficientes en el límite 
 
 
 
-\subsection{tiempos de primer escape (First-exit times)}
+\subsection{Tiempos de primer escape (First-exit times)}
 El \textit{first-exit time} es el tiempo en el cual un camino aleatorio alcanza un cierto límite por primera vez. El objetivo de esta sección es calcular la probabilidad de que un camino aleatorio alcance cierto límite antes de cierto tiempo.
 \begin{figure}[H]
     \centering
@@ -168,7 +168,7 @@ que volviendo a la EDP~\eqref{eq:CumulatFirstExitTime}:
     &\Rightarrow \int_t^\infty\frac{\partial C}{\partial t} dt' + \frac{1}{2} B(y, t)^2 \int_t^\infty \frac{\partial^2 C}{\partial y^2} dt' + A(y, t) \int_t^\infty \frac{\partial C}{\partial y} dt' = 0 \Rightarrow \\
     &\Rightarrow -1 - \frac{\partial u}{\partial t} - \frac{1}{2} B(y, t)^2 \frac{\partial^2 u}{\partial y^2} - A(y, t) \frac{\partial u}{\partial y} = 0
 \end{align*}
-por lo que el tiempo esperado de primer escape $u(y, t)$ satisface la EDP:
+por lo que el tiempo esperado de primer escape $u(y, t)$ satisface la EDP
 \[
     \boxed{
         \left\{
@@ -179,7 +179,7 @@ por lo que el tiempo esperado de primer escape $u(y, t)$ satisface la EDP:
         \right\}
     }
 \]
-Por ejemplo, si se tiene una EDE independiente del tiempo $A=\mu S, B=\sigma S$, se puede buscar una solución en estado estacionario, es decir, $u(y, t) = u(y)$, que satisface la EDP:
+Por ejemplo, si se tiene una EDE independiente del tiempo $A=\mu S, B=\sigma S$, se puede buscar una solución en estado estacionario, es decir, $u(y, t) = u(y)$, que satisface la EDP
 \[
     \frac{1}{2}\sigma^2 S^2 \frac{d^2 u}{dS^2} + \mu S \frac{du}{dS} = -1
 \]
@@ -195,7 +195,97 @@ con condiciones de contorno $u(S_0) = u(S_1) = 0$. La solución en este caso ser
 
 
 
+\subsection{Estrategias en apuestas}
 
+\subsubsection{Blackjack}
+La distribución del beneficio en el blackjack (explicado en el apéndice~\ref{sec:blackjack}) es la siguiente. Se denota $\phi$ a la variable aleatoria que represestan el resultado de la apuesta, $\mu$ es la media de y $\sigma$ es la desviación típica de $\phi$. En blackjack, los valores discretos de $\phi$ son:
+\begin{align*}
+    &\phi = -1, && \text{el jugador pierde la apuesta} \\
+    &\phi = 0, && \text{el jugador empata} \\
+    &\phi = 1, && \text{el jugador gana la apuesta} \\
+    &\phi = 3/2, && \text{el jugador consigue un blackjack o natural} \\
+\end{align*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{Imagenes/3_Aleatoriedad/blackjack_Dist.png}
+    \caption{Distribución de beneficios en el blackjack}
+\end{figure}
+
+
+
+
+\subsubsection{Criterio de Kelly}
+Siguiendo con el ejemplo del blackjack, se tiene la v.a.\ $\phi_i$ para denotar el resultado de mano i-ésima, con media $\mu_i$ y desviación típica $\sigma_i$. Suponiendo además que en total incialmente se tiene una cantidad de dinero $P$ y en cada mano se apuesta una fracción $f$ de la cantidad de dinero que se tenga en ese momento. Por lo tanto en la primera mano se obtiene
+\[
+    P(1+f\phi_1)
+\]
+en la segunda mano
+\[
+    P(1+f\phi_1)(1+f\phi_2)
+\]
+y tras $M$ manos se obtiene
+\[
+    P\prod_{i=1}^M (1+f\phi_i)
+\]
+se plantea ahora cómo se elige $f$ para maximiar las ganancias. Si $f$ es muy grande eventualmente se perderá todo (o casi todo el dinero) aunque las expectativas sean positivas (por ejemplo, si se apuesta todo el dinero en una mano); si $f$ es muy es muy pequeño, se ganrá poco y se tardará demasiado en conseguir una cantidad significativa de dinero. Por lo tanto se  busca un valor intermedio.
+
+En este caso se va a elegir $f$ de forma que maximice la \textbf{tasa de crecimiento esperada a largo plazo}, si bien se pueden maximizar con otras estrategias. La tasa de crecimiento es
+\[
+    \frac{1}{M} \ln\left(  P\prod_{i=1}^M (1+f\phi_i)\right) = \frac{1}{M} \ln(P) + \frac{1}{M} \sum_{i=1}^M \ln(1+f\phi_i)
+\]
+ignorando el reescalado del primer término y suponiendo que el resultado de cada mano es independiente (no es el caso en el blackjack), su esperanza es:
+\begin{align*}
+    \mathbb{E}[\ln(1+f\phi_i)] &\overset{\text{(Taylor)}}{=} \mathbb{E}[f\phi_i - \frac{1}{2}f^2\phi_i^2 + O(f^3)] \\
+    &= f\mathbb{E}[\phi_i] - \frac{1}{2}f^2\mathbb{E}[\phi_i^2] + O(f^3) \\
+    &= f\mu - \frac{1}{2}f^2\sigma^2 + O(f^3)
+\end{align*}
+
+Luego, despreciando los términos de orden superior, la tasa de crecimiento esperada a largo plazo es
+\begin{align}\label{eq:KellyGrowth}
+    f\mu - \frac{1}{2}f^2\sigma^2
+\end{align}
+que se maximiza cuando
+\[
+    \boxed{f = \frac{\mu}{\sigma^2}}
+\]
+dando un crecimiento esperado de
+\[
+    \frac{\mu}{\sigma^2}\mu - \frac{1}{2}\left(\frac{\mu}{\sigma^2}\right)^2\sigma^2 = \frac{\mu^2}{\sigma^2} - \frac{1}{2}\frac{\mu^2}{\sigma^2} = \boxed{\frac{\mu^2}{2\sigma^2}}
+\]
+por mano.
+
+Lo importante para obtener ganancias a largo plazo es que la ecuación~\eqref{eq:KellyGrowth} sea positiva:
+\begin{align*}
+    f\mu - \frac{1}{2}f^2\sigma^2 > 0 \Leftrightarrow f\mu > \frac{1}{2}f^2\sigma^2 \Leftrightarrow \mu > \frac{1}{2}f\sigma^2 \Leftrightarrow \boxed{f < \frac{2\mu}{\sigma^2}}
+\end{align*}
+
+
+
+
+
+
+
+\subsubsection{Apuestas a eventos deportivos: carreras de caballos}
+Se tiene en una carrera de caballos $N$ caballos, habiendose apostado una cantidad total $W_i$ sobre el i-ésimo caballo. La casa de apuestas paga $1:q_i$ por el iésimo caballo. Para evitar pérdidas, la casa de apuestas tiene que elegir $q_i$ de forma que nunca pierda.
+
+El total de dinero recaudado antes de la carrera es de
+\[
+    \sum_{i=1}^N W_i
+\]
+y si el gana el caballo $j$ la casa de apuestas paga 
+\[
+    (1+q_j)W_j
+\]
+luego para conseguir ganancias, lo único de lo que tiene que asegurarse la casa de apuestas es de que
+\[
+    \sum_{i=1}^N W_i \geq (1+q_j)W_j
+\]
+es decir que
+\[
+    \boxed{q_j \leq \frac{\sum_{i=1}^N W_i}{W_j} - 1, \quad \forall j=1,\ldots,N}
+\]
+
+Como se puede observar, la probabilidades no tienen nada que ver con las probabilidades reales, si no de lo que se haya apostado.
 
 
 

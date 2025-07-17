@@ -524,6 +524,42 @@ INPUT .\11_Prods_renta_fija.tex
 INPUT .\11_Prods_renta_fija.tex
 INPUT 11_Prods_renta_fija.tex
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\tfm\public\eurosym\feymr10.tfm
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve.eps
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve.eps
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve.eps
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve.eps
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve.eps
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve-eps-converted-to.pdf
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve-eps-converted-to.pdf
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve.eps
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve-eps-converted-to.pdf
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve-eps-converted-to.pdf
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve-eps-converted-to.pdf
+INPUT .\Imagenes\11_Prods_renta_fija\Yield_Curve-eps-converted-to.pdf
+INPUT .\12_swaps.tex
+INPUT .\12_swaps.tex
+INPUT 12_swaps.tex
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Interest_swap.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Relacion_Swaps_Bonos.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
+INPUT .\Imagenes\12_swaps\Interes_variable_swaps.png
 INPUT .\3_ALetoriedad.tex
 INPUT .\3_ALetoriedad.tex
 INPUT .\3_ALetoriedad.tex
@@ -601,6 +637,13 @@ INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
 INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
 INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
 INPUT .\Imagenes\3_Aleatoriedad\First-exit_Time-eps-converted-to.pdf
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
+INPUT .\Imagenes\3_Aleatoriedad\blackjack_Dist.png
 INPUT .\4_Black_Scholes.tex
 INPUT .\4_Black_Scholes.tex
 INPUT .\4_Black_Scholes.tex
@@ -1363,6 +1406,9 @@ INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
 INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
 INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
 INPUT .\Imagenes\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
+INPUT .\Apendices\Black_Jack.tex
+INPUT .\Apendices\Black_Jack.tex
+INPUT Apendices\Black_Jack.tex
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.aux
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.out
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.out
@@ -1378,6 +1424,8 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\am
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex9.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex9.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
