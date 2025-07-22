@@ -1,5 +1,5 @@
 
-\section{Aleatoriedad y procesos estocásticos}
+\section{Algunas propiedades}
 
 \subsection{Desigualdad de Jensen}
 Sea la función convexa $f(S)$ (que se curva hacia arriba, con forma de cuenco) de la variable aleatoria $S$, entonces
@@ -61,13 +61,13 @@ En el apéndice~\ref{CalcIto} se encuentra la fórmula para dimensiones mayores.
 
 
 
-\subsection{Función de densidad de transición}
+\section{Función de densidad de transición}
 Es la \textit{`probabilidad de que una variable aleatoria $y$ esté entre $a$ y $b$ en el instante futuro $t'$, sabiendo que ha empezado con un valor $y$ en el instante $t$`}. En concreto la función de densidad de transición $p(y, t; y', t')$ es:
 \[
     \boxed{\text{Prob}(a<y'<b\text{ en }t' | y\text{ en }t) = \int_a^b p(y, t; y', t') dy'}
 \]
 
-\subsubsection{Ecuación de Fokker-Planck o de Kolmogorov hacia delante}
+\subsection{Ecuación de Fokker-Planck o de Kolmogorov hacia delante}
 Se centra en cómo evoluciona la transición con respecto al tiempo futuro $t'$. Se enfoca en el destino del proceso y cómo cambia la probabilidad de estar en distintos valores futuros $y'$ a medida que avanza el tiempo $t'$. Sabiendo que la variable aleatoria cumple la EDE
 \[
     dy = A(y, t) dt + B(y, t) d\mathnormal{X}
@@ -122,7 +122,7 @@ donde $A_\infty$ y $B_\infty$ son los valores de los coeficientes en el límite 
 
 
 
-\subsection{Tiempos de primer escape (First-exit times)}
+\section{Tiempos de primer escape (First-exit times)}
 El \textit{first-exit time} es el tiempo en el cual un camino aleatorio alcanza un cierto límite por primera vez. El objetivo de esta sección es calcular la probabilidad de que un camino aleatorio alcance cierto límite antes de cierto tiempo.
 \begin{figure}[H]
     \centering
@@ -133,7 +133,7 @@ El \textit{first-exit time} es el tiempo en el cual un camino aleatorio alcanza 
 
 
 
-\subsubsection{Funciones de distribución acumulada para first-exit times}
+\subsection{Funciones de distribución acumulada para first-exit times}
 Se definde la función $C(y, t; t')$ como la probabilidad de que la variable $y$ salga de la región $\Omega$ antes del tiempo $t'$, habiendo empezado en $y$ en el tiempo $t$. Esta función puede interpretarse como una función de distribución acumulada para first-exit time. 
 
 El objetivo es calcular la probabilidad de que un camino aleatorio abandone una región $\Omega$ antes de un tiempo dado $t'$. Para ello, se tiene que satisfacer el problema de la EDP hacia atrás:
@@ -150,7 +150,7 @@ El objetivo es calcular la probabilidad de que un camino aleatorio abandone una 
 
 
 
-\subsubsection{Tiempos de primer escape esperados (Expected first-exit times)}\label{sec:ExpectedFirstExitTimes}
+\subsection{Tiempos de primer escape esperados (Expected first-exit times)}\label{sec:ExpectedFirstExitTimes}
 Una vez calculado~\eqref{eq:CumulatFirstExitTime} es posile calcular el tiempo esperado de primer escape:
 \[
     u(y, t) = \int_t^\infty (t' - t) \frac{\partial C}{\partial t'} dt' \overset{\text{partes}}{=} \int_t^\infty 1 - C(y, t; t') dt'
@@ -195,9 +195,9 @@ con condiciones de contorno $u(S_0) = u(S_1) = 0$. La solución en este caso ser
 
 
 
-\subsection{Estrategias en apuestas}
+\section{Estrategias en apuestas}
 
-\subsubsection{Blackjack}
+\subsection{Blackjack}
 La distribución del beneficio en el blackjack (explicado en el apéndice~\ref{sec:blackjack}) es la siguiente. Se denota $\phi$ a la variable aleatoria que represestan el resultado de la apuesta, $\mu$ es la media de y $\sigma$ es la desviación típica de $\phi$. En blackjack, los valores discretos de $\phi$ son:
 \begin{align*}
     &\phi = -1, && \text{el jugador pierde la apuesta} \\
@@ -214,7 +214,7 @@ La distribución del beneficio en el blackjack (explicado en el apéndice~\ref{s
 
 
 
-\subsubsection{Criterio de Kelly}
+\subsection{Criterio de Kelly}
 Siguiendo con el ejemplo del blackjack, se tiene la v.a.\ $\phi_i$ para denotar el resultado de mano i-ésima, con media $\mu_i$ y desviación típica $\sigma_i$. Suponiendo además que en total incialmente se tiene una cantidad de dinero $P$ y en cada mano se apuesta una fracción $f$ de la cantidad de dinero que se tenga en ese momento. Por lo tanto en la primera mano se obtiene
 \[
     P(1+f\phi_1)
@@ -265,7 +265,7 @@ Lo importante para obtener ganancias a largo plazo es que la ecuación~\eqref{eq
 
 
 
-\subsubsection{Apuestas a eventos deportivos: carreras de caballos}
+\subsection{Apuestas a eventos deportivos: carreras de caballos}
 Se tiene en una carrera de caballos $N$ caballos, habiendose apostado una cantidad total $W_i$ sobre el i-ésimo caballo. La casa de apuestas paga $1:q_i$ por el iésimo caballo. Para evitar pérdidas, la casa de apuestas tiene que elegir $q_i$ de forma que nunca pierda.
 
 El total de dinero recaudado antes de la carrera es de
@@ -288,6 +288,110 @@ es decir que
 Como se puede observar, la probabilidades no tienen nada que ver con las probabilidades reales, si no de lo que se haya apostado.
 
 
+
+
+
+Ahora desde el punto de vista del apostador, veamos si se puede observar si hay arbitraje. Sea $w_i$ la cantidad apostada al i-ésimo caballo y que el total de dinero apostado es 1, entonces
+\[
+    \sum_{i=1}^N w_i = 1
+\]
+y lo que se gana siendo el j-ésimo caballo el ganador es
+\[
+    (q_j + 1)w_j
+\]
+
+El objetivo es por lo tanto encontrar $w_i$ para todo i tal que son todos positivos, suman 1 y la ganancia sea postivia para todo $j$. Por lo tanto, para que haya arbitraje se tiene que conseguir más de 1 (lo invertido):
+\begin{align*}
+    (q_j + 1)w_j > 1 \Leftrightarrow w_j > \frac{1}{q_j + 1} \\
+\end{align*}
+leugo el problema es encontrar $w_i$ tal que
+\[
+    \left\{
+    \begin{aligned}\label{eq:ArbitrajeCaballos}
+        &\sum_{i=1}^N w_i = 1 \\
+        &w_j > \frac{1}{q_j + 1} \quad \forall j
+    \end{aligned}
+    \right\}
+\]
+La primera parte implica que la solución debe estar en en plano $\sum_{i=1}^N w_i = 1$ mientras que la segunda dice que para que haya arbitraje el punto $\frac{1}{\vec{q} + 1}$ debe estar por debajo de dicho plano, teniendo en cuenta que todos los valores deben ser positivos. En 2D esto se traduce en la siguiente imagen:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{Imagenes/3_Aleatoriedad/Arbitraje_Cabllos.png}
+    \caption{Arbitraje en carreras de caballos de dos caballos}
+\end{figure}
+
+Una manera rápida de comprobar si hay arbitraje es transformar la ecuacion~\eqref{eq:ArbitrajeCaballos} y comprobar si se cumple:
+\[
+    1 = \sum_{i=1}^N w_i > \sum_{i=1}^N \frac{1}{q_i + 1} \Rightarrow  \boxed{\sum_{i=1}^N \frac{1}{q_i + 1} < 1}
+\]
+en caso contrario no hay arbitraje. Una vez comprobado que hay arbitraje, para conseguir ganancias simplemente se debe conseguir un punto $\vec{w}$ dentro de la recta (o plano) $\sum_{i=1}^N w_i = 1$ (comprobando que se cumple la otra condición).
+
+
+
+
+
+Si no se cumple la condición de arbitraje, existen varias maneras de apostar. Sea $p_i$ la probabilidad de que el i-ésimo caballo gane, entonces se debe cumplir.
+\[
+    \sum_{i=1}^N p_i = 1
+\]
+Si se ha apostado en todos los caballos un total de 1, entonces el beneficio o pérdida esperado es
+\[
+    m = \sum_{i=1}^N p_i w_i (q_i + 1) - 1
+\]
+
+Por otro lado, la desviación estandar es
+\[
+    \sigma = \sqrt{\sum_{i=1}^N p_i( w_i (q_i + 1) - 1 - m)^2}
+\]
+
+Existen varias estrategias de apuestas:
+\begin{itemize}
+    \item \textbf{Maximizar el valor esperado}: en este caso se apuesta todo al caballo con mayor probabilidad de ganar, i.e.\ maximizar $p_i(q_i+1)$. Esta es una apuesta muy arriesgada ya que la esperanza es muy alta pero también la desviación.
+    \item \textbf{Minimizar la desviación estándar}: muchas veces se consigue una desviación nula, pero resulta en una esperanza negativa, por lo que no es una buena estrategia.
+    \item \textbf{Maximizar rendimiento dividido por desviación estándar}: en este caso se busca un equilibrio entre la esperanza y la desviación $m/\sigma$.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Extreme value theory}
+Estudia el comportamiento de los valores extremos de una variable aleatoria, es decir, los máximos y mínimos. Se centra en la distribución de los valores extremos, que normalmente con pocas observaciones.
+
+Si $X_i$ son variable identicamente distribuidas (iid) y
+\[
+    x = \max(X_1, X_2, \ldots, X_n)
+\]
+entonces la función de distribución de $x$ converge a
+\[
+    \boxed{F(x) = \exp\left( -\left( 1 + \frac{\xi (x-\mu)}{\sigma} \right)^{-1/\xi} \right)}
+\]
+donde si $\xi=0$ se tiene la distribución Gumbel, si $\xi > 0$ se tiene la distribución Fréchet y si $\xi < 0$ se tiene la distribución Weibull. En concreto, la de Fréchet es importante en finanzas porque esta asociada a colas pesadas.
+
+
+Se considera la probabilidad de una pérdida que exceda $u$ por una cantidad $y$, sabiendo que se ha superado $u$, es decir,
+\[
+    F_u(x) = \mathbb{P}(X - u \leq  y \mid X > u)
+\]
+Esto se puede aproximar por la Distribución Generalizada de Pareto (GPD):
+\[
+    \boxed{1 - \left( 1 + \frac{\xi X}{\beta} \right)^{-1/\xi}}
+\]
+
+Para colas pesadas, se tiene que $\xi > 0$, en cuyo caso no todos los momentos existen:
+\[
+    \mathbb{E}[X^k] = \infty, \qquad k \geq \frac{1}{\xi}
+\]
+
+Para más información mirar teoría vista en el Athens.
 
 
 
