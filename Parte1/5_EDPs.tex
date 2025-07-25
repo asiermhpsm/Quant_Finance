@@ -1,0 +1,34 @@
+
+\section{Comportamiento de las EDPs}
+
+\subsection{Significado de los términos de una EDP}
+Sea una EDP de la siguiente forma:
+$$\frac{\partial u}{\partial t} + c(u) \frac{\partial u}{\partial x} = D(u) \frac{\partial^2 u}{\partial x^2} + R(u)$$
+entonces se tienen los siguientes términos:
+\begin{itemize}
+    \item \textbf{Término de difusión} ($D(u) \frac{\partial^2 u}{\partial x^2}$): es el responsable de disipar o concentrar la solución . Si $D(u)>0$ entonces la solución se suaviza mientras que $D(u)<0$ hace que la solución se concentre. 
+    \item \textbf{Término de convección} ($c(u) \frac{\partial u}{\partial x}$): representa el transporte con velocidad $c(u)$ hacia la derecha si $c(u)>0$ o hacia la izquierda si $c(u)<0$.
+    \item \textbf{Término de reacción} ($R(u)$): representa la salida o entrada local de $u$. Se puede ver como crear/eliminar masa (fuentes o sumideros).
+\end{itemize}
+
+Sabiendo que la EDP de Black-Scholes clásica es
+$$\frac{\partial V}{\partial t} + \frac{\sigma^2S^2}{2} \frac{\partial^2 V}{\partial S^2} + rS \frac{\partial V}{\partial S} -rV = 0 $$
+entonces:
+\begin{itemize}
+    \item El término de \textbf{difusión} $\frac{\sigma^2}{2}S^2 > 0$ indica que la solución se suaviza y que los picos se homogeinizan.
+    \item El término de \textbf{convección} $rS > 0$ indica que el resultado se mueve hacia los valores de $S$ positivos (hacia la derecha).
+    \item El término de \textbf{reacción} $rV > 0$ indica un decaimiento general del valor de la opción a medida que pasa el tiempo.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+

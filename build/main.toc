@@ -126,11 +126,13 @@
 \contentsline {section}{\numberline {6.1}Análisis técnico}{73}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Wave theory}{79}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Olas de Elliott y números de Fibonacci}{79}{subsection.6.2.1}%
-\contentsline {chapter}{\numberline {A}Apéndices Introducción}{81}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Cálculo de Itô}{81}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Generalizaciones sencillas de Black-Scholes}{84}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Opciones Make Your Mind Up}{87}{section.Alph1.3}%
-\contentsline {section}{\numberline {A.4}Media y varianza de cobertura con volatilidad implícita}{93}{section.Alph1.4}%
-\contentsline {chapter}{\numberline {B}Apéndices extra}{103}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Blackjack y apuestas}{103}{section.Alph2.1}%
-\contentsline {subsection}{\numberline {B.1.1}Reglas del blackjack}{103}{subsection.Alph2.1.1}%
+\contentsline {part}{II\hspace {1em}Otros tipos de opciones y derivados}{81}{part.2}%
+\contentsline {chapter}{\numberline {7}Derivados exóticos y derivados dependientes del camino}{83}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Apéndices Introducción}{85}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Cálculo de Itô}{85}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Generalizaciones sencillas de Black-Scholes}{88}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Opciones Make Your Mind Up}{91}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Media y varianza de cobertura con volatilidad implícita}{97}{section.Alph1.4}%
+\contentsline {chapter}{\numberline {B}Apéndices extra}{107}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Blackjack y apuestas}{107}{section.Alph2.1}%
+\contentsline {subsection}{\numberline {B.1.1}Reglas del blackjack}{107}{subsection.Alph2.1.1}%

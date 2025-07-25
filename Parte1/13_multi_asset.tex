@@ -1,0 +1,186 @@
+\section{Opciones multiasset}
+Cada uno de los subyacentes sigue un un camino aleatorio
+\[
+    dS_i = \mu_i S_i dt + \sigma_i S_i d\mathnormal{X_i}
+\]
+tal que
+\[
+    \mathbb{E}[d\mathnormal{X_i}] = 0, \qquad \mathbb{E}[d\mathnormal{X_i}^2] = dt
+\]
+y tienen una correlación
+\[
+    \mathbb{E}[d\mathnormal{X_i} d\mathnormal{X_j}] = \rho_{ij} dt
+\]
+donde los $\rho_{ij}$ vienen dados por la matriz de correlación
+\[
+    \Sigma = \begin{pmatrix}
+        1 & \rho_{12} & \cdots & \rho_{1n} \\
+        \rho_{21} & 1 & \cdots & \rho_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \rho_{n1} & \rho_{n2} & \cdots & 1
+    \end{pmatrix}
+\]
+que es definida positiva, (i.e. $y^T \Sigma y \geq 0$). Sea $M$ una matriz diagonal con los valores de $\sigma$, la matriz de covarianza es
+\[
+    M \Sigma M = \begin{pmatrix}
+        \sigma_1^2 & \rho_{12} \sigma_1 \sigma_2 & \cdots & \rho_{1n} \sigma_1 \sigma_n \\
+        \rho_{21} \sigma_2 \sigma_1 & \sigma_2^2 & \cdots & \rho_{2n} \sigma_2 \sigma_n \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \rho_{n1} \sigma_n \sigma_1 & \rho_{n2} \sigma_n \sigma_2 & \cdots & \sigma_n^2
+    \end{pmatrix}
+\]
+Como se muestra en el apéndice~\ref{CalcIto}, el cálculo de Itô se puede generalizar como:
+\[
+    dV = \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} \right) dt + \sum_{i=1}^{d} \frac{\partial V}{\partial S_i} dS_i
+\]
+
+
+
+
+
+
+\subsection{Obtención de la correlación}
+Si se tiene una serie de datos de precios de los activos a intervalos $\delta t$, se puede calcular la correlación entre ellos. En primer lugar se debe calcular el retorno en cada punto:
+\[
+    R_i(t_K) = \frac{S_i(t_k + \delta t) - S_i(t_k)}{S_i(t_k)}
+\]
+luego la volatilidad histórica de cada activo es
+\[
+    \sigma_i = \sqrt{ \frac{1}{\delta t (M-1)} \sum_{k=1}^{M} \left( R_i(t_k) - \overline{R_i} \right)^2 }
+\]
+donde $M$ es el número de puntos de datos y $\overline{R_i}$ es la media de los retornos. La covarianza entre activos es de
+\[
+    \mathrm{Cov}(S_i, S_j) = \frac{1}{\delta t (M-1)} \sum_{k=1}^{M} \left( R_i(t_k) - \overline{R_i} \right) \left( R_j(t_k) - \overline{R_j} \right)
+\]
+Finalmente, la correlación entre los activos $i$ y $j$ es
+\[
+    \boxed{\rho_{ij} = \frac{1}{\delta t (M-1) \sigma_i \sigma_j} \sum_{k=1}^{M} \left( R_i(t_k) - \overline{R_i} \right) \left( R_j(t_k) - \overline{R_j} \right)}
+\]
+Esta correlación suele ser bastante inestable y cambia mucho dependiendo de la ventana de tiempo que se utilice.
+
+
+
+
+
+\subsection{Opciones basket}
+También llamadas \textbf{basket options, options on baskets o rainbow options}. Se construye la cartera:
+\[
+    \Pi = V(S_1, \dots, S_d, t) - \sum_{i=1}^{d} \Delta_i S_i
+\]
+cuya variación es
+\begin{align*}
+    d\Pi &= dV(S_1, \dots, S_d, t) - \sum_{i=1}^{d} \Delta_i dS_i \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} \right) dt + \sum_{i=1}^{d} \frac{\partial V}{\partial S_i} dS_i - \sum_{i=1}^{d} \Delta_i dS_i \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} \right) dt + \sum_{i=1}^{d} \left( \frac{\partial V}{\partial S_i} - \Delta_i \right) dS_i
+\end{align*}
+luego la cobertura se debe hacer con $ \Delta_i = \frac{\partial V}{\partial S_i} $, lo que da lugar a
+\begin{align*}
+    &d\Pi = r \Pi dt \Rightarrow \\
+    \Rightarrow &\left( \frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} \right) dt = r \left(V - \sum_{i=1}^{d} \Delta_i S_i \right) dt \Rightarrow \\
+    \Rightarrow &\frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} = r V - r \sum_{i=1}^{d} \frac{\partial V}{\partial S_i} S_i \Rightarrow \\
+    \Rightarrow &\frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} + r \sum_{i=1}^{d} \frac{\partial V}{\partial S_i} S_i - r V = 0
+\end{align*}
+
+Teniendo en cuenta dividendos y siguiendo la misma lógica, se obtiene la EDP
+\begin{equation}\label{eq:basket_edp}
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} \sigma_i \sigma_j \rho_{ij} S_i S_j \frac{\partial^2 V}{\partial S_i \partial S_j} + \sum_{i=1}^{d} (r - D_i) \frac{\partial V}{\partial S_i} S_i - r V = 0}
+\end{equation}
+cuya solución analítica es
+\[
+    \boxed{V = \frac{e^{-r(T-t)}}{(\sigma_1 \cdots \sigma_d)\sqrt{(2\pi(T-t))^{d} \det(\Sigma)}} \int_{0}^{\infty} \cdots \int_{0}^{\infty} \frac{\mathrm{Payoff}(S_1', \dots, S_d')}{S_1' \cdots S_d'} \exp\left( -\frac{1}{2} \alpha^T \Sigma^{-1} \alpha \right) dS_1' \cdots dS_d'}
+\]
+donde
+\[
+    \alpha_i = \frac{1}{\sigma_i \sqrt{T-t}} \left( \log\left( \frac{S_i}{S_i'} \right) + \left( r - D_i - \frac{\sigma_i^2}{2} \right)(T-t) \right)
+\]
+
+
+
+
+
+
+
+
+\subsection{Opciones exchange}
+Dan el derecho al poseedor de un activo por otro con un ratio. Su payoff es
+\[
+    \max(q_1S_1-q_2S_2, 0)
+\]
+con $q_1$ y $q_2$ constantes. La EDP que sigue es igualmente~\eqref{eq:basket_edp} con $d=2$. Para encontrar la solución se puede hacer el cambio
+\[
+    V(S_1, S_2, t) = q_1 S_2 H(\xi, t), \qquad \xi = \frac{S_1}{S_2}
+\]
+lo que llevaria a una condición final
+\[
+    H(\xi, T) = \max\left( \xi - \frac{q_2}{q_1}, 0 \right)
+\]
+y una edp
+\[
+    \frac{\partial H}{\partial t} + \frac{1}{2} \sigma^2 \xi^2 \frac{\partial^2 H}{\partial \xi^2} + (D_2 - D_1)\xi \frac{\partial H}{\partial \xi} - D_2 H = 0, \qquad \sigma' = \sqrt{\sigma_1^2 - 2\rho_{12}\sigma_1\sigma_2 + \sigma_2^2}
+\]
+
+Resolviendo y rehaciendo el cambio, se obtiene
+\[
+    \boxed{V(S_1, S_2, t) = q_1 S_1 e^{-D_1(T-t)} N(d_1') - q_2 S_2 e^{-D_2(T-t)} N(d_2')}
+\]
+donde
+\[
+    d_1' = \frac{\log(q_1 S_1 / q_2 S_2) + (D_2 - D_1 + \frac{1}{2} {\sigma'}^2)(T-t)}{\sigma' \sqrt{T-t}}, \qquad d_2' = d_1' - \sigma' \sqrt{T-t}
+\]
+
+
+
+
+
+
+
+\subsection{Quantos}
+El payoff está definidido en base a un activo o índice en una divisa que luego es convertida a otra en el momento del pago.Se va a tomar como ejemplo un contrato basado en un índice definido en yenes  y pagado en dólares. Se define $S_\$$ como el ratio de conversión de yenes a dolares y $S_N$ el índice. Se asume que se satisfacen la EDEs
+\begin{align*}
+    dS_\$ &= \mu_\$ S_\$ dt + \sigma_\$ S_\$ d\mathnormal{X_\$} \\
+    dS_N &= \mu_N S_N dt + \sigma_N S_N d\mathnormal{X_N}
+\end{align*}
+con una correlación $\rho$. Se construye la cartera
+\[
+    \Pi = V(S_\$, S_N, t) - \Delta_\$ S_\$ - \Delta_N S_N S_\$
+\]
+Todo en esta cartera está medido en dólares: $\Delta_\$$ es el número de yenes que se tiene en short, $\Delta_\$ S_\$$ es el valor en dolares de esos yenes; $\Delta_N$ es la cantidad el indice que se tiene en short y $\Delta_N S_N S_\$$ es el valor de todo esa cantidad de indice convertido a dolares. La variación de la cartera es
+\begin{align*}
+    d\Pi = &\left( \frac{\partial V}{\partial t} + \frac{1}{2} \sigma_\$^2 S_\$^2 \frac{\partial^2 V}{\partial S_\$^2} + \rho \sigma_\$ \sigma_N S_\$ S_N \frac{\partial^2 V}{\partial S_\$  \partial S_N} + \frac{1}{2} \sigma_N^2 S_N^2 \frac{\partial^2 V}{\partial S_N^2}  - \rho \sigma_\$ \sigma_N \Delta_N S_\$ S_N - r_f \Delta_\$ S_\$ \right) dt \\
+    &+ \left( \frac{\partial V}{\partial S_\$} - \Delta_\$ - \Delta_N S_N \right) dS_\$ + \left( \frac{\partial V}{\partial S_N} - \Delta_N S_\$ \right) dS_N.
+\end{align*}
+luego para eliminar el riesgo se elige
+\[
+    \Delta_\$ = \frac{\partial V}{\partial S_\$} - \frac{S_N}{S_\$} \frac{\partial V}{\partial S_N}, \qquad \Delta_N = \frac{1}{S_\$} \frac{\partial V}{\partial S_N}
+\]
+que igualando al interés $r_\$$ da lugar a EDP
+\[
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} \sigma_\$^2 S_\$^2 \frac{\partial^2 V}{\partial S_\$^2} + \rho \sigma_\$ \sigma_N S_\$ S_N \frac{\partial^2 V}{\partial S_\$  \partial S_N} + \frac{1}{2} \sigma_N^2 S_N^2 \frac{\partial^2 V}{\partial S_N^2} + (r_\$ - r_f) S_\$ \frac{\partial V}{\partial S_\$} + ( r_f - \rho \sigma_\$ \sigma_N) S_N \frac{\partial V}{\partial S_N} - r_\$ V = 0}
+\]
+con la condición final
+\[
+    V(S_\$, S_N, T) = \max\left( S_N - E, 0 \right)
+\]
+
+Si se busca una solución de la forma
+\[
+    V(S_\$, S_N, t) = W(S_N, t)
+\]
+se obtiene la EDP
+\[
+    \frac{\partial W}{\partial t} + \frac{1}{2} \sigma_N^2 S_N^2 \frac{\partial^2 W}{\partial S_N^2} + S_N \frac{\partial W}{\partial S_N} \left( r_f - \rho \sigma_\$ \sigma_N \right) - r_\$ W = 0
+\]
+Lo que quiere decir que un quanto es equivalente a un modelo básico de Black-Scholes con una tasa de dividendo $r_\$ - r_f + \rho \sigma_\$ \sigma_N$
+
+
+
+
+
+
+
+
+
+
+
+
+

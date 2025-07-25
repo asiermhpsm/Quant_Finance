@@ -1,0 +1,102 @@
+\section{Conceptos financieros básicos}
+En esta sección se explican ciertos conceptos financieros básicos en inglés.
+
+\subsection{Terminología básica}\label{sec:terminos_basicos}
+\begin{itemize}
+    \item \textbf{Equity, stock, share}: acción de una empresa.
+    \item \textbf{Shareholders}: accionistas.
+    \item \textbf{Dividens}: dividendos. Pagas generalmente cada 6 meses. \textbf{Cum} cuando se va a pagar el siguiente dividendo o \textbf{Es} cuando no. Suele haber bajadas del precio de acción cuando se paga dividendo. Si en cierto momento $t_d$ se paga un dividendo $q\cdot S$, justo después de pagar el dividendo la acción en ausencia de arbitraje vale 
+    \[S(1-q)\]
+    \item \textbf{Stock split}: De vez en cuando empresas pueden hacer división de acciones, i.e, cada acción pasa a ser $N$ acciones y el precio se divide entre $N$.
+    \item \textbf{Commodities}: producto en bruto como oro, petróleo, \dots Se suelen usar en mercados a futuro.
+    \item \textbf{Foreign exchange, Forex, FX}: Cambio de divisas. Debe haber cambio consistente entre divisas para evitar arbitraje.
+    \item \textbf{Índice}: Medida de cómo va un mercado/economía. Se calcula como la suma de un \textbf{basket} o conjunto selecto de acciones.
+    \item \textbf{Interest}:
+    \begin{itemize}
+        \item \textbf{Simple interest}: se aplica interés $r$ al valor inicial.
+        \[(1+r)P\]
+        \item \textbf{Compound interest}: se aplica interés $r$ al valor inicial y al interés ganado:
+        \begin{itemize}
+            \item \textbf{Discretely compounded interest}:
+            \[\left(1 +\frac{r}{m} \right)^{mn}P\]
+            \item \textbf{Continuously compounded interest}:
+            \[\lim_{m\rightarrow\infty}\left( 1+\frac{r}{m} \right)^{mn}P=e^{nr}P\]
+        \end{itemize}
+        \item \textbf{Fixed}: interés fijo.
+        \item \textbf{Floating}: interés variable.
+    \end{itemize}
+    \item \textbf{Present value}: actualización de un valor futuro. 
+    \item \textbf{Coupon-bearing bonds}: bonos con cupón cada X tiempo que finalmente paga un \textbf{principal}.
+    \item \textbf{Interest rate swaps}: dos partes se intercambian los intereses, por ejemplo, uno paga un $r$ fijo y el otro el del Euribor 6M, o Euribor 3M vs Euribor 6M. Hay un capítulo entero a continuación.
+    \item \textbf{Index-linked bond}: bonos asociados a un índice para evitar la inflación.
+    \item \textbf{Retail Price Index (RPI)}: índice que mide la inflación en el Reino Unido.
+    \item \textbf{Consumer Price Index (CPI)}: índice que mide la inflación en EE.UU.\@
+    \item \textbf{Short position}: vender un activo (esperando que baje de precio).
+    \item \textbf{Long position}: comprar un activo (esperando que suba de precio).
+    \item \textbf{Derivatives}: instrumento financiero cuyo valor depende del valor de otro activo.
+    \item \textbf{Close position}: terminar una inversión o apuesta que se había abierto anteriormente, p.e.\ vender/comprar algo, dejar que algo expire, ejercer un contrato, \ldots{}
+    \item \textbf{Fundamental analysis}: determinar el valor intrínseco o correcto de una empresa estudiando sus balances contables, estados financieros, equipo de gestión, patentes, competencias, proyecciones de beneficios, flujos de caja, \dots Es muy complejo y hay veces en las que el mercado se comporta de manera irracional.
+    \item \textbf{Technical analysis}: no importa lo que hace la empresa, se analiza cómo se comporta la acción usando gráficos de precios, tendencias, patrones técnicos, \dots Se considera una pseudo-ciencia.
+    \item \textbf{Quantitative analysis}: enfoque matemático y estadístico de los mercados financieros. Se usa para valorar derivados, gestión de riesgos, teoría de carteras, \dots
+    \item \textbf{Return}: porcentaje de crecimiento.
+\end{itemize}
+
+
+\subsection{Contratos forward y futures}
+\begin{itemize}
+    \item \textbf{Forward contract}: una parte se compromete (y se \textbf{obliga}) a comprarle un activo a otra parte en la \textbf{delivery date} o \textbf{maturity} del contrato por un \textbf{delivery price}. EL \textbf{forward price} es el precio actualizado del subyacente (teniendo en cuenta interés, cupones, etc para que el contrato tenga valor inicial del contrato sea 0). El forward price cambia en cada momento, pero el delivery price se fija al firmar el contrato.
+    \item \textbf{Future cotract}: como el forward, pero más público, estandarizado, con un ajuste diario y menor flexibilidad. Por ejemplo, un trader especulando con el SP500.
+    \item \textbf{Spot price}: el valor de activo subyacente en tiempo $t$, i.e., $S_t$.
+    \item \textbf{Going short}: vender un activo que no tienes, con la promesa de recomprarlo más adelante para devolverlo.
+\end{itemize}
+Para que uno de estos contratos no tenga arbitraje se debe cumplir que
+\[S(t)e^{r(T-t)}-F=0 \Rightarrow F=S(t)e^{r(T-t)}\]
+
+
+
+\subsection{Contratos future}
+Siempre hay un \textbf{delivery and Settlement} en el que se debe entregar el subyacente, pero muchas veces el contrato se cierra antes o se liquida en efectivo la diferencia entre lo pactado y el valor actual.
+Al entrar en futuros, debe haber un depósito de dinero (\textbf{Margin}) como garantía de que vas a pagar. Según va cambiando día a día el precio del contrato, se va añadiendo o retirando dinero de tu \textbf{margin account}. Como se da esta compensación diaria (cada dia me pagan/pago lo que haya ganado/perdido segun lo que firmé), el valor del contrato de resetea a 0 todos los días.
+\begin{itemize}
+    \item \textbf{Initial Margin}: fianza inicial al abrir posición.
+    \item \textbf{Maintenance Margin}: mínimo que debe haber en la cuenta.
+\end{itemize}
+
+\subsubsection{Commodity futures}
+Futuros sobre materias primas, entra en juego costo de almacenamiento y rendimiento de conveniencia.
+\[F=S(t)e^{(r+s-c)(T-t)}\]
+donde $s$ es el \textbf{storage cost} y $c$ es el \textbf{convenience yield}, que es el beneficio de tener el bien físicamente.
+\begin{itemize}
+    \item \textbf{Backwardation}: cuando el storage cost domina sobre el convenience yield
+    \[F=S(t)e^{(r+s-c)(T-t)}<S(t)e^{r(T-t)}\]
+    \item \textbf{Contango}: cuando el convenience yield domina sobre el storage cost. SObre todo cuando el bien es escaso
+    \[F=S(t)e^{(r+s-c)(T-t)}>S(t)e^{r(T-t)}\]
+\end{itemize}
+
+
+\subsubsection{FX futures}
+Contrato para comprar o vender divisas. No hay costes de almacenamiento, pero la divisa extranjera genera intereses si se invierte en banco extranjero.
+\[F=S(t)e^{(r-r_f)(T-t)}\]
+donde $r$ es interés doméstico y $r_f$ es interés extranjero.
+
+
+\subsubsection{Index futures}
+Futuros sobre índices de acciones. Similar a los FX, los dividendos bajan el valor del futuro.
+\[F=S(t)e^{(r-q)(T-t)}\]
+donde $q$ es el porcentaje anual de dividendo.
+
+
+
+
+
+
+\subsection{Conteo de días}
+Algunas maneras de contar los días entre dos fechas:
+\begin{itemize}
+    \item \textbf{Actual/Actual}: número de días normal que hay en el calendario.
+    \item \textbf{30/360}: cada mes tiene 30 días y el año tiene 360 días
+    \item \textbf{Actual/360}: cada mes tiene los días que toca, pero el año tiene 360 días.
+\end{itemize}
+
+
+
