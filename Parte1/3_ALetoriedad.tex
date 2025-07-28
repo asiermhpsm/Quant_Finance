@@ -122,7 +122,7 @@ donde $A_\infty$ y $B_\infty$ son los valores de los coeficientes en el límite 
 
 
 
-\section{Tiempos de primer escape (First-exit times)}
+\section{Tiempos de primer escape (First-exit times)}\label{sec:FirstExitTimes}
 El \textit{first-exit time} es el tiempo en el cual un camino aleatorio alcanza un cierto límite por primera vez. El objetivo de esta sección es calcular la probabilidad de que un camino aleatorio alcance cierto límite antes de cierto tiempo.
 \begin{figure}[H]
     \centering
@@ -138,6 +138,7 @@ Se definde la función $C(y, t; t')$ como la probabilidad de que la variable $y$
 
 El objetivo es calcular la probabilidad de que un camino aleatorio abandone una región $\Omega$ antes de un tiempo dado $t'$. Para ello, se tiene que satisfacer el problema de la EDP hacia atrás:
 \begin{equation}\label{eq:CumulatFirstExitTime}
+    \boxed{
     \left\{
     \begin{array}{rlrl}
         \displaystyle\frac{\partial C}{\partial t} + \frac{1}{2} B(y, t)^2 \frac{\partial^2 C}{\partial y^2} + A(y, t) \frac{\partial C}{\partial y} = 0 &\quad& (y,t) \in \Omega\times(0, t') \\[2ex]
@@ -145,6 +146,7 @@ El objetivo es calcular la probabilidad de que un camino aleatorio abandone una 
         C(y, t'; t') = 0 && y \in \Omega \\
     \end{array}
     \right\}
+    }
 \end{equation}
 
 

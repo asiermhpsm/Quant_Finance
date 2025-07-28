@@ -128,11 +128,35 @@
 \contentsline {subsection}{\numberline {6.2.1}Olas de Elliott y números de Fibonacci}{79}{subsection.6.2.1}%
 \contentsline {part}{II\hspace {1em}Otros tipos de opciones y derivados}{81}{part.2}%
 \contentsline {chapter}{\numberline {7}Derivados exóticos y derivados dependientes del camino}{83}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Apéndices Introducción}{85}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Cálculo de Itô}{85}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Generalizaciones sencillas de Black-Scholes}{88}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Opciones Make Your Mind Up}{91}{section.Alph1.3}%
-\contentsline {section}{\numberline {A.4}Media y varianza de cobertura con volatilidad implícita}{97}{section.Alph1.4}%
-\contentsline {chapter}{\numberline {B}Apéndices extra}{107}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Blackjack y apuestas}{107}{section.Alph2.1}%
-\contentsline {subsection}{\numberline {B.1.1}Reglas del blackjack}{107}{subsection.Alph2.1.1}%
+\contentsline {section}{\numberline {7.1}Clasificación de opciones complejas}{83}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Dependencia del tiempo}{83}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Flujo de dinero}{84}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Dependencia del camino}{84}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}Strong Path Dependence}{84}{subsubsection.7.1.3.1}%
+\contentsline {subsubsection}{\numberline {7.1.3.2}Weak Path Dependence}{84}{subsubsection.7.1.3.2}%
+\contentsline {subsection}{\numberline {7.1.4}Dimensionalidad}{85}{subsection.7.1.4}%
+\contentsline {subsection}{\numberline {7.1.5}Orden}{85}{subsection.7.1.5}%
+\contentsline {subsection}{\numberline {7.1.6}Decisiones integradas}{85}{subsection.7.1.6}%
+\contentsline {section}{\numberline {7.2}Algunos ejemplos de derivados exóticos y dependientes del camino}{85}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Compounds options}{85}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Choosers options}{86}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Extendible options}{86}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Range Notes}{86}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Barrier Options}{86}{subsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.2.6}Asian Options}{86}{subsection.7.2.6}%
+\contentsline {subsection}{\numberline {7.2.7}Lookback Options}{87}{subsection.7.2.7}%
+\contentsline {section}{\numberline {7.3}Resumen de la clasificación}{87}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Barrier options}{88}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Modelización de opciones barrera}{88}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Fórmulas analíticas}{89}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Otras posibles características}{90}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}First-exit times}{91}{subsection.7.4.4}%
+\contentsline {section}{\numberline {7.5}Derivados fuertemente dependientes del camino}{92}{section.7.5}%
+\contentsline {chapter}{\numberline {A}Apéndices Introducción}{93}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Cálculo de Itô}{93}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Generalizaciones sencillas de Black-Scholes}{96}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Opciones Make Your Mind Up}{99}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Media y varianza de cobertura con volatilidad implícita}{105}{section.Alph1.4}%
+\contentsline {chapter}{\numberline {B}Apéndices extra}{115}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Blackjack y apuestas}{115}{section.Alph2.1}%
+\contentsline {subsection}{\numberline {B.1.1}Reglas del blackjack}{115}{subsection.Alph2.1.1}%

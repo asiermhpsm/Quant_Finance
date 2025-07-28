@@ -1,0 +1,298 @@
+\section{Barrier options}\label{sec:barrier_options}
+Como se ha explicado en la sección anterior, las \textbf{barrier options} son opciones cuyo valor depende de si el subyacente alcanza o no una barrera. Se suelen usar cuando se tene confianza de que alcanzará/no alcanzará la barrera y no se quiere pagar el precio de una opción vainilla normal (que será más cara). La barrera puede ser constante o dependiente del tiempo.
+
+Existen dos tipos de opciones barrier:
+\begin{itemize}
+    \item \textbf{Out option}: solo paga si no se ha alcanzado la barrera. Si se alcanza la barrera, se dice que la opción se ha \textbf{knock-out} (se desactiva).
+    \item \textbf{In option}: solo paga si se ha alcanzado la barrera. Si no se alcanza la barrera, se dice que la opción se ha \textbf{knock-in} (se activa).
+\end{itemize}
+
+Y por otro lado se puede clasifica según la posición de la barrera con respecto al subyacente en el momento inicial:
+\begin{itemize}
+    \item \textbf{Up ontion}: la barrera está por encima del subyacente.
+    \item \textbf{Down option}: la barrera está por debajo del subyacente.
+\end{itemize}
+
+Y por último se puede clasificar según el payoff: los usuales son call, put, binarios, etc.
+
+También puede haber una \textbf{double barrier}, en la que hay dos barreras, una por encima y otra por debajo del subyacente en el momento inicial. En este caso, una double \textit{out} se desactiva si se alcanza cualquiera de las dos barreras, y una double \textit{in} se activa si se alcanza cualquiera de las dos barreras. También se pueden mezclar barreras.
+
+En ocasiones se paga una \textbf{rebate} si se alcanza la barrera. Este suele ser el caso de las \textit{out} en cuyo caso este reembolso puede considerarse como una forma de amortiguar el impacto de perder el resto de la recompensa.
+
+
+
+\subsection{Modelización de opciones barrera}
+
+Sea $V(S,t)$ el valor de la opción barrera en un momento $t$ y precio subyacente $S$, bajo el supuesto de que aún no se ha activado/desactivado la barrera. En todos los casos, satisface la EDP clásica de Black-Scholes:
+
+\[
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - r V = 0}
+\]
+
+Según el tipo de opción, se añaden condiciones de frontera y condiciones finales distintas. Sea un payoff genérico $F(S)$, el valor de la opción vanilla correspondiente $V_v(S,t)$ y un \emph{rebate} $R$, entonces:
+
+\begin{itemize}
+    \item \textbf{Opciones Out:} se desactivan si se toca la barrera antes del vencimiento, pagando un rebate $R$ en ese instante.
+    \begin{itemize}
+        \item \textbf{Up-and-Out}:
+        \begin{itemize}
+            \item \textbf{Dominio:}
+                \[
+                    \boxed{S\in(0, S_u)}
+                \]
+            \item \textbf{Condiciones de frontera}: 
+                \[
+                    \boxed{
+                        \begin{aligned}
+                            &V(S_u, t) = R, && 0 \leq t < T \\
+                            &V(0, t) = V_v(0, t), && \text{(opcional)}
+                        \end{aligned}
+                    }
+                \]
+            \item \textbf{Condición final}:
+                \[
+                    \boxed{
+                        V(S,T) = F(S), \qquad S\in(0, S_u)
+                    }
+                \]
+        \end{itemize}
+
+        \item \textbf{Down-and-Out}:
+        \begin{itemize}
+            \item \textbf{Dominio:}
+                \[
+                    \boxed{S\in(S_d, \infty)}
+                \]
+            \item \textbf{Condiciones de frontera}: 
+                \[
+                    \boxed{
+                        \begin{aligned}
+                            &V(S_d, t) = R, && 0 \leq t < T \\
+                            &V(S\rightarrow\infty, t) = V_v(S\rightarrow\infty, t), && \text{(opcional)}
+                        \end{aligned}
+                    }
+                \]
+            \item \textbf{Condición final}:
+                \[
+                    \boxed{
+                        V(S,T) = F(S), \qquad S\in(S_d, \infty)
+                    }
+                \]
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Opciones In:} es simplemente una opción vainilla europea con la condición de que paga solamente si se ha alcanzado la barrera en algún momento (aunque a tiempo de vencimiento no se toque)
+    \begin{itemize}
+        \item \textbf{Dominio EDP}:
+            \[
+                \boxed{S\in(0, \infty)}
+            \]
+        \item \textbf{Condiciones de frontera}: sea $S_u$ la barrera superior y $S_d$ la barrera inferior, entonces según corresponda:
+            \[
+                    \boxed{V(S_i,t) = V_v(S_i,t), \qquad 0 \leq t < T}
+            \]
+        \item \textbf{Condición final}:
+            \[
+                \boxed{
+                    V(S,T) = 
+                    \begin{cases} 
+                        R, & \text{si no se ha alcanzado barrera} \\
+                        F(S), & \text{si se ha alcanzado barrera}
+                    \end{cases}
+                }
+            \]
+        \item \textbf{Cálculo típico:} no se suele resolver directamente con EDPs, sino que se usa la relación:
+        \[
+            \boxed{V_{\text{In}}(S,t) = V_v(S,t) - V_{\text{Out}}(S,t)}
+        \]
+        añadiendo el rebate si es necesario.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\subsection{Fórmulas analíticas}
+En esta sección se muestran las fórmulas analíticas para las opciones barrera, si bien no son comunmente usadas. Sea
+\[
+    a = \left( \frac{S_b}{S} \right)^{-1 + \frac{2(r-q)}{\sigma^2}}, \qquad
+    b = \left( \frac{S_b}{S} \right)^{1 + \frac{2(r-q)}{\sigma^2}}
+\]
+donde $S_b$ es la posición de la barrera (ya sea $S_u$ o $S_d$ según el caso); y sea
+\begin{align*}
+    d_1 &= \frac{\log(S/E) + (r-q + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_2 &= \frac{\log(S/E) + (r-q - \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_3 &= \frac{\log(S/S_b) + (r-q + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_4 &= \frac{\log(S/S_b) + (r-q - \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_5 &= \frac{\log(S_b^2/(SE)) + (r-q + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_6 &= \frac{\log(S_b^2/(SE)) + (r-q - \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_7 &= \frac{\log(SE/S_b^2) + (r-q + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}} \\
+    d_8 &= \frac{\log(SE/S_b^2) + (r-q - \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}
+\end{align*}
+
+Sea $N(\cdot)$ la función de distribución acumulativa de la normal estándar, entonces las fórmulas para las opciones barrera son:
+\begin{itemize}
+    \item \textbf{Up-and-out call:}
+    \[
+        \boxed{
+            Se^{-q(T-t)} \left( N(d_1) - N(d_3) - b(N(d_6) - N(d_8)) \right)
+            - Ee^{-r(T-t)} \left( N(d_2) - N(d_4) - a(N(d_5) - N(d_7)) \right)
+        }
+    \]
+    \item \textbf{Up-and-in call:}
+    \[
+        \boxed{
+            Se^{-q(T-t)} \left( N(d_3) + b(N(d_6) - N(d_8)) \right)
+            - Ee^{-r(T-t)} \left( N(d_4) + a(N(d_5) - N(d_7)) \right)
+        }
+    \]
+    \item \textbf{Down-and-out call:}
+    \begin{itemize}
+        \item Si $E > S_b$:
+        \[
+            \boxed{
+                Se^{-q(T-t)} \left( N(d_1) - b(1 - N(d_8)) \right)
+                - Ee^{-r(T-t)} \left( N(d_2) - a(1 - N(d_7)) \right)
+            }
+        \]
+        \item Si $E < S_b$:
+        \[
+            \boxed{
+                Se^{-q(T-t)} \left( N(d_3) - b(1 - N(d_6)) \right)
+                - Ee^{-r(T-t)} \left( N(d_4) - a(1 - N(d_5)) \right)
+            }
+        \]
+    \end{itemize}
+    \item \textbf{Down-and-in call:}
+    \begin{itemize}
+        \item Si $E > S_b$:
+        \[
+            \boxed{
+                Se^{-q(T-t)} b (1 - N(d_8)) - Ee^{-r(T-t)} a (1 - N(d_7))
+            }
+        \]
+        \item Si $E < S_b$:
+        \[
+            \boxed{
+                Se^{-q(T-t)} \left( N(d_1) - N(d_3) + b(1 - N(d_6)) \right)
+                - Ee^{-r(T-t)} \left( N(d_2) - N(d_4) + a(1 - N(d_5)) \right)
+            }
+        \]
+    \end{itemize}
+    \item \textbf{Down-and-out put:}
+    \[
+        \boxed{
+            -Se^{-q(T-t)} \left( N(d_3) - N(d_1) - b(N(d_8) - N(d_6)) \right)
+            + Ee^{-r(T-t)} \left( N(d_4) - N(d_2) - a(N(d_7) - N(d_5)) \right)
+        }
+    \]
+    \item \textbf{Down-and-in put:}
+    \[
+        \boxed{
+            -Se^{-q(T-t)} \left( 1 - N(d_3) + b(N(d_8) - N(d_6)) \right)
+            + Ee^{-r(T-t)} \left( 1 - N(d_4) + a(N(d_7) - N(d_5)) \right)
+        }
+    \]
+    \item \textbf{Up-and-out put:}
+    \begin{itemize}
+        \item Si $E > S_b$:
+        \[
+            \boxed{
+                -Se^{-q(T-t)} \left( 1 - N(d_3) - bN(d_6) \right)
+                + Ee^{-r(T-t)} \left( 1 - N(d_4) - aN(d_5) \right)
+            }
+        \]
+        \item Si $E < S_b$:
+        \[
+            \boxed{
+                -Se^{-q(T-t)} \left( 1 - N(d_1) - bN(d_8) \right)
+                + Ee^{-r(T-t)} \left( 1 - N(d_2) - aN(d_7) \right)
+            }
+        \]
+    \end{itemize}
+    \item \textbf{Up-and-in put:}
+    \begin{itemize}
+        \item Si $E > S_b$:
+        \[
+            \boxed{
+                -Se^{-q(T-t)} \left( N(d_3) - N(d_1) + bN(d_6) \right)
+                + Ee^{-r(T-t)} \left( N(d_4) - N(d_2) + aN(d_5) \right)
+            }
+        \]
+        \item Si $E < S_b$:
+        \[
+            \boxed{
+                -Se^{-q(T-t)} b N(d_8) + Ee^{-r(T-t)} a N(d_7)
+            }
+        \]
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+
+
+\subsection{Otras posibles características}
+Otras características que pueden tener las opciones barrera son:
+\begin{itemize}
+    \item \textbf{Ejercicio anticipado}: Es posible un ejercicio anticipado al estilo americano, que será una simple restricción al valor de la opción. El contrato debe especificar el payoff si se ejerce antes del vencimiento.
+    \item \textbf{Barrera intermitente}: La posición de la(s) barrera(s) puede depender del tiempo. Una versión más extrema de una barrera dependiente del tiempo consiste en que una barrera desaparezca por completo durante períodos específicos. Estas opciones se denominan \textbf{called protected options} o \textbf{partial barrier options}. Existen dos variantes: que se active si en los días de proteccion se ha cruzado la barrera (puede haber cruzado en otro momento), o que se active si en los días de protección se cruza la barrera (la barrera se tiene que cruzar esos días y no otros).
+    \item \textbf{Repeated Hitting of the Barrier}: en los casos en los que hay doble barrera, se puede requerir que se deben alcanzar ambas barreras para activar el contrato.
+    \item \textbf{Resetting of Barrier}: se puede hacer una variante de barrera \textit{in} en las que si se alcanza una barrera antes de cierto tiempo, se obtiene una nueva opcion barrera con otra barrera distinta. Puede haber tantos pasos como se quiera. Relacionados a estos contratos están los \textbf{roll-up options} y \textbf{roll-down options}, que comienzan como una opción vainilla pero si se alcanza cierto nivel se convierten en una opción barrera.
+    \item \textbf{Outside/Rainbow Barrier Options}: se activan cuando un segundo subyacente activa la barrera. Son contratos multifactor.
+    \item \textbf{Soft Barriers}: permite que el contrato se reduzca gradualmente. El contrato especifica dos niveles: uno superior y otro inferior; una parte del contrato se reduce en función de la distancia que el activo haya alcanzado entre las dos barreras. Por ejemplo, si se tiene las barreras $B_1, B_2, B_1 < B_2$ y el activo alcanza un nivel intermedio, se pierde un porcentaje $(S_{\max}-B_1)/(B_2-B_1)$ del contrato.
+    \item \textbf{Parisian Options}: se activa solo si se ha activado la barrera durante más de un tiempo especificado. Esta característica adicional reduce la posibilidad de manipulación del evento desencadenante y facilita la cobertura dinámica. Sin embargo, esta nueva característica también aumenta la dimensionalidad del problema. Se verá más en detalle en la sección \ref{sec:parisian_options}.
+    \item \textbf{The Emergency Exit}: Se trata de una cláusula de escape que permite salir de una posición bajo condiciones prescritas. Por ejemplo, una salida de emergencia en un contrato podría especificar que se puede salir en cualquier momento antes del vencimiento y recibir un reembolso. Esto es muy similar al ejercicio americano, por lo que si el reembolso es $R$, entonces:
+    \[
+        V \geq R
+    \]
+    Es posible que R dependa del tiempo, por lo que la cláusula de escape solo esté activa durante tiempos determinados, y/o que dependa de $S$, de modo que solo pueda escapar cuando el precio de las acciones se encuentre en ciertos niveles.
+\end{itemize}
+
+
+
+
+
+\subsection{First-exit times}
+También puede ser útil conocer la probabilidad de que un camino aleatorio alcance una barrera antes de cierto tiempo. Como se vio en la seccion~\ref{sec:FirstExitTimes}, la probabilidad de que el camino aleatorio alcance la barrera antes de cierto tiempo $t$ es $\mathcal{Q}(S,t)$ y cumple el sistema~\eqref{eq:CumulatFirstExitTime}:
+\[
+    \boxed{
+        \left\{
+        \begin{aligned}
+            &\frac{\partial \mathcal{Q}}{\partial t} + \frac{1}{2} B^2 \frac{\partial^2 \mathcal{Q}}{\partial S^2} + A \frac{\partial \mathcal{Q}}{\partial S} = 0 \\[1.5ex]
+            &\mathcal{Q}(S, T) = 0 \\[1.5ex]
+            &\mathcal{Q}(S_b, T) = 1
+        \end{aligned}
+        \right.
+    }
+\]
+
+Por ejemplo, para una \textit{Up-and-In} cuyo subyacente sigue una EDE $dS = \mu S dt + \sigma S dX_t$, el sistema es:
+
+\[
+    \left\{
+    \begin{aligned}
+        &\frac{\partial \mathcal{Q}}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 \mathcal{Q}}{\partial S^2} + \mu S \frac{\partial \mathcal{Q}}{\partial S} = 0 \\[1.5ex]
+        &\mathcal{Q}(S, T) = 0 \\[1.5ex]
+        &\mathcal{Q}(S_u, T) = 1
+    \end{aligned}
+    \right.
+\]
+
+y el tiempo esperado de primer escape (visto en la sección~\ref{sec:ExpectedFirstExitTimes}) viene dado por:
+\[
+    \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 \mathcal{Q}}{\partial S^2} + \mu S \frac{\partial \mathcal{Q}}{\partial S} = -1
+\]
+i.e.
+\[
+    u(S) = \frac{1}{\frac{1}{2}\sigma^2 - \mu} \log\left( \frac{S}{S_u} \right)
+\]
+cuando $2\mu > \sigma^2$. Si no fuese el caso, el tiempo esperado es infinito.
+
+
+
+
+
+
