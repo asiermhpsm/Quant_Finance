@@ -38,7 +38,7 @@
 \newtheorem{notation}{Notación}
 
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 
 
 %%-----------------------------------------------
@@ -101,6 +101,8 @@
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
 
+
+
   %PRIMERA PARTE: FUNDAMENTOS BÁSICOS DE DERIVADOS, RIESGO Y RENTABILIDAD
   \clearpage%
   \part{Fundamentos básicos de derivados, riesgo y rentabilidad}
@@ -149,14 +151,13 @@
 
 
 
-
-
   %SEGUNDA PARTE: OTROS TIPOS DE OPCIONES Y DERIVADOS
   \clearpage%
   \part{Otros tipos de opciones y derivados}
-  \chapter{Derivados exóticos y derivados dependientes del camino}
+  \chapter{Clasificación genérica de opciones exóticas}
   \input{Parte2/17_Clas_exot_path_ops.tex}
   \newpage
+  \chapter{Algunas opciones exóticas}
   \input{Parte2/18_Barrier_options.tex}
   \newpage
   \input{Parte2/19_Strong_path.tex}
@@ -170,9 +171,16 @@
   \input{Parte2/23_Otras_ops_exotic.tex}
 
 
+
+  %TERCERA PARTE: MODELOZACION DE RENTA FIJA Y DERIVADOS
+  \clearpage%
+  \part{Renta fija y derivados}
+
+
   %APENDICES
   \clearpage%
   \appendix
+  \part{Apéndices}
   \chapter{Apéndices Introducción}
   \input{Apendices/Apendice Ito}
   \input{Apendices/Apendice generalizaciones}

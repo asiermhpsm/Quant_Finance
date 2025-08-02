@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 1754154907.11643 "build/main.aux" "build/main.bbl" "build/main" 1754155233.79 0
+["bibtex build/main"] 1754155992.01048 "build/main.aux" "build/main.bbl" "build/main" 1754155998.77072 0
   "./referencias.bib" 1754057188 185 7d1ed1a5e72641dda3a92dc99b5b2198 ""
   "C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "build/main.aux" 1754155232 37888 2f6054516751b8b6b4d65f71be4a1d80 "pdflatex"
+  "build/main.aux" 1754155997 38300 0c734b960d13d3454be780fc00154f3e "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1754155226.51861 "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" "build/main.pdf" "main" 1754155233.79071 0
+["pdflatex"] 1754155992.36753 "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" "build/main.pdf" "main" 1754155998.77156 0
   "Apendices/Apendice Ito.tex" 1753443018 207 79f7b164e140169e84241b81d8ede33f ""
   "Apendices/Apendice Make Your Mind Up.tex" 1753443023 238 2743dc998b32508c8d8d54f21929bf60 ""
   "Apendices/Apendice generalizaciones.tex" 1753443015 232 dd4a30686c58c5692158272eb651ac78 ""
@@ -340,13 +340,13 @@
   "Parte2/21_Lookback_ops.tex" 1754058664 7606 f47f9263c2ff09c4b9dda7cc99941d2d ""
   "Parte2/22_Passport_ops.tex" 1754145614 9626 04d2d38560b175265aca1ac388381ccf ""
   "Parte2/23_Otras_ops_exotic.tex" 1754154990 11071 d05c22d144b6775d8f86e6ae20eb310b ""
-  "build/main.aux" 1754155232 37888 2f6054516751b8b6b4d65f71be4a1d80 "pdflatex"
-  "build/main.bbl" 1754154907 189 e9ea4334d9ee8ff3fbcf69838ecfe442 "bibtex build/main"
-  "build/main.out" 1754155232 37607 793c10a339c9ba7a90e88b6d7c4158f3 "pdflatex"
-  "build/main.toc" 1754155232 18250 08851393b17bb8e9af664fcac862544f "pdflatex"
-  "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" 1754146620 4232 adb1e6d2eeb62727025d697dca9411b4 ""
+  "build/main.aux" 1754155997 38300 0c734b960d13d3454be780fc00154f3e "pdflatex"
+  "build/main.bbl" 1754155992 189 e9ea4334d9ee8ff3fbcf69838ecfe442 "bibtex build/main"
+  "build/main.out" 1754155997 32029 6a90ce497092f062e491d137245387d0 "pdflatex"
+  "build/main.toc" 1754155997 18461 4824591b0901a8521c4dc166d2b50a87 "pdflatex"
+  "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" 1754155984 4388 9b75851ad8189d63f1e436b8a143cd40 ""
   "datos.tex" 1751297253 145 2d409cff85cafdbdb8e75b049b65ea99 ""
-  "main.tex" 1754146620 4232 adb1e6d2eeb62727025d697dca9411b4 ""
+  "main.tex" 1754155984 4388 9b75851ad8189d63f1e436b8a143cd40 ""
   "newplot.png" 1751049772 99395 18ca683a11bfd7fecac41f19be881a97 ""
   (generated)
   "build/main.aux"
