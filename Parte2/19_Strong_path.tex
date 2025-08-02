@@ -1,24 +1,106 @@
 \section{Derivados fuertemente dependientes del camino}
 
+\subsection{Muestras continuas}
+Para calcular el payoff, se usa al menos una nueva variable independiente $I$ llamada \textbf{state variable}; por lo tanto el payoff se representa como $P(S,I)$. Esta variable suele venir dada por la integral:
+\begin{equation}\label{eq:state_variable}
+    \boxed{I(t) = \int_{0}^{t} f(S, \tau) d\tau}
+\end{equation}
+donde $f$ es una función que se modela según el interés del escritor. Por lo tanto el payoff debe ser de la forma:
+\[
+    P(S,I)
+\]
+Algunos ejemplos son:
+\begin{itemize}
+    \item \textbf{Media aritmética}: $\boxed{f(S, \tau) = S}$
+    \item \textbf{Media geométrica}: $\boxed{f(S, \tau) = \log(S)}$
+    \item Contrato que paga según el tiempo que el subyacente ha estado por encima de un nivel: $f(S, \tau) = \mathcal{H}(S-S_u)$
+    \item Contrato que paga según el tiempo que el subyacente ha estado por encima de un nivel y el cuadrado de ese valor: $f(S, \tau) = S^2\mathcal{H}(S-S_u)$
+\end{itemize}
+
+
+
+Se considera que el subyacente sigue la EDE:
+\begin{equation*}
+    dS = \mu S dt + \sigma S dX
+\end{equation*}
+y de la ecuación~\eqref{eq:state_variable} se obtiene que:
+\begin{equation*}
+    dI = f(S, t) dt 
+\end{equation*}
+
+Por otro lado, se considera la cartera:
+\begin{equation*}
+    \Pi = V(S,I,t) - \Delta S
+\end{equation*}
+usando el lema de Itô bidimensional descrito en el apéndice~\ref{CalcIto}, se obtiene que la variación de la cartera es:
+\begin{align*}
+    d\Pi &= \frac{\partial V}{\partial t} dt + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} dt + \frac{\partial V}{\partial S} dS + \frac{\partial V}{\partial I} dI - \Delta dS \\
+    &= \left( \frac{\partial V}{\partial t}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} \right) dt +  f(S, t) \frac{\partial V}{\partial I} dt + \left( \frac{\partial V}{\partial S} - \Delta \right) dS \\
+    &= \left( \frac{\partial V}{\partial t}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + f(S, t) \frac{\partial V}{\partial I} \right) dt +  \left( \frac{\partial V}{\partial S} - \Delta \right) dS
+\end{align*}
+que eligiendo $\Delta = \frac{\partial V}{\partial S}$ es:
+\begin{equation*}
+    d\Pi = \left( \frac{\partial V}{\partial t}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + f(S, t) \frac{\partial V}{\partial I} \right) dt
+\end{equation*}
+e igualando a la tasa libre de riesgo
+\[
+    d\Pi = r\Pi dt = r(V - \Delta S) dt  = r\left( V - \frac{\partial V}{\partial S} S \right) dt
+\]
+se obtiene la EDP\@:
+\begin{equation}\label{eq:strong_path}
+    \boxed{\frac{\partial V}{\partial t}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + f(S, t) \frac{\partial V}{\partial I} + r S \frac{\partial V}{\partial S} - rV = 0}
+\end{equation}
+a lo que se le debe añadir la condición final:
+\[
+    \boxed{V(S, I, T) = P(S, I)}
+\]
+
+Se podría considerar más de una variable de estado.
+
+
+\subsection{Muestras discretas}
+La expresion~\eqref{eq:state_variable} consideran muestras continuas, pero en la realidad se usan siempre muestras discretas. Por ello, se suele usar la \textbf{updating rule}, que premite actualizar la variable de estado $I_i$ en cada paso de tiempo $t_i \leq t < t_{i+1}$. Es decir, a tiempo $t_i$ la cantidad $I_{i-1}$ se actualiza como:
+\begin{equation}\label{eq:updating_rule}
+    I_i = F(S(t_i), I_{i-1}, t_i)
+\end{equation}
+
+Durante los momentos entre tiempos $(t_i, t_{i+1})$, el incremento de la variable de estado permanece nula:
+\[
+    dI = 0
+\]
+por lo tanto, la EDP~\eqref{eq:strong_path} pasa a ser la ecuación clásica de Black-Scholes::
+\begin{equation}
+    \boxed{\frac{\partial V}{\partial t}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0}
+\end{equation}
+a la que se le debe añadir la condición de salto:
+\begin{equation*}
+    V(S, I_{i-1}, t^-_i) = V(S, I_i, t^+_i) \overset{\ref{eq:updating_rule}}{\Longrightarrow} \boxed{V(S, I, t_i^-) = V(S, F(S,I,i), t_i^+)}
+\end{equation*}
+
+Por ejemplo, para una opción asiática (media aritmética), se usa:
+\begin{align*}
+    A_M &= \frac{I_M}{M} = \frac{1}{M} \sum_{k=0}^{M} S(t_k) \Rightarrow \\
+    \overset{\text{updating rule}}{\Longrightarrow} A_i &= \frac{1}{i} \sum_{k=0}^{i} S(t_k) = \frac{1}{i} S(t_i) + \frac{i-1}{i} A_{i-1}
+\end{align*}
+con una condición de salto:
+\begin{equation*}
+    V(S, I, t_i^-) = V(S, \frac{i-1}{i} A + \frac{1}{i} S, t_i^+)
+\end{equation*}
+y un payoff:
+\begin{equation*}
+    P(S,A_M) = \max(A_M - S, 0)
+\end{equation*}
+
+Se podría considerar más de una variable de estado.
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Ejercicio anticipado}
+En cualquier caso, en sencillo modelizar el ejercicio anticipado, simplemente se añade una condición de ejercicio anticipado:
+\begin{equation*}
+    V(S, I, t) \geq P(S, I)
+\end{equation*}
 
 
 

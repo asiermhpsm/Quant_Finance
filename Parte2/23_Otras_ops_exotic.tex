@@ -1,0 +1,235 @@
+\section{Otras opciones exóticas}
+
+
+\subsection{Forward-start options}
+Es una opción que se materializa en algún momento del futuo, es decir, se compra en tiempo $t=0$ pero el strike no se conoce hasta el tiempo $T_1$ (y será el valor de la acción en ese momento) y finalmente vence en tiempo $T$.
+
+La primera manera de resolverlo es tratarlo como una opción \textit{at-the-money} con $S=S_1, t=T-T_1, E=S_1$ y dados $r$ y $\sigma$. Para el caso de una call el resultado sería:
+\begin{equation*}
+    S_1 N(d_1) - S_1 e^{-r(T-T_1)} N(d_2)
+\end{equation*}
+donde
+\begin{align*}
+    & d_1 = \frac{r + \frac{1}{2}\sigma^2}{\sigma} \sqrt{T-T_1} \\
+    & d_2 = \frac{r - \frac{1}{2}\sigma^2}{\sigma} \sqrt{T-T_1}
+\end{align*}
+
+La otra manera de resolverlo es tratarlo como una opción dependiente del camino e introducir la variable de estado $\mathcal{S}$ definida en $t \geq T_1$ como el valor de la acción en tiempo $T_1$:
+\begin{equation*}
+    \mathcal{S} = S(T_1)
+\end{equation*}
+Para tiempos anteriores se toma $\mathcal{S}=0$. Por lo tanto, el valor de la opción depende de tres variables $V(S, \mathcal{S}, t)$ y cumple la \underline{ecuacion clásica de Black-Scholes} en $S$ y $t$ ya que $\mathcal{S}$ no es estocástica y es constate tras $T_1$. A tiempo final para una call se tiene:
+\begin{equation*}
+    \boxed{V(S, \mathcal{S}, T) = \max(S - \mathcal{S}, 0)}
+\end{equation*}
+Y se tiene que añadir la condición de salto en $T_1$:
+\begin{equation*}
+    \boxed{V(S, \mathcal{S}, T_1^+) = V(S, \mathcal{S}, T_1^-)}
+\end{equation*}
+
+
+
+
+
+\subsection{Shout options}
+Es una opción normal pero con la posibilidad de hacer un `shouting' que resetea el strike al precio actual del subyacente. A la vez suele haber un pago, normalmente de la diferencia entre strikes. Se introducen dos funciones, $V_a(S,X,t)$ y $V_b(S,X,t)$ que son el valor de la opción y después y antes del shouting respectivamente. Como $X$ se actualiza de forma discreta, la EDP es la \underline{clásica de Black-Scholes}. La condición final es:
+\begin{equation*}
+    \boxed{V_a(S, X, T) = V_b(S, X, T) = \max(S - X, 0)}
+\end{equation*}
+y se debe cumplir la condición:
+\begin{equation*}
+    \boxed{V_b(S, X, t) \geq V_a(S, \max(S, X), t) - R(S, X)}
+\end{equation*}
+donde $R$ es el pago del shouting. 
+
+
+
+\subsection{Capped lookbacks y asiáticas}
+En las que existe un límite o garantía del tamaño del máximo, mínimo o promedio. Un ejemplo sería una opción asiática cuyo promedio viene dado por:
+\begin{equation*}
+    A = \frac{1}{t} I = \frac{1}{t} \int_0^t \min(S, S_u) d\tau
+\end{equation*}
+y por lo que la $I$ sigue una EDE:\@
+\begin{equation*}
+    dI = \min(S, S_u) dt
+\end{equation*}
+
+
+
+
+
+\subsection{Combinaciones de cualidades}
+Es posible combinar varios tipos de opciones asiáticas, por ejemplo una opción lookback-asiática que depende del máximo (o mínimo) y del promedio. Existen varias maneras de combinar estas cualidades:
+\begin{itemize}
+    \item \textbf{El máximo del activo y el promedio del activo}: por ejemplo, usando un promedio aritmético y que ambas cualidades dependientes del camino se muestrean discretamente se tiene que el valor de la opción depende de cuatro variables $V(S, M, A, t)$ donde $M$ es el máximo del activo y $A$ el promedio. Las variables $M, A$ se miden discretamente:
+    \begin{align*}
+        M_i &= \max(S(t_1), S(t_2), \ldots, S(t_i)) = \max(M_{i-1}, S(t_i)) \\
+        A_i &= \frac{1}{i} \sum_{j=1}^i S(t_j) = \frac{(i-1)A_{i-1} + S(t_i)}{i}
+    \end{align*}
+    por lo que la condición de salto es:
+    \begin{equation*}
+        \boxed{V(S, M, A, t_i^-) = V\left(S, \max(M, S), \frac{(i-1)A + S}{i}, t_i^+\right)}
+    \end{equation*}
+    y se completaría el modelo con la \underline{EDP clásica de Black-Scholes} y una condición final correspondiente.
+    
+    \item \textbf{El promedio del activo y el máximo del promedio}: se tiene entonces que las updating rules son:
+    \begin{align*}
+        A_i &= \frac{(i-1)A_{i-1} + S(t_i)}{i} \\
+        M_i &= \max(M_{i-1}, A_i)
+    \end{align*}
+    y la condición de salto:
+    \begin{equation*}
+        \boxed{
+            V(S, M, A, t_i^-) = V\left(S, \max\left(M, \frac{(i-1)A + S}{i}\right), \frac{(i-1)A + S}{i}, t_i^+\right)
+        }
+    \end{equation*}
+    y se completaría el modelo con la \underline{EDP clásica de Black-Scholes} y una condición final correspondiente.
+
+    \item \textbf{El máximo del activo y el promedio del máximo}: se tiene entonces que las updating rules son:
+    \begin{align*}
+        M_i &= \max(M_{i-1}, S(t_i)) \\
+        A_i &= \frac{(i-1)A_{i-1} + M_i}{i}
+    \end{align*}
+    y la condición de salto:
+    \begin{equation*}
+        \boxed{
+            V(S, M, A, t_i^-) = V\left(S, \max(M, S), \frac{(i-1)A + \max(M, S)}{i}, t_i^+\right)
+        }
+    \end{equation*}
+    y se completaría el modelo con la \underline{EDP clásica de Black-Scholes} y una condición final correspondiente.
+\end{itemize}
+
+
+
+
+
+\subsection{Volatility options}
+En este tipo de opciones se tiene en cuenta la volatilidad histórica del subyacente en el sentido estadístico:
+\begin{equation*}
+    \sqrt{\frac{1}{\delta t} \frac{1}{M-1} \sum_{j=1}^{M} \left( \log\left( \frac{S(t_j)}{S(t_{j-1})} \right) \right)^2}
+\end{equation*}
+donde $\delta t$ es el tiempo entre mediciones.
+
+Se va a valorar en un mundo de volatilidad constante. Se definden dos variables de estado $I$ como la volatilidad actual y $\mathcal{S}$ como el último precio del subyacente:
+\begin{align*}
+    I_i &= \sqrt{ \frac{1}{\delta t (i-1)} \sum_{j=1}^{i} \left( \log\left( \frac{S(t_j)}{S(t_{j-1})} \right) \right)^2 } \\
+    \mathcal{S}_i &= S(t_{i-1})
+\end{align*}
+Las dos updating rules son:
+\begin{align*}
+    \mathcal{S}_i &= S(t_{i-1}) \\
+    I_i &= \sqrt{ \frac{i-2}{i-1} I_{i-1}^2 + \frac{1}{\delta t (i-1)} \left( \log(S(t_i)) - \log(\mathcal{S}_i) \right)^2 }
+\end{align*}
+y la condición de salto es:
+\begin{equation*}
+    \boxed{V(S, \mathcal{S}, I, t_i^-) = V\left(S, S, \sqrt{ \frac{i-2}{i-1} I^2 + \frac{1}{\delta t (i-1)} (\log(S) - \log(\mathcal{S}))^2 }, t_i^+\right)}
+\end{equation*}
+Se completaría el modelo con la \underline{EDP clásica de Black-Scholes} y una condición final correspondiente.
+
+Fuera de la volatilidad constante, se puede usar una volatilidad estocástica. Todas las condiciones son iguales pero aumenta la dimensionalidad en uno, convirtiendose en un problema de cinco dimesiones.
+
+
+
+
+
+
+
+\subsection{Ladder options}
+Es una opción lookback en la que el máximo del subyacente se registra de forma discreta, pero en niveles de precio en vez de en el tiempo. El payoff depende del nivel más alto alcanzado entre un conjunto de precios predefinidos (los `peldaños' de la ladder). Por ejemplo, si los peldaños están en múltiplos de 5 (\$50, \$55, \$60, etc.) y el activo alcanza un máximo de \$58, el nivel registrado sería \$55. Este tipo de opción suele ser más barata que la versión continua. Matemáticamente, el contrato puede verse como una combinación de opciones tipo barrera activadas en cada peldaño, o bien como una opción cuyo payoff es una función escalonada del máximo alcanzado.
+
+
+
+
+
+
+
+
+\subsection{Parisian options}
+Son como las opciones barrera, pero para activar la barrera se tiene que haber sobrepasado la barrera durante un tiempo determinado. En la opción parisina cláscia (la única que va a considerar aquí) el `reloj' que mide el tiempo habiendo sobrepasado la barrera se resetea si se vuelve a entrar en ella.
+
+Se introduce la variable para una barrera \textit{up} $S_u$ que define el tiempo que el activo ha estado más allá de la barrera:
+\begin{equation*}
+    \tau = t - \sup \left\{ t' \leq t \mid S(t') \leq S_u \right\}
+\end{equation*}
+La EDE para esta variable es:
+\begin{equation*}
+    d\tau = 
+    \begin{cases}
+        dt & S > S_u \\
+        -\tau^- & S = S_u \\
+        0 & S < S_u
+    \end{cases}
+\end{equation*}
+donde $\tau^-$ es el valor de $\tau$ antes de que salte a cero al reiniciarse. Se debe resolver el problema $V(S, \tau, t)$ en dos regiones:
+\begin{itemize}
+    \item \textbf{Dentro de la barrera} ($S < S_u$): 
+    \begin{equation*}
+        \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} + \frac{\partial V}{\partial \tau} - r V = 0}
+    \end{equation*}
+
+    \item \textbf{Fuera de la barrera} ($S > S_u$):
+    \begin{equation*}
+        \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - r V = 0}
+    \end{equation*}
+\end{itemize}
+En $S=S_u$ donde $\tau$ se resetea, se debe imponer continuidad:
+\begin{equation*}
+    \boxed{V(S_u, t, \tau) = V(S_u, t, 0)}
+\end{equation*}
+En cuanto al payoff, si la barrera no ha sido activada al vencimiento $T$, el payoff es $F(S, \tau)$. Si la barrera ha sido activada antes del vencimiento, el payoff es $G(S)$ en el momento de la activación. Por ejemplo, para una up-and-in put, $F = 0$ y $G = \max(E - S, 0)$. Para una up-and-out call, $F = \max(S - E, 0)$ y $G = 0$. Las condiciones de contorno se aplican como:
+\begin{equation*}
+    \boxed{V(S, T, \omega) = G(S), \qquad V(S, T, \tau) = F(S, \tau)}
+\end{equation*}
+donde $\omega$ es el valor que alcanza $\tau$ para que se active la barrera.
+
+Se puede añadir una condición americana, en cuyo caso se debe añadir la condición:
+\begin{equation*}
+    \boxed{V(S, t, \tau) \geq A(S, t, \tau)}
+\end{equation*}
+con continuidad de la delta y donde $A$ define el payoff en el caso de ejercicio anticipado.
+
+
+
+
+
+\subsection{Balloon option}
+La cantidad de opciones compradas aumenta si se cumplen ciertas condiciones, como la activación de barreras.
+
+\subsection{Break/cancelable forward}
+Contrato a plazo, normalmente en divisas, que el tenedor puede cancelar en ciertos momentos predeterminados.
+
+\subsection{Contingent premium option}
+Se paga una prima adicional si se cumplen ciertas condiciones.
+
+\subsection{Coupe option}
+Opción periódica en la que el strike se reajusta al peor valor entre el subyacente y el strike anterior, similar a una cliquet pero más barata.
+
+\subsection{Extendible option/swap}
+Opción o swap cuya fecha de vencimiento puede ser extendida por el tenedor.
+
+\subsection{Hawai’ian option}
+Opciones que combinan características de las opciones asiáticas y americanas.
+
+\subsection{Himalayan option}
+Opciones sobre múltiples activos donde el mejor activo se elimina en fechas de muestreo, quedando solo uno al final para el cálculo del payoff. Existen variantes llamadas mountain \textbf{range options}.
+
+\subsection{HYPER option}
+Opciones reversibles de alto rendimiento que permiten cambiar repetidamente entre call y put durante la vida de la opción, resolviendo la ecuación de Black-Scholes para cada estado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

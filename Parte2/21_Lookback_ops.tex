@@ -1,0 +1,175 @@
+\section{Opciones lookback}\label{sec:lookback_options}
+Este tipo de opciones paga en función del valor máximo y mínimo del activo subyacente durante un tiempo concreto. Existen dos casos a considerar: si el máximo y mínimo se miden de forma contínua o discreta. AL igual que en las opciones asiáticas, estan las opciones \textit{rate} (llamadas \textbf{fixed strike}, con un payoff igual que las vainilla pero reemplazando el valor del subyacente por el máximo o mínimo) y las opciones \textit{price} (llamadas \textbf{floating strike}, con un payoff como las vainilla pero reemplazando el strike por el mínimo o máximo).
+
+
+
+\subsection{Medición continua del máximo}
+Se introduce la variable $M$ como el máximo del activo subyacente $S(t)$ desde el inicio del contrato hasta el tiempo $t$:
+\begin{equation*}
+    M = \max_{0 \leq \tau \leq t} S(\tau).
+\end{equation*}
+
+El valor de la opcion es por lo tanto una funcion de tres variable $V(S, M, t)$, con la restricción:
+\begin{equation*}
+    0 \leq S \leq M
+\end{equation*}
+Durante casi todo momento, el subyacente está por debajo del máximo, menos cuando el subyacente alcanza el máximo, en cuyo caso $S = M$. A excepción de esos momentos, se cumple que $S < M$ y se satisface la EDP:\@
+\begin{equation*}
+    dM = 0
+\end{equation*}
+
+Por lo tanto, la EDP que gobierna el comportamiento en ese dominio es:
+\begin{equation*}
+    \boxed{\frac{\partial V}{\partial t} + r S \frac{\partial V}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} - r V = 0, \qquad S < M}
+\end{equation*}
+con la condicion de contorno cuando se alcanza el máximo:
+\begin{equation*}
+    \frac{\partial V}{\partial M} = 0, \qquad S = M
+\end{equation*}
+
+Por último, se debe imponer el payoff, que por ejemplo para una lookback rate call option es
+\begin{equation*}
+    \max(M-E, 0)
+\end{equation*}
+y para una lookback strike put option es
+\begin{equation*}
+    \max(M-S, 0)
+\end{equation*}
+
+
+
+\subsection{Medición discreta del máximo}
+En este caso, solo se considera el máximo en puntos discretos, por lo que es posible que en algún momento el subyacente esté por encima del máximo. Si el máximo se mide en los tiempos $t_i$, la updating rule es:
+\begin{equation*}
+    \boxed{M_i = \max(S(t_i), M_{i-1})}
+\end{equation*}
+y la condición de salto es:
+\begin{equation*}
+    \boxed{V(S, M, t_i^-) = V(S, \max(S, M), t_i^+)}
+\end{equation*}
+
+
+
+
+
+
+
+\subsection{Algunas soluciones analíticas}
+En ocasiones, es posible hacer ciertas reduciones de un problema con tres variables a uno de dos variables, consultar en el capítulo 26 de \textit{Paul Wilmott on Quantitative Finance}~\cite{PaulWilmott2006}. Algunas soluciones analíticas son:
+\begin{itemize}
+    \item \textbf{Floating strike lookback call}: si se mide continuamente, su payoff es:
+    \begin{equation*}
+        \max(S - M, 0) = S - M,
+    \end{equation*}
+    donde $M$ es el mínimo realizado del precio del activo, y su valor:
+    \begin{equation*}
+        \boxed{
+            \begin{aligned}
+                & Se^{-D(T-t)} N(d_1) - Me^{-r(T-t)} N(d_2) + Se^{-r(T-t)} \frac{\sigma^2}{2(r-D)} \\
+                & \quad \cdot \left( \left( \frac{S}{M} \right)^{-2(r-D)/\sigma^2} N\left(-d_1 + \frac{2(r-D)\sqrt{T-t}}{\sigma}\right) - e^{(r-D)(T-t)} N(-d_1) \right)
+            \end{aligned}
+        }
+    \end{equation*}
+    donde
+    \begin{equation*}
+        d_1 = \frac{\log(S/M) + (r-D + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}, \quad d_2 = d_1 - \sigma\sqrt{T-t}.
+    \end{equation*}
+
+    \item \textbf{Floating strike lookback put}: si se mide continuamente, su payoff es:
+    \begin{equation*}
+        \max(M - S, 0) = M - S,
+    \end{equation*}
+    donde $M$ es el máximo realizado del precio del activo, y su valor:
+    \begin{equation*}
+        \boxed{
+            \begin{aligned}
+                & Me^{-r(T-t)} N(-d_2) - Se^{-D(T-t)} N(-d_1) + Se^{-r(T-t)} \frac{\sigma^2}{2(r-D)} \\
+                & \quad \cdot \left( -\left( \frac{S}{M} \right)^{-2(r-D)/\sigma^2} N\left(d_1 - \frac{2(r-D)\sqrt{T-t}}{\sigma}\right) + e^{(r-D)(T-t)} N(d_1) \right)
+            \end{aligned}
+        }
+    \end{equation*}
+    donde
+    \begin{equation*}
+        d_1 = \frac{\log(S/M) + (r-D + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}, \quad d_2 = d_1 - \sigma\sqrt{T-t}.
+    \end{equation*}
+
+    \item \textbf{Fixed strike lookback call}: su payoff es
+    \begin{equation*}
+        \max(M-E, 0)
+    \end{equation*}
+    donde $M$ es el máximo realizado del precio del activo. Su valor justo es:
+    \begin{itemize}
+        \item $E > M$:
+        \begin{equation*}
+            \boxed{
+                \begin{aligned}
+                    & Se^{-D(T-t)} N(d_1) - Ee^{-r(T-t)} N(d_2) + Se^{-r(T-t)} \frac{\sigma^2}{2(r-D)} \\
+                    & \quad \cdot \left( -\left( \frac{S}{E} \right)^{-2(r-D)/\sigma^2} N\left(d_1 - \frac{2(r-D)\sqrt{T-t}}{\sigma}\right) + e^{(r-D)(T-t)} N(d_1) \right)
+                \end{aligned}
+            }
+        \end{equation*}
+        donde
+        \begin{equation*}
+            d_1 = \frac{\log(S/E) + (r-D + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}, \quad d_2 = d_1 - \sigma\sqrt{T-t}.
+        \end{equation*}
+
+        \item $E < M$:
+        \begin{equation*}
+            \boxed{
+                \begin{aligned}
+                    & (M-E)e^{-r(T-t)} + Se^{-D(T-t)} N(d_1) - Me^{-r(T-t)} N(d_2) + Se^{-r(T-t)} \frac{\sigma^2}{2(r-D)} \\
+                    & \quad \cdot \left( -\left( \frac{S}{M} \right)^{-2(r-D)/\sigma^2} N\left(d_1 - \frac{2(r-D)\sqrt{T-t}}{\sigma}\right) + e^{(r-D)(T-t)} N(d_1) \right)
+                \end{aligned}
+            }
+        \end{equation*}
+        donde
+        \begin{equation*}
+            d_1 = \frac{\log(S/M) + (r-D + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}, \quad d_2 = d_1 - \sigma\sqrt{T-t}.
+        \end{equation*}
+    \end{itemize}
+
+    \item \textbf{Fixed strike lookback put}: su payoff es
+    \begin{equation*}
+        \max(E - M, 0)
+    \end{equation*}
+    donde $M$ es el mínimo realizado del precio del activo. Su valor justo es:
+    \begin{itemize}
+        \item $E < M$:
+        \begin{equation*}
+            \boxed{
+                \begin{aligned}
+                    & Ee^{-r(T-t)} N(-d_2) - Se^{-D(T-t)} N(-d_1) + Se^{-r(T-t)} \frac{\sigma^2}{2(r-D)} \\
+                    & \quad \cdot \left( \left( \frac{S}{E} \right)^{-2(r-D)/\sigma^2} N\left(-d_1 + \frac{2(r-D)\sqrt{T-t}}{\sigma}\right) - e^{(r-D)(T-t)} N(-d_1) \right)
+                \end{aligned}
+            }
+        \end{equation*}
+        donde
+        \begin{equation*}
+            d_1 = \frac{\log(S/E) + (r-D + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}, \quad d_2 = d_1 - \sigma\sqrt{T-t}.
+        \end{equation*}
+
+        \item $E > M$:
+        \begin{equation*}
+            \boxed{
+                \begin{aligned}
+                    & (E-M)e^{-r(T-t)} - Se^{-D(T-t)} N(-d_1) + Me^{-r(T-t)} N(-d_2) + Se^{-r(T-t)} \frac{\sigma^2}{2(r-D)} \\
+                    & \quad \cdot \left( \left( \frac{S}{M} \right)^{-2(r-D)/\sigma^2} N\left(-d_1 + \frac{2(r-D)\sqrt{T-t}}{\sigma}\right) - e^{(r-D)(T-t)} N(-d_1) \right)
+                \end{aligned}
+            }
+        \end{equation*}
+        donde
+        \begin{equation*}
+            d_1 = \frac{\log(S/M) + (r-D + \frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}}, \quad d_2 = d_1 - \sigma\sqrt{T-t}.
+        \end{equation*}
+    \end{itemize}
+    
+\end{itemize}
+
+
+
+
+
+
+
+
+

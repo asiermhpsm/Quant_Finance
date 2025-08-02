@@ -270,6 +270,8 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabul
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
 INPUT .\datos.tex
 INPUT .\datos.tex
 INPUT datos.tex
@@ -1418,6 +1420,18 @@ INPUT Parte2\18_Barrier_options.tex
 INPUT .\Parte2\19_Strong_path.tex
 INPUT .\Parte2\19_Strong_path.tex
 INPUT Parte2\19_Strong_path.tex
+INPUT .\Parte2\20_Asian_ops.tex
+INPUT .\Parte2\20_Asian_ops.tex
+INPUT Parte2\20_Asian_ops.tex
+INPUT .\Parte2\21_Lookback_ops.tex
+INPUT .\Parte2\21_Lookback_ops.tex
+INPUT Parte2\21_Lookback_ops.tex
+INPUT .\Parte2\22_Passport_ops.tex
+INPUT .\Parte2\22_Passport_ops.tex
+INPUT Parte2\22_Passport_ops.tex
+INPUT .\Parte2\23_Otras_ops_exotic.tex
+INPUT .\Parte2\23_Otras_ops_exotic.tex
+INPUT Parte2\23_Otras_ops_exotic.tex
 INPUT .\Apendices\Apendice Ito.tex
 INPUT .\Apendices\Apendice Ito.tex
 INPUT .\Apendices\Apendice Ito.tex
@@ -1570,6 +1584,9 @@ INPUT .\Imagenes\Parte1\10_Cobertura\Mean_Var_Cobertura_Imp_Vol.pdf
 INPUT .\Apendices\Black_Jack.tex
 INPUT .\Apendices\Black_Jack.tex
 INPUT Apendices\Black_Jack.tex
+INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.bbl
+INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.bbl
+INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.bbl
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.aux
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.out
 INPUT c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.out
@@ -1627,5 +1644,7 @@ INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\am
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\eurosym\feymr10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\eurosym\feymr10.pfb
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
+INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

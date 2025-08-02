@@ -1,0 +1,110 @@
+\section{Opciones passport}
+Se invierte en una acción en particular, comprando o vendiendo según se tenga una visión de futuro u otra. La cantidad de dinero que acumula al operar con esta acción se denomina\textbf{trading account}. Si se es bueno o se tiene suerte, esta cantidad será positiva pero si se es malo o se tiene mala suerte, esta cantidad será negativa. La \textbf{perfect trader/passport option} es una opción que permite asegurarse contra pérdidas en la cuenta de trading; es una opción call sobre la trading account que otorga al poseedor el saldo de la cuenta al final del contrato si es positivo y cero si es negativo.
+
+Se introduce la nueva variable de estado $\pi$ que es el valor de la trading account. Se introduce también la \textbf{variable de control} $q$ como la cantidad de acción que se posee a tiempo $t$. Se tiene por lo tanto una posición de la acción $q S$, y como el valor total es $\pi$, se tiene $\pi - q S$ en efectivo. La posición de la acción variará $q dS$ mientras que el efectivo variará por los intereses una cantidad $r(\pi - q S)dt$ (\textcolor{orange}{aquí se asume que el efectivo crece por el intereses, pero en la realidad no tiene porque, se podría eleminar esta condición}). Por lo tanto, la variación total será de:
+\begin{equation*}
+    d\pi = r(\pi - q S)dt + q dS
+\end{equation*}
+La cantidad de $q$ es una elección que varía según el tiempo y la acción cambia; es una función $q(S,\pi,t)$. En este caso se va a restringir a que $\|q\| \leq 1$. El contrato tendrá un payoff:
+\begin{equation*}
+    \boxed{V(S,\pi,T) = \max(\pi,0)}
+\end{equation*}
+
+Se asume como siempre que $S$ sigue la EDE:\@
+\begin{equation*}
+    dS = \mu S dt + \sigma S dX
+\end{equation*}
+por lo que la variación de $\pi$ es:
+\begin{align*}
+    d\pi &= r(\pi - q S)dt + q dS \\
+    &= r(\pi - q S)dt + q(\mu S dt + \sigma S dX) \\
+    &= (r\pi - rq S + q\mu S)dt + q\sigma S dX \\
+\end{align*}
+y aplicando el lema de Itô de varios procesos (ver apendice~\ref{CalcIto}):
+\begin{align*}
+    dV &= \frac{\partial V}{\partial t}dt + \left( \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} \right)dt + \frac{\partial V}{\partial S}dS + \frac{\partial V}{\partial \pi}d\pi \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} \right)dt + \frac{\partial V}{\partial S}dS + \frac{\partial V}{\partial \pi}\left(r(\pi - q S)dt + q dS\right) \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} + r(\pi - q S)\frac{\partial V}{\partial \pi} \right)dt + \left( \frac{\partial V}{\partial S} + q\frac{\partial V}{\partial \pi} \right)dS
+\end{align*}
+
+Se considera la cartera:
+\begin{equation*}
+    \Pi = V - \Delta S
+\end{equation*}
+cuya variación es:
+\begin{align*}
+    d\Pi &= dV - \Delta dS \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} + r(\pi - q S)\frac{\partial V}{\partial \pi} \right)dt + \left( \frac{\partial V}{\partial S} + q\frac{\partial V}{\partial \pi} \right)dS - \Delta dS \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} + r(\pi - q S)\frac{\partial V}{\partial \pi} \right)dt + \left( \frac{\partial V}{\partial S} + q\frac{\partial V}{\partial \pi} - \Delta \right)dS \\
+\end{align*}
+y eligiendo
+\begin{equation*}
+    \Delta = \frac{\partial V}{\partial S} + q\frac{\partial V}{\partial \pi}
+\end{equation*}
+e igualando a:
+\begin{equation*}
+    d\Pi = r\Pi dt = r(V - \Delta S)dt = r\left(V - S\frac{\partial V}{\partial S} - qS\frac{\partial V}{\partial \pi}\right)dt
+\end{equation*}
+se obtiene que la EDP gobernante es:
+\begin{align}\label{eq:passport}
+    &\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} + r(\pi - \cancel{q S})\frac{\partial V}{\partial \pi} = r\left(V - S\frac{\partial V}{\partial S} - \cancel{qS\frac{\partial V}{\partial \pi}}\right) \nonumber \\
+    &\boxed{\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} + rS\frac{\partial V}{\partial S} + r\pi\frac{\partial V}{\partial \pi} - rV = 0}
+\end{align}
+Esta ecuación no tiene dos dimensiones espaciales ya que $S$ y $\pi$ estan perfectamente correladas. La ecuación es más bien de una dimensión espacial y una temporal. 
+
+Para valorar de forma correcta la opción se debe asumir que el poseedor actúa de forma óptima a la hora de elegir $q$. Esto ocurre cuando se elige $q$ de manera que se maximicen los términos de~\eqref{eq:passport} que dependen de $q$. Por lo tanto:
+\begin{equation*}
+    \boxed{\max_{|q|\leq 1} \left( \frac{1}{2}q^2\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi^2} + q\sigma^2 S^2 \frac{\partial^2 V}{\partial \pi \partial S} \right)}
+\end{equation*}
+
+
+
+
+
+\subsection{Limitación en el número de operaciones}
+Sea $V^{n+}(S,\pi,t), V^{n-}(S,\pi,t)$ el valor de la opción cuando aún se permiten $n$ operaciones y el $+/-$ se refiere a si el operador está actualmente en posición larga o corta respecto de la cantidad máxima permitida del subyacente. Por lo tanto ahora las únicas opciones que se dan son estar en una posición larga ($q=1$) o corta ($q=-1$). Además, como se se tiene la opción de cambiar de posición en cualquier momento, se está antes una situación de optimización similar a las opciones americanas y se emplean inecuaciones. Por lo tanto, se tiene que:
+\begin{align*}
+    &\boxed{\frac{\partial V^{n+}}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{n+}}{\partial S^2} + \sigma^2 S^2 \frac{\partial^2 V^{n+}}{\partial S \partial \pi} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{n+}}{\partial \pi^2} + rS\frac{\partial V^{n+}}{\partial S} + r\pi\frac{\partial V^{n+}}{\partial \pi} - rV^{n+} \leq 0} \\[1.5em]
+    &\boxed{\frac{\partial V^{n-}}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{n-}}{\partial S^2} - \sigma^2 S^2 \frac{\partial^2 V^{n-}}{\partial S \partial \pi} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{n-}}{\partial \pi^2} + rS\frac{\partial V^{n-}}{\partial S} + r\pi\frac{\partial V^{n-}}{\partial \pi} - rV^{n-} \leq 0}
+\end{align*}
+y la condición final es:
+\begin{equation*}
+    \boxed{V^{0\pm}(S,\pi,T) = \max(\pi,0)}
+\end{equation*}
+Por útlimo, una operación es óptima cuando el valor con $n$ operaciones restantes (y actualmente en posición larga/corta) es el mismo que con $n-1$ operaciones restantes y la posición opuesta:
+\begin{equation*}
+    \boxed{V^{n+} \geq V^{(n-1)-}, \qquad V^{n-} \geq V^{(n-1)+}}
+\end{equation*}
+
+También es posible añadir una penalización $P$ a cada operación que se realice. Para modelarlo bastaría con modificar esta útlima condición a:
+\begin{equation*}
+    \boxed{V^{n+} \geq V^{(n-1)-} + P, \qquad V^{n-} \geq V^{(n-1)+} + P}
+\end{equation*}
+
+
+
+
+
+
+\subsection{Limitación de tiempo entre operaciones}
+También se puede limitar el tiempo entre operaciones: una vez hecha una operación, se debe esperar un tiempo $\omega$ antes de realizar la siguiente. Por lo tanto se debe introducir un `reloj' que registra el tiempo transcurrido desde la última operación. Este reloj se reinicia a cero en cuanto se realiza una operación. Por lo tanto el valor de la opción viene dado por $V^{+}(S,\pi,t,\tau), V^{-}(S,\pi,t,\tau)$, donde $\tau$ es el tiempo de ese reloj. Se cumplen las dos inecuaciones:
+\begin{align*}
+    &\boxed{\frac{\partial V^{+}}{\partial t} + \frac{\partial V^{+}}{\partial \tau} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{+}}{\partial S^2} + \sigma^2 S^2 \frac{\partial^2 V^{+}}{\partial S \partial \pi} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{+}}{\partial \pi^2} + rS\frac{\partial V^{+}}{\partial S} + r\pi\frac{\partial V^{+}}{\partial \pi} - rV^{+} \leq 0} \\[1.5em]
+    &\boxed{\frac{\partial V^{-}}{\partial t} + \frac{\partial V^{-}}{\partial \tau} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{-}}{\partial S^2} - \sigma^2 S^2 \frac{\partial^2 V^{-}}{\partial S \partial \pi} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V^{-}}{\partial \pi^2} + rS\frac{\partial V^{-}}{\partial S} + r\pi\frac{\partial V^{-}}{\partial \pi} - rV^{-} \leq 0}
+\end{align*}
+con la condición final:
+\begin{equation*}
+    \boxed{V^{\pm}(S,\pi,T,\tau) = \max(\pi,0)}
+\end{equation*}
+
+Una operación es óptima cuando el valor de la opción es el mismo que el de la posición opuesta en el activo subyacente y con una operación permitida. (i.e.\ $\tau=\omega$)
+\begin{equation*}
+    \boxed{V^{+}(S,\pi,t,\omega) \geq V^{-}(S,\pi,t,0), \qquad V^{-}(S,\pi,t,\omega) \geq V^{+}(S,\pi,t,0)}
+\end{equation*}
+
+
+
+
+
+
+

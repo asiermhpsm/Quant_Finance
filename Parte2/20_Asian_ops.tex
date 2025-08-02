@@ -1,0 +1,185 @@
+\section{Opciones asiáticas}\label{sec:asian_options}
+En ellas el payoff depende del valor promedio del activo subyacente durante un período de tiempo, lo que las hace menos susceptibles a la manipulación del mercado y puede reducir la volatilidad del precio de la opción. Existen muchos tipos de payoffs, como por ejemplo:
+\begin{itemize}
+    \item \textbf{Average strike}:
+    \begin{itemize}
+        \item \textbf{Average strike call}: $\max(S-A, 0)$
+        \item \textbf{Average strike put}: $\max(A-S, 0)$
+    \end{itemize}
+    \item \textbf{Average rate}:
+    \begin{itemize}
+        \item \textbf{Average rate call}: $\max(A-E, 0)$
+        \item \textbf{Average rate put}: $\max(E-A, 0)$
+    \end{itemize}
+\end{itemize}
+
+Algunas maneras de calcular el promedio son:
+\begin{itemize}
+    \item Tipo de promedio:
+    \begin{itemize}
+        \item \textbf{Aritmético}: la suma de todos los precios constituyentes, igualmente ponderados, dividida por el número total de precios utilizados.
+        \item \textbf{Geométrico}: el exponencial de la suma de todos los logaritmos de los precios constituyentes, igualmente ponderados, dividido por el número total de precios utilizados.
+        \item Otros: como el aritmético con diferentes pesos.
+    \end{itemize}
+    \item Muestreo:
+    \begin{itemize}
+        \item \textbf{Continuo}: se toman muestras de precios en intervalos de tiempo infinitesimales.
+        \item \textbf{Discreto}: se toman muestras de precios en intervalos de tiempo discretos, como diariamente, semanalmente, etc.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+Algunos ejemplos específicos de variable de estado y su EDP asociada son:
+\begin{itemize}
+    \item \textbf{Promedio con muestreo continuo}:
+    \begin{itemize}
+        \item \textbf{Promedio aritmético} :El promedio se calcularía como:
+        \begin{equation*}
+            \frac{1}{t}\int_{0}^{t} S(\tau) d\tau
+        \end{equation*}
+        introduciendo la variable de estado
+        \begin{equation*}
+            \boxed{I = \int_{0}^{t} S(\tau) d\tau}
+        \end{equation*}
+        y la EDP asociada sería:
+        \begin{equation*}
+            \boxed{\frac{\partial V}{\partial t} + S \frac{\partial V}{\partial I}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0}
+        \end{equation*}
+
+        \item \textbf{Promedio geométrico}: El promedio se calcularía como:
+        \begin{equation*}
+            \exp\left(\frac{1}{t}\int_{0}^{t} \log(S(\tau)) d\tau\right)
+        \end{equation*}
+        introduciendo la variable de estado
+        \begin{equation*}
+            \boxed{I = \int_{0}^{t} \log(S(\tau)) d\tau}
+        \end{equation*}
+        y la EDP asociada sería:
+        \begin{equation*}
+            \boxed{\frac{\partial V}{\partial t} + \log(S) \frac{\partial V}{\partial I}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0}
+        \end{equation*}
+
+        Para este caso existe una solución analítica, que es parecida a la de la opción europea (tabla~\ref{tab:soluciones_BS_europeas}), pero con los siguientes cambios:
+        \begin{itemize}
+            \item La volatilidad de sustituye por $\boxed{\sigma\sqrt{3}}$
+            \item Los dividendos se sustituyen por $\boxed{D+\sigma^2/6}$
+        \end{itemize}
+        Para usar en este modelo sencillo una volatilidad dependiente del tiempo, se puede usar una fórmula similar a la de la sección~\ref{sec:vol_dep_tiempo}:
+        \begin{equation*}
+            \boxed{\overline{\sigma_G}^2 = \frac{1}{T} \int_0^T \sigma(t)^2 \left( \frac{T-t}{T} \right)^2 dt}
+        \end{equation*}
+        que cuando la volatilidad es constante se reduce a $\sigma_G = \sigma\sqrt{3}$.
+    \end{itemize}
+
+    \item \textbf{Promedio con muestreo discreto}:
+    \begin{itemize}
+        \item \textbf{Promedio aritmético}: El promedio se calcularía como:
+        \begin{equation*}
+            \boxed{A_i = \frac{i-1}{i} A_{i-1} + \frac{1}{i} S(t_i)}
+        \end{equation*}
+        y la condición de salto sería:
+        \begin{equation*}
+            \boxed{V(S,A,t_i^-) = V\left( S, \frac{i-1}{i} A + \frac{1}{i} S, t_i^+ \right)}
+        \end{equation*}
+
+        \item \textbf{Promedio geométrico}: El promedio se calcularía como:
+        \begin{equation*}
+            \boxed{\exp\left(A_i = \frac{i-1}{i} \log(A_{i-1}) + \frac{1}{i} \log(S(t_i))\right)}
+        \end{equation*}
+        y la condición de salto sería:
+        \begin{equation*}
+            \boxed{V(S,A,t_i^-) = V\left( S, \exp\left(\frac{i-1}{i} \log(A) + \frac{1}{i} \log(S)\right), t_i^+ \right)}
+        \end{equation*}
+    \end{itemize}
+
+    \item \textbf{Promedios ponderados exponencialmente}:
+    \begin{itemize}
+        \item \textbf{Promedio aritmético ponderado exponencialmente con muestreo continuo}: Se introduce la variable de estado:
+        \begin{equation*}
+            \boxed{I = \lambda \int_{-\infty}^{t} e^{-\lambda (t - \tau)} S(\tau) d\tau}
+        \end{equation*}
+        que satisface
+        \begin{equation*}
+            dI = \lambda (S-I) dt
+        \end{equation*}
+        por lo que la EDP asociada sería:
+        \begin{equation*}
+            \boxed{\frac{\partial V}{\partial t} + \lambda (S-I) \frac{\partial V}{\partial I}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0}
+        \end{equation*}
+
+        \item \textbf{Promedio geométrico ponderado exponencialmente con muestreo continuo}: Se introduce la variable de estado:
+        \begin{equation*}
+            \boxed{I = \lambda \int_{\infty}^{t} e^{-\lambda (t - \tau)} \log(S(\tau)) d\tau}
+        \end{equation*}
+        que satisface
+        \begin{equation*}
+            dI = \lambda (\log(S)-I) dt
+        \end{equation*}
+        por lo que la EDP asociada sería:
+        \begin{equation*}
+            \boxed{\frac{\partial V}{\partial t} + \lambda (\log(S)-I) \frac{\partial V}{\partial I}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0}
+        \end{equation*}
+    \end{itemize}
+
+    \item \textbf{Promedio hasta punto fijo}: cuando para calcular el promedio solo se tiene en cuenta el valor del activo hasta un punto fijo en el tiempo, se introduce la variable de estado:
+    \begin{equation*}
+        \boxed{I = \int_{0}^{T_0} S(\tau) d\tau, \quad T_0 < T}
+    \end{equation*}
+    por lo que la EDP asociada sería:
+    \begin{equation*}
+        \boxed{\frac{\partial V}{\partial t} + S \mathcal{H}(T_0-t) \frac{\partial V}{\partial I}  +  \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0}
+    \end{equation*}
+\end{itemize}
+
+También es posible añadir el ejercicio anticipado o aumentar la dimensionalidad, como la \textbf{anteater option}, cuyo payoff depende del payoff de dos subyacentes $S_1$ y $S_2$:
+\begin{equation*}
+    \boxed{I = \int_{0}^{t} \frac{S_1(\tau)}{S_2(\tau)} d\tau}
+\end{equation*}
+
+
+
+
+
+
+\subsection{Algunas soluciones analíticas}
+No existen muchas soluciones analíticas para las opciones asiáticas, de las cuales las más comunes son promedios geométricos de average rate calls y puts, que son:
+\begin{itemize}
+    \item \textbf{Geometric average rate call}: con un payoff de:
+    \begin{equation*}
+        \max(A-E, 0)
+    \end{equation*}
+    donde $A$ es el promedio geométrico del activo subyacente, y su valor se puede calcular como:
+    \begin{equation*}
+        \boxed{e^{-r(T-t)} \left( G \exp\left( \frac{(r-D-\sigma^2/2)(T-t)^2}{2T} + \frac{\sigma^2 (T-t)^3}{6T^2} \right) N(d_1) - E N(d_2) \right)}
+    \end{equation*}
+    donde
+    \begin{align*}
+        I &= \int_0^t \log(S(\tau)) d\tau, \\
+        G &= e^{I/T} S^{(T-t)/T}, \\
+        d_1 &= \frac{T \log(G/E) + (r-D-\sigma^2/2)(T-t)^2/2 + \sigma^2 (T-t)^3/3T}{\sigma \sqrt{(T-t)^3/3}}, \\
+        d_2 &= \frac{T \log(G/E) + (r-D-\sigma^2/2)(T-t)^2/2}{\sigma \sqrt{(T-t)^3/3}}.
+    \end{align*}
+
+    \item \textbf{Geometric average rate put}: con un payoff de:
+    \begin{equation*}
+        \max(E-A, 0)
+    \end{equation*}
+    donde $A$ es el promedio geométrico del activo subyacente, y su valor se puede calcular como:
+    \begin{equation*}
+        \boxed{e^{-r(T-t)} \left( E N(-d_2) - G \exp\left( \frac{(r-D-\sigma^2/2)(T-t)^2}{2T} + \frac{\sigma^2 (T-t)^3}{6T^2} \right) N(d_1) \right)}
+    \end{equation*}
+    donde
+    \begin{align*}
+        I &= \int_0^t \log(S(\tau)) d\tau, \\
+        G &= e^{I/T} S^{(T-t)/T}, \\
+        d_1 &= \frac{T \log(G/E) + (r-D-\sigma^2/2)(T-t)^2/2 + \sigma^2 (T-t)^3/3T}{\sigma \sqrt{(T-t)^3/3}}, \\
+        d_2 &= \frac{T \log(G/E) + (r-D-\sigma^2/2)(T-t)^2/2}{\sigma \sqrt{(T-t)^3/3}}.
+    \end{align*}
+\end{itemize}
+
+
+
+
+

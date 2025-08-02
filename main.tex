@@ -23,6 +23,7 @@
 \usepackage{pdfpages}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{cancel}
 
 
 \input{datos.tex}
@@ -97,6 +98,8 @@
   \setcounter{page}{1}
   \pagenumbering{arabic}
 
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{\baselineskip}
 
   %PRIMERA PARTE: FUNDAMENTOS BÁSICOS DE DERIVADOS, RIESGO Y RENTABILIDAD
   \clearpage%
@@ -157,11 +160,14 @@
   \input{Parte2/18_Barrier_options.tex}
   \newpage
   \input{Parte2/19_Strong_path.tex}
-
-
-
-
-
+  \newpage
+  \input{Parte2/20_Asian_ops.tex}
+  \newpage
+  \input{Parte2/21_Lookback_ops.tex}
+  \newpage
+  \input{Parte2/22_Passport_ops.tex}
+  \newpage
+  \input{Parte2/23_Otras_ops_exotic.tex}
 
 
   %APENDICES
@@ -176,5 +182,9 @@
 
   \chapter{Apéndices extra}
   \input{Apendices/Black_Jack.tex}
+
+  \nocite{*}
+  \bibliographystyle{plain}
+  \bibliography{referencias}
 
 \end{document}
