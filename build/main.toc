@@ -16,101 +16,101 @@
 \contentsline {subsection}{\numberline {2.1.3}Call-Put Parity}{11}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Opciones binarias/ digitales}{11}{subsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.1.5}Portfolio of options/Option strategy}{12}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Opciones a largo plazo}{15}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.6}Opciones a largo plazo}{16}{subsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.1.7}Otros derivados}{16}{subsection.2.1.7}%
-\contentsline {section}{\numberline {2.2}Productos de renta fija: bonos}{17}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Contratos simples de renta fija}{17}{subsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.1.1}Bonos de cupón cero}{17}{subsubsection.2.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.2.1.2}Bonos con cupón (coupon-bearing bond)}{17}{subsubsection.2.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.2.1.3}Money Market Account}{17}{subsubsection.2.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.2.1.4}Floating Rate Bonds}{17}{subsubsection.2.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.2.1.5}Forward Rate Agreements (FRA)}{17}{subsubsection.2.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.2.1.6}Repos}{17}{subsubsection.2.2.1.6}%
-\contentsline {subsubsection}{\numberline {2.2.1.7}Bonos separables (STRIPS)}{17}{subsubsection.2.2.1.7}%
-\contentsline {subsubsection}{\numberline {2.2.1.8}Amortización}{18}{subsubsection.2.2.1.8}%
-\contentsline {subsubsection}{\numberline {2.2.1.9}Cláusula de rescate anticipado (Call Provision)}{18}{subsubsection.2.2.1.9}%
-\contentsline {subsection}{\numberline {2.2.2}Mercado internacional de bonos}{18}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Rentabilidad de bonos (Yield)}{18}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Yield Curve}{19}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Duración}{19}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Convexividad}{20}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}Intereses dependientes del tiempo (Time-Dependent Interest Rates)}{21}{subsection.2.2.7}%
-\contentsline {subsection}{\numberline {2.2.8}Tasas Forward y bootstrapping}{21}{subsection.2.2.8}%
-\contentsline {section}{\numberline {2.3}Swaps}{23}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Swaps de intereses vainillas}{23}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}Ejemplo de uso}{23}{subsubsection.2.3.1.1}%
-\contentsline {subsection}{\numberline {2.3.2}Relación entre swaps y bonos: obtener valor justo del interés fijo}{24}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Bootstrapping}{25}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Otras características de contratos swap}{26}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Otros tipos de swaps}{26}{subsection.2.3.5}%
-\contentsline {chapter}{\numberline {3}Aletoriedad}{27}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Algunas propiedades}{27}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Desigualdad de Jensen}{27}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Propiedad de Markov}{27}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Propiedad de martingala}{27}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Lema de Itô}{27}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Algunos ejemplos de caminos aleatorios}{28}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}Función de densidad de transición}{29}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Ecuación de Fokker-Planck o de Kolmogorov hacia delante}{29}{subsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Ecuación de Kolmogorov hacia detrás}{30}{subsubsection.3.2.1.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Distribución en estado estacionario (steady-state distribution)}{30}{subsubsection.3.2.1.2}%
-\contentsline {section}{\numberline {3.3}Tiempos de primer escape (First-exit times)}{30}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Funciones de distribución acumulada para first-exit times}{31}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Tiempos de primer escape esperados (Expected first-exit times)}{31}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Estrategias en apuestas}{32}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Blackjack}{32}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Criterio de Kelly}{33}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Apuestas a eventos deportivos: carreras de caballos}{34}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Extreme value theory}{36}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Modelación básica de opciones}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Modelos Black-Scholes}{37}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Modelo opciones básico}{37}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Opciones de activos con dividendos continuos}{37}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Currency options}{38}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Commodity options}{38}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Forwards contracts}{38}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Future contracts}{38}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Opciones sobre futuros}{39}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Condiciones de frontera y finales}{39}{subsection.4.1.8}%
-\contentsline {subsection}{\numberline {4.1.9}Algunas propiedades de las opciones europeas}{39}{subsection.4.1.9}%
-\contentsline {section}{\numberline {4.2}Comportamiento de las EDPs}{43}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Significado de los términos de una EDP}{43}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Soluciones y griegas}{44}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Griegas}{44}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Tablas de soluciones}{44}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Representación gráfica de soluciones}{45}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}Call option}{46}{subsubsection.4.3.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.3.2}Put option}{47}{subsubsection.4.3.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3.3}Binary Call option}{48}{subsubsection.4.3.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.4}Binary Put option}{49}{subsubsection.4.3.3.4}%
-\contentsline {subsection}{\numberline {4.3.4}Volatilidad implícita}{50}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Tipos de coberturas}{50}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Generalizaciones sencillas del modelo}{52}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Dividendos discretos}{52}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Préstamo de acciones}{52}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Parámetros dependientes del tiempo}{52}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Power options y log contracts}{52}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Modelización la volatilidad}{53}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Volatilidad por media estadística}{53}{subsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.1.1}Volatilidad constante}{53}{subsubsection.4.5.1.1}%
-\contentsline {subsubsection}{\numberline {4.5.1.2}Volatilidad con regresión a la media}{53}{subsubsection.4.5.1.2}%
-\contentsline {subsubsection}{\numberline {4.5.1.3}Volatilidad con media móvil exponencialmente ponderada (EWMA)}{53}{subsubsection.4.5.1.3}%
-\contentsline {subsubsection}{\numberline {4.5.1.4}Modelo GARCH}{54}{subsubsection.4.5.1.4}%
-\contentsline {subsubsection}{\numberline {4.5.1.5}Volatilidad futura esperada}{54}{subsubsection.4.5.1.5}%
-\contentsline {subsubsection}{\numberline {4.5.1.6}Estimación de volatilidad basada en rangos de tiempo}{55}{subsubsection.4.5.1.6}%
-\contentsline {subsection}{\numberline {4.5.2}Estimar parámetros: maximum likelihood estimation (MLE)}{56}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Volatilidad dependiente del tiempo en modelos sencillos}{57}{subsection.4.5.3}%
-\contentsline {section}{\numberline {4.6}Cobertura: volatilidad implicita vs real}{58}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Comportamiento de la volatilidad implícita}{60}{subsection.4.6.1}%
-\contentsline {section}{\numberline {4.7}Opciones americanas}{61}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Dividendos discretos}{61}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Opciones one-touch}{61}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Otros tipos de opciones americanas}{62}{subsection.4.7.3}%
-\contentsline {section}{\numberline {4.8}Opciones multiasset}{63}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Obtención de la correlación}{63}{subsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.8.2}Opciones basket}{64}{subsection.4.8.2}%
-\contentsline {subsection}{\numberline {4.8.3}Opciones exchange}{64}{subsection.4.8.3}%
-\contentsline {subsection}{\numberline {4.8.4}Quantos}{65}{subsection.4.8.4}%
+\contentsline {section}{\numberline {2.2}Productos de renta fija: bonos}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Contratos simples de renta fija}{18}{subsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1.1}Bonos de cupón cero}{18}{subsubsection.2.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.2.1.2}Bonos con cupón (coupon-bearing bond)}{18}{subsubsection.2.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.2.1.3}Money Market Account}{18}{subsubsection.2.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.2.1.4}Floating Rate Bonds}{18}{subsubsection.2.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.2.1.5}Forward Rate Agreements (FRA)}{18}{subsubsection.2.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.2.1.6}Repos}{18}{subsubsection.2.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.2.1.7}Bonos separables (STRIPS)}{18}{subsubsection.2.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.2.1.8}Amortización}{19}{subsubsection.2.2.1.8}%
+\contentsline {subsubsection}{\numberline {2.2.1.9}Cláusula de rescate anticipado (Call Provision)}{19}{subsubsection.2.2.1.9}%
+\contentsline {subsection}{\numberline {2.2.2}Mercado internacional de bonos}{19}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Rentabilidad de bonos (Yield)}{19}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Yield Curve}{20}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Duración}{20}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Convexividad}{21}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Intereses dependientes del tiempo (Time-Dependent Interest Rates)}{22}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Tasas Forward y bootstrapping}{22}{subsection.2.2.8}%
+\contentsline {section}{\numberline {2.3}Swaps}{24}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Swaps de intereses vainillas}{24}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Ejemplo de uso}{24}{subsubsection.2.3.1.1}%
+\contentsline {subsection}{\numberline {2.3.2}Relación entre swaps y bonos: obtener valor justo del interés fijo}{25}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Bootstrapping}{26}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Otras características de contratos swap}{27}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Otros tipos de swaps}{27}{subsection.2.3.5}%
+\contentsline {chapter}{\numberline {3}Aletoriedad}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Algunas propiedades}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Desigualdad de Jensen}{29}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Propiedad de Markov}{29}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Propiedad de martingala}{29}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Lema de Itô}{29}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Algunos ejemplos de caminos aleatorios}{30}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}Función de densidad de transición}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Ecuación de Fokker-Planck o de Kolmogorov hacia delante}{31}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Ecuación de Kolmogorov hacia detrás}{32}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Distribución en estado estacionario (steady-state distribution)}{32}{subsubsection.3.2.1.2}%
+\contentsline {section}{\numberline {3.3}Tiempos de primer escape (First-exit times)}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Funciones de distribución acumulada para first-exit times}{33}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Tiempos de primer escape esperados (Expected first-exit times)}{33}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Estrategias en apuestas}{34}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Blackjack}{34}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Criterio de Kelly}{35}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Apuestas a eventos deportivos: carreras de caballos}{35}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Extreme value theory}{38}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Modelación básica de opciones}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Modelos Black-Scholes}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Modelo opciones básico}{39}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Opciones de activos con dividendos continuos}{39}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Currency options}{40}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Commodity options}{40}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Forwards contracts}{40}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Future contracts}{40}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Opciones sobre futuros}{41}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Condiciones de frontera y finales}{41}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Algunas propiedades de las opciones europeas}{41}{subsection.4.1.9}%
+\contentsline {section}{\numberline {4.2}Comportamiento de las EDPs}{45}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Significado de los términos de una EDP}{45}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Soluciones y griegas}{46}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Griegas}{46}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Tablas de soluciones}{46}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Representación gráfica de soluciones}{47}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}Call option}{48}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}Put option}{49}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}Binary Call option}{50}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}Binary Put option}{51}{subsubsection.4.3.3.4}%
+\contentsline {subsection}{\numberline {4.3.4}Volatilidad implícita}{51}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Tipos de coberturas}{52}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Generalizaciones sencillas del modelo}{53}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Dividendos discretos}{53}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Préstamo de acciones}{53}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Parámetros dependientes del tiempo}{53}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Power options y log contracts}{53}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Modelización la volatilidad}{54}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Volatilidad por media estadística}{54}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}Volatilidad constante}{54}{subsubsection.4.5.1.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.2}Volatilidad con regresión a la media}{54}{subsubsection.4.5.1.2}%
+\contentsline {subsubsection}{\numberline {4.5.1.3}Volatilidad con media móvil exponencialmente ponderada (EWMA)}{54}{subsubsection.4.5.1.3}%
+\contentsline {subsubsection}{\numberline {4.5.1.4}Modelo GARCH}{55}{subsubsection.4.5.1.4}%
+\contentsline {subsubsection}{\numberline {4.5.1.5}Volatilidad futura esperada}{55}{subsubsection.4.5.1.5}%
+\contentsline {subsubsection}{\numberline {4.5.1.6}Estimación de volatilidad basada en rangos de tiempo}{56}{subsubsection.4.5.1.6}%
+\contentsline {subsection}{\numberline {4.5.2}Estimar parámetros: maximum likelihood estimation (MLE)}{57}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Volatilidad dependiente del tiempo en modelos sencillos}{58}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.6}Cobertura: volatilidad implicita vs real}{59}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Comportamiento de la volatilidad implícita}{61}{subsection.4.6.1}%
+\contentsline {section}{\numberline {4.7}Opciones americanas}{62}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Dividendos discretos}{62}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Opciones one-touch}{62}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Otros tipos de opciones americanas}{63}{subsection.4.7.3}%
+\contentsline {section}{\numberline {4.8}Opciones multiasset}{64}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Obtención de la correlación}{64}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Opciones basket}{65}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Opciones exchange}{65}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Quantos}{66}{subsection.4.8.4}%
 \contentsline {chapter}{\numberline {5}Valoración del riesgo}{67}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Gestión de carteras}{67}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Carteras diversificadas}{67}{subsection.5.1.1}%
@@ -183,12 +183,31 @@
 \contentsline {subsection}{\numberline {8.6.14}Himalayan option}{112}{subsection.8.6.14}%
 \contentsline {subsection}{\numberline {8.6.15}HYPER option}{112}{subsection.8.6.15}%
 \contentsline {part}{III\hspace {1em}Renta fija y derivados}{113}{part.3}%
-\contentsline {part}{IV\hspace {1em}Apéndices}{115}{part.4}%
-\contentsline {chapter}{\numberline {A}Apéndices Introducción}{117}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Cálculo de Itô}{117}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Generalizaciones sencillas de Black-Scholes}{120}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Opciones Make Your Mind Up}{123}{section.Alph1.3}%
-\contentsline {section}{\numberline {A.4}Media y varianza de cobertura con volatilidad implícita}{129}{section.Alph1.4}%
-\contentsline {chapter}{\numberline {B}Apéndices extra}{139}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Blackjack y apuestas}{139}{section.Alph2.1}%
-\contentsline {subsection}{\numberline {B.1.1}Reglas del blackjack}{139}{subsection.Alph2.1.1}%
+\contentsline {chapter}{\numberline {9}Modelización de instrumentos de renta fija}{115}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Modelado de tasas de interés one-factor}{115}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Modelización de bonos}{115}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Market price of risk $\lambda (r,t)$}{117}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Modelos y soluciones manejables}{117}{subsection.9.1.3}%
+\contentsline {subsubsection}{\numberline {9.1.3.1}Solución analítica con parámetros constantes}{119}{subsubsection.9.1.3.1}%
+\contentsline {subsection}{\numberline {9.1.4}Algunos modelos famosos}{121}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}Forwards y futures con tipos estocásticos}{122}{subsection.9.1.5}%
+\contentsline {subsubsection}{\numberline {9.1.5.1}Forwards Contracts}{122}{subsubsection.9.1.5.1}%
+\contentsline {subsubsection}{\numberline {9.1.5.2}Futures Contracts}{123}{subsubsection.9.1.5.2}%
+\contentsline {section}{\numberline {9.2}Ajuste de la Yield Curve}{124}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Ho \& Lee}{124}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Vasicek extendido de Hull \& White}{124}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Pros y contras del ajuste para modelos de un solo factor para ajustar yield curve}{126}{subsection.9.2.3}%
+\contentsline {section}{\numberline {9.3}Derivados de la tasa de interés}{127}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Bonos callable}{127}{subsection.9.3.1}%
+\contentsline {part}{IV\hspace {1em}Apéndices}{129}{part.4}%
+\contentsline {chapter}{\numberline {A}Cálculo básico}{131}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Algunos resultados básicos de cálculo}{131}{section.Alph1.1}%
+\contentsline {chapter}{\numberline {B}Apéndices de la Parte 1}{133}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Cálculo de Itô}{133}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Generalizaciones sencillas de Black-Scholes}{136}{section.Alph2.2}%
+\contentsline {section}{\numberline {B.3}Opciones Make Your Mind Up}{139}{section.Alph2.3}%
+\contentsline {section}{\numberline {B.4}Media y varianza de cobertura con volatilidad implícita}{145}{section.Alph2.4}%
+\contentsline {chapter}{\numberline {C}Apéndices de la Parte 2}{155}{appendix.Alph3}%
+\contentsline {chapter}{\numberline {D}Apéndices extra}{157}{appendix.Alph4}%
+\contentsline {section}{\numberline {D.1}Blackjack y apuestas}{157}{section.Alph4.1}%
+\contentsline {subsection}{\numberline {D.1.1}Reglas del blackjack}{157}{subsection.Alph4.1.1}%

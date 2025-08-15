@@ -1,0 +1,36 @@
+\section{Derivados de la tasa de interés}
+
+En esta sección se van a modelar distintos derivados de la tasa de interés.
+
+
+\subsection{Bonos callable}
+Se trata de un bono simple con cupón, pero que el emisor puede rescatar en fechas específicas por un importe determinado. El importe rescatable puede variar en función del tiempo.Esta característica reduce el valor del bono; si las tasas son bajas, de modo que el valor del bono es alto, el emisor lo rescatará.
+Sigue la misma EDP que un bono normal~\eqref{eq:edp_bono}:
+\begin{equation*}
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + (u - w\lambda) \frac{\partial V}{\partial r} - rV = 0}
+\end{equation*}
+con la misma condición final:
+\begin{equation*}
+    \boxed{V(r,T;T) = 1}
+\end{equation*}
+la condición de continuidad en caso de cupones discretos:
+\begin{equation*}
+    \boxed{V(r, t_c^-) = V(r, t_c^+) + K_c}
+\end{equation*}
+y la condición extra de la conversión:
+\begin{equation*}
+    \boxed{V(r,t) \leq C(t)}
+\end{equation*}
+donde $C(t)$ es el valor de conversión del bono en el tiempo $t$.
+
+
+
+
+
+
+
+
+
+
+
+

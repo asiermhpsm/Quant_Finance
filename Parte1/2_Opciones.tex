@@ -7,14 +7,14 @@ Una \textbf{Call} option es el derecho a comprar un \textbf{underlying asset} po
     \[\boxed{\max(S-K, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/PayOffCall.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/PayOffCall.pdf}
         \caption{Payoff de opción Call a vencimiento}
     \end{figure}
     \item \textbf{Put option}: Apuestas a que el mercado baje
     \[\boxed{\max(K-S, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/PayOffPut.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/PayOffPut.pdf}
         \caption{Payoff de opción Put a vencimiento}
     \end{figure}
 \end{itemize}
@@ -38,11 +38,11 @@ A veces el strike $K$ se representa con una $E$. Las opciones \textbf{vainilla} 
     \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.45\linewidth}
-            \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/ProfitDiagCall.eps}
+            \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf}
             \caption{Call option}
         \end{subfigure}
             \begin{subfigure}[b]{0.45\linewidth}
-            \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/ProfitDiagPut.eps}
+            \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf}
             \caption{Put option}
         \end{subfigure}
         \caption{Profit diagram de opción a vencimiento}
@@ -75,11 +75,11 @@ A fecha de ejercicio son discontinuas. Pagan una cierta cantidad fija (como un \
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\linewidth}
-        \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/BinaryCall.eps}
+        \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/BinaryCall.pdf}
         \caption{Call option}
     \end{subfigure}
         \begin{subfigure}[b]{0.45\linewidth}
-        \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/BinaryPut.eps}
+        \includegraphics[width=\linewidth]{Imagenes/Parte1/2_Derivados/BinaryPut.pdf}
         \caption{Put option}
     \end{subfigure}
     \caption{Binary option payoff}
@@ -97,7 +97,7 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
     \[\boxed{\max(S-E_1, 0) - \max(S-E_2, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/BullPayoff.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/BullPayoff.pdf}
         \caption{Payoff de Bull Spread a vencimiento (normalizado)}
     \end{figure}
     Para normalizarlo se divide por $E_2-E_1$
@@ -105,7 +105,7 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
      \[\boxed{\max(E_2-S, 0) - \max(E_1-S, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/BearPayoff.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/BearPayoff.pdf}
         \caption{Payoff de Bear Spread a vencimiento (normalizado)}
     \end{figure}
     Para normalizarlo se divide por $E_2-E_1$
@@ -113,7 +113,7 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
     \[\boxed{\max(S-E, 0) + \max(E-S, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/StraddlePayoff.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf}
         \caption{Payoff de Straddle}
     \end{figure}
     \item \textbf{Strangle}: similar a straddles, pero con strikes distintos. Es más barato pero precisa de mayores cambios en el subyacente para que haya beneficios. Su payoff es:
@@ -123,35 +123,45 @@ Conjunto de opciones combinadas de manera estratégica para un objetivo concreto
         \item \textbf{Out-of-the-Money Strangle (OTM)}: se compra call con strike por encima de precio actual y put con strike por debajo de actual. Es más barato (primas bajas) pero se necesita un movimiento grande del subyacente.
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.eps}
+            \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf}
             \caption{Payoff de Strangle OTM}
         \end{figure}
         \item \textbf{In-the-Money Strangle (ITM)}: se compra call con strike por debajo de precio actual y put con strike por encima de actual. Algo más caro (por primas) que OTM, pero un poco más seguro.
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/StrangleITMPayoff.eps}
+            \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf}
             \caption{Payoff de Strangle ITM}
         \end{figure}
     \end{itemize}
-    \item \textbf{Risk Reversal}: comprar una call con strike mayor que el precio actual y vender una put con un strike inferior al precio actual. Se apuesta a que el subyacente va a subir (y que como mucho no va a bajar demasiado). Si el activo baja se pierde dinero, pero las primas son más baratas. Su payoff sería:
-    \[\boxed{\max(S-E_C, 0) - \max(E_P-S, 0)}\]
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/RiskReversalPayoff.eps}
-        \caption{Payoff de Risk Reversal a vencimiento}
-    \end{figure}
+    \item \textbf{Risk Reversal}: comprar/vender una call con strike mayor que el precio actual y vender/comprar una put con un strike inferior al precio actual. Se apuesta a que el subyacente va a subir (y que como mucho no va a bajar demasiado) o al contrario. Se puede perder dinero, pero las primas son más baratas. Su payoff sería:
+    \begin{itemize}
+        \item \textbf{Bullish risk reversal}:
+        \[\boxed{\max(S-E_C, 0) - \max(E_P-S, 0)}\]
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf}
+            \caption{Payoff de Risk Reversal a vencimiento}
+        \end{figure}
+        \item \textbf{Bearish risk reversal}:
+        \[\boxed{\max(E_P-S, 0) - \max(S-E_C, 0)}\]
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf}
+            \caption{Payoff de Risk Reversal a vencimiento}
+        \end{figure}
+    \end{itemize}
     \item \textbf{Butterflies}: se compra una call ITM ($E_{C_{ITM}}$), se venden dos calls ATM (at-the-money) ($E_{C_{ATM}}$) y se compra una call OTM ($E_{C_{OTM}}$). Es decir, $E_{C_{ITM}}<E_{C_{ATM}}<E_{C_{OTM}}$. Además, generalmente se cumple que $E_{C_{OTM}} - E_{C_{ATM}} = E_{C_{ATM}} - E_{C_{ITM}}$. Se usa cuando se espera que el subyacente esté cerca de cierto precio central y haya poca volatilidad. Su payoff es:
     \[\boxed{\max(S-E_{C_{ITM}}, 0) - 2\max(S-E_{C_{ATM}}, 0) + \max(S-E_{C_{OTM}}, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/ButterflyPayoff.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf}
         \caption{Payoff de Butterfly a vencimiento}
     \end{figure}
     \item \textbf{Condors}: parecido a butterflies, se compra call con strike $E_1$, se vende call con strike $E_2$, se vende call con strike $E_3$, y se compra call con strike $E_4$ tal que $E_1<E_2<E_3<E_4$. Además, generalmente se cumple que $E_2-E_1=E_4-E_3$. Se obtienen ganancias máximas si el subyacente se mantiene entre $E_2$ y $E_3$. Su payoff es:
     \[\boxed{\max(S-E_1, 0) - \max(S-E_2, 0) - \max(S-E_3, 0) + \max(S-E_4, 0)}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/CondorsPayoff.eps}
+        \includegraphics[width=0.5\linewidth]{Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf}
         \caption{Payoff de Condors a vencimiento}
     \end{figure}
 \end{itemize}

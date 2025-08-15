@@ -36,6 +36,8 @@
 \newtheorem{remark}{Observación}
 \newtheorem{proposition}{Proposición}
 \newtheorem{notation}{Notación}
+\newtheorem{definition}{Definición}
+\newtheorem{theorem}{Teorema}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
@@ -175,17 +177,33 @@
   %TERCERA PARTE: MODELOZACION DE RENTA FIJA Y DERIVADOS
   \clearpage%
   \part{Renta fija y derivados}
+  \chapter{Modelización de instrumentos de renta fija}
+  \input{Parte3/24_One-factor_int_rate.tex}
+  \newpage
+  \input{Parte3/25_Ajuste_Yied_Curve.tex}
+  \newpage
+  \input{Parte3/26_Deriv_interes.tex}
+  \newpage
+  
 
 
   %APENDICES
   \clearpage%
   \appendix
   \part{Apéndices}
-  \chapter{Apéndices Introducción}
+  \chapter{Cálculo básico}
+  \input{Apendices/Apendice Calculo.tex}
+  \newpage
+  \chapter{Apéndices de la Parte 1}
   \input{Apendices/Apendice Ito}
+  \newpage
   \input{Apendices/Apendice generalizaciones}
+  \newpage
   \input{Apendices/Apendice Make Your Mind Up}
+  \newpage
   \input{Apendices/Apendice var cob vol imp.tex}
+  \newpage
+  \chapter{Apéndices de la Parte 2}
 
 
   \chapter{Apéndices extra}

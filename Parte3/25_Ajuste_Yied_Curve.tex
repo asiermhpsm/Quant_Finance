@@ -1,0 +1,145 @@
+\section{Ajuste de la Yield Curve}\label{sec:ajuste_yield_curve}
+Los modelos de tasas de interés one-factor contruyen una yield curve completa. El objetivo es elegir los parámetros de estos modelos para que esta curva construida se ajuste a la curva de tasas de interés observada en el mercado. Normalmente, se suelen usar parámetros dependientes del tiempo para que la curva ajuste perfectamente.
+
+
+\subsection{Ho \& Lee}
+Este modelo sigue una tasa spot neutral al riesgo:
+\begin{equation}
+    dr = \eta(t)\,dt + c\,dX.
+\end{equation}
+Como se ha visto antes, la solución de para un bono de cupón cero es:
+\begin{equation}
+    Z(r, t; T) = e^{A(t;T) - r(T-t)}
+\end{equation}
+donde
+\begin{equation}
+    A(t; T) = -\int_t^T \eta(s)(T-s)\,ds + \frac{1}{6}c^2(T-t)^3
+\end{equation}
+Por lo tanto, sabiendo $\eta(t)$, esta solución da un valor para todos los bonos de cupón cero con cualquier vencimiento $T$.
+
+Se debe elegir $\eta(t)$ para que el valor teórico de las tasas de descuento para todos los vencimientos sea igual a los valores de mercado. Se denota esta elección como $\eta(t)^*$. Se quiere ajustar la yield curve hoy $t=t^*$ (mañana los parámetros serán distintos), cuando la tasa de interés spot son $r^*$ y las tasas de descuento de mercado $Z_M(t^*;T)$. Por lo tanto se debe igualar:
+\begin{align*}
+    &Z_M(t^*;T) = e^{A(t^*;T) - r^*(T-t^*)} \\
+    &\ln(Z_M(t^*;T)) = -\int_{t^*}^T \eta(s)(T-s)\,ds + \frac{1}{6}c^2(T-t^*)^3 - r^*(T-t^*) \implies \\
+    \implies &\int_{t^*}^T \eta(s)(T-s)\,ds = -\ln(Z_M(t^*;T)) - r^*(T-t^*) + \frac{1}{6}c^2(T-t^*)^3 \implies \\
+    \implies &\frac{\partial}{\partial T} \int_{t^*}^T \eta(s)(T-s)\,ds = \frac{\partial}{\partial T} \left( -\ln(Z_M(t^*;T)) - r^*(T-t^*) + \frac{1}{6}c^2(T-t^*)^3 \right) \implies \\
+    \overset{\text{Leibniz}~\ref{thm:leibniz}}{\implies} &\int_{t^*}^T \frac{\partial}{\partial T}\left(\eta(s)(T-s)\right)\,ds + \cancel{\eta(T)(T-T)} = - \frac{\partial}{\partial T} \left(\ln(Z_M(t^*;T)) \right) - r^* + \frac{1}{2}c^2(T-t^*)^2 \implies \\
+    \implies &\frac{\partial}{\partial T} \int_{t^*}^T \eta(s)\,ds = \frac{\partial}{\partial T} \left( -\frac{\partial}{\partial T} \left(\ln(Z_M(t^*;T)) \right) - r^* + \frac{1}{2}c^2(T-t^*)^2 \right) \implies \\
+    \overset{\text{Leibniz}~\ref{thm:leibniz}}{\implies} &\cancel{\int_{t^*}^T \frac{\partial}{\partial T}\eta(s)\,ds} + \eta(T) = c^2(T-t^*) -\frac{\partial^2}{\partial T^2}\ln(Z_M(t^*;T)) \implies \\
+    \implies &\boxed{\eta(t) = c^2(t-t^*) -\frac{\partial^2}{\partial t^2}\ln(Z_M(t^*;t))}
+\end{align*}
+Se tiene por lo tanto que:
+\begin{equation*}
+    \boxed{A(t; T) = \log\left(\frac{Z_M(t^*; T)}{Z_M(t^*; t)}\right) - (T-t)\frac{\partial}{\partial t}\log(Z_M(t^*; t)) - \frac{1}{2}c^2(t-t^*)(T-t)^2}
+\end{equation*}
+Se debe de tener en cuenta que $c$ se asume conocido y constante. Se podría estimar de forma estadística o como se considere.
+
+
+
+
+\subsection{Vasicek extendido de Hull \& White}
+Proponen una extensión del modelo de Vasicek como:
+\begin{equation*}
+    dr = (\eta(t) - \gamma r)\,dt + c\,dX.
+\end{equation*}
+Se asume que $\gamma$ y $\eta$ se han estimado de forma estadísitca. Entonces se escoge $\eta = \eta^*(t)$ a tiempor $t^*$ para que los precios teóricos de de mercado coincidan.
+
+Se tiene que la solución de un bono de cupón cero es:
+\begin{equation*}
+    Z(r, t; T) = e^{A(t;T) - r B(t;T)},
+\end{equation*}
+donde
+\begin{align*}
+    A(t; T) &= -\int_t^T \eta^*(s) B(s; T)\,ds + \frac{c^2}{2\gamma^2} \left( T-t + \frac{2}{\gamma}e^{-\gamma(T-t)} - \frac{1}{2\gamma}e^{-2\gamma(T-t)} - \frac{3}{2\gamma} \right) \\
+    B(t; T) &= \frac{1}{\gamma}\left(1 - e^{-\gamma(T-t)}\right)
+\end{align*}
+
+Para ajustar la yield curve a tiempo $t^*$, se debe elegir $\eta^*$ satisfaciendo:
+\begin{align*}
+    Z_M(t^*; T) =& e^{A(t^*;T) - r^* B(t^*;T)} \\
+    \ln(Z_M(t^*; T)) =& A(t^*; T) - r^* B(t^*; T) \\
+    =& -\int_{t^*}^T \eta^*(s) B(s; T)\,ds + \frac{c^2}{2\gamma^2} \left( T-t^* + \frac{2}{\gamma}e^{-\gamma(T-t^*)} - \frac{1}{2\gamma}e^{-2\gamma(T-t^*)} - \frac{3}{2\gamma} \right) \\
+    &- r^* B(t^*; T) \\
+    \overset{\frac{\partial}{\partial T}}{\implies} \frac{\partial}{\partial T}\ln(Z_M(t^*; T)) =& - \left( \int_{t^*}^T \eta^*(s) \frac{\partial}{\partial T} B(s; T)\,ds + \cancel{\eta^*(T) B(T; T)} \right) \\
+    &+ \frac{c^2}{2\gamma^2} \left( 1 - 2e^{-\gamma(T-t^*)} + e^{-2\gamma(T-t^*)} \right) - r^* \frac{\partial}{\partial T} B(t^*; T) \\
+    =& - \int_{t^*}^T \eta^*(s) e^{-\gamma(T-s)}\,ds + \frac{c^2}{2\gamma^2} \left( 1 - 2e^{-\gamma(T-t^*)} + e^{-2\gamma(T-t^*)} \right) - r^* \frac{\partial}{\partial T} B(t^*; T) \\
+    \overset{\frac{\partial}{\partial T}}{\implies} \frac{\partial^2}{\partial T^2}\ln(Z_M(t^*; T)) =& - \left( \int_{t^*}^T \eta^*(s) (-\gamma) e^{-\gamma(T-s)}\,ds + \eta^*(T) \right) \\
+    &+ \frac{c^2}{2\gamma^2} \left( 2\gamma e^{-\gamma(T-t^*)} + (-2\gamma) e^{-2\gamma(T-t^*)}  \right) - r^* \frac{\partial^2}{\partial T^2} B(t^*; T) \\
+    =& \gamma \int_{t^*}^T \eta^*(s) e^{-\gamma(T-s)}\,ds - \eta^*(T) + \frac{c^2}{\gamma} \left( e^{-\gamma(T-t^*)} - e^{-2\gamma(T-t^*)} \right)  - r^* \frac{\partial^2}{\partial T^2} B(t^*; T) \\
+    =& \gamma \left( -\frac{\partial}{\partial T}\ln(Z_M(t^*; T)) + \frac{c^2}{2\gamma^2} \left( 1 - 2e^{-\gamma(T-t^*)} + e^{-2\gamma(T-t^*)} \right)  - r^* \frac{\partial}{\partial T} B(t^*; T) \right) \\
+    &- \eta^*(T) + \frac{c^2}{\gamma} \left( e^{-\gamma(T-t^*)} - e^{-2\gamma(T-t^*)} \right)  - r^* \frac{\partial^2}{\partial T^2} B(t^*; T) \\
+    =& -\gamma\frac{\partial}{\partial T}\ln(Z_M(t^*; T)) + \frac{c^2}{2\gamma} - \frac{c^2}{\gamma} e^{-\gamma(T-t^*)} + \frac{c^2}{2\gamma} e^{-2\gamma(T-t^*)} - \\
+    &- \eta^*(T) + \frac{c^2}{\gamma}e^{-\gamma(T-t^*)} - \frac{c^2}{\gamma}e^{-2\gamma(T-t^*)} - r^*\left( \gamma \frac{\partial}{\partial T} B(t^*; T) + \frac{\partial^2}{\partial T^2} B(t^*; T) \right) \\
+    =& -\gamma\frac{\partial}{\partial T}\ln(Z_M(t^*; T)) + \frac{c^2}{2\gamma} + \cancel{e^{-\gamma(T-t^*)}\left( \frac{c^2}{\gamma} - \frac{c^2}{\gamma} \right)} \\
+    &+ e^{-2\gamma(T-t^*)} \left( \frac{c^2}{2\gamma} - \frac{c^2}{\gamma} \right) - \eta^*(T) \cancel{- r^*\left( \gamma e^{-\gamma(T-t^*)} - \gamma e^{-\gamma(T-t^*)} \right)} \\
+    &= -\gamma\frac{\partial}{\partial T}\ln(Z_M(t^*; T)) + \frac{c^2}{2\gamma} \left( 1 + e^{-2\gamma(T-t^*)} \right) - \eta^*(T) \\
+\end{align*}
+por lo que
+\begin{equation*}
+    \boxed{\eta^*(t) = -\frac{\partial^2}{\partial t^2}\ln(Z_M(t^*; t)) -\gamma\frac{\partial}{\partial t}\ln(Z_M(t^*; t)) + \frac{c^2}{2\gamma} \left( 1 + e^{-2\gamma(t-t^*)} \right)}
+\end{equation*}
+y se puede demostrar que entonces:
+\begin{equation*}
+    \boxed{A(t; T) = \log\left(\frac{Z_M(t^*; T)}{Z_M(t^*; t)}\right) 
+    - B(t; T) \frac{\partial}{\partial t} \log(Z_M(t^*; t)) - \frac{c^2}{4\gamma^3} \left( e^{-\gamma(T-t^*)} - e^{-\gamma(t-t^*)} \right)^2 \left( e^{2\gamma(t-t^*)} - 1 \right)}
+\end{equation*}
+
+
+
+\subsection{Pros y contras del ajuste para modelos de un solo factor para ajustar yield curve}
+
+\subsubsection*{A favor}
+\begin{itemize}
+    \item Los modelos de un solo factor (como Ho \& Lee o Hull \& White) se basan en:
+    \begin{itemize}
+        \item Cobertura delta.
+        \item Ausencia de arbitraje.
+    \end{itemize}
+    \item Para que la cobertura funcione, los precios de los instrumentos usados para cubrir deben coincidir con los precios de mercado.
+    \item El \textit{yield curve fitting} ajusta la función $\eta^*(t)$ para que los precios de bonos en el modelo igualen los de mercado.
+    \item Una vez ajustados, se puede cubrir estática o dinámicamente:
+    \begin{itemize}
+        \item Pérdidas en el derivado se compensan con ganancias en los instrumentos de cobertura.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{En contra}
+\begin{itemize}
+    \item Al recalibrar días o semanas después:
+    \begin{itemize}
+        \item $\eta^*(t)$ cambia drásticamente.
+        \item La curva de mercado apenas varía.
+    \end{itemize}
+    \item Esto indica que el modelo no captura correctamente:
+    \begin{itemize}
+        \item La pendiente (\textit{slope}) típica alta de la curva de rendimientos.
+        \item La curvatura (\textit{curvature}) típica negativa.
+    \end{itemize}
+    \item Análisis mediante series de Taylor:
+    \begin{itemize}
+        \item Pendiente de la curva a corto plazo $\leftrightarrow$ deriva bajo la medida neutral al riesgo.
+        \item Curvatura de la curva a corto plazo $\leftrightarrow$ derivada temporal de esa deriva.
+    \end{itemize}
+    \item En curvas reales:
+    \begin{itemize}
+        \item Pendiente alta $\Rightarrow$ $\eta^*(t)$ grande en el corto plazo.
+        \item Curvatura negativa $\Rightarrow$ pendiente muy negativa de $\eta^*(t)$.
+        \item $\eta^*(t)$ no es estable en el tiempo.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Conclusiones}
+\begin{itemize}
+    \item El \textit{yield curve fitting} en modelos de un solo factor es \textbf{inconsistente} y \textbf{arriesgado} cuando la curva presenta gran pendiente y curvatura.
+    \item Puede ser razonable solo si la curva es relativamente plana.
+    \item Pocos modelos manejan bien estas características:
+    \begin{itemize}
+        \item Algunos modelos Heath-Jarrow-Morton (HJM).
+        \item Un modelo no probabilístico.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+

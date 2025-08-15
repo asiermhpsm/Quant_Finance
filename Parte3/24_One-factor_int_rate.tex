@@ -1,0 +1,429 @@
+\section{Modelado de tasas de interés one-factor}
+Ya que no se puede predecir de forma realista la tasa de interés, se trata como una variable aleatoria. Se va a modelar el comportamiento de $r$, la tasa de interés recibida por el depósito más corto posible. Esta tasa se denomina \textbf{spot interest rate}. A menudo se usa el rate a un mes como sustituto del spot rate. Se va a suponer que la tasa de interés va a seguir la EDE:
+\begin{equation*}
+    dr = u(r,t)\,dt + w(r,t)\,dX
+\end{equation*}
+
+
+\subsection{Modelización de bonos}
+Cuando los intereses son estocásticos, el valor de un bono viene dado como $V(r,t;T)$. En este caso no se puede hacer una cobertura como en opciones ya que no hay un subyacente para posicionarse en corto. En cambio se usan dos bonos con diferentes vencimientos $T_1$ y $T_2$ que serán $V_1(r,t;T_1)$ y $V_2(r,t;T_2)$ respectivamente. Se sabe que:
+\begin{align*}
+    dV_i &= \left( \frac{\partial V_i}{\partial t} + u \frac{\partial V_i}{\partial r} + \frac{1}{2} w^2 \frac{\partial^2 V_i}{\partial r^2} \right)\,dt + w \frac{\partial V_i}{\partial r}\,dX \\
+    &= \frac{\partial V_i}{\partial t}\,dt + \frac{1}{2} w^2 \frac{\partial^2 V_i}{\partial r^2}\,dt + \frac{\partial V_i}{\partial r}\,dr
+\end{align*}
+Se construye la cartera:
+\begin{equation*}
+    \Pi = V_1 - \Delta V_2
+\end{equation*}
+por lo que su variación es:
+\begin{align*}
+    d\Pi &= dV_1 - \Delta dV_2 \\
+    &= \frac{\partial V_1}{\partial t}\,dt + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2}\,dt + \frac{\partial V_1}{\partial r}\,dr - \Delta \left( \frac{\partial V_2}{\partial t}\,dt + \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2}\,dt + \frac{\partial V_2}{\partial r}\,dr \right) \\
+    &= \left( \frac{\partial V_1}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2} - \Delta \left( \frac{\partial V_2}{\partial t} - \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2} \right) \right)\,dt + \left( \frac{\partial V_1}{\partial r} - \Delta \frac{\partial V_2}{\partial r} \right)\,dr
+\end{align*}
+se elige $\Delta$ de forma que:
+\begin{equation*}
+    \frac{\partial V_1}{\partial r} - \Delta \frac{\partial V_2}{\partial r} = 0 \implies \Delta = \frac{\partial V_1/\partial r}{\partial V_2/\partial r}
+\end{equation*}
+por lo que:
+\begin{align*}
+    d\Pi &= \left( \frac{\partial V_1}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2} - \Delta \left( \frac{\partial V_2}{\partial t} - \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2} \right) \right)\,dt \\
+    &= \left( \frac{\partial V_1}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2} - \frac{\partial V_1/\partial r}{\partial V_2/\partial r} \left( \frac{\partial V_2}{\partial t} - \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2} \right) \right)\,dt \\
+\end{align*}
+que igualando al argumento de no arbitraje
+\begin{equation*}
+    d\Pi = r \Pi\,dt = r \left( V_1 - \Delta V_2 \right)\,dt = r \left( V_1 - \frac{\partial V_1/\partial r}{\partial V_2/\partial r} V_2 \right)\,dt
+\end{equation*}
+se obtiene:
+\begin{align*}
+    &\frac{\partial V_1}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2} - \frac{\partial V_1/\partial r}{\partial V_2/\partial r} \left( \frac{\partial V_2}{\partial t} - \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2} \right) = r \left( V_1 - \frac{\partial V_1/\partial r}{\partial V_2/\partial r} V_2 \right) \implies \\[1.5em]
+    \implies &\frac{\partial V_1}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2} - rV_1 = \frac{\partial V_1/\partial r}{\partial V_2/\partial r} \left( \frac{\partial V_2}{\partial t} - \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2} - rV_2 \right) \implies \\[1.5em]
+    \implies &\frac{\frac{\partial V_1}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V_1}{\partial r^2} - rV_1}{\frac{\partial V_1}{\partial r}} = \frac{\partial V_2/\partial t - \frac{1}{2} w^2 \frac{\partial^2 V_2}{\partial r^2} - rV_2}{\frac{\partial V_2}{\partial r}}
+\end{align*}
+pero ambos lados la parte derecha es una función de $T_1$ y la parte izquierda es una función de $T_2$. Por lo tanto, ambos lados deben ser independientes de la fecha de vencimiento
+\begin{equation*}
+    \frac{\partial V/\partial t + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - rV}{\frac{\partial V}{\partial r}} = a(r,t)
+\end{equation*}
+y usando de forma conveniente la siguiente definición (dado un $u$ y un $w$ no nulo siempre es posible):
+\begin{equation*}
+    a(r,t) = w(r,t)\lambda(r,t) - u(r,t)
+\end{equation*}
+se tiene que
+\begin{align}\label{eq:edp_bono}
+    &\frac{\partial V/\partial t + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - rV}{\frac{\partial V}{\partial r}} = w\lambda - u \implies \nonumber\\
+    &\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - rV = (w\lambda - u) \frac{\partial V}{\partial r} \implies \nonumber\\[1.5em]
+    &\boxed{\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + (u - w\lambda) \frac{\partial V}{\partial r} - rV = 0}
+\end{align}
+a la que se le tiene que añadir la condicion final:
+\begin{equation*}
+    \boxed{V(r,T;T) = 1}
+\end{equation*}
+o el valor $P$ del bono al vencimiento $T$. A esto se le tiene que añadir dos condiciones frontera, que dependen la $u$ y $w$, por lo que se discutirá más adelante.
+
+Es sencillo comprobar que si se reciben cupones $K(r,t)dt$ de forma continua, entonces la EDP es:
+\begin{equation*}
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + (u - w\lambda) \frac{\partial V}{\partial r} - rV + K = 0}
+\end{equation*}
+y si se reciben de forma discreta, la lugar a una condición de salto:
+\begin{equation*}
+    \boxed{V(r,t_c^-;T) = V(r,t_c^+;T) + K(r,t_c)}
+\end{equation*}
+
+
+De esta sección una propiedad importante que puede ser útil es que:
+\begin{align*}
+    \frac{\partial V/\partial t + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - rV}{\frac{\partial V}{\partial r}} = w\lambda - u \implies \\
+    \frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - rV = (w\lambda - u) \frac{\partial V}{\partial r} \implies \\
+    \frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} = (w\lambda - u) \frac{\partial V}{\partial r} + rV
+\end{align*}
+luego el lema de Ito se puede escribir como:
+\begin{align}
+    &dV = \left(\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2}\right)\,dt + \frac{\partial V}{\partial r}\,dr \implies \nonumber \\
+    \implies &\boxed{dV = \left((w\lambda - u) \frac{\partial V}{\partial r} + rV\right)\,dt + \frac{\partial V}{\partial r}\,dr} \label{eq:variacion_bono}
+\end{align}
+
+
+
+\subsection{Market price of risk \texorpdfstring{$\lambda(r,t)$}{lambda(r,t)}}
+Se tiene que
+\begin{align*}
+    dV &= w \frac{\partial V}{\partial r}\,dX + \left( \frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + u \frac{\partial V}{\partial r} \right)\,dt. \\
+    &= w \frac{\partial V}{\partial r}\,dX + \left( w \lambda \frac{\partial V}{\partial r} + rV \right)\,dt \implies \\
+    \implies &dV - rV\,dt = w \frac{\partial V}{\partial r} (dX + \lambda\,dt)
+\end{align*}
+El lado derecho de esta expresión contiene dos términos: un término determinista en dt y un término aleatorio en dX. La presencia de dX muestra que esta no es una cartera libre de riesgo. El término determinista puede interpretarse como el exceso de rentabilidad sobre la tasa libre de riesgo por aceptar cierto nivel de riesgo. A cambio de asumir el riesgo adicional, la cartera se beneficia de un $\lambda$ dt adicional por unidad de riesgo adicional, dX. Por lo tanto, la función $\lambda$ se denomina \textbf{market price of risk (precio de mercado del riesgo)}, i.e.\ el valor que el mercado asigna a la unidad de riesgo asumido.
+
+
+La ecuación~\eqref{eq:edp_bono} tiene una estructura muy similar a la ecuación de Kolmogorov hacia detrás descrita en la sección~\eqref{sec:KolmogorovDetras} (a excepción del término final de descuento), que describe la evolución temporal hacia atrás de probabilidades o precios esperados. Por lo tanto, se puede interpretar la ecuacion de valoración de un bono como el valor actual esperado de todos los flujos de caja. Suponiendo que se recibe un `Payoff' en tiempo $T$, entonces el valor del contrato a dia de hoy sería:
+\begin{equation*}
+    \mathbb{E}\left[ e^{-\int_t^T r(\tau)\,d\tau} \text{Payoff} \right]
+\end{equation*}
+Se puede ver cómo se ha actualizado con una integral de la tasa de interés ya que se supone un interés estocástico. Sin embargo, este valor esperado no se toma sobre la variable real, si no sobre una variable neutral al riesgo. Existe esta diferencia porque el término de deriva de la ecuación~\eqref{eq:edp_bono} no es el real spot rate $u$, si no la deriva de otro rate llamado \textbf{risk-neutral spot rate}; esta deriva es $u-\lambda w$. Cuando se modelan derivados de las tasas de interés es importante modelar y valorar usando el risk-neutral rate, que satisface:
+\begin{equation*}
+    dr = (u - \lambda w)\,dt + w\,dX.
+\end{equation*}
+
+
+
+
+
+
+
+\subsection{Modelos y soluciones manejables}
+Se eligen los valores de $u$ y $w$ de manera que tengan ciertas características y se puedan obtener soluciones analíticas. Se asume:
+\begin{equation}\label{eq:EDE_bono}
+    \boxed{
+        \begin{aligned}
+            &u(r,t) - \lambda(r,t) w(r,t) = \eta(t) - \gamma(t) r \\
+            &w(r,t) = \sqrt{\alpha(t) r + \beta(t)}.
+        \end{aligned}
+    }
+\end{equation}
+Se va a restringir los parametros para que el camino aleatorio $r$ tengan ciertas propiedades:
+\begin{itemize}
+    \item \textbf{Interés positivo (o acotado por debajo)}: Se busca que la raíz sea positiva. Si $\boxed{\alpha(t) > 0}$ y $\boxed{\beta(t) \leq 0}$, la raíz $r=-\beta(t)/\alpha(t)$ es un límite inferior real por debajo del cual la raíz cuadrada se vuelve imaginaria, así que el proceso no puede cruzar a valores menores. En el caso especial en el que $\boxed{\alpha(t) = 0}$, se tiene que $\boxed{\beta(t) \geq 0}$ para que la raíz sea real. Con este modelo el interés puede ir a infinito, pero con probabilidad cero.
+    \item \textbf{Reversión a la media}: fijandose en la deriva, se ve que el interés tiene un comportamiento de reversión a la media: cuando $r$ es muy grande, el termino $- \gamma(t) r$ domina y la deriva es negativa; cuando $r$ es pequeño, el término $\eta(t)$ domina y la deriva es positiva; por lo tanto el punto de equilibro está en $\eta(t)/\gamma(t)$, que es el valor al que tiende el interés a largo plazo.
+\end{itemize}
+
+En primer lugar, se debe imponer la condición final:
+\begin{equation*}
+    \boxed{V(r, t; T) \to 0,  \qquad r \to \infty}
+\end{equation*}
+
+También se busca que el límite inferior $r=-\beta/\alpha$ sea inalcanzable;  el tipo de interés spot no se debe quedar estancado para siempre en el límite inferior y se quiere evitar imponer condiciones adicionales para determinar con qué rapidez se aleja de este valor. La EDP que modela el comportamiento del valor del bono en este caso es:
+\begin{equation*}
+    \frac{\partial V}{\partial t} + \frac{1}{2} (\alpha(t) r + \beta(t)) \frac{\partial^2 V}{\partial r^2} + (\eta(t) - \gamma(t) r) \frac{\partial V}{\partial r} - rV = 0
+\end{equation*}
+que tiene un término de difusión (el que acompaña a la derivada segunda) y un término de deriva (que acompaña a la derivada primera de $r$). Se busca que la frontera $r=-\beta/\alpha$ sea no absorbente y no obligue a imponer condiciones extra, por lo que hace falta que el término de deriva sea mayor que el de difusión cerca del límite. Se sustituye por lo tanto $r=-\beta/\alpha + \epsilon = r_0 + \epsilon$ en cada uno de dichos términos:
+\begin{align*}
+    &\frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} = \frac{1}{2} (\alpha (r_0 + \epsilon) + \beta) \frac{\partial^2 V}{\partial r^2} = \frac{\alpha\epsilon}{2} \frac{\partial^2 V}{\partial r^2} \\
+    &(u - \lambda w) \frac{\partial V}{\partial r} = (\eta - \gamma (r_0 + \epsilon)) \frac{\partial V}{\partial r} \approx (\eta - \gamma r_0) \frac{\partial V}{\partial r}
+\end{align*}
+La condición clásica de `no-sticky boundary' en la clasificación de Feller pide que cuando $\epsilon \to 0$, el cociente:
+\begin{equation*}
+    \frac{\text{difusión}}{\text{deriva}} \sim \frac{\frac{\alpha}{2} \epsilon V_{rr}}{(\eta - \gamma r_0) V_r} \propto \frac{\alpha/2}{\eta - \gamma r_0} \epsilon
+\end{equation*}
+(donde $\propto$ significa proporcional) sea lo bastante pequeño. Por lo tanto, debe cumplirse:
+\begin{equation*}
+    \eta + \gamma \frac{\beta}{\alpha} \geq \frac{\alpha}{2} \implies \boxed{\eta(t) \geq -\gamma(t) \frac{\beta(t)}{\alpha(t)} + \frac{\alpha(t)}{2}}
+\end{equation*}
+
+Con estas elecciones de $u$ y $w$, las soluciones de la EDP~\eqref{eq:edp_bono} para bonos de cupón cero son simplemente:
+\begin{equation*}
+    Z(r, t; T) = e^{A(t;T) - r B(t;T)}.
+\end{equation*}
+Sustituyendo en la EDP~\eqref{eq:edp_bono} se obtiene que:
+\begin{align}
+    &\frac{\partial Z}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 Z}{\partial r^2} + (u - w\lambda) \frac{\partial Z}{\partial r} - rZ = 0 \implies \nonumber\\
+    \implies &\left( \frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t}  \right) \cancel{Z} + \frac{1}{2} w^2 B^2 \cancel{Z} + (u - w\lambda) (-B) \cancel{Z} - r \cancel{Z} = 0 \implies \nonumber\\
+    \implies &\frac{\partial A(t;T)}{\partial t} - r \frac{\partial B(t;T)}{\partial t} + \frac{1}{2} w(r,t)^2 B(t;T)^2 - (u(r,t) - w(r,t)\lambda(r,t)) B(t;T) - r = 0 \label{eq:EDP_bono_sol_1}\implies \\
+    \overset{\frac{\partial}{\partial r}}{\implies} &-\frac{\partial B(t;T)}{\partial t} + \frac{1}{2} B(t;T)^2 \frac{\partial}{\partial r}\left(w(r,t)^2\right) - B(t;T) \frac{\partial}{\partial r} (u(r,t) - w(r,t)\lambda(r,t)) - 1 = 0 \label{eq:EDP_bono_sol_2} \implies\\
+    \overset{\frac{\partial}{\partial r}}{\implies} &\frac{1}{2} B(t;T)^2 \frac{\partial^2}{\partial r^2}\left(w(r,t)^2\right) - B(t;T) \frac{\partial^2}{\partial r^2} (u(r,t) - w(r,t)\lambda(r,t)) = 0 \implies \nonumber\\
+    \implies &B(t;T)^2 \phi_2(r,t) + B(t;T) \phi_1(r,t) = 0 \Longleftrightarrow \nonumber\\
+    \Longleftrightarrow 
+    &\left\{
+        \begin{aligned}
+            &\phi_2(r,t) = 0 \\
+            &\phi_1(r,t) = 0
+        \end{aligned}
+    \right\} \Longleftrightarrow 
+    \boxed{
+        \left\{
+        \begin{aligned}
+            &\frac{1}{2} \frac{\partial^2}{\partial r^2}\left(w^2\right) = 0 \\
+            &\frac{\partial^2}{\partial r^2} (u - w\lambda) = 0
+        \end{aligned}
+        \right\}
+    } \nonumber\\
+\end{align}
+tal y como cumple~\eqref{eq:EDE_bono}. Introduciendo los valores de $u$ y $w$ de la forma~\eqref{eq:EDE_bono} en~\eqref{eq:EDP_bono_sol_2} se obtiene que:
+\begin{align*}
+    &-\frac{\partial B}{\partial t} + \frac{1}{2} B^2 \frac{\partial}{\partial r}\left(w^2\right) - B \frac{\partial}{\partial r} (u - w\lambda) - 1 = 0 \implies \\
+    \implies &-\frac{\partial B}{\partial t} + \frac{1}{2} B^2 \frac{\partial}{\partial r}\left(\alpha(t) r + \beta(t)\right) - B \frac{\partial}{\partial r} (\eta(t) - \gamma(t) r) - 1 = 0 \implies \\
+    \implies &-\frac{\partial B}{\partial t} + \frac{1}{2} \alpha(t) B^2 + \gamma(t) B - 1 = 0 \implies \\
+    \implies &\boxed{\frac{\partial B(t;T)}{\partial t} = \frac{1}{2} \alpha(t) B(t;T)^2 + \gamma(t) B(t;T) - 1}
+\end{align*}
+que introduciendolo en~\eqref{eq:EDP_bono_sol_1} se obtiene:
+\begin{align*}
+    &\frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t} + \frac{1}{2} w^2 B^2 - (u - w\lambda) B - r = 0 \implies \\
+    &\frac{\partial A}{\partial t} - r \left(\cancel{\frac{1}{2} \alpha(t) B^2} + \cancel{\gamma(t) B} - \cancel{1}\right) + \frac{1}{2} (\cancel{\alpha(t) r} + \beta(t)) B^2 - (\eta(t) - \cancel{\gamma(t) r}) B - \cancel{r} = 0 \implies \\
+    &\boxed{\frac{\partial A(t;T)}{\partial t} = \eta(t) B(t;T) - \frac{1}{2} \beta(t) B(t;T)^2} \\
+\end{align*}
+
+Por último, se debe imponer la condición final $Z(r,T;t)=1$:
+\begin{equation*}
+    \boxed{A(T;T) = 0, \qquad B(T;T) = 0}
+\end{equation*}
+
+
+
+
+
+\subsubsection{Solución analítica con parámetros constantes}
+El modelo más sencillo para encontrar una solución analítica es cuando los parámetros son constantes. Se puede demostrar que la solución es:
+\begin{equation*}
+    \boxed{
+        \begin{aligned}
+            B(t;T) &= \frac{2\left(e^{\psi_1 (T-t)} - 1\right)}{(\gamma + \psi_1)\left(e^{\psi_1 (T-t)} - 1\right) + 2\psi_1} \\[1.5em]
+            \frac{\alpha}{2}A(t;T) &= a\psi_2 \log(a - B) + (\psi_2 + \tfrac{1}{2}\beta)b \log\left(\frac{B + b}{b}\right) - \tfrac{1}{2}B^2 - a\psi_2 \log a
+        \end{aligned}
+    }
+\end{equation*}
+siendo
+\begin{align*}
+    \psi_1 &= \sqrt{\gamma^2 + 2\alpha} \\
+    \psi_2 &= \frac{\eta - a\beta/2}{a + b} \\
+    a &= \frac{\pm\gamma + \sqrt{\gamma^2 + 2\alpha}}{\alpha} = \frac{\pm\gamma + \psi_1}{\alpha} \\
+\end{align*}
+
+Cuando los cuatro parámetros son constantes, tanto $A$ como $B$ dependen únicamente de la variable $\tau = T-t$, y no de $t$ y $T$ por separado. Esto no sería cierto si alguno de los parámetros fuera dependiente del tiempo.
+
+El modelo permite predecir una amplia variedad de curvas de rendimiento (yield curves). En el límite cuando $\tau \to \infty$, se tiene que
+\begin{equation*}
+    B \to \frac{2}{\gamma + \psi_1}
+\end{equation*}
+y la curva de rendimiento $Y$ tiene el siguiente comportamiento asintótico:
+\begin{equation*}
+    Y \to \frac{2}{(\gamma + \psi_1)^2} \left( \eta (\gamma + \psi_1) - \beta \right).
+\end{equation*}
+Por tanto, para parámetros constantes y fijos, el modelo conduce a un tipo de interés a largo plazo fijo, independiente del tipo spot.
+
+La función de densidad de probabilidad, $P(r, t)$, para el spot rate bajo la medida neutral al riesgo satisface la ecuación:
+
+\begin{equation*}
+    \frac{\partial P}{\partial t} = \frac{1}{2} \frac{\partial^2}{\partial r^2} (w^2 P) - \frac{\partial}{\partial r} \left( (u - \lambda w) P \right).
+\end{equation*}
+
+En el largo plazo, esta ecuación converge a una distribución estacionaria $P_\infty(r)$, independiente del valor inicial del tipo de interés. Esta distribución satisface la ecuación diferencial ordinaria:
+
+\begin{equation*}
+    \frac{1}{2} \frac{d^2}{dr^2} (w^2 P_\infty) = \frac{d}{dr} \left( (u - \lambda w) P_\infty \right).
+\end{equation*}
+
+Para el modelo afín general con parámetros constantes, la solución es:
+
+\begin{equation*}
+    \boxed{P_\infty(r) = \frac{\left( \frac{2\gamma}{\alpha} \right)^k}{\Gamma(k)} \left( r + \frac{\beta}{\alpha} \right)^{k-1} e^{-\frac{2\gamma}{\alpha} \left( r + \frac{\beta}{\alpha} \right)}}
+\end{equation*}
+
+donde
+
+\begin{equation*}
+    k = \frac{2\eta}{\alpha} + \frac{2\beta\gamma}{\alpha^2}
+\end{equation*}
+
+y $\Gamma(\cdot)$ es la función gamma. La frontera $r = -\beta/\alpha$ es inalcanzable si $k > 1$. La media de la distribución estacionaria es:
+
+\begin{equation*}
+    \frac{\alpha k}{2\gamma} - \frac{\beta}{\alpha}
+\end{equation*}
+
+
+
+
+
+
+\subsection{Algunos modelos famosos}
+\begin{itemize}
+    \item \textbf{Modelo Vasicek}: Con $\alpha=0$ y $\beta>0$ y el resto de parámetros constantes:
+    \begin{equation*}
+        \boxed{dr = (\eta - \gamma r)\,dt + \beta^{1/2}\,dX}
+    \end{equation*}
+    Su solucion es:
+    \begin{equation*}
+        Z(r, t; T) = e^{A(t;T) - r B(t;T)}
+    \end{equation*}
+    donde
+    \begin{align*}
+        B(t;T) &= \frac{1}{\gamma} \left( 1 - e^{-\gamma (T-t)} \right) \\
+        A(t;T) &= \frac{1}{\gamma^2} \left( B(t;T) - (T-t) \right) \left( \eta - \frac{1}{2} \beta \right) - \frac{\beta B(t;T)^2}{4\gamma}
+    \end{align*}
+    Tiene reversión a la media, pero puede llegar a tener valores negativos. La función de densidad de probabilidad en estado estacionario es un caso degenerado de la ecuación general, ya que $\alpha = 0$. Se obtiene que:
+    \begin{equation*}
+        P_\infty(r) = \sqrt{\frac{\gamma}{\beta \pi}} \exp\left( -\frac{\gamma}{\beta} (r - \frac{\eta}{\gamma})^2 \right).
+    \end{equation*}
+    Por lo que a la larga, el spot rate esta distribuido normalmente con media $\eta/\gamma$.
+
+    \item \textbf{Modelo CIR (Cox-Ingersoll-Ross)}: Con $\beta=0$ y el resto de parámetros constantes:
+    \begin{equation*}
+        \boxed{dr = (\eta - \gamma r)\,dt + \sqrt{\alpha r}\,dX.}
+    \end{equation*}
+    Tiene reversión a la media y si $\eta > \alpha/2$ el spot rate se mantiene siempre positivo. La función de densidad de probabilidad en estado estacionario es un caso de la ecuación general y tiene media $\eta/\gamma$.
+    
+    \item \textbf{Modelo Ho-Lee}: con $\alpha=\gamma=0, \beta>0$ y $\eta$ una función de $t$:
+    \begin{equation*}
+        \boxed{dr = \eta(t)\,dt + \beta^{1/2}\,dX.}
+    \end{equation*}
+    Su solución es:
+    \begin{equation*}
+        Z(r, t; T) = e^{A(t;T) - r B(t;T)}
+    \end{equation*}
+    donde
+    \begin{align*}
+        B(t;T) &= T - t \\
+        A(t;T) &= -\int_t^T \eta(s)(T-s)\,ds + \frac{1}{6} \beta (T-t)^3
+    \end{align*}
+    Fue el primer modelo de \textit{no arbitraje} para la estructura temporal de los tipos de interés. Esto significa que, eligiendo cuidadosamente la función $\eta(t)$, se puede conseguir que los precios teóricos de los bonos cupón cero que da el modelo coincidan exactamente con los precios de mercado observados. Esta técnica se denomina \textbf{yield curve fitting} o ajuste de la curva de rendimientos.
+    La elección cuidadosa de $\eta(t)$ es:
+    \begin{equation*}
+        \eta(t) = -\frac{\partial^2}{\partial T^2} \log Z_M(t^*; T) + \beta (t - t^*)
+    \end{equation*}
+    donde $t^*$ es el momento actual y $Z_M(t^*; T)$ es el precio de mercado hoy de un bono cupón cero con vencimiento $T$. Esto supone que existen bonos de todos los vencimientos y que los precios son dos veces diferenciables respecto al vencimiento. Así, el modelo ajusta exactamente la curva de rendimientos observada en el mercado, y además permite obtener fórmulas explícitas para opciones sobre bonos.
+
+    \item \textbf{Modelo Hull-White}: son como el CIR y el de Vasicek, pero con parámetros dependientes del tiempo.
+\end{itemize}
+
+Otros modelos un poco más complejos a parte y que permiten simplificaciones de ajuste de la yield curve (ver seccion siguiente~\ref{sec:ajuste_yield_curve}) mediante ciertos esquemas numéricos son:
+\begin{itemize}
+    \item \textbf{Black, Derman \& Toy (BDT)}:
+    \begin{equation*}
+        d(\log r) = \left( \theta(t) - \frac{\sigma'(t)}{\sigma(t)} \log r \right) dt + \sigma(t) dX
+    \end{equation*}
+
+    \item \textbf{Black \& Karasinski}:
+    \begin{equation*}
+        d\log r = (\theta(t) - a(t)\log r)\,dt + \sigma(t)\,dX.
+    \end{equation*}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\subsection{Forwards y futures con tipos estocásticos}
+Se va a volver a deducir las EDPs vistas en las secciones~\ref{sec:ForwardsContracts} y~\ref{sec:FutureContracts} pero con tasas de interés estocásticas. Se va a considerar ahora que:
+\begin{align*}
+    dS &= \mu S\,dt + \sigma S\,dX_1 \\[1.5em]
+    dr &= u(r,t)\,dt + w(r,t)\,dX_2
+\end{align*}
+habiendo una correlación $\rho$ entre ambos procesos $X_1$ y $X_2$.
+
+
+\subsubsection{Forwards Contracts}
+Se construye la cartera:
+\begin{equation*}
+    \Pi = V - \Delta S - \Delta_1 Z
+\end{equation*}
+siendo $Z$ un bono de cupón cero. Usando el lema de Ito de caminos correlacionados~\eqref{eq:ItoCorrelated} y la propiedad~\eqref{eq:variacion_bono} de la variación del bono, se obtiene que las distintas variaciones de la cartera son:
+\begin{align*}
+    dV &= \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} b_i b_j \rho_{ij} \frac{\partial^2 V}{\partial S_i \partial S_j} \right)\,dt + \sum_{i=1}^{d} \frac{\partial V}{\partial S_i}\,dS_i \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \rho\sigma w S \frac{\partial^2 V}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} \right)\,dt + \frac{\partial V}{\partial S}\,dS + \frac{\partial V}{\partial r}\,dr \\
+    dZ &= \left(\frac{\partial Z}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 Z}{\partial r^2}\right)\,dt + \frac{\partial Z}{\partial r}\,dr \implies \\
+    &=  \left((w\lambda - u) \frac{\partial Z}{\partial r} + rZ\right)\,dt + \frac{\partial Z}{\partial r}\,dr
+\end{align*}
+por lo que la variación de la cartera es:
+\begin{align*}
+    d\Pi &= dV - \Delta dS - \Delta_1 dZ \\
+    &= \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \rho\sigma w S \frac{\partial^2 V}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - \Delta_1 (w\lambda - u) \frac{\partial Z}{\partial r} - \Delta_1 rZ  \right)\,dt \\
+    &\quad + \left(\frac{\partial V}{\partial S} - \Delta\right)\,dS + \left( \frac{\partial V}{\partial r} - \Delta_1 \frac{\partial Z}{\partial r} \right)\,dr
+\end{align*}
+Eligiendo para evitar arbitraje los valores:
+\begin{equation*}
+    \Delta = \frac{\partial V}{\partial S}, \qquad \Delta_1 = \frac{\partial V}{\partial r} / \frac{\partial Z}{\partial r}
+\end{equation*}
+se obtiene que la variación de la cartera libre de riesgo es:
+\begin{align*}
+    d\Pi &= \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \rho\sigma w S \frac{\partial^2 V}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - (w\lambda - u) \frac{\partial V}{\partial r} - \Delta_1 rZ  \right)\,dt
+\end{align*}
+Por otro lado, para evitar arbitraje se debe igualar a la variación del activo libre de riesgo:
+\begin{equation*}
+    d\Pi = r \Pi\,dt = r \left( V - \Delta S - \Delta_1 Z \right)\,dt = \left( rV - r\frac{\partial V}{\partial S} S - r\Delta_1 Z \right)\,dt
+\end{equation*}
+es decir:
+\begin{align*}
+    &\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \rho\sigma w S \frac{\partial^2 V}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} - (w\lambda - u) \frac{\partial V}{\partial r} - \Delta_1 rZ = rV - r\frac{\partial V}{\partial S} S - r\Delta_1 Z \implies \\
+    &\boxed{\frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + \rho\sigma w S \frac{\partial^2 V}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + r S \frac{\partial V}{\partial S} + (u - w\lambda) \frac{\partial V}{\partial r} - rV = 0}
+\end{align*}
+
+La condición final es el valor del activo menos el precio fijado:
+\begin{equation*}
+    \boxed{V(S,r,t) = S - \overline{S}}
+\end{equation*}
+siendo $\overline{S}$ el fixed delivery price (lo que se acuerda en el instante inicial que se pagará por el subyacente).
+
+La solución con estas condiciones es:
+\begin{equation*}
+    \boxed{V(S,r,t) = S - \overline{S} Z}
+\end{equation*}
+siendo $Z$ un bono de cupón cero con la misma fecha de vencimiento que el contrato forward, que seguirá la EDP~\eqref{eq:edp_bono} y su correspondiente condición final (igualar a 1).
+
+Por lo tanto, para evitar arbitraje, se debe elegir un fixed delivery price $\overline{S}$ tal que:
+\begin{align*}
+    &0 = V(S_0,r,0) = S_0 - \overline{S} Z(S_0,r,0) \implies \\
+    \implies &\boxed{\overline{S} = \frac{S_0}{Z(S_0,r,0)}}
+\end{align*}
+
+
+
+
+
+\subsubsection{Futures Contracts}
+Se recuerda que el contrato de futuros es un contrato forward con la diferencia de que no se paga al vencimiento, si no que se paga cada día la variación del precio del activo subyacente. Por lo tanto, el valor del contrato de futuros siempre es cero. Se construye la cartera:
+\begin{equation*}
+    \Pi = F(S,r,t) - \Delta S - \Delta_1 Z = - \Delta S - \Delta_1 Z
+\end{equation*}
+
+Siguiendo el mismo procedimiento que en el apartado anterior de los forwards, se obtiene que se debe cumplir la EDP:
+\begin{align*}
+    &\frac{\partial F}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 F}{\partial S^2} + \rho\sigma w S \frac{\partial^2 F}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 F}{\partial r^2} + rS\frac{\partial F}{\partial S} + (u - w\lambda) \frac{\partial F}{\partial r} - rF = 0 \implies \\
+    \implies &\boxed{\frac{\partial F}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 F}{\partial S^2} + \rho\sigma w S \frac{\partial^2 F}{\partial S \partial r} + \frac{1}{2} w^2 \frac{\partial^2 F}{\partial r^2} + rS\frac{\partial F}{\partial S} + (u - w\lambda) \frac{\partial F}{\partial r} = 0}
+\end{align*}
+con la condición final:
+\begin{equation*}
+    F(S,r,T) = S
+\end{equation*}
+
+
+
+Se puede probar que la solución de esta EDP con estas condiciones puede tomar la forma $S/P(r,t)$ (de manera similar) a los forwards y que $p$ sigue una EDP parecida a $Z$ a excepción de dos términos que dependen de la volatilidad del interés y de la correlación entre ambos procesos. De eso también se puede deducir que \underline{el precio de los futures es siempre mayor o igual que el equivalente forward}. La igualdad se da cuando la volatilidad del interés es cero.
+
+
+
+
+
+
+

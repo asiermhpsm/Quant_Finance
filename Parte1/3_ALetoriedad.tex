@@ -27,9 +27,12 @@ Sea
 \[dS = a(S,t)dt + b(S,t)d\mathnormal{X}\]
 entonces
 \begin{equation}
-    \boxed{dV = \left( \frac{dV}{dt} +  a\frac{dV}{dS} + \frac{1}{2}b^2\frac{d^2V}{dS^2} \right)dt + b\frac{dV}{dS}d\mathnormal{X}}
+    \boxed{dV = \left( \frac{dV}{dt} + \frac{1}{2}b^2\frac{d^2V}{dS^2} \right)\,dt + \frac{dV}{dS}\,dS = \left( \frac{dV}{dt} +  a\frac{dV}{dS} + \frac{1}{2}b^2\frac{d^2V}{dS^2} \right)\,dt + b\frac{dV}{dS}\,d\mathnormal{X}}
 \end{equation}\label{Ito}
-En el apéndice~\ref{CalcIto} se encuentra la fórmula para dimensiones mayores.
+En el apéndice~\ref{CalcIto} se encuentra la fórmula para dimensiones mayores. Para el caso en el que se tenga varios procesos correlacionados, la fórmula de Ito se puede escribir como:
+\begin{equation}\label{eq:ItoCorrelated}
+    \boxed{dV = \left( \frac{\partial V}{\partial t} + \frac{1}{2} \sum_{i=1}^{d} \sum_{j=1}^{d} b_i b_j \rho_{ij} \frac{\partial^2 V}{\partial S_i \partial S_j} \right)\,dt + \sum_{i=1}^{d} \frac{\partial V}{\partial S_i}\,dS_i}
+\end{equation}
 
 \subsection{Algunos ejemplos de caminos aleatorios}
 
@@ -37,24 +40,24 @@ En el apéndice~\ref{CalcIto} se encuentra la fórmula para dimensiones mayores.
     \item \textbf{Brownian Motion with Drift}: $\boxed{dS = \mu dt + \sigma d\mathnormal{X}}$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.eps}
+        \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf}
         \caption{Brownian Motion with Drift}
     \end{figure}
     \item \textbf{The Lognormal Random Walk}: $\boxed{dS = S\mu dt + S\sigma d\mathnormal{X}}$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.eps}
+        \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf}
         \caption{The Lognormal Random Walk}
     \end{figure}
     \item \textbf{A Mean-reverting Random Walk}: reversion a la media, cuando se esta fuera del crecimiento normal el camino tiende a corregirse.\\
     Su EDE es 
     \[
-        \boxed{dS = \kappa(\theta+S) dt + \sigma d\mathnormal{X}}
+        \boxed{dS = \kappa(\theta-S) dt + \sigma d\mathnormal{X}}
     \]
     donde $\kappa$ es la velocidad de reversión a la media, $\theta$ es la tasa de interés a largo plazo y $\sigma$ es la volatilidad. Un ejemplo común es el modelo Vasicek para el ratio de interés, $dr = \kappa(\theta+r) dt + \sigma d\mathnormal{X}$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.eps}
+        \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf}
         \caption{Mean-reverting Random Walk}
     \end{figure}
 \end{itemize}
@@ -68,7 +71,7 @@ Es la \textit{`probabilidad de que una variable aleatoria $y$ esté entre $a$ y 
 \]
 
 \subsection{Ecuación de Fokker-Planck o de Kolmogorov hacia delante}
-Se centra en cómo evoluciona la transición con respecto al tiempo futuro $t'$. Se enfoca en el destino del proceso y cómo cambia la probabilidad de estar en distintos valores futuros $y'$ a medida que avanza el tiempo $t'$. Sabiendo que la variable aleatoria cumple la EDE
+Se centra en cómo evoluciona la transición con respecto al tiempo futuro $t'$. Se enfoca en el destino del proceso y cómo cambia la probabilidad de estar en distintos valores futuros $y'$ a medida que avanza el tiempo $t'$. Esta ecuación se usa cuando hay un espacio especial ahora y se quiere saber que va a pasar en el futuro. Sabiendo que la variable aleatoria cumple la EDE
 \[
     dy = A(y, t) dt + B(y, t) d\mathnormal{X}
 \]
@@ -91,17 +94,17 @@ que da como solución
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\linewidth}
-        \includegraphics[width=\linewidth]{Imagenes/Parte1/3_Aleatoriedad/PDF_3D.eps}
+        \includegraphics[width=\linewidth]{Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf}
     \end{subfigure}
         \begin{subfigure}[b]{0.45\linewidth}
-        \includegraphics[width=\linewidth]{Imagenes/Parte1/3_Aleatoriedad/PDF_2D.eps}
+        \includegraphics[width=\linewidth]{Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf}
     \end{subfigure}
     \caption{Función de densidad de transición}
 \end{figure}
 
 
 
-\subsubsection{Ecuación de Kolmogorov hacia detrás}
+\subsubsection{Ecuación de Kolmogorov hacia detrás}\label{sec:KolmogorovDetras}
 Se centra en cómo evoluciona la densidad de transición con respecto al tiempo actual $t$. Se enfoca más en el origen  y cómo cambian las probabilidades de llegar al punto $y'$, $t'$ dependiendo de donde se está en el momento. La EDP es
 \[
     \boxed{\frac{\partial p}{\partial t} + \frac{1}{2} B(y, t)^2 \frac{\partial^2 p}{\partial y^2} + A(y, t) \frac{\partial p}{\partial y} = 0}
@@ -126,7 +129,7 @@ donde $A_\infty$ y $B_\infty$ son los valores de los coeficientes en el límite 
 El \textit{first-exit time} es el tiempo en el cual un camino aleatorio alcanza un cierto límite por primera vez. El objetivo de esta sección es calcular la probabilidad de que un camino aleatorio alcance cierto límite antes de cierto tiempo.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.eps}
+    \includegraphics[width=0.65\linewidth]{Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf}
     \caption{First-exit Time}
 \end{figure}
 
