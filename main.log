@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.27)  1 AUG 2025 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.27)  16 AUG 2025 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,15 +944,21 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \TX@delta=\dimen313
 \TX@cols=\count358
 \TX@ftn=\toks55
+)
+(C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.s
+ty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (datos.tex)
 \c@remark=\count359
 \c@proposition=\count360
 \c@notation=\count361
+\c@definition=\count362
+\c@theorem=\count363
 
 (C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3bac
 kend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count362
+\l__color_backend_stack_int=\count364
 ) (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -961,26 +967,26 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Info: Redefining \. on input line 77.
-LaTeX Info: Redefining \% on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1020,16 +1026,16 @@ LaTeX Info: Redefining \% on input line 77.
 (C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\sup
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count363
+\scratchcounter=\count365
 \scratchdimen=\dimen314
 \scratchbox=\box85
-\nofMPsegments=\count364
-\nofMParguments=\count365
+\nofMPsegments=\count366
+\nofMParguments=\count367
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count366
+\MPscratchCnt=\count368
 \MPscratchDim=\dimen315
-\MPnumerator=\count367
-\makeMPintoPDFobject=\count368
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
 \everyMPtoPDFconversion=\toks57
 )
 (C:\Users\Usuario Asier\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
@@ -1042,12 +1048,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 df-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 77.
+Package hyperref Info: Link coloring OFF on input line 80.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-\c@lstlisting=\count369
+\c@lstlisting=\count371
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -1066,10 +1072,10 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-<newplot.png, id=690, 1517.67pt x 724.7075pt>
+<newplot.png, id=726, 1517.67pt x 724.7075pt>
 File: newplot.png Graphic file (type png)
 <use newplot.png>
-Package pdftex.def Info: newplot.png  used on input line 82.
+Package pdftex.def Info: newplot.png  used on input line 85.
 (pdftex.def)             Requested size: 409.71692pt x 195.64046pt.
 
 
@@ -1100,28 +1106,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [3]
 
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
+LaTeX Info: Redefining \. on input line 131.
+LaTeX Info: Redefining \% on input line 131.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 107.
+(babel)             Reported  on input line 131.
 [4]
 
-LaTeX Info: Redefining \. on input line 163.
-LaTeX Info: Redefining \% on input line 163.
+LaTeX Info: Redefining \. on input line 189.
+LaTeX Info: Redefining \% on input line 189.
 [5])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
 
 
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
+LaTeX Info: Redefining \. on input line 109.
+LaTeX Info: Redefining \% on input line 109.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.104   \clearpage
+l.109   \clearpage
                   % [1]
 
 
@@ -1129,7 +1135,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105   \part
+l.110   \part
              {Fundamentos básicos de derivados, riesgo y rentabilidad}
 [2
 
@@ -1141,7 +1147,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 ...icos de derivados, riesgo y rentabilidad}
+l.110 ...icos de derivados, riesgo y rentabilidad}
                                                    [3]
 
 
@@ -1149,7 +1155,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 ...icos de derivados, riesgo y rentabilidad}
+l.110 ...icos de derivados, riesgo y rentabilidad}
                                                    [4]
 Cap\'{\i }tulo 1.
 (Parte1/1_Conceptos_basicos.tex
@@ -1169,8 +1175,8 @@ LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
 [6])
 
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
+LaTeX Info: Redefining \. on input line 114.
+LaTeX Info: Redefining \% on input line 114.
 [7]
 
 [8
@@ -1179,400 +1185,211 @@ LaTeX Info: Redefining \% on input line 109.
 ]
 Cap\'{\i }tulo 2.
 (Parte1/2_Opciones.tex
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/PayOffCall.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 21526 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/PayOffCall-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:13
-(epstopdf)                    size: 9519 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/PayOffCall-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/PayOffCall.
-eps>
-(epstopdf)             \includegraphics on input line 10.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/PayOffCall-eps-converted-to.pdf, id=928, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/PayOffCall-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/2_Derivados/PayOffCall-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/PayOffCall-eps-converted-t
-o.pdf  used on input line 10.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/PayOffPut.eps>
+<Imagenes/Parte1/2_Derivados/PayOffCall.pdf, id=976, 414.83543pt x 316.16193pt>
 
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 22243 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/PayOffPut-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:14
-(epstopdf)                    size: 9546 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/PayOffPut-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/PayOffPut.ep
-s>
-(epstopdf)             \includegraphics on input line 17.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/PayOffPut-eps-converted-to.pdf, id=929, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/PayOffPut-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/2_Derivados/PayOffPut-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/PayOffPut-eps-converted-to
-.pdf  used on input line 17.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
+File: Imagenes/Parte1/2_Derivados/PayOffCall.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/PayOffCall.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/PayOffCall.pdf  used on in
+put line 10.
+(pdftex.def)             Requested size: 227.62206pt x 173.47952pt.
+<Imagenes/Parte1/2_Derivados/PayOffPut.pdf, id=977, 414.83543pt x 316.16193pt>
+File: Imagenes/Parte1/2_Derivados/PayOffPut.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/PayOffPut.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/PayOffPut.pdf  used on inp
+ut line 17.
+(pdftex.def)             Requested size: 227.62206pt x 173.47952pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[9 <./Imagenes/Parte1/2_Derivados/PayOffCall-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/ProfitDiagCall
-.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 22416 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/ProfitDiagCall
--eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:16
-(epstopdf)                    size: 9645 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/ProfitDiagCall-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/ProfitD
-iagCall.eps>
-(epstopdf)             \includegraphics on input line 41.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/ProfitDiagCall-eps-converted-to.pdf, id=943, 421.5
-75pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/ProfitDiagCall-eps-converted-to.pdf Graphic f
-ile (type pdf)
-<use Imagenes/Parte1/2_Derivados/ProfitDiagCall-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ProfitDiagCall-eps-convert
-ed-to.pdf  used on input line 41.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/ProfitDiagPut.
-eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 22351 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/ProfitDiagPut-
-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:17
-(epstopdf)                    size: 9597 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/ProfitDiagPut-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/ProfitDi
-agPut.eps>
-(epstopdf)             \includegraphics on input line 45.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/ProfitDiagPut-eps-converted-to.pdf, id=944, 421.57
-5pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/ProfitDiagPut-eps-converted-to.pdf Graphic fi
-le (type pdf)
-<use Imagenes/Parte1/2_Derivados/ProfitDiagPut-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ProfitDiagPut-eps-converte
-d-to.pdf  used on input line 45.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
+[9 <./Imagenes/Parte1/2_Derivados/PayOffCall.pdf>]
+<Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf, id=1016, 414.83543pt x 316.161
+93pt>
+File: Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf  used o
+n input line 41.
+(pdftex.def)             Requested size: 204.85846pt x 156.13158pt.
+<Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf, id=1017, 414.83543pt x 316.1619
+3pt>
+File: Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf  used on
+ input line 45.
+(pdftex.def)             Requested size: 204.85846pt x 156.13158pt.
 
-Underfull \vbox (badness 2080) has occurred while \output is active []
+Underfull \vbox (badness 1960) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
-[10 <./Imagenes/Parte1/2_Derivados/PayOffPut-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/BinaryCall.eps
+[10 <./Imagenes/Parte1/2_Derivados/PayOffPut.pdf>]
+<Imagenes/Parte1/2_Derivados/BinaryCall.pdf, id=1056, 418.03488pt x 316.16193pt
 >
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 55001 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/BinaryCall-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:18
-(epstopdf)                    size: 5583 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/BinaryCall-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/BinaryCall.
-eps>
-(epstopdf)             \includegraphics on input line 78.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/BinaryCall-eps-converted-to.pdf, id=958, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/BinaryCall-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/2_Derivados/BinaryCall-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BinaryCall-eps-converted-t
-o.pdf  used on input line 78.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/BinaryPut.eps>
+File: Imagenes/Parte1/2_Derivados/BinaryCall.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/BinaryCall.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BinaryCall.pdf  used on in
+put line 78.
+(pdftex.def)             Requested size: 204.85846pt x 154.93517pt.
+<Imagenes/Parte1/2_Derivados/BinaryPut.pdf, id=1057, 418.03488pt x 316.16193pt>
 
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 55000 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/BinaryPut-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:19
-(epstopdf)                    size: 5578 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/BinaryPut-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/BinaryPut.ep
-s>
-(epstopdf)             \includegraphics on input line 82.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/BinaryPut-eps-converted-to.pdf, id=959, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/BinaryPut-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/2_Derivados/BinaryPut-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BinaryPut-eps-converted-to
-.pdf  used on input line 82.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
+File: Imagenes/Parte1/2_Derivados/BinaryPut.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/BinaryPut.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BinaryPut.pdf  used on inp
+ut line 82.
+(pdftex.def)             Requested size: 204.85846pt x 154.93517pt.
 
-Underfull \vbox (badness 2277) has occurred while \output is active []
+Underfull \vbox (badness 2119) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 87.
 LaTeX Info: Redefining \% on input line 87.
-[11 <./Imagenes/Parte1/2_Derivados/ProfitDiagCall-eps-converted-to.pdf> <./Imag
-enes/Parte1/2_Derivados/ProfitDiagPut-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/BullPayoff.eps
+[11 <./Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf> <./Imagenes/Parte1/2_Der
+ivados/ProfitDiagPut.pdf>]
+<Imagenes/Parte1/2_Derivados/BullPayoff.pdf, id=1132, 406.42903pt x 312.35081pt
 >
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 54937 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/BullPayoff-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:20
-(epstopdf)                    size: 10533 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/BullPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/BullPayoff.
-eps>
-(epstopdf)             \includegraphics on input line 100.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/BullPayoff-eps-converted-to.pdf, id=982, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/BullPayoff-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/2_Derivados/BullPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BullPayoff-eps-converted-t
-o.pdf  used on input line 100.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
+File: Imagenes/Parte1/2_Derivados/BullPayoff.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/BullPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BullPayoff.pdf  used on in
+put line 100.
+(pdftex.def)             Requested size: 227.62206pt x 174.93433pt.
 
 
 LaTeX Info: Redefining \. on input line 105.
 LaTeX Info: Redefining \% on input line 105.
-[12 <./Imagenes/Parte1/2_Derivados/BinaryCall-eps-converted-to.pdf> <./Imagenes
-/Parte1/2_Derivados/BinaryPut-eps-converted-to.pdf> <./Imagenes/Parte1/2_Deriva
-dos/BullPayoff-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/BearPayoff.eps
+[12 <./Imagenes/Parte1/2_Derivados/BinaryCall.pdf> <./Imagenes/Parte1/2_Derivad
+os/BinaryPut.pdf> <./Imagenes/Parte1/2_Derivados/BullPayoff.pdf>]
+<Imagenes/Parte1/2_Derivados/BearPayoff.pdf, id=1242, 406.42903pt x 312.35081pt
 >
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 54937 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/BearPayoff-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:22
-(epstopdf)                    size: 10508 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/BearPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/BearPayoff.
-eps>
-(epstopdf)             \includegraphics on input line 108.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/BearPayoff-eps-converted-to.pdf, id=1004, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/BearPayoff-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/2_Derivados/BearPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BearPayoff-eps-converted-t
-o.pdf  used on input line 108.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/StraddlePayoff
-.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 55374 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/StraddlePayoff
--eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:23
-(epstopdf)                    size: 20901 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/StraddlePayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/Straddl
-ePayoff.eps>
-(epstopdf)             \includegraphics on input line 116.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/StraddlePayoff-eps-converted-to.pdf, id=1005, 421.
-575pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/StraddlePayoff-eps-converted-to.pdf Graphic f
-ile (type pdf)
-<use Imagenes/Parte1/2_Derivados/StraddlePayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StraddlePayoff-eps-convert
-ed-to.pdf  used on input line 116.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/StrangleOTMPay
-off.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 56431 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/StrangleOTMPay
-off-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:24
-(epstopdf)                    size: 19960 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/StrangleOTMPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/Stra
-ngleOTMPayoff.eps>
-(epstopdf)             \includegraphics on input line 126.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/StrangleOTMPayoff-eps-converted-to.pdf, id=1006, 4
-21.575pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff-eps-converted-to.pdf Graphi
-c file (type pdf)
-<use Imagenes/Parte1/2_Derivados/StrangleOTMPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff-eps-conv
-erted-to.pdf  used on input line 126.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
+File: Imagenes/Parte1/2_Derivados/BearPayoff.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/BearPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BearPayoff.pdf  used on in
+put line 108.
+(pdftex.def)             Requested size: 227.62206pt x 174.93433pt.
+<Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf, id=1243, 406.42903pt x 312.350
+81pt>
+File: Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf  used o
+n input line 116.
+(pdftex.def)             Requested size: 227.62206pt x 174.93433pt.
+<Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf, id=1244, 414.83543pt x 316.
+16193pt>
+File: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf Graphic file (type pdf)
+
+<use Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf  use
+d on input line 126.
+(pdftex.def)             Requested size: 227.62206pt x 173.47952pt.
 
 
 LaTeX Info: Redefining \. on input line 129.
 LaTeX Info: Redefining \% on input line 129.
-[13 <./Imagenes/Parte1/2_Derivados/BearPayoff-eps-converted-to.pdf> <./Imagenes
-/Parte1/2_Derivados/StraddlePayoff-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/StrangleITMPay
-off.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 54239 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/StrangleITMPay
-off-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:25
-(epstopdf)                    size: 19750 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/StrangleITMPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/Stra
-ngleITMPayoff.eps>
-(epstopdf)             \includegraphics on input line 132.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/StrangleITMPayoff-eps-converted-to.pdf, id=1023, 4
-21.575pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/StrangleITMPayoff-eps-converted-to.pdf Graphi
-c file (type pdf)
-<use Imagenes/Parte1/2_Derivados/StrangleITMPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleITMPayoff-eps-conv
-erted-to.pdf  used on input line 132.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/RiskReversalPa
-yoff.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 52998 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/RiskReversalPa
-yoff-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:26
-(epstopdf)                    size: 19306 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/RiskReversalPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/Ris
-kReversalPayoff.eps>
-(epstopdf)             \includegraphics on input line 140.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/RiskReversalPayoff-eps-converted-to.pdf, id=1024, 
-421.575pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/RiskReversalPayoff-eps-converted-to.pdf Graph
-ic file (type pdf)
-<use Imagenes/Parte1/2_Derivados/RiskReversalPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/RiskReversalPayoff-eps-con
-verted-to.pdf  used on input line 140.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
+[13 <./Imagenes/Parte1/2_Derivados/BearPayoff.pdf> <./Imagenes/Parte1/2_Derivad
+os/StraddlePayoff.pdf>]
+<Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf, id=1328, 406.42903pt x 316.
+16193pt>
+File: Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf Graphic file (type pdf)
+
+<use Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf  use
+d on input line 132.
+(pdftex.def)             Requested size: 227.62206pt x 177.06876pt.
+<Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf, id=1329, 414.83543p
+t x 312.35081pt>
+File: Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf Graphic file (t
+ype pdf)
+<use Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.
+pdf  used on input line 142.
+(pdftex.def)             Requested size: 227.62206pt x 171.38835pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-LaTeX Info: Redefining \. on input line 144.
-LaTeX Info: Redefining \% on input line 144.
-[14 <./Imagenes/Parte1/2_Derivados/StrangleOTMPayoff-eps-converted-to.pdf> <./I
-magenes/Parte1/2_Derivados/StrangleITMPayoff-eps-converted-to.pdf> <./Imagenes/
-Parte1/2_Derivados/RiskReversalPayoff-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/ButterflyPayof
-f.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 49199 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/ButterflyPayof
-f-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:27
-(epstopdf)                    size: 11595 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/ButterflyPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/Butter
-flyPayoff.eps>
-(epstopdf)             \includegraphics on input line 147.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/ButterflyPayoff-eps-converted-to.pdf, id=1048, 421
-.575pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/ButterflyPayoff-eps-converted-to.pdf Graphic 
-file (type pdf)
-<use Imagenes/Parte1/2_Derivados/ButterflyPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ButterflyPayoff-eps-conver
-ted-to.pdf  used on input line 147.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/2_Derivados/CondorsPayoff.
-eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 56001 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/2_Derivados/CondorsPayoff-
-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:29
-(epstopdf)                    size: 12328 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/2_De
-rivados/CondorsPayoff-eps-converted-to.pdf Imagenes/Parte1/2_Derivados/CondorsP
-ayoff.eps>
-(epstopdf)             \includegraphics on input line 154.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/2_Derivados/CondorsPayoff-eps-converted-to.pdf, id=1049, 421.5
-75pt x 316.18124pt>
-File: Imagenes/Parte1/2_Derivados/CondorsPayoff-eps-converted-to.pdf Graphic fi
-le (type pdf)
-<use Imagenes/Parte1/2_Derivados/CondorsPayoff-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/2_Derivados/CondorsPayoff-eps-converte
-d-to.pdf  used on input line 154.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
+
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+[14 <./Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf> <./Imagenes/Parte1/2_
+Derivados/StrangleITMPayoff.pdf>]
+<Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf, id=1422, 414.83543p
+t x 312.35081pt>
+File: Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf Graphic file (t
+ype pdf)
+<use Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.
+pdf  used on input line 149.
+(pdftex.def)             Requested size: 227.62206pt x 171.38835pt.
+<Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf, id=1423, 406.42903pt x 312.35
+081pt>
+File: Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf  used 
+on input line 157.
+(pdftex.def)             Requested size: 227.62206pt x 174.93433pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
-[15 <./Imagenes/Parte1/2_Derivados/ButterflyPayoff-eps-converted-to.pdf> <./Ima
-genes/Parte1/2_Derivados/CondorsPayoff-eps-converted-to.pdf>])
 
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
-[16] (Parte1/11_Prods_renta_fija.tex
+LaTeX Info: Redefining \. on input line 160.
+LaTeX Info: Redefining \% on input line 160.
+[15 <./Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf> <./Imagenes/P
+arte1/2_Derivados/BearishRiskReversalPayoff.pdf>]
+<Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf, id=1517, 408.45221pt x 316.1619
+3pt>
+File: Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf>
+Package pdftex.def Info: Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf  used on
+ input line 164.
+(pdftex.def)             Requested size: 227.62206pt x 176.19557pt.
+
+
+LaTeX Info: Redefining \. on input line 182.
+LaTeX Info: Redefining \% on input line 182.
+[16 <./Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf> <./Imagenes/Parte1/2_De
+rivados/CondorsPayoff.pdf>])
+
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+[17] (Parte1/11_Prods_renta_fija.tex
 
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
-[17]
+[18]
 
 LaTeX Info: Redefining \. on input line 101.
 LaTeX Info: Redefining \% on input line 101.
-[18]
-Package epstopdf Info: Source file: <Imagenes/Parte1/11_Prods_renta_fija/Yield_
-Curve.eps>
-(epstopdf)                    date: 2025-07-08 19:07:14
-(epstopdf)                    size: 16834 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/11_Prods_renta_fija/Yield_
-Curve-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-08 19:09:38
-(epstopdf)                    size: 6614 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/11_P
-rods_renta_fija/Yield_Curve-eps-converted-to.pdf Imagenes/Parte1/11_Prods_renta
-_fija/Yield_Curve.eps>
-(epstopdf)             \includegraphics on input line 107.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve-eps-converted-to.pdf, id=1080,
- 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve-eps-converted-to.pdf Grap
-hic file (type pdf)
-<use Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve-eps-co
-nverted-to.pdf  used on input line 107.
-(pdftex.def)             Requested size: 295.90588pt x 221.93324pt.
+[19]
+<Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf, id=1597, 569.7191pt x 424
+.47958pt>
+File: Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf Graphic file (type pd
+f)
+<use Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf>
+Package pdftex.def Info: Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf  u
+sed on input line 107.
+(pdftex.def)             Requested size: 295.90588pt x 220.47804pt.
 
 
 LaTeX Info: Redefining \. on input line 134.
 LaTeX Info: Redefining \% on input line 134.
-[19 <./Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve-eps-converted-to.pdf>]
+[20 <./Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf>]
 
 LaTeX Info: Redefining \. on input line 174.
 LaTeX Info: Redefining \% on input line 174.
-[20])
+[21])
 
-LaTeX Info: Redefining \. on input line 114.
-LaTeX Info: Redefining \% on input line 114.
-[21]
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+[22]
 
-LaTeX Info: Redefining \. on input line 114.
-LaTeX Info: Redefining \% on input line 114.
-[22] (Parte1/12_swaps.tex
-<Imagenes/Parte1/12_swaps/Interest_swap.png, id=1112, 289.08pt x 142.73325pt>
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+[23] (Parte1/12_swaps.tex
+<Imagenes/Parte1/12_swaps/Interest_swap.png, id=1658, 289.08pt x 142.73325pt>
 File: Imagenes/Parte1/12_swaps/Interest_swap.png Graphic file (type png)
 <use Imagenes/Parte1/12_swaps/Interest_swap.png>
 Package pdftex.def Info: Imagenes/Parte1/12_swaps/Interest_swap.png  used on in
@@ -1582,8 +1399,8 @@ put line 12.
 
 LaTeX Info: Redefining \. on input line 49.
 LaTeX Info: Redefining \% on input line 49.
-[23 <./Imagenes/Parte1/12_swaps/Interest_swap.png>]
-<Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png, id=1120, 368.577pt x 260.17
+[24 <./Imagenes/Parte1/12_swaps/Interest_swap.png>]
+<Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png, id=1667, 368.577pt x 260.17
 2pt>
 File: Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png Graphic file (type png)
 
@@ -1591,7 +1408,7 @@ File: Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png Graphic file (type png)
 Package pdftex.def Info: Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png  use
 d on input line 70.
 (pdftex.def)             Requested size: 295.90588pt x 208.88023pt.
-<Imagenes/Parte1/12_swaps/Interes_variable_swaps.png, id=1121, 289.08pt x 264.9
+<Imagenes/Parte1/12_swaps/Interes_variable_swaps.png, id=1668, 289.08pt x 264.9
 9pt>
 File: Imagenes/Parte1/12_swaps/Interes_variable_swaps.png Graphic file (type pn
 g)
@@ -1606,248 +1423,165 @@ Underfull \vbox (badness 2261) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 82.
 LaTeX Info: Redefining \% on input line 82.
-[24 <./Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png>]
+[25 <./Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png>]
 
 LaTeX Info: Redefining \. on input line 120.
 LaTeX Info: Redefining \% on input line 120.
-[25 <./Imagenes/Parte1/12_swaps/Interes_variable_swaps.png>])
+[26 <./Imagenes/Parte1/12_swaps/Interes_variable_swaps.png>])
 
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
-[26]
-Cap\'{\i }tulo 3.
-(Parte1/3_ALetoriedad.tex
-Package epstopdf Info: Source file: <Imagenes/Parte1/3_Aleatoriedad/BrownianMot
-ionDrift.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 36475 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/3_Aleatoriedad/BrownianMot
-ionDrift-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:30
-(epstopdf)                    size: 13054 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/3_Al
-eatoriedad/BrownianMotionDrift-eps-converted-to.pdf Imagenes/Parte1/3_Aleatorie
-dad/BrownianMotionDrift.eps>
-(epstopdf)             \includegraphics on input line 40.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift-eps-converted-to.pdf, id=11
-43, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift-eps
--converted-to.pdf  used on input line 40.
-(pdftex.def)             Requested size: 295.90588pt x 221.93324pt.
+LaTeX Info: Redefining \. on input line 122.
+LaTeX Info: Redefining \% on input line 122.
+[27]
 
-
-[27
+[28
 
 
 ]
-Package epstopdf Info: Source file: <Imagenes/Parte1/3_Aleatoriedad/LognormalRa
-ndomWalk.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 38054 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/3_Aleatoriedad/LognormalRa
-ndomWalk-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:31
-(epstopdf)                    size: 13145 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/3_Al
-eatoriedad/LognormalRandomWalk-eps-converted-to.pdf Imagenes/Parte1/3_Aleatorie
-dad/LognormalRandomWalk.eps>
-(epstopdf)             \includegraphics on input line 46.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk-eps-converted-to.pdf, id=11
-50, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk-eps
--converted-to.pdf  used on input line 46.
-(pdftex.def)             Requested size: 295.90588pt x 221.93324pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/3_Aleatoriedad/MeanReverti
-ngWalk.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 38047 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/3_Aleatoriedad/MeanReverti
-ngWalk-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:32
-(epstopdf)                    size: 13336 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/3_Al
-eatoriedad/MeanRevertingWalk-eps-converted-to.pdf Imagenes/Parte1/3_Aleatorieda
-d/MeanRevertingWalk.eps>
-(epstopdf)             \includegraphics on input line 57.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk-eps-converted-to.pdf, id=1151
-, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk-eps-converted-to.pdf Gra
-phic file (type pdf)
-<use Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk-eps-c
-onverted-to.pdf  used on input line 57.
-(pdftex.def)             Requested size: 295.90588pt x 221.93324pt.
+Cap\'{\i }tulo 3.
+(Parte1/3_ALetoriedad.tex
 
-Underfull \vbox (badness 1796) has occurred while \output is active []
+[29]
+<Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf, id=1700, 611.26181pt x
+ 378.79895pt>
+File: Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf>
+Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf
+  used on input line 43.
+(pdftex.def)             Requested size: 295.90588pt x 183.37047pt.
+<Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf, id=1701, 608.06236pt x
+ 378.79895pt>
+File: Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf>
+Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf
+  used on input line 49.
+(pdftex.def)             Requested size: 295.90588pt x 184.3415pt.
+<Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf, id=1702, 601.67914pt x 3
+78.79895pt>
+File: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf Graphic file (type p
+df)
+<use Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf>
+Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf  
+used on input line 60.
+(pdftex.def)             Requested size: 295.90588pt x 186.29514pt.
 
 
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+[30 <./Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf> <./Imagenes/Part
+e1/3_Aleatoriedad/LognormalRandomWalk.pdf>]
+<Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf, id=1759, 339.00624pt x 341.84264pt>
 
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
-[28 <./Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift-eps-converted-to.pdf>
- <./Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/3_Aleatoriedad/PDF_3D.eps>
-
-(epstopdf)                    date: 2025-07-05 21:00:22
-(epstopdf)                    size: 63443 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/3_Aleatoriedad/PDF_3D-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-07-05 21:02:14
-(epstopdf)                    size: 53479 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/3_Al
-eatoriedad/PDF_3D-eps-converted-to.pdf Imagenes/Parte1/3_Aleatoriedad/PDF_3D.ep
-s>
-(epstopdf)             \includegraphics on input line 94.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/3_Aleatoriedad/PDF_3D-eps-converted-to.pdf, id=1168, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/3_Aleatoriedad/PDF_3D-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/3_Aleatoriedad/PDF_3D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_3D-eps-converted-to
-.pdf  used on input line 94.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/3_Aleatoriedad/PDF_2D.eps>
-
-(epstopdf)                    date: 2025-07-05 21:00:04
-(epstopdf)                    size: 21991 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/3_Aleatoriedad/PDF_2D-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-07-05 21:02:15
-(epstopdf)                    size: 7091 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/3_Al
-eatoriedad/PDF_2D-eps-converted-to.pdf Imagenes/Parte1/3_Aleatoriedad/PDF_2D.ep
-s>
-(epstopdf)             \includegraphics on input line 97.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/3_Aleatoriedad/PDF_2D-eps-converted-to.pdf, id=1169, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/3_Aleatoriedad/PDF_2D-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/3_Aleatoriedad/PDF_2D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_2D-eps-converted-to
-.pdf  used on input line 97.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
+File: Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf  used on inp
+ut line 97.
+(pdftex.def)             Requested size: 204.85846pt x 206.57288pt.
+<Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf, id=1760, 455.4271pt x 337.93816pt>
+File: Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf  used on inp
+ut line 100.
+(pdftex.def)             Requested size: 204.85846pt x 152.00888pt.
 
 
-LaTeX Info: Redefining \. on input line 101.
-LaTeX Info: Redefining \% on input line 101.
-[29 <./Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/3_Aleatoriedad/First-exit_
-Time.eps>
-(epstopdf)                    date: 2025-07-06 14:13:00
-(epstopdf)                    size: 25422 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/3_Aleatoriedad/First-exit_
-Time-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-06 14:13:46
-(epstopdf)                    size: 10131 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/3_Al
-eatoriedad/First-exit_Time-eps-converted-to.pdf Imagenes/Parte1/3_Aleatoriedad/
-First-exit_Time.eps>
-(epstopdf)             \includegraphics on input line 129.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/3_Aleatoriedad/First-exit_Time-eps-converted-to.pdf, id=1180, 
-421.575pt x 316.18124pt>
-File: Imagenes/Parte1/3_Aleatoriedad/First-exit_Time-eps-converted-to.pdf Graph
-ic file (type pdf)
-<use Imagenes/Parte1/3_Aleatoriedad/First-exit_Time-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/First-exit_Time-eps-con
-verted-to.pdf  used on input line 129.
-(pdftex.def)             Requested size: 295.90588pt x 221.93324pt.
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
+[31 <./Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf>]
+<Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf, id=1796, 611.26181pt x 304
+.76154pt>
+File: Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf Graphic file (type pdf
+)
+<use Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf>
+Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf  us
+ed on input line 132.
+(pdftex.def)             Requested size: 295.90588pt x 147.53014pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
-[30 <./Imagenes/Parte1/3_Aleatoriedad/PDF_3D-eps-converted-to.pdf> <./Imagenes/
-Parte1/3_Aleatoriedad/PDF_2D-eps-converted-to.pdf>]
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
+[32 <./Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf> <./Imagenes/Parte1/3_Aleatori
+edad/PDF_2D.pdf>]
 
-LaTeX Info: Redefining \. on input line 172.
-LaTeX Info: Redefining \% on input line 172.
-[31 <./Imagenes/Parte1/3_Aleatoriedad/First-exit_Time-eps-converted-to.pdf>]
-<Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png, id=1219, 299.31825pt x 246.
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+[33 <./Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf>]
+<Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png, id=1905, 299.31825pt x 246.
 9225pt>
 File: Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png Graphic file (type png)
 
 <use Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png  use
-d on input line 212.
+d on input line 215.
 (pdftex.def)             Requested size: 295.90588pt x 244.11115pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
+LaTeX Info: Redefining \. on input line 224.
+LaTeX Info: Redefining \% on input line 224.
+[34 <./Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png>]
 
-
-LaTeX Info: Redefining \. on input line 215.
-LaTeX Info: Redefining \% on input line 215.
-[32]
-
-LaTeX Info: Redefining \. on input line 248.
-LaTeX Info: Redefining \% on input line 248.
-[33 <./Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png>]
-
-LaTeX Info: Redefining \. on input line 317.
-LaTeX Info: Redefining \% on input line 317.
-[34]
-<Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png, id=1237, 233.673pt x 217
+LaTeX Info: Redefining \. on input line 279.
+LaTeX Info: Redefining \% on input line 279.
+[35]
+<Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png, id=1918, 233.673pt x 217
 .41225pt>
 File: Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png Graphic file (type p
 ng)
 <use Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png  
-used on input line 321.
+used on input line 324.
 (pdftex.def)             Requested size: 295.90588pt x 275.33086pt.
 
+Underfull \vbox (badness 5388) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 347.
-LaTeX Info: Redefining \% on input line 347.
-[35 <./Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png>])
 
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
+
+LaTeX Info: Redefining \. on input line 327.
+LaTeX Info: Redefining \% on input line 327.
 [36]
+
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
+[37 <./Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png>])
+
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+[38]
 Cap\'{\i }tulo 4.
 (Parte1/4_Black_Scholes.tex
 
-[37
+[39
 
 
 ]
 
 LaTeX Info: Redefining \. on input line 107.
 LaTeX Info: Redefining \% on input line 107.
-[38]
+[40]
 
 LaTeX Info: Redefining \. on input line 169.
 LaTeX Info: Redefining \% on input line 169.
-[39]
+[41]
 
 LaTeX Info: Redefining \. on input line 243.
 LaTeX Info: Redefining \% on input line 243.
-[40]
+[42]
 
 LaTeX Info: Redefining \. on input line 301.
 LaTeX Info: Redefining \% on input line 301.
-[41])
+[43])
 
-LaTeX Info: Redefining \. on input line 124.
-LaTeX Info: Redefining \% on input line 124.
-[42] (Parte1/5_EDPs.tex)
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+[44] (Parte1/5_EDPs.tex)
 
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
-[43] (Parte1/6_Sols_deltas.tex
+LaTeX Info: Redefining \. on input line 131.
+LaTeX Info: Redefining \% on input line 131.
+[45] (Parte1/6_Sols_deltas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|$\OML/cmm/m/it/10 Se[]N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d[]\OT1/cmr/m/n/10 
 ) \OMS/cmsy/m/n/10 ^^@
@@ -1903,215 +1637,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--84
 
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
-[44]
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call3D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 132227 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call3D-eps-con
-verted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:33
-(epstopdf)                    size: 151093 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call3D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call3D.eps>
-(epstopdf)             \includegraphics on input line 100.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call3D-eps-converted-to.pdf, id=1371, 421.575pt x 
-316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call3D-eps-converted-to.pdf Graphic file (typ
-e pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call3D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call3D-eps-converted-to.pd
-f  used on input line 100.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/CallSFijo.eps>
+[46]
+<Imagenes/Parte1/6_Sols/Call/Call3D.pdf, id=2056, 300.3797pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Call/Call3D.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call3D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call3D.pdf  used on input 
+line 100.
+(pdftex.def)             Requested size: 136.57462pt x 130.90164pt.
+<Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf, id=2057, 400.0458pt x 327.20317pt>
+File: Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf  used on inp
+ut line 104.
+(pdftex.def)             Requested size: 136.57462pt x 111.70692pt.
+<Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf, id=2058, 412.81226pt x 327.20317pt>
 
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 29291 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/CallSFijo-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:35
-(epstopdf)                    size: 11119 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/CallSFijo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/CallSFijo.ep
-s>
-(epstopdf)             \includegraphics on input line 104.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/CallSFijo-eps-converted-to.pdf, id=1372, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/CallSFijo-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/6_Sols/Call/CallSFijo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/CallSFijo-eps-converted-to
-.pdf  used on input line 104.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/CalltFIjo.eps>
+File: Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf  used on inp
+ut line 108.
+(pdftex.def)             Requested size: 136.57462pt x 108.25197pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf, id=2059, 298.84558pt x 287.9079pt>
 
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 27177 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/CalltFIjo-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:36
-(epstopdf)                    size: 9602 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/CalltFIjo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/CalltFIjo.ep
-s>
-(epstopdf)             \includegraphics on input line 108.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/CalltFIjo-eps-converted-to.pdf, id=1373, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/CalltFIjo-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/6_Sols/Call/CalltFIjo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/CalltFIjo-eps-converted-to
-.pdf  used on input line 108.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Delta.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 138807 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Delta-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:37
-(epstopdf)                    size: 135724 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Delta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Delta.
-eps>
-(epstopdf)             \includegraphics on input line 112.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Delta-eps-converted-to.pdf, id=1374, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Delta-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Delta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Delta-eps-converted-t
-o.pdf  used on input line 112.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Gamma.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 74853 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Gamma-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:38
-(epstopdf)                    size: 69367 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Gamma-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Gamma.
-eps>
-(epstopdf)             \includegraphics on input line 116.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Gamma-eps-converted-to.pdf, id=1375, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Gamma-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Gamma-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Gamma-eps-converted-t
-o.pdf  used on input line 116.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Theta.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 70857 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Theta-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:40
-(epstopdf)                    size: 66941 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Theta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Theta.
-eps>
-(epstopdf)             \includegraphics on input line 120.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Theta-eps-converted-to.pdf, id=1376, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Theta-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Theta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Theta-eps-converted-t
-o.pdf  used on input line 120.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Speed.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 57030 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Speed-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:41
-(epstopdf)                    size: 52501 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Speed-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Speed.
-eps>
-(epstopdf)             \includegraphics on input line 124.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Speed-eps-converted-to.pdf, id=1377, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Speed-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Speed-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Speed-eps-converted-t
-o.pdf  used on input line 124.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Vega.eps>
+File: Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf  used on in
+put line 112.
+(pdftex.def)             Requested size: 136.57462pt x 131.57379pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf, id=2060, 297.987pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf  used on in
+put line 116.
+(pdftex.def)             Requested size: 136.57462pt x 131.9516pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf, id=2061, 300.08777pt x 287.9079pt>
 
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 122132 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Vega-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:42
-(epstopdf)                    size: 102361 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Vega-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Vega.ep
-s>
-(epstopdf)             \includegraphics on input line 128.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Vega-eps-converted-to.pdf, id=1378, 421.575pt
- x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Vega-eps-converted-to.pdf Graphic file (
-type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Vega-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Vega-eps-converted-to
-.pdf  used on input line 128.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Rho_r.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 105821 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Rho_r-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:44
-(epstopdf)                    size: 98637 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Rho_r-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Rho_r.
-eps>
-(epstopdf)             \includegraphics on input line 132.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Rho_r-eps-converted-to.pdf, id=1379, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Rho_r-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Rho_r-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Rho_r-eps-converted-t
-o.pdf  used on input line 132.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Call/Call_Rho_D.eps
->
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 120769 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Call/Call_Rho_D-eps
--converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:45
-(epstopdf)                    size: 131480 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Call/Call_Rho_D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Call/Call_Rho_D.
-eps>
-(epstopdf)             \includegraphics on input line 136.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Call/Call_Rho_D-eps-converted-to.pdf, id=1380, 421.575p
-t x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Call/Call_Rho_D-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use Imagenes/Parte1/6_Sols/Call/Call_Rho_D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Rho_D-eps-converted-t
-o.pdf  used on input line 136.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
+File: Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf  used on in
+put line 120.
+(pdftex.def)             Requested size: 136.57462pt x 131.03343pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf, id=2062, 298.15347pt x 287.9079pt>
+
+File: Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf  used on in
+put line 124.
+(pdftex.def)             Requested size: 136.57462pt x 131.8857pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf, id=2063, 296.75638pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf  used on inp
+ut line 128.
+(pdftex.def)             Requested size: 136.57462pt x 132.50073pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf, id=2064, 296.24556pt x 287.9079pt>
+
+File: Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf  used on in
+put line 132.
+(pdftex.def)             Requested size: 136.57462pt x 132.73357pt.
+<Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf, id=2065, 301.47577pt x 287.9079pt>
+
+File: Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf  used on in
+put line 136.
+(pdftex.def)             Requested size: 136.57462pt x 130.42719pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2119,203 +1711,67 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 140.
 LaTeX Info: Redefining \% on input line 140.
-[45]
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put3D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 108369 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put3D-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:46
-(epstopdf)                    size: 103234 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put3D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put3D.eps>
-(epstopdf)             \includegraphics on input line 146.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put3D-eps-converted-to.pdf, id=1385, 421.575pt x 31
-6.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put3D-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put3D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put3D-eps-converted-to.pdf 
- used on input line 146.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/PutSFijo.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 28127 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/PutSFijo-eps-co
-nverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:47
-(epstopdf)                    size: 11054 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/PutSFijo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/PutSFijo.eps>
-(epstopdf)             \includegraphics on input line 150.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/PutSFijo-eps-converted-to.pdf, id=1386, 421.575pt x
- 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/PutSFijo-eps-converted-to.pdf Graphic file (ty
-pe pdf)
-<use Imagenes/Parte1/6_Sols/Put/PutSFijo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/PutSFijo-eps-converted-to.p
-df  used on input line 150.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/PuttFIjo.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 29100 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/PuttFIjo-eps-co
-nverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:49
-(epstopdf)                    size: 10852 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/PuttFIjo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/PuttFIjo.eps>
-(epstopdf)             \includegraphics on input line 154.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/PuttFIjo-eps-converted-to.pdf, id=1387, 421.575pt x
- 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/PuttFIjo-eps-converted-to.pdf Graphic file (ty
-pe pdf)
-<use Imagenes/Parte1/6_Sols/Put/PuttFIjo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/PuttFIjo-eps-converted-to.p
-df  used on input line 154.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Delta.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 137454 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Delta-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:50
-(epstopdf)                    size: 135017 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Delta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Delta.eps>
-
-(epstopdf)             \includegraphics on input line 158.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Delta-eps-converted-to.pdf, id=1388, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Delta-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Delta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Delta-eps-converted-to.
-pdf  used on input line 158.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Gamma.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 74856 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Gamma-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:51
-(epstopdf)                    size: 69373 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Gamma-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Gamma.eps>
-
-(epstopdf)             \includegraphics on input line 162.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Gamma-eps-converted-to.pdf, id=1389, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Gamma-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Gamma-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Gamma-eps-converted-to.
-pdf  used on input line 162.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Theta.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 70828 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Theta-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:52
-(epstopdf)                    size: 67123 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Theta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Theta.eps>
-
-(epstopdf)             \includegraphics on input line 166.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Theta-eps-converted-to.pdf, id=1390, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Theta-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Theta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Theta-eps-converted-to.
-pdf  used on input line 166.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Speed.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 57033 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Speed-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:54
-(epstopdf)                    size: 52507 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Speed-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Speed.eps>
-
-(epstopdf)             \includegraphics on input line 170.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Speed-eps-converted-to.pdf, id=1391, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Speed-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Speed-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Speed-eps-converted-to.
-pdf  used on input line 170.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Vega.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 122135 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Vega-eps-co
-nverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:55
-(epstopdf)                    size: 102367 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Vega-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Vega.eps>
-(epstopdf)             \includegraphics on input line 174.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Vega-eps-converted-to.pdf, id=1392, 421.575pt x
- 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Vega-eps-converted-to.pdf Graphic file (ty
-pe pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Vega-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Vega-eps-converted-to.p
-df  used on input line 174.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Rho_r.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 165803 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Rho_r-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:56
-(epstopdf)                    size: 154705 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Rho_r-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Rho_r.eps>
-
-(epstopdf)             \includegraphics on input line 178.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Rho_r-eps-converted-to.pdf, id=1393, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Rho_r-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Rho_r-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Rho_r-eps-converted-to.
-pdf  used on input line 178.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Put/Put_Rho_D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 125396 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Put/Put_Rho_D-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:57
-(epstopdf)                    size: 101177 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Put/Put_Rho_D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Put/Put_Rho_D.eps>
-
-(epstopdf)             \includegraphics on input line 182.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Put/Put_Rho_D-eps-converted-to.pdf, id=1394, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Put/Put_Rho_D-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/6_Sols/Put/Put_Rho_D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Rho_D-eps-converted-to.
-pdf  used on input line 182.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
+[47]
+<Imagenes/Parte1/6_Sols/Put/Put3D.pdf, id=2070, 300.50175pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put3D.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put3D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put3D.pdf  used on input li
+ne 146.
+(pdftex.def)             Requested size: 136.57462pt x 130.84892pt.
+<Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf, id=2071, 400.0458pt x 327.20317pt>
+File: Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf  used on input
+ line 150.
+(pdftex.def)             Requested size: 136.57462pt x 111.70692pt.
+<Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf, id=2072, 412.81226pt x 327.20317pt>
+File: Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf  used on input
+ line 154.
+(pdftex.def)             Requested size: 136.57462pt x 108.25197pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf, id=2073, 301.79121pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf  used on inpu
+t line 158.
+(pdftex.def)             Requested size: 136.57462pt x 130.2954pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf, id=2074, 297.987pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf  used on inpu
+t line 162.
+(pdftex.def)             Requested size: 136.57462pt x 131.9516pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf, id=2075, 299.78789pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf  used on inpu
+t line 166.
+(pdftex.def)             Requested size: 136.57462pt x 131.16083pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf, id=2076, 298.15347pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf  used on inpu
+t line 170.
+(pdftex.def)             Requested size: 136.57462pt x 131.8857pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf, id=2077, 296.75638pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf  used on input
+ line 174.
+(pdftex.def)             Requested size: 136.57462pt x 132.50073pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf, id=2078, 300.12762pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf  used on inpu
+t line 178.
+(pdftex.def)             Requested size: 136.57462pt x 131.01146pt.
+<Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf, id=2079, 296.76543pt x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf  used on inpu
+t line 182.
+(pdftex.def)             Requested size: 136.57462pt x 132.50073pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2323,231 +1779,92 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 186.
 LaTeX Info: Redefining \% on input line 186.
-[46 <./Imagenes/Parte1/6_Sols/Call/Call3D-eps-converted-to.pdf> <./Imagenes/Par
-te1/6_Sols/Call/CallSFijo-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Call/
-CalltFIjo-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Delta-eps-c
-onverted-to.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Gamma-eps-converted-to.pdf
-> <./Imagenes/Parte1/6_Sols/Call/Call_Theta-eps-converted-to.pdf> <./Imagenes/P
-arte1/6_Sols/Call/Call_Speed-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Ca
-ll/Call_Vega-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Rho_r-ep
-s-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Rho_D-eps-converted-to.
-pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/BinaryC
-all3D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 143739 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/BinaryC
-all3D-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:44:59
-(epstopdf)                    size: 138150 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/BinaryCall3D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Binary_
-Call/BinaryCall3D.eps>
-(epstopdf)             \includegraphics on input line 193.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D-eps-converted-to.pdf, id=1464,
- 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D-eps-converted-to.pdf Grap
-hic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D-eps-co
-nverted-to.pdf  used on input line 193.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/BinaryC
-allSFijo.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 29454 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/BinaryC
-allSFijo-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:00
-(epstopdf)                    size: 11160 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/BinaryCallSFijo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Call/BinaryCallSFijo.eps>
-(epstopdf)             \includegraphics on input line 197.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo-eps-converted-to.pdf, id=14
-65, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo-eps
--converted-to.pdf  used on input line 197.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/BinaryC
-alltFIjo.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 28695 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/BinaryC
-alltFIjo-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:01
-(epstopdf)                    size: 9925 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/BinaryCalltFIjo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Call/BinaryCalltFIjo.eps>
-(epstopdf)             \includegraphics on input line 201.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo-eps-converted-to.pdf, id=14
-66, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo-eps
--converted-to.pdf  used on input line 201.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Delta.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 74179 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Delta-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:02
-(epstopdf)                    size: 69011 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Delta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bi
-nary_Call/Binary_Call_Delta.eps>
-(epstopdf)             \includegraphics on input line 205.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta-eps-converted-to.pdf, id=
-1467, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta-e
-ps-converted-to.pdf  used on input line 205.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Gamma.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 57304 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Gamma-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:03
-(epstopdf)                    size: 127420 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Gamma-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bi
-nary_Call/Binary_Call_Gamma.eps>
-(epstopdf)             \includegraphics on input line 209.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma-eps-converted-to.pdf, id=
-1468, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma-e
-ps-converted-to.pdf  used on input line 209.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Theta.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 63369 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Theta-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:05
-(epstopdf)                    size: 103873 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Theta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bi
-nary_Call/Binary_Call_Theta.eps>
-(epstopdf)             \includegraphics on input line 213.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta-eps-converted-to.pdf, id=
-1469, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta-e
-ps-converted-to.pdf  used on input line 213.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Speed.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 51270 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Speed-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:06
-(epstopdf)                    size: 123032 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Speed-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bi
-nary_Call/Binary_Call_Speed.eps>
-(epstopdf)             \includegraphics on input line 217.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed-eps-converted-to.pdf, id=
-1470, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed-e
-ps-converted-to.pdf  used on input line 217.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Vega.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 66273 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Vega-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:07
-(epstopdf)                    size: 123400 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Vega-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bin
-ary_Call/Binary_Call_Vega.eps>
-(epstopdf)             \includegraphics on input line 221.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega-eps-converted-to.pdf, id=1
-471, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega-eps-converted-to.pdf 
-Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega-ep
-s-converted-to.pdf  used on input line 221.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Rho_r.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 117032 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Rho_r-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:08
-(epstopdf)                    size: 125831 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Rho_r-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bi
-nary_Call/Binary_Call_Rho_r.eps>
-(epstopdf)             \includegraphics on input line 225.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r-eps-converted-to.pdf, id=
-1472, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r-e
-ps-converted-to.pdf  used on input line 225.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Rho_D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 121367 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Call/Binary_
-Call_Rho_D-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:09
-(epstopdf)                    size: 102129 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Call/Binary_Call_Rho_D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bi
-nary_Call/Binary_Call_Rho_D.eps>
-(epstopdf)             \includegraphics on input line 229.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D-eps-converted-to.pdf, id=
-1473, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D-e
-ps-converted-to.pdf  used on input line 229.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
+[48 <./Imagenes/Parte1/6_Sols/Call/Call3D.pdf> <./Imagenes/Parte1/6_Sols/Call/C
+allSFijo.pdf> <./Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf> <./Imagenes/Parte1/
+6_Sols/Call/Call_Delta.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf> <./I
+magenes/Parte1/6_Sols/Call/Call_Theta.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_
+Speed.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf> <./Imagenes/Parte1/6_S
+ols/Call/Call_Rho_r.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf>]
+<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf, id=2294, 298.8458pt x 287
+.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf Graphic file (type pd
+f)
+<use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf  u
+sed on input line 193.
+(pdftex.def)             Requested size: 136.57462pt x 131.57379pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf, id=2295, 422.39493pt x
+ 327.20317pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf
+  used on input line 197.
+(pdftex.def)             Requested size: 136.57462pt x 105.79556pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf, id=2296, 409.62848pt x
+ 327.20317pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf
+  used on input line 201.
+(pdftex.def)             Requested size: 136.57462pt x 109.09074pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf, id=2297, 298.01447pt
+ x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.p
+df  used on input line 205.
+(pdftex.def)             Requested size: 136.57462pt x 131.9472pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf, id=2298, 296.56693pt
+ x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.p
+df  used on input line 209.
+(pdftex.def)             Requested size: 136.57462pt x 132.5886pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf, id=2299, 303.077pt x
+ 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.p
+df  used on input line 213.
+(pdftex.def)             Requested size: 136.57462pt x 129.74185pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf, id=2300, 303.38377pt
+ x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.p
+df  used on input line 217.
+(pdftex.def)             Requested size: 136.57462pt x 129.61006pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf, id=2301, 296.39809pt 
+x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf Graphic file (typ
+e pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pd
+f  used on input line 221.
+(pdftex.def)             Requested size: 136.57462pt x 132.66328pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf, id=2302, 298.9333pt 
+x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.p
+df  used on input line 225.
+(pdftex.def)             Requested size: 136.57462pt x 131.53864pt.
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf, id=2303, 301.54773pt
+ x 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.p
+df  used on input line 229.
+(pdftex.def)             Requested size: 136.57462pt x 130.39642pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2555,224 +1872,92 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 233.
 LaTeX Info: Redefining \% on input line 233.
-[47 <./Imagenes/Parte1/6_Sols/Put/Put3D-eps-converted-to.pdf> <./Imagenes/Parte
-1/6_Sols/Put/PutSFijo-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Put/PuttF
-Ijo-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Delta-eps-converted
--to.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Gamma-eps-converted-to.pdf> <./Image
-nes/Parte1/6_Sols/Put/Put_Theta-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols
-/Put/Put_Speed-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Vega-eps
--converted-to.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Rho_r-eps-converted-to.pdf
-> <./Imagenes/Parte1/6_Sols/Put/Put_Rho_D-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/BinaryPu
-t3D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 95917 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/BinaryPu
-t3D-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:11
-(epstopdf)                    size: 110996 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/BinaryPut3D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Binary_Pu
-t/BinaryPut3D.eps>
-(epstopdf)             \includegraphics on input line 239.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D-eps-converted-to.pdf, id=1543, 4
-21.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D-eps-converted-to.pdf Graphi
-c file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D-eps-conv
-erted-to.pdf  used on input line 239.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/BinaryPu
-tSFijo.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 29067 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/BinaryPu
-tSFijo-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:12
-(epstopdf)                    size: 11195 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/BinaryPutSFijo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Binary
-_Put/BinaryPutSFijo.eps>
-(epstopdf)             \includegraphics on input line 243.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo-eps-converted-to.pdf, id=1544
-, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo-eps-converted-to.pdf Gra
-phic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo-eps-c
-onverted-to.pdf  used on input line 243.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/BinaryPu
-ttFIjo.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 29137 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/BinaryPu
-ttFIjo-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:13
-(epstopdf)                    size: 9988 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/BinaryPuttFIjo-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Binary
-_Put/BinaryPuttFIjo.eps>
-(epstopdf)             \includegraphics on input line 247.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo-eps-converted-to.pdf, id=1545
-, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo-eps-converted-to.pdf Gra
-phic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo-eps-c
-onverted-to.pdf  used on input line 247.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Delta.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 68203 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Delta-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:14
-(epstopdf)                    size: 63895 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Delta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Delta.eps>
-(epstopdf)             \includegraphics on input line 251.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta-eps-converted-to.pdf, id=15
-46, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta-eps
--converted-to.pdf  used on input line 251.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Gamma.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 58999 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Gamma-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:15
-(epstopdf)                    size: 54334 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Gamma-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Gamma.eps>
-(epstopdf)             \includegraphics on input line 255.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma-eps-converted-to.pdf, id=15
-47, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma-eps
--converted-to.pdf  used on input line 255.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Theta.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 53920 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Theta-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:17
-(epstopdf)                    size: 119617 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Theta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Theta.eps>
-(epstopdf)             \includegraphics on input line 259.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta-eps-converted-to.pdf, id=15
-48, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta-eps
--converted-to.pdf  used on input line 259.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Speed.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 51268 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Speed-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:18
-(epstopdf)                    size: 123028 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Speed-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Speed.eps>
-(epstopdf)             \includegraphics on input line 263.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed-eps-converted-to.pdf, id=15
-49, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed-eps
--converted-to.pdf  used on input line 263.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Vega.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 69142 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Vega-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:19
-(epstopdf)                    size: 64754 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Vega-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Binar
-y_Put/Binary_Put_Vega.eps>
-(epstopdf)             \includegraphics on input line 267.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega-eps-converted-to.pdf, id=155
-0, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega-eps-converted-to.pdf Gr
-aphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega-eps-
-converted-to.pdf  used on input line 267.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Rho_r.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 166290 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Rho_r-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:21
-(epstopdf)                    size: 147026 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Rho_r-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Rho_r.eps>
-(epstopdf)             \includegraphics on input line 271.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r-eps-converted-to.pdf, id=15
-51, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r-eps
--converted-to.pdf  used on input line 271.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Rho_D.eps>
-(epstopdf)                    date: 2025-06-27 20:42:52
-(epstopdf)                    size: 149397 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/Binary_Put/Binary_P
-ut_Rho_D-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-27 20:45:22
-(epstopdf)                    size: 135445 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Rho_D-eps-converted-to.pdf Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Rho_D.eps>
-(epstopdf)             \includegraphics on input line 275.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D-eps-converted-to.pdf, id=15
-52, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D-eps-converted-to.pdf G
-raphic file (type pdf)
-<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D-eps
--converted-to.pdf  used on input line 275.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
+[49 <./Imagenes/Parte1/6_Sols/Put/Put3D.pdf> <./Imagenes/Parte1/6_Sols/Put/PutS
+Fijo.pdf> <./Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf> <./Imagenes/Parte1/6_Sols
+/Put/Put_Delta.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf> <./Imagenes/Pa
+rte1/6_Sols/Put/Put_Theta.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf> <./
+Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Rho_
+r.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf>]
+<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf, id=2521, 298.8458pt x 287.9
+079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf Graphic file (type pdf)
+
+<use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf  use
+d on input line 239.
+(pdftex.def)             Requested size: 136.57462pt x 131.57379pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf, id=2522, 416.0117pt x 32
+7.20317pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf Graphic file (type p
+df)
+<use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf  
+used on input line 243.
+(pdftex.def)             Requested size: 136.57462pt x 107.41818pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf, id=2523, 409.62848pt x 3
+27.20317pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf Graphic file (type p
+df)
+<use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf  
+used on input line 247.
+(pdftex.def)             Requested size: 136.57462pt x 109.09074pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf, id=2524, 301.68501pt x
+ 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf
+  used on input line 251.
+(pdftex.def)             Requested size: 136.57462pt x 130.33932pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf, id=2525, 299.34332pt x
+ 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf
+  used on input line 255.
+(pdftex.def)             Requested size: 136.57462pt x 131.36292pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf, id=2526, 307.62135pt x
+ 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf
+  used on input line 259.
+(pdftex.def)             Requested size: 136.57462pt x 127.82646pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf, id=2527, 303.38377pt x
+ 287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf
+  used on input line 263.
+(pdftex.def)             Requested size: 136.57462pt x 129.61006pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf, id=2528, 298.70418pt x 
+287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf Graphic file (type 
+pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf 
+ used on input line 267.
+(pdftex.def)             Requested size: 136.57462pt x 131.63528pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf, id=2529, 301.745pt x 2
+87.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf
+  used on input line 271.
+(pdftex.def)             Requested size: 136.57462pt x 130.31296pt.
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf, id=2530, 305.4092pt x 
+287.9079pt>
+File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf Graphic file (type
+ pdf)
+<use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf>
+Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf
+  used on input line 275.
+(pdftex.def)             Requested size: 136.57462pt x 128.74901pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2780,151 +1965,58 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 279.
 LaTeX Info: Redefining \% on input line 279.
-[48 <./Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D-eps-converted-to.pdf> <.
-/Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo-eps-converted-to.pdf> <./Im
-agenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo-eps-converted-to.pdf> <./Image
-nes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta-eps-converted-to.pdf> <./Imagen
-es/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma-eps-converted-to.pdf> <./Imagene
-s/Parte1/6_Sols/Binary_Call/Binary_Call_Theta-eps-converted-to.pdf> <./Imagenes
-/Parte1/6_Sols/Binary_Call/Binary_Call_Speed-eps-converted-to.pdf> <./Imagenes/
-Parte1/6_Sols/Binary_Call/Binary_Call_Vega-eps-converted-to.pdf> <./Imagenes/Pa
-rte1/6_Sols/Binary_Call/Binary_Call_Rho_r-eps-converted-to.pdf> <./Imagenes/Par
-te1/6_Sols/Binary_Call/Binary_Call_Rho_D-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[50 <./Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf> <./Imagenes/Parte1/
+6_Sols/Binary_Call/BinaryCallSFijo.pdf> <./Imagenes/Parte1/6_Sols/Binary_Call/B
+inaryCalltFIjo.pdf> <./Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf
+> <./Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf> <./Imagenes/Part
+e1/6_Sols/Binary_Call/Binary_Call_Theta.pdf> <./Imagenes/Parte1/6_Sols/Binary_C
+all/Binary_Call_Speed.pdf> <./Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Ve
+ga.pdf> <./Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf> <./Imagene
+s/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf>]
 
+LaTeX Info: Redefining \. on input line 289.
+LaTeX Info: Redefining \% on input line 289.
+[51 <./Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf> <./Imagenes/Parte1/6_
+Sols/Binary_Put/BinaryPutSFijo.pdf> <./Imagenes/Parte1/6_Sols/Binary_Put/Binary
+PuttFIjo.pdf> <./Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf> <./Ima
+genes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf> <./Imagenes/Parte1/6_Sols/
+Binary_Put/Binary_Put_Theta.pdf> <./Imagenes/Parte1/6_Sols/Binary_Put/Binary_Pu
+t_Speed.pdf> <./Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf> <./Image
+nes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf> <./Imagenes/Parte1/6_Sols/Bi
+nary_Put/Binary_Put_Rho_D.pdf>])
 
+LaTeX Info: Redefining \. on input line 133.
+LaTeX Info: Redefining \% on input line 133.
+[52] (Parte1/8_Generalizaciones.tex)
 
-LaTeX Info: Redefining \. on input line 287.
-LaTeX Info: Redefining \% on input line 287.
-[49 <./Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D-eps-converted-to.pdf> <./I
-magenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo-eps-converted-to.pdf> <./Imagen
-es/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo-eps-converted-to.pdf> <./Imagenes/Pa
-rte1/6_Sols/Binary_Put/Binary_Put_Delta-eps-converted-to.pdf> <./Imagenes/Parte
-1/6_Sols/Binary_Put/Binary_Put_Gamma-eps-converted-to.pdf> <./Imagenes/Parte1/6
-_Sols/Binary_Put/Binary_Put_Theta-eps-converted-to.pdf> <./Imagenes/Parte1/6_So
-ls/Binary_Put/Binary_Put_Speed-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/
-Binary_Put/Binary_Put_Vega-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Bina
-ry_Put/Binary_Put_Rho_r-eps-converted-to.pdf> <./Imagenes/Parte1/6_Sols/Binary_
-Put/Binary_Put_Rho_D-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/IV_vs_Strike.eps>
-(epstopdf)                    date: 2025-06-29 18:21:20
-(epstopdf)                    size: 26505 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/IV_vs_Strike-eps-co
-nverted-to.pdf>
-(epstopdf)                    date: 2025-06-29 18:25:35
-(epstopdf)                    size: 8653 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/IV_vs_Strike-eps-converted-to.pdf Imagenes/Parte1/6_Sols/IV_vs_Strike.eps>
-(epstopdf)             \includegraphics on input line 295.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/IV_vs_Strike-eps-converted-to.pdf, id=1691, 421.575pt x
- 316.18124pt>
-File: Imagenes/Parte1/6_Sols/IV_vs_Strike-eps-converted-to.pdf Graphic file (ty
-pe pdf)
-<use Imagenes/Parte1/6_Sols/IV_vs_Strike-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/IV_vs_Strike-eps-converted-to.p
-df  used on input line 295.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/6_Sols/IV_vs_Delta.eps>
-(epstopdf)                    date: 2025-06-29 18:20:57
-(epstopdf)                    size: 26415 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/6_Sols/IV_vs_Delta-eps-con
-verted-to.pdf>
-(epstopdf)                    date: 2025-06-29 18:25:12
-(epstopdf)                    size: 9004 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/6_So
-ls/IV_vs_Delta-eps-converted-to.pdf Imagenes/Parte1/6_Sols/IV_vs_Delta.eps>
-(epstopdf)             \includegraphics on input line 298.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/6_Sols/IV_vs_Delta-eps-converted-to.pdf, id=1692, 421.575pt x 
-316.18124pt>
-File: Imagenes/Parte1/6_Sols/IV_vs_Delta-eps-converted-to.pdf Graphic file (typ
-e pdf)
-<use Imagenes/Parte1/6_Sols/IV_vs_Delta-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/6_Sols/IV_vs_Delta-eps-converted-to.pd
-f  used on input line 298.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
-
-
-LaTeX Info: Redefining \. on input line 322.
-LaTeX Info: Redefining \% on input line 322.
-[50 <./Imagenes/Parte1/6_Sols/IV_vs_Strike-eps-converted-to.pdf> <./Imagenes/Pa
-rte1/6_Sols/IV_vs_Delta-eps-converted-to.pdf>])
-
-LaTeX Info: Redefining \. on input line 128.
-LaTeX Info: Redefining \% on input line 128.
-[51] (Parte1/8_Generalizaciones.tex)
-
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
-[52] (Parte1/7_Volatilidad.tex
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
+[53] (Parte1/7_Volatilidad.tex
 
 LaTeX Info: Redefining \. on input line 51.
 LaTeX Info: Redefining \% on input line 51.
-[53]
-Package epstopdf Info: Source file: <Imagenes/Parte1/7_Volatilidad/Volatilidad.
-eps>
-(epstopdf)                    date: 2025-07-02 15:07:46
-(epstopdf)                    size: 44455 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/7_Volatilidad/Volatilidad-
-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-02 15:08:20
-(epstopdf)                    size: 13904 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/7_Vo
-latilidad/Volatilidad-eps-converted-to.pdf Imagenes/Parte1/7_Volatilidad/Volati
-lidad.eps>
-(epstopdf)             \includegraphics on input line 84.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/7_Volatilidad/Volatilidad-eps-converted-to.pdf, id=1723, 421.5
-75pt x 316.18124pt>
-File: Imagenes/Parte1/7_Volatilidad/Volatilidad-eps-converted-to.pdf Graphic fi
-le (type pdf)
-<use Imagenes/Parte1/7_Volatilidad/Volatilidad-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Volatilidad-eps-converte
-d-to.pdf  used on input line 84.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/7_Volatilidad/Volatilidad_
-Prediccion.eps>
-(epstopdf)                    date: 2025-07-02 15:07:19
-(epstopdf)                    size: 41243 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/7_Volatilidad/Volatilidad_
-Prediccion-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-02 15:08:21
-(epstopdf)                    size: 13084 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/7_Vo
-latilidad/Volatilidad_Prediccion-eps-converted-to.pdf Imagenes/Parte1/7_Volatil
-idad/Volatilidad_Prediccion.eps>
-(epstopdf)             \includegraphics on input line 87.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion-eps-converted-to.pdf, id=
-1724, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion-eps-converted-to.pdf
- Graphic file (type pdf)
-<use Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion-eps-converted-to.pdf>
-
-Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion-e
-ps-converted-to.pdf  used on input line 87.
-(pdftex.def)             Requested size: 227.62206pt x 170.72084pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/7_Volatilidad/Accion.eps>
-(epstopdf)                    date: 2025-07-02 15:07:35
-(epstopdf)                    size: 22759 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/7_Volatilidad/Accion-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2025-07-02 15:08:22
-(epstopdf)                    size: 8860 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/7_Vo
-latilidad/Accion-eps-converted-to.pdf Imagenes/Parte1/7_Volatilidad/Accion.eps>
-
-(epstopdf)             \includegraphics on input line 90.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/7_Volatilidad/Accion-eps-converted-to.pdf, id=1725, 421.575pt 
-x 316.18124pt>
-File: Imagenes/Parte1/7_Volatilidad/Accion-eps-converted-to.pdf Graphic file (t
-ype pdf)
-<use Imagenes/Parte1/7_Volatilidad/Accion-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Accion-eps-converted-to.
-pdf  used on input line 90.
-(pdftex.def)             Requested size: 204.85846pt x 153.64684pt.
+[54]
+<Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf, id=2988, 422.39493pt x 315.8325
+7pt>
+File: Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf>
+Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf  used on
+ input line 84.
+(pdftex.def)             Requested size: 204.85846pt x 153.17378pt.
+<Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf, id=2989, 422.39493pt
+ x 315.83257pt>
+File: Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf Graphic file (ty
+pe pdf)
+<use Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf>
+Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.p
+df  used on input line 87.
+(pdftex.def)             Requested size: 227.62206pt x 170.19524pt.
+<Imagenes/Parte1/7_Volatilidad/Accion.pdf, id=2990, 425.57869pt x 312.02145pt>
+File: Imagenes/Parte1/7_Volatilidad/Accion.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/7_Volatilidad/Accion.pdf>
+Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Accion.pdf  used on inpu
+t line 90.
+(pdftex.def)             Requested size: 204.85846pt x 150.19708pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2932,136 +2024,92 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 94.
 LaTeX Info: Redefining \% on input line 94.
-[54]
+[55]
 
-LaTeX Info: Redefining \. on input line 121.
-LaTeX Info: Redefining \% on input line 121.
-[55 <./Imagenes/Parte1/7_Volatilidad/Volatilidad-eps-converted-to.pdf> <./Image
-nes/Parte1/7_Volatilidad/Volatilidad_Prediccion-eps-converted-to.pdf> <./Imagen
-es/Parte1/7_Volatilidad/Accion-eps-converted-to.pdf>]
+LaTeX Info: Redefining \. on input line 123.
+LaTeX Info: Redefining \% on input line 123.
+[56 <./Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf> <./Imagenes/Parte1/7_Vola
+tilidad/Volatilidad_Prediccion.pdf> <./Imagenes/Parte1/7_Volatilidad/Accion.pdf
+>]
 
 LaTeX Info: Redefining \. on input line 167.
 LaTeX Info: Redefining \% on input line 167.
-[56])
+[57])
 
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
-[57] (Parte1/10_Cobertura.tex
+LaTeX Info: Redefining \. on input line 137.
+LaTeX Info: Redefining \% on input line 137.
+[58] (Parte1/10_Cobertura.tex
 
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
-[58]
-Package epstopdf Info: Source file: <Imagenes/Parte1/10_Cobertura/Cobertura_Vol
-at_Imp.eps>
-(epstopdf)                    date: 2025-07-06 23:57:31
-(epstopdf)                    size: 36232 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/10_Cobertura/Cobertura_Vol
-at_Imp-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-06 23:58:51
-(epstopdf)                    size: 11960 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/10_C
-obertura/Cobertura_Volat_Imp-eps-converted-to.pdf Imagenes/Parte1/10_Cobertura/
-Cobertura_Volat_Imp.eps>
-(epstopdf)             \includegraphics on input line 104.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp-eps-converted-to.pdf, id=1765
-, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp-eps-converted-to.pdf Gra
-phic file (type pdf)
-<use Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp-eps-c
-onverted-to.pdf  used on input line 104.
-(pdftex.def)             Requested size: 295.90588pt x 221.93324pt.
+[59]
+<Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf, id=3138, 422.39493pt x 3
+12.02145pt>
+File: Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf Graphic file (type p
+df)
+<use Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf>
+Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf  
+used on input line 104.
+(pdftex.def)             Requested size: 295.90588pt x 218.58968pt.
 
 
 LaTeX Info: Redefining \. on input line 110.
 LaTeX Info: Redefining \% on input line 110.
-[59 <./Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp-eps-converted-to.pdf>])
+[60 <./Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf>])
 
-
-LaTeX Info: Redefining \. on input line 134.
-LaTeX Info: Redefining \% on input line 134.
-[60] (Parte1/9_Ops_Americanas.tex
-Package epstopdf Info: Source file: <Imagenes/Parte1/9_Americanas/One_Touch_Cal
-l.eps>
-(epstopdf)                    date: 2025-07-04 22:26:32
-(epstopdf)                    size: 86255 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/9_Americanas/One_Touch_Cal
-l-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-04 22:28:17
-(epstopdf)                    size: 64555 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/9_Am
-ericanas/One_Touch_Call-eps-converted-to.pdf Imagenes/Parte1/9_Americanas/One_T
-ouch_Call.eps>
-(epstopdf)             \includegraphics on input line 57.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/9_Americanas/One_Touch_Call-eps-converted-to.pdf, id=1783, 421
-.575pt x 316.18124pt>
-File: Imagenes/Parte1/9_Americanas/One_Touch_Call-eps-converted-to.pdf Graphic 
-file (type pdf)
-<use Imagenes/Parte1/9_Americanas/One_Touch_Call-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/9_Americanas/One_Touch_Call-eps-conver
-ted-to.pdf  used on input line 57.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
-Package epstopdf Info: Source file: <Imagenes/Parte1/9_Americanas/Delta_One_Tou
-ch_Call.eps>
-(epstopdf)                    date: 2025-07-04 22:26:50
-(epstopdf)                    size: 60102 bytes
-(epstopdf)             Output file: <Imagenes/Parte1/9_Americanas/Delta_One_Tou
-ch_Call-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-04 22:28:18
-(epstopdf)                    size: 54678 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=Imagenes/Parte1/9_Am
-ericanas/Delta_One_Touch_Call-eps-converted-to.pdf Imagenes/Parte1/9_Americanas
-/Delta_One_Touch_Call.eps>
-(epstopdf)             \includegraphics on input line 61.
-Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call-eps-converted-to.pdf, id=178
-4, 421.575pt x 316.18124pt>
-File: Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call-eps-converted-to.pdf Gr
-aphic file (type pdf)
-<use Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call-eps-
-converted-to.pdf  used on input line 61.
-(pdftex.def)             Requested size: 159.33821pt x 119.50363pt.
+LaTeX Info: Redefining \. on input line 139.
+LaTeX Info: Redefining \% on input line 139.
+[61] (Parte1/9_Ops_Americanas.tex
+<Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf, id=3175, 300.55858pt x 287.90
+79pt>
+File: Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf Graphic file (type pdf)
+<use Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf>
+Package pdftex.def Info: Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf  used 
+on input line 57.
+(pdftex.def)             Requested size: 159.33821pt x 152.63438pt.
+<Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf, id=3176, 295.3497pt x 2
+87.9079pt>
+File: Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf Graphic file (type 
+pdf)
+<use Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf>
+Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf 
+ used on input line 61.
+(pdftex.def)             Requested size: 159.33821pt x 155.32297pt.
 
 
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
-[61])
+[62])
 
-LaTeX Info: Redefining \. on input line 136.
-LaTeX Info: Redefining \% on input line 136.
-[62 <./Imagenes/Parte1/9_Americanas/One_Touch_Call-eps-converted-to.pdf> <./Ima
-genes/Parte1/9_Americanas/Delta_One_Touch_Call-eps-converted-to.pdf>]
-(Parte1/13_multi_asset.tex
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+[63 <./Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf> <./Imagenes/Parte1/9_Am
+ericanas/Delta_One_Touch_Call.pdf>] (Parte1/13_multi_asset.tex
 
 LaTeX Info: Redefining \. on input line 69.
 LaTeX Info: Redefining \% on input line 69.
-[63]
+[64]
 
 LaTeX Info: Redefining \. on input line 120.
 LaTeX Info: Redefining \% on input line 120.
-[64]
+[65]
 Overfull \hbox (36.6766pt too wide) detected at line 159
 []
  []
 
 )
 
-LaTeX Info: Redefining \. on input line 139.
-LaTeX Info: Redefining \% on input line 139.
-[65]
-
-[66
-
-
-]
+LaTeX Info: Redefining \. on input line 144.
+LaTeX Info: Redefining \% on input line 144.
+[66]
 Cap\'{\i }tulo 5.
 (Parte1/14_Gestion_carteras.tex
 
-[67]
-<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png, id=1838, 299.3182
+[67
+
+
+]
+<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png, id=3262, 299.3182
 5pt x 217.41225pt>
 File: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png Graphic file 
 (type png)
@@ -3069,7 +2117,7 @@ File: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png Graphic file
 Package pdftex.def Info: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activo
 s.png  used on input line 48.
 (pdftex.def)             Requested size: 295.90588pt x 214.93687pt.
-<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png, id=1839
+<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png, id=3263
 , 269.20575pt x 202.95825pt>
 File: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png Gra
 phic file (type png)
@@ -3094,8 +2142,8 @@ LaTeX Info: Redefining \. on input line 169.
 LaTeX Info: Redefining \% on input line 169.
 [70])
 
-LaTeX Info: Redefining \. on input line 142.
-LaTeX Info: Redefining \% on input line 142.
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
 [71] (Parte1/15_VaR.tex
 Overfull \hbox (9.59808pt too wide) in paragraph at lines 43--88
  [][] 
@@ -3114,19 +2162,19 @@ LaTeX Info: Redefining \. on input line 128.
 LaTeX Info: Redefining \% on input line 128.
 [73])
 
-LaTeX Info: Redefining \. on input line 145.
-LaTeX Info: Redefining \% on input line 145.
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
 [74]
 Cap\'{\i }tulo 6.
 (Parte1/16_Prediccion_mercado.tex
-<Imagenes/Parte1/16_Prediccion/Plotting.png, id=1880, 302.3295pt x 147.55125pt>
+<Imagenes/Parte1/16_Prediccion/Plotting.png, id=3306, 302.3295pt x 147.55125pt>
 
 File: Imagenes/Parte1/16_Prediccion/Plotting.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Plotting.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Plotting.png  used on in
 put line 13.
 (pdftex.def)             Requested size: 295.90588pt x 144.4236pt.
-<Imagenes/Parte1/16_Prediccion/Resistance.png, id=1881, 263.7855pt x 206.57175p
+<Imagenes/Parte1/16_Prediccion/Resistance.png, id=3307, 263.7855pt x 206.57175p
 t>
 File: Imagenes/Parte1/16_Prediccion/Resistance.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Resistance.png>
@@ -3142,14 +2190,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./Imagenes/Parte1/16_Prediccion/Plotting.png>]
-<Imagenes/Parte1/16_Prediccion/Support.png, id=1888, 251.13824pt x 206.57175pt>
+<Imagenes/Parte1/16_Prediccion/Support.png, id=3314, 251.13824pt x 206.57175pt>
 
 File: Imagenes/Parte1/16_Prediccion/Support.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Support.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Support.png  used on inp
 ut line 25.
 (pdftex.def)             Requested size: 295.90588pt x 243.4058pt.
-<Imagenes/Parte1/16_Prediccion/Trendlines.png, id=1889, 248.127pt x 199.947pt>
+<Imagenes/Parte1/16_Prediccion/Trendlines.png, id=3315, 248.127pt x 199.947pt>
 File: Imagenes/Parte1/16_Prediccion/Trendlines.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Trendlines.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Trendlines.png  used on 
@@ -3164,13 +2212,13 @@ LaTeX Info: Redefining \. on input line 34.
 LaTeX Info: Redefining \% on input line 34.
 [76 <./Imagenes/Parte1/16_Prediccion/Resistance.png> <./Imagenes/Parte1/16_Pred
 iccion/Support.png>]
-<Imagenes/Parte1/16_Prediccion/Oscillator.png, id=1898, 284.262pt x 139.722pt>
+<Imagenes/Parte1/16_Prediccion/Oscillator.png, id=3324, 284.262pt x 139.722pt>
 File: Imagenes/Parte1/16_Prediccion/Oscillator.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Oscillator.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Oscillator.png  used on 
 input line 43.
 (pdftex.def)             Requested size: 295.90588pt x 145.45029pt.
-<Imagenes/Parte1/16_Prediccion/Bollinger Bands.png, id=1899, 299.31825pt x 143.
+<Imagenes/Parte1/16_Prediccion/Bollinger Bands.png, id=3325, 299.31825pt x 143.
 3355pt>
 File: Imagenes/Parte1/16_Prediccion/Bollinger Bands.png Graphic file (type png)
 
@@ -3184,7 +2232,7 @@ LaTeX Info: Redefining \. on input line 52.
 LaTeX Info: Redefining \% on input line 52.
 [77 <./Imagenes/Parte1/16_Prediccion/Trendlines.png> <./Imagenes/Parte1/16_Pred
 iccion/Oscillator.png>]
-<Imagenes/Parte1/16_Prediccion/Head and shoulders.png, id=1908, 254.75175pt x 2
+<Imagenes/Parte1/16_Prediccion/Head and shoulders.png, id=3334, 254.75175pt x 2
 13.79875pt>
 File: Imagenes/Parte1/16_Prediccion/Head and shoulders.png Graphic file (type p
 ng)
@@ -3192,7 +2240,7 @@ ng)
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Head and shoulders.png  
 used on input line 57.
 (pdftex.def)             Requested size: 295.90588pt x 248.3362pt.
-<Imagenes/Parte1/16_Prediccion/Saucer bottom.png, id=1909, 244.5135pt x 193.924
+<Imagenes/Parte1/16_Prediccion/Saucer bottom.png, id=3335, 244.5135pt x 193.924
 5pt>
 File: Imagenes/Parte1/16_Prediccion/Saucer bottom.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Saucer bottom.png>
@@ -3208,14 +2256,14 @@ LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
 [78 <./Imagenes/Parte1/16_Prediccion/Bollinger Bands.png> <./Imagenes/Parte1/16
 _Prediccion/Head and shoulders.png>]
-<Imagenes/Parte1/16_Prediccion/Triple top.png, id=1918, 260.77425pt x 216.81pt>
+<Imagenes/Parte1/16_Prediccion/Triple top.png, id=3344, 260.77425pt x 216.81pt>
 
 File: Imagenes/Parte1/16_Prediccion/Triple top.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Triple top.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Triple top.png  used on 
 input line 69.
 (pdftex.def)             Requested size: 295.90588pt x 246.03784pt.
-<Imagenes/Parte1/16_Prediccion/Candlestick char.png, id=1920, 302.93175pt x 157
+<Imagenes/Parte1/16_Prediccion/Candlestick char.png, id=3346, 302.93175pt x 157
 .7895pt>
 File: Imagenes/Parte1/16_Prediccion/Candlestick char.png Graphic file (type png
 )
@@ -3223,7 +2271,7 @@ File: Imagenes/Parte1/16_Prediccion/Candlestick char.png Graphic file (type png
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Candlestick char.png  us
 ed on input line 76.
 (pdftex.def)             Requested size: 295.90588pt x 154.14148pt.
-<Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png, id=1921, 237.88875pt 
+<Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png, id=3347, 237.88875pt 
 x 159.59625pt>
 File: Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png Graphic file (typ
 e png)
@@ -3237,7 +2285,7 @@ LaTeX Info: Redefining \. on input line 84.
 LaTeX Info: Redefining \% on input line 84.
 [79 <./Imagenes/Parte1/16_Prediccion/Saucer bottom.png> <./Imagenes/Parte1/16_P
 rediccion/Triple top.png>]
-<Imagenes/Parte1/16_Prediccion/Point Figure Chart.png, id=1931, 248.127pt x 181
+<Imagenes/Parte1/16_Prediccion/Point Figure Chart.png, id=3357, 248.127pt x 181
 .8795pt>
 File: Imagenes/Parte1/16_Prediccion/Point Figure Chart.png Graphic file (type p
 ng)
@@ -3254,7 +2302,7 @@ LaTeX Info: Redefining \. on input line 96.
 LaTeX Info: Redefining \% on input line 96.
 [80 <./Imagenes/Parte1/16_Prediccion/Candlestick char.png> <./Imagenes/Parte1/1
 6_Prediccion/Meanings candlesticks.png>]
-<Imagenes/Parte1/16_Prediccion/Elliot waves.png, id=1940, 230.66174pt x 190.913
+<Imagenes/Parte1/16_Prediccion/Elliot waves.png, id=3366, 230.66174pt x 190.913
 25pt>
 File: Imagenes/Parte1/16_Prediccion/Elliot waves.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Elliot waves.png>
@@ -3270,8 +2318,8 @@ LaTeX Info: Redefining \. on input line 114.
 LaTeX Info: Redefining \% on input line 114.
 [81 <./Imagenes/Parte1/16_Prediccion/Point Figure Chart.png>])
 
-LaTeX Info: Redefining \. on input line 154.
-LaTeX Info: Redefining \% on input line 154.
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
 [82 <./Imagenes/Parte1/16_Prediccion/Elliot waves.png>]
 
 [83
@@ -3282,7 +2330,7 @@ LaTeX Info: Redefining \% on input line 154.
 [84]
 Cap\'{\i }tulo 7.
 (Parte2/17_Clas_exot_path_ops.tex
-<Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png, id=1961, 211.38976pt x 2
+<Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png, id=3387, 211.38976pt x 2
 15.00325pt>
 File: Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png Graphic file (type p
 ng)
@@ -3298,7 +2346,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [85
 
  <./Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png>]
-<Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png, id=1968, 292.09125pt
+<Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png, id=3394, 292.09125pt
  x 215.6055pt>
 File: Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png Graphic file (ty
 pe png)
@@ -3341,102 +2389,144 @@ Underfull \hbox (badness 2418) in paragraph at lines 232--232
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Depend.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Flujo di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Depend.
  []
 
 
-Overfull \hbox (0.54836pt too wide) in paragraph at lines 253--253
+Overfull \hbox (0.54836pt too wide) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Dimensi^^Son| 
  []
 
 
-Overfull \hbox (2.36641pt too wide) in paragraph at lines 253--253
+Overfull \hbox (2.36641pt too wide) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Compund/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Range
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/m/n/10 S^^S^^P (con-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Barrier
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/m/n/10 Primero
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 \OT1/cmr/m/n/10 (Knock-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 \OT1/cmr/m/n/10 Out)/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 \OT1/cmr/m/n/10 Se-gun-do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/m/n/10 Si (dis-cre-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 \OT1/cmr/m/n/10 to)/ No
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/bx/n/10 Lookback
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\OT1/cmr/m/n/10 Si (dis-cre-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 \OT1/cmr/m/n/10 to)/ No
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+[]|\OT1/cmr/bx/n/10 Passport
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+[]|\OT1/cmr/bx/n/10 Forward-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+\OT1/cmr/bx/n/10 start
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+[]|\OT1/cmr/bx/n/10 Volatility
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+[]|\OT1/cmr/bx/n/10 Parisian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+[]|\OT1/cmr/m/n/10 Strong
+ []
+
+
+Overfull \hbox (12.61687pt too wide) in paragraph at lines 263--263
+[]|\OT1/cmr/m/n/10 Primero(Out)/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+\OT1/cmr/m/n/10 Se-gun-
  []
 
 )
 
-LaTeX Info: Redefining \. on input line 158.
-LaTeX Info: Redefining \% on input line 158.
-[90] (Parte2/18_Barrier_options.tex
+LaTeX Info: Redefining \. on input line 161.
+LaTeX Info: Redefining \% on input line 161.
+[90]
+Cap\'{\i }tulo 8.
+(Parte2/18_Barrier_options.tex
 
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
-[91]
+[91
 
-LaTeX Info: Redefining \. on input line 134.
-LaTeX Info: Redefining \% on input line 134.
+]
+
+LaTeX Info: Redefining \. on input line 131.
+LaTeX Info: Redefining \% on input line 131.
 [92]
 Overfull \hbox (6.84785pt too wide) detected at line 141
 []
@@ -3449,8 +2539,8 @@ Overfull \hbox (14.62566pt too wide) detected at line 188
 
 
 
-LaTeX Info: Redefining \. on input line 242.
-LaTeX Info: Redefining \% on input line 242.
+LaTeX Info: Redefining \. on input line 195.
+LaTeX Info: Redefining \% on input line 195.
 [93]
 
 LaTeX Warning: Reference `sec:parisian_options' on page 94 undefined on input l
@@ -3458,20 +2548,20 @@ ine 246.
 
 
 
-LaTeX Info: Redefining \. on input line 282.
-LaTeX Info: Redefining \% on input line 282.
+LaTeX Info: Redefining \. on input line 248.
+LaTeX Info: Redefining \% on input line 248.
 [94])
 
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
+LaTeX Info: Redefining \. on input line 164.
+LaTeX Info: Redefining \% on input line 164.
 [95] (Parte2/19_Strong_path.tex
 
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
 [96])
 
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
 [97] (Parte2/20_Asian_ops.tex
 
 LaTeX Info: Redefining \. on input line 65.
@@ -3486,16 +2576,149 @@ LaTeX Info: Redefining \. on input line 179.
 LaTeX Info: Redefining \% on input line 179.
 [100])
 
-LaTeX Info: Redefining \. on input line 164.
-LaTeX Info: Redefining \% on input line 164.
-[101] (Parte2/21_Lookback_ops.tex)
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+[101] (Parte2/21_Lookback_ops.tex
 
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
 [102]
+
+LaTeX Info: Redefining \. on input line 137.
+LaTeX Info: Redefining \% on input line 137.
+[103])
+
+LaTeX Info: Redefining \. on input line 170.
+LaTeX Info: Redefining \% on input line 170.
+[104] (Parte2/22_Passport_ops.tex
+Overfull \hbox (5.28691pt too wide) detected at line 39
+[]
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+[105]
+
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+[106])
+
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
+[107] (Parte2/23_Otras_ops_exotic.tex
+
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+[108]
+
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+[109]
+
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+[110]
+
+LaTeX Info: Redefining \. on input line 216.
+LaTeX Info: Redefining \% on input line 216.
+[111])
+
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+[112]
+
+[113
+
+
+]
+
+[114]
+Cap\'{\i }tulo 9.
+(Parte3/24_One-factor_int_rate.tex
+
+[115
+
+]
+
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
+[116]
+
+LaTeX Info: Redefining \. on input line 125.
+LaTeX Info: Redefining \% on input line 125.
+[117]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+[118]
+
+LaTeX Info: Redefining \. on input line 217.
+LaTeX Info: Redefining \% on input line 217.
+[119]
+
+LaTeX Info: Redefining \. on input line 271.
+LaTeX Info: Redefining \% on input line 271.
+[120]
+
+LaTeX Info: Redefining \. on input line 326.
+LaTeX Info: Redefining \% on input line 326.
+[121]
+
+LaTeX Info: Redefining \. on input line 380.
+LaTeX Info: Redefining \% on input line 380.
+[122])
+
+LaTeX Info: Redefining \. on input line 182.
+LaTeX Info: Redefining \% on input line 182.
+[123] (Parte3/25_Ajuste_Yied_Curve.tex
+
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
+[124]
+Overfull \hbox (9.13376pt too wide) detected at line 76
+[]
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+[125])
+
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+[126] (Parte3/26_Deriv_interes.tex)
+
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+[127]
+
+[128
+
+
+]
+
+[129]
+
+[130]
 Ap\'{e}ndice A.
+(Apendices/Apendice Calculo.tex)
+
+[131
+
+]
+
+[132
+
+]
+Ap\'{e}ndice B.
 (Apendices/Apendice Ito.tex
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=2061, 364.19562pt x 27
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3657, 364.19562pt x 27
 3.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pd
 f)
@@ -3503,7 +2726,7 @@ f)
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf  u
 sed on input line 10.
 (pdftex.def)             Requested size: 364.19473pt x 273.14581pt.
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=2063, page=1, 364.1956
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3659, page=1, 364.1956
 2pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pd
 f)
@@ -3519,10 +2742,7 @@ page1 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
 
 
-[103
-
-
-]
+[133]
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pd
 f)
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 1>
@@ -3535,7 +2755,7 @@ f)
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , 
 page1 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=2068, page=2, 364.1956
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3664, page=2, 364.1956
 2pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pd
 f)
@@ -3563,11 +2783,11 @@ f)
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , 
 page2 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
-[104
+[134
 
  <./Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf> <./Imagenes/Parte1/3_A
 leatoriedad/6-CalculoIto2425.pdf>]
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=2157, page=3, 364.1956
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3753, page=3, 364.1956
 2pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pd
 f)
@@ -3581,7 +2801,7 @@ f)
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , 
 page3 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=2158, page=4, 364.1956
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3754, page=4, 364.1956
 2pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pd
 f)
@@ -3609,7 +2829,7 @@ f)
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , 
 page4 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
-[105
+[135
 
  <./Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf> <./Imagenes/Parte1/3_A
 leatoriedad/6-CalculoIto2425.pdf>])
@@ -3618,7 +2838,7 @@ leatoriedad/6-CalculoIto2425.pdf>])
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log
 _options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
 > allowed
-<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=2165, 538.01pt x 69
+<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3761, 538.01pt x 69
 9.61375pt>
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type
  pdf)
@@ -3636,7 +2856,7 @@ _options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log
 _options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
 > allowed
-<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=2167, page=1, 538.0
+<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3763, page=1, 538.0
 1pt x 699.61375pt>
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type
  pdf)
@@ -3654,7 +2874,7 @@ Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf
 
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
-[106]
+[136]
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type
  pdf)
 <use Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, page 1>
@@ -3675,14 +2895,14 @@ File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type
 Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf
  , page1 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[107
+[137
 
  <./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log
 _options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
 > allowed
-<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=2220, page=2, 538.0
+<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3816, page=2, 538.0
 1pt x 699.61375pt>
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type
  pdf)
@@ -3704,7 +2924,7 @@ File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type
 Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf
  , page2 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[108
+[138
 
  <./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf>])
 (Apendices/Apendice Make Your Mind Up.tex
@@ -3712,7 +2932,7 @@ Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/9_Americanas/Make_Your_Min
 d_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=2225, 538.01
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=3821, 538.01
 pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
@@ -3730,7 +2950,7 @@ on <1.5> allowed
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/9_Americanas/Make_Your_Min
 d_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=2227, page=1
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=3823, page=1
 , 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
@@ -3748,7 +2968,7 @@ ent.pdf , page1 used on input line 9.
 
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
-[109]
+[139]
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, page 1>
@@ -3769,14 +2989,14 @@ e (type pdf)
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalm
 ent.pdf , page1 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[110
+[140
 
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/9_Americanas/Make_Your_Min
 d_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=2298, page=2
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=3894, page=2
 , 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
@@ -3798,14 +3018,14 @@ e (type pdf)
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalm
 ent.pdf , page2 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[111
+[141
 
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/9_Americanas/Make_Your_Min
 d_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=2303, page=3
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=3899, page=3
 , 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
@@ -3827,14 +3047,14 @@ e (type pdf)
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalm
 ent.pdf , page3 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[112
+[142
 
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/9_Americanas/Make_Your_Min
 d_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=2308, page=4
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=3904, page=4
 , 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
@@ -3856,14 +3076,14 @@ e (type pdf)
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalm
 ent.pdf , page4 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[113
+[143
 
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/9_Americanas/Make_Your_Min
 d_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=2313, page=5
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=3909, page=5
 , 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic fil
 e (type pdf)
@@ -3885,7 +3105,7 @@ e (type pdf)
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalm
 ent.pdf , page5 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[114
+[144
 
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>])
 (Apendices/Apendice var cob vol imp.tex
@@ -3893,7 +3113,7 @@ ent.pdf , page5 used on input line 9.
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2319, 538.01pt
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=3915, 538.01pt
  x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -3911,7 +3131,7 @@ rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2321, page=1, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=3917, page=1, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -3929,7 +3149,7 @@ l.pdf , page1 used on input line 9.
 
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
-[115]
+[145]
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 1>
@@ -3950,14 +3170,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page1 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[116
+[146
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2393, page=2, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=3989, page=2, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -3979,14 +3199,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page2 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[117
+[147
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2398, page=3, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=3994, page=3, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -4008,14 +3228,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page3 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[118
+[148
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2413, page=4, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4009, page=4, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -4037,14 +3257,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page4 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[119
+[149
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2418, page=5, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4014, page=5, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -4066,14 +3286,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page5 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[120
+[150
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2423, page=6, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4019, page=6, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -4095,14 +3315,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page6 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[121
+[151
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2428, page=7, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4024, page=7, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -4124,14 +3344,14 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page7 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[122
+[152
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobe
 rtura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version
  <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=2434, page=8, 
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4030, page=8, 
 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file 
 (type pdf)
@@ -4153,27 +3373,31 @@ File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vo
 l.pdf , page8 used on input line 9.
 (pdftex.def)             Requested size: 538.00868pt x 699.61205pt.
-[123
+[153
 
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>])
 
-[124
+[154
 
 ]
-Ap\'{e}ndice B.
+Ap\'{e}ndice C.
+
+
+[155]
+
+[156
+
+]
+Ap\'{e}ndice D.
 (Apendices/Black_Jack.tex) (main.bbl
 
-[125]
+[157]
 
-[126
+[158
 
-]
+])
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-)
-
-[127] (main.aux
+[159] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -4186,16 +3410,16 @@ L3 programming layer <2025-05-26>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A26894995F1220ABD8F9D019D2DAC417;34337.
+(rerunfilecheck)             Checksum: 121BD143328404983D9F675C0A77864E;35713.
  ) 
 Here is how much of TeX's memory you used:
- 30656 strings out of 468219
- 616451 string characters out of 5428961
- 966353 words of memory out of 5000000
- 58258 multiletter control sequences out of 15000+600000
- 637682 words of font info for 80 fonts, out of 8000000 for 9000
+ 30876 strings out of 468219
+ 615670 string characters out of 5428961
+ 968053 words of memory out of 5000000
+ 58360 multiletter control sequences out of 15000+600000
+ 640472 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,19n,105p,941b,890s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,19n,105p,941b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Usuario Asier\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
 600\tcrm1000.pk><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs
@@ -4209,30 +3433,33 @@ grams/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Usuario As
 ier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
 ><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmmi10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Usuario Asier/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Usuario Asier/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Usu
-ario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.p
+ype1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Usuario Asier/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Usuario Asier/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Us
+uario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Usuario Asier/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Usuario Asier/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Us
+uario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.p
 fb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Usuario Asier/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Usuario Asier/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Usua
-rio Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb
-><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Usuario Asier/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Usua
-rio Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pf
-b><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmti10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Usuario Asier/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb><C:/Users/Usuario Asier/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (132 pages, 5435270 bytes).
+fonts/cm/cmr7.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Usuario Asier/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Usu
+ario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
+fb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Usuario Asier/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Usuario Asier/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb><C:/Users/Us
+uario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/
+line10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (164 pages, 6869908 bytes).
 PDF statistics:
- 2627 PDF objects out of 2984 (max. 8388607)
- 392 named destinations out of 1000 (max. 500000)
- 1976 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4260 PDF objects out of 4296 (max. 8388607)
+ 481 named destinations out of 1000 (max. 500000)
+ 2043 words of extra memory for PDF output out of 10000 (max. 10000000)
 
