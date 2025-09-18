@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 1755342861.87767 "build/main.aux" "build/main.bbl" "build/main" 1755342875.73765 0
+["bibtex build/main"] 1756075143.7845 "build/main.aux" "build/main.bbl" "build/main" 1758021002.35512 0
   "./referencias.bib" 1754057188 185 7d1ed1a5e72641dda3a92dc99b5b2198 ""
   "C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "build/main.aux" 1755342874 42146 450c17ef119c63e6cd2941073fbac21d "pdflatex"
+  "build/main.aux" 1758021000 47010 5a90a74e68884343775c70eaac37b6a1 "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1755342869.14943 "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" "build/main.pdf" "main" 1755342875.73865 0
+["pdflatex"] 1758020994.82408 "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" "build/main.pdf" "main" 1758021002.35597 0
   "Apendices/Apendice Calculo.tex" 1754843701 450 8fbd668c3c31aabb3021c7c051ca27fb ""
   "Apendices/Apendice Ito.tex" 1753443018 207 79f7b164e140169e84241b81d8ede33f ""
   "Apendices/Apendice Make Your Mind Up.tex" 1753443023 238 2743dc998b32508c8d8d54f21929bf60 ""
@@ -327,7 +327,7 @@
   "Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png" 1753445036 23303 e804ac058a8cbdbd91160a79a38ec80b ""
   "Parte1/10_Cobertura.tex" 1755299399 8953 f83fe2854926e2f0f470f88124367c67 ""
   "Parte1/11_Prods_renta_fija.tex" 1755207868 12956 1aac579155e6fce8455e145b0c1ce66a ""
-  "Parte1/12_swaps.tex" 1753442991 7820 951e2d7a8bd4b007e153d4932700fa11 ""
+  "Parte1/12_swaps.tex" 1755358592 7837 356526b2954ea06017a59757f8930899 ""
   "Parte1/13_multi_asset.tex" 1752864509 9161 3db0e34aa0c83c4cddf5a54307ea71e1 ""
   "Parte1/14_Gestion_carteras.tex" 1753442994 10084 0d8feb03824e6fc9d2d60b3cb10b4c8d ""
   "Parte1/15_VaR.tex" 1753133562 9120 01a735940c260f3b640b5f261a13bfa4 ""
@@ -341,7 +341,7 @@
   "Parte1/7_Volatilidad.tex" 1755297396 10851 f3ede686d3eddf4942f3fe8da0bcca0a ""
   "Parte1/8_Generalizaciones.tex" 1751656957 2780 e07567dc4cfa3ba64424be68a0449bda ""
   "Parte1/9_Ops_Americanas.tex" 1755300213 4885 ef8db661dc3c53f11d0dfcd3c6f901f1 ""
-  "Parte2/17_Clas_exot_path_ops.tex" 1754155223 14383 20c20ae3cd39b3a696f864846b20414e ""
+  "Parte2/17_Clas_exot_path_ops.tex" 1755539370 14411 f8fc3d400ac1f6630944f2ca3556db02 ""
   "Parte2/18_Barrier_options.tex" 1753713814 14666 5adff6b5af8d707e58653d55cd226769 ""
   "Parte2/19_Strong_path.tex" 1753893676 4960 7cdc46822f50dbd07305a8f55bd2c722 ""
   "Parte2/20_Asian_ops.tex" 1753911943 8971 91cf2dcac7c5472bdad845b9f6ec8753 ""
@@ -350,14 +350,17 @@
   "Parte2/23_Otras_ops_exotic.tex" 1754154990 11071 d05c22d144b6775d8f86e6ae20eb310b ""
   "Parte3/24_One-factor_int_rate.tex" 1754949207 29529 deb8b0ab80ff766389c0c9fd368cc2a5 ""
   "Parte3/25_Ajuste_Yied_Curve.tex" 1754949725 9502 4d0aaad5d85e4d6608e169380fae3fca ""
-  "Parte3/26_Deriv_interes.tex" 1755167907 1158 4023ea2cda6cbf1ad0907deac00f341e ""
-  "build/main.aux" 1755342874 42146 450c17ef119c63e6cd2941073fbac21d "pdflatex"
-  "build/main.bbl" 1755342862 189 e9ea4334d9ee8ff3fbcf69838ecfe442 "bibtex build/main"
-  "build/main.out" 1755342874 35713 121bd143328404983d9f675c0a77864e "pdflatex"
-  "build/main.toc" 1755342874 20383 b7b740a49c4abb7ebe3b06456832d4d4 "pdflatex"
-  "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" 1755022553 5049 329d635ef09f688a609ac6d84cd40127 ""
+  "Parte3/26_Deriv_interes.tex" 1755542699 20110 4a242fc37e5ed932e4275b44999cbe5a ""
+  "Parte3/27_Bono_Conver.tex" 1755963443 20973 f5e2fce991ef88222db21d8a2391c4f6 ""
+  "Parte6/1_Descrip_General.tex" 1755967991 3061 c43c5c11bfb01219dc0dfcfc018315eb ""
+  "Parte6/2_DF_One_Fact.tex" 1758020992 6038 eedf1fc49b511a874708d57a6822c59d ""
+  "build/main.aux" 1758021000 47010 5a90a74e68884343775c70eaac37b6a1 "pdflatex"
+  "build/main.bbl" 1756075144 189 e9ea4334d9ee8ff3fbcf69838ecfe442 "bibtex build/main"
+  "build/main.out" 1758021000 40885 3b8f39ee3a2d5dee39e17d747d7f71b3 "pdflatex"
+  "build/main.toc" 1758021000 23258 2dbaf36caf108f259a67ee22e4b3c7db "pdflatex"
+  "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" 1755968689 5383 89734b5b7024b16ee98fcac4cf45395d ""
   "datos.tex" 1751297253 145 2d409cff85cafdbdb8e75b049b65ea99 ""
-  "main.tex" 1755022553 5049 329d635ef09f688a609ac6d84cd40127 ""
+  "main.tex" 1755968689 5383 89734b5b7024b16ee98fcac4cf45395d ""
   "newplot.png" 1751049772 99395 18ca683a11bfd7fecac41f19be881a97 ""
   (generated)
   "build/main.aux"

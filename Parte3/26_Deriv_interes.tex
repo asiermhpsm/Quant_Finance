@@ -23,6 +23,35 @@ y la condición extra de la conversión:
 \end{equation*}
 donde $C(t)$ es el valor de conversión del bono en el tiempo $t$.
 
+También se debe añadir la condición de continunidad de la derivada de $r$.
+
+
+
+
+
+\subsection{Bond option}
+Son idénticas que una opción de acciones pero el subyacente es un bono con volatilidad estocástica. Por ejemplo, se considera una opción call sobre un bono cupón cero con precio de ejercicio $E$ y fecha de vencimiento $T$, siendo la fecha de vencimiento del bono $T_B \geq T$. Primero, se define $Z(r, t; T_B)$ como el valor del bono, que satisface la siguiente EDP:
+\begin{equation*}
+    \frac{\partial Z}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 Z}{\partial r^2} + (u - \lambda w) \frac{\partial Z}{\partial r} - rZ = 0
+\end{equation*}
+con la condición final $Z(r, T_B; T_B) = 1$ y condiciones de frontera adecuadas.
+
+Para la opción call sobre el bono, se define $V(r, t)$ como su valor, que como depende igualmente de $r$, también satisface la misma EDP (usando el mismo razonamiento que para los bonos). Por lo tanto,
+\begin{equation*}
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + (u - \lambda w) \frac{\partial V}{\partial r} - rV = 0}
+\end{equation*}
+La condición final para la opción es:
+\begin{equation*}
+    \boxed{V(r, T) = \max(Z(r, T; T_B) - E, 0)}
+\end{equation*}
+Este payoff corresponde al valor de ejercer la opción sobre el bono en la fecha $T$.
+
+
+El problema de este modelo es que cualquier inexactitud se amplifica ya que primero se resuelve el valor del bono y después la de la opción. Esto hace que en ocasiones se utilice un modelo más simplificado (aunque realmente inconsistente) que consiste en tratar el valor del bono como un camino aleatorio lognormal. De esta manera se puede usar la solución de Black-Scholes clásica. Este será un buen modelo siempre que el vencimiento de la opción sobre el bono sea mucho más corto que el vencimiento del bono subyacente. En períodos cortos de tiempo, mucho más allá del vencimiento, el bono se comporta de forma estocástica, con una volatilidad medible.
+
+Sin embargo, no debe utilizarse cuando la vida de la opción sea comparable al vencimiento del bono, ya que en ese caso se produce una apreciable tendencia a la par; es decir, el valor del bono al vencimiento es el principal más el último cupón; el bono no puede comportarse de forma logarítmica cerca del vencimiento, ya que sabemos dónde debe terminar. Esto contrasta enormemente con el comportamiento de una acción, cuyo valor no se conoce con certeza en una fecha futura.
+
+Otro enfoque utilizado en la práctica consiste en modelar el rendimiento (yield) al vencimiento del bono subyacente. La suposición habitual es que este rendimiento sigue una trayectoria aleatoria logarítmica normal. Al modelar el rendimiento y calcular el precio del bono con base en este rendimiento, se obtiene un bono con un buen comportamiento cerca de su vencimiento
 
 
 
@@ -30,6 +59,234 @@ donde $C(t)$ es el valor de conversión del bono en el tiempo $t$.
 
 
 
+
+\subsection{Caps y floors}
+
+Son contratos diseñados para limitar (poner tope o suelo) al tipo de interés que se paga o cobra en un contrato. Por ejemplo, si se tiene un contrato con una deuda del Euribor+1\% y se quiere limitar el tipo de interés a un máximo del 5\% (cap) o mínimo del 2\% (floor).
+
+Los \textbf{caps} son comprados por el pagador del contrato y ponen un tope en el máximo que se paga. Un cap se compone de la suma de varios \textbf{caplets} en tiempo $t_i$. El flujo de dinero que genera cada caplet:
+\begin{equation*}
+    \boxed{\max(r_L-r_c, 0) \cdot P \cdot \text{Tenor}}
+\end{equation*}
+donde $r_L$ es el tipo observado (Libor, Euribor, etc.), $r_c$ es el tipo strike del cap y el tenor es la fracción del año correspondiente al caplet (p.e.\ si es trimestral 0.25, si es semestral 0.5, etc.). 
+
+Si se asume que el tipo observado sigue un camino aleatorio $r_L \approx r$, entonces un solo caplet sigue la EDP:
+\begin{equation*}
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + (u - \lambda w) \frac{\partial V}{\partial r} - rV = 0}
+\end{equation*}
+con la condición
+\begin{equation*}
+    \boxed{V(r,T) = \max(r - r_c, 0)}
+\end{equation*}
+que matematicamente es parecido a una call option.
+
+
+
+Los \textbf{floors} son comprados por el recibidor del contrato y ponen un suelo en el mínimo que se paga. Un floor se compone de la suma de varios \textbf{floorlets} en tiempo $t_i$. De igual manera, cumplen:
+\begin{equation*}
+    \boxed{\frac{\partial V}{\partial t} + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2} + (u - \lambda w) \frac{\partial V}{\partial r} - rV = 0}
+\end{equation*}
+con la condición:
+\begin{equation*}
+    \boxed{V(r,T) = \max(r_f - r, 0)}
+\end{equation*}
+que matematicamente es parecido a una put option.
+
+
+Normalmente, el valor $r_L$ se define en $t_{i-1}$.
+
+
+\subsubsection{Cap/Floor parity}
+Una cartera compuesta por un caplet largo y un floorlet corto (con el mismo strike) genera un flujo de caja equivalente al de un swap de tasas de interés. Matemáticamente, esto se expresa como:
+\begin{equation*}
+    \max(r_L - r_c, 0) - \max(r_c - r_L, 0) = r_L - r_c
+\end{equation*}
+Este flujo es igual al de un pago de swap (ver sección~\ref{sec:swaps}). Por lo tanto, existe la relación de no arbitraje:
+\begin{equation*}
+    \boxed{\text{cap} = \text{floor} + \text{swap}}
+\end{equation*}
+
+
+
+\subsubsection{Relación entre Caplet/Floorlet y Bond Options}
+En el caso de los capplets, se tiene un flujo de dinero
+\begin{equation*}
+    \max(r_L - r_c, 0)
+\end{equation*}
+multiplicado por el principal y el tenor (fracción del año entre t's) y recibido en tiempo $t_i$, pero siendo $r_L$ definido en $t_{i-1}$. Sea el principal 1 y sea $\tau$ el tenor, se tiene que el valor actualizado de este flujo es:
+\begin{align*}
+    \frac{1}{1+r_L\tau}\tau\max(r_L - r_c, 0) &= \max\left(\frac{\tau(r_L - r_c)}{1+r_L\tau}, 0\right) \\
+    &= \max\left(\frac{r_L\tau - r_c\tau}{1+r_L\tau}, 0\right) \\
+    &= \max\left(\frac{ (1+r_L\tau) - ( 1+r_c\tau) }{1+r_L\tau}, 0\right) \\
+    &= \max\left( 1 - \frac{ 1+r_c\tau }{1+r_L\tau}, 0\right)
+\end{align*}
+El valor en $t_{i-1}$ de un bono de cupón cero que paga $1+r_c\tau$ en tiempo $t_i$ es su actualización:
+\begin{equation*}
+    B_{t_i}(t_{i-1}) = \text{Actualización}(1+r_c\tau) = \frac{ 1+r_c\tau }{1+r_L\tau}
+\end{equation*}
+luego el flujo de dinero del capplet es:
+\begin{equation*}
+    \max\left( 1 - B_{t_i}(t_{i-1}), 0\right)
+\end{equation*}
+
+Es decir, \textbf{el flujo de dinero de un capplet es equivalente a una Bond Option de tipo Put con un strike 1 y el subyacente un bono de cupón cero que paga $1+r_c\tau$ en $t_i$}. 
+
+Siguiendo el mismo razonamiento, se deduce que \textbf{el flujo de dinero de un floorlet es equivalente a una Bond Option de tipo Call con un strike 1 y el subyacente un bono de cupón cero que paga $1+r_f\tau$ en $t_i$}.
+
+
+
+\subsubsection{Collars}
+Se ponen límites tanto al máximo como al mínimo que se paga en un contrato. Se puede valorar como un cap en posición larga y un floor en posición corta.
+
+
+
+
+
+
+
+\subsection{Range Notes}
+Descritas en~\ref{sec:clas_range_notes}, pagan intereses sobre un principal nomial cada vez que el subyacente está dentro de un rango delimitado por un límite superior y uno inferior. Si se asume que el subyacente sobre el que se aplica el rango es el tipo de interés spot, entonces se debe resolver:
+\begin{equation*}
+    \boxed{
+        \frac{\partial V}{\partial t}
+        + \frac{1}{2} w^2 \frac{\partial^2 V}{\partial r^2}
+        + (u - \lambda w) \frac{\partial V}{\partial r}
+        - rV + \mathcal{I}(r) = 0
+    }
+\end{equation*}
+con la condición final:
+\begin{equation*}
+    V(r, T) = 0
+\end{equation*}
+donde
+\begin{equation*}
+    \mathcal{I}(r) = 
+    \begin{cases}
+        r & \text{si } r_l < r < r_u \\
+        0 & \text{en otro caso}
+    \end{cases}
+\end{equation*}
+Esto es solo una aproximación al valor correcto, ya que en la práctica el tipo de interés relevante (subyacente) tendrá un vencimiento finito (no infinitesimal).
+
+
+
+
+\subsection{Swaptions, captions y floortions}
+
+Una \textbf{swaption} es una opción sobre un swap de tasas de interés. El comprador de una swaption tiene el derecho, pero no la obligación, de entrar en un swap en una fecha futura, pagando una tasa fija ($r_E$) y recibiendo una tasa flotante (o viceversa). En una swaption de tipo call, el comprador tiene el derecho de ser el pagador de la tasa fija; en una swaption de tipo put, el comprador puede ser el receptor de la tasa fija.
+
+Las \textbf{captions} y \textbf{floortions} son opciones sobre contratos de cap y floor, respectivamente. Estos instrumentos pueden valorarse mediante ecuaciones diferenciales parciales, aunque en la práctica suelen utilizarse aproximaciones como la fórmula de Black-Scholes para swaptions europeas.
+
+\subsubsection*{Práctica de mercado}
+
+En la práctica, se modela el valor de la swaption usando la tasa par ($r_T$) de un swap con vencimiento $T_S$. Se asume que $r_T$ sigue una caminata lognormal con volatilidad medible. El valor de la swaption en el vencimiento es:
+\begin{equation*}
+    \max(r_T - r_E, 0) \times \text{valor presente de los flujos futuros}
+\end{equation*}
+El valor de la swaption depende de la volatilidad de la tasa par, el tiempo hasta el vencimiento y los factores de descuento adecuados.
+
+La fórmula de valoración para una swaption pagadora bajo el marco de Black-Scholes es:
+\begin{equation*}
+    \frac{1}{F} e^{-r(T-\tau)} \left( 1 - \left(1 + \frac{1}{2}F\right)^{-2(T_S-T)} \right) \left( FN(d_1') - EN(d_2') \right)
+\end{equation*}
+y para la swaption receptora:
+\begin{equation*}
+    \frac{1}{F} e^{-r(T-\tau)} \left( 1 - \left(1 + \frac{1}{2}F\right)^{-2(T_S-T)} \right) \left( EN(d_2') - FN(d_1') \right)
+\end{equation*}
+donde $F$ es la tasa forward del swap, $T_S$ es el vencimiento del swap, y
+\begin{align*}
+    d_1' &= \frac{\log(F/E) + \frac{1}{2}\sigma^2(T-\tau)}{\sigma\sqrt{T-\tau}} \\
+    d_2' &= d_1' - \sigma\sqrt{T-\tau}
+\end{align*}
+Estas fórmulas asumen pagos semestrales y se basan en el modelo de Black para swaps.
+
+Las captions y floortions se valoran de manera similar, pero sobre contratos de cap y floor respectivamente. Debido a la complejidad y el riesgo de errores de valoración, se recomienda precaución en su uso.
+
+
+
+\subsection{Spread Options}
+
+Las \textbf{spread options} son derivados cuyo valor depende de la diferencia entre dos tasas de interés. En el caso más simple, ambas tasas provienen de la misma curva de rendimientos, pero también pueden ser tasas de curvas relacionadas (por ejemplo, curva de rendimiento vs.\ curva swap, LIBOR vs.\ bonos del Tesoro), curvas de riesgo y sin riesgo, o tasas en diferentes monedas.
+
+Valorar estos contratos en el marco de modelos de un solo factor es complicado, ya que la diferencia (spread) depende de la inclinación de la curva de rendimientos y, en estos modelos, todas las tasas están correlacionadas, dejando poco margen para el comportamiento aleatorio del spread. Por lo tanto, se requieren modelos más avanzados (por ejemplo, multifactoriales) para una valoración consistente.
+
+En la práctica, una aproximación común es modelar el spread directamente como una variable lognormal (o normal) y aplicar la fórmula de Black-Scholes, eligiendo tasas adecuadas para descontar. Aunque este método es menos satisfactorio desde el punto de vista teórico, es menos propenso a errores graves y es ampliamente utilizado en el mercado.
+
+
+
+
+\subsection{Index Amortizing Rate Swaps}
+
+Amplización de la seccion~\ref{sec:swaps} sobre swaps vainilla, un \textbf{Index Amortizing Rate Swap (IAR Swap)} es un contrato en el que dos partes intercambian pagos de intereses sobre un principal que se reduce (amortiza) en función de un índice, normalmente una tasa de interés de corto plazo. Típicamente, un pago es a tasa fija y el otro a tasa flotante.
+
+La amortización del principal depende del nivel del índice en fechas de revisión. Por ejemplo, si la tasa spot es baja, el principal se amortiza más rápido; si la tasa es alta, la amortización es menor o nula. La relación entre la tasa spot y la reducción del principal se define en una tabla de amortización.
+
+Características adicionales incluyen:
+\begin{itemize}
+    \item \textbf{Lockout period}: Periodo inicial donde no hay amortización, los pagos son como en un swap vanilla.
+    \item \textbf{Clean up}: Si el principal cae por debajo de un umbral, se amortiza completamente.
+\end{itemize}
+
+Estos swaps permiten adaptar el riesgo y los flujos de caja a la evolución de las tasas de interés, y pueden incluir estructuras sofisticadas según las necesidades del contrato.
+
+
+
+
+
+
+\subsection{Contratos con decisiones embebidas (Flexiswaps)}
+
+Un \textbf{flexiswap} es un contrato de swap con $M$ flujos de caja de tipo flotante menos fijo, $r - r_f$, durante su vida. La particularidad es que el titular debe elegir aceptar exactamente $m \leq M$ de estos flujos de caja. En cada fecha de flujo de caja, el titular debe decidir si acepta o no el flujo. Una vez que ha aceptado $m$ flujos, no puede aceptar más. Esto hace que el contrato sea dependiente de la trayectoria (\textit{path-dependent}).
+
+Para valorar este contrato, se introducen $m+1$ funciones de valor, $V(r, t, i)$, donde $i = 1, \dots, m$ es el número de flujos de caja que el titular todavía tiene derecho a aceptar, y $V(r, t, 0) = 0$ ya que no quedan opciones. Cada una de estas funciones satisface la EDP de valoración de derivados de tasa de interés.
+
+Sea $t_j$ con $j=1, \dots, M$ las fechas de los flujos de caja. Se deben cumplir dos condiciones:
+\begin{enumerate}
+    \item Si el número de flujos de caja restantes en el contrato es igual al número de flujos que aún se deben aceptar, el titular está obligado a aceptarlos todos.
+    \item Si hay más flujos de caja disponibles que los que se deben aceptar, la elección debe ser óptima.
+\end{enumerate}
+
+El primer punto se garantiza con la siguiente condición en las fechas de flujo de caja $t_{M-i+1}, \dots, t_M$. Si en la fecha $t_{M-k}$ quedan $k+1$ flujos de caja y al titular le quedan por elegir $k+1$ flujos (es decir, $i=k+1$), debe aceptar el flujo. Esto se modela como una condición de salto:
+\begin{equation*}
+    V(r, t_{M-i+1}^-, i) = V(r, t_{M-i+1}^+, i-1) + r - r_f \quad \text{para } i=1, \dots, m
+\end{equation*}
+Esta condición asegura que los últimos $m$ flujos de caja se aceptan si es obligatorio.
+
+La optimalidad de las elecciones anteriores se asegura mediante una restricción de tipo americano. En una fecha de flujo de caja $t_j$ donde la elección es opcional, el valor del contrato es el máximo entre ejercer (aceptar el flujo) y no ejercer (esperar):
+\begin{equation*}
+    V(r, t_j, i) = \max\left( V(r, t_j, i-1) + r - r_f, V_{\text{continuación}}(r, t_j, i) \right)
+\end{equation*}
+donde $V_{\text{continuación}}$ es el valor de no aceptar el flujo y mantener las $i$ opciones para el futuro. Esto se puede escribir como una desigualdad:
+\begin{equation*}
+    V(r, t_j, i) \geq V(r, t_j, i-1) + r - r_f
+\end{equation*}
+La valoración de este contrato requiere resolver $m$ problemas de valoración, trabajando hacia atrás desde $V(r,t,0)=0$ para calcular $V(r,t,1)$, luego $V(r,t,2)$, y así sucesivamente hasta $V(r,t,m)$.
+
+También existen los flexicaps y los flexifloors.
+
+
+
+\subsection{Más derivados de tipos de interés}
+
+Los siguientes derivados requieren un modelo estocástico de tipos de interés para su valoración, por lo que son dependientes del modelo.
+
+\begin{itemize}
+    \item \textbf{Accordion swap:} Un swap cuyo vencimiento puede alargarse o acortarse a voluntad del tenedor.
+    \item \textbf{Barrier cap/floor:} Un cap o floor de tipo de interés con una característica de barrera.
+    \item \textbf{Basis swap:} Un swap en el que ambas patas son flotantes, de diferentes vencimientos o monedas.
+    \item \textbf{Bermudan swaptions:} Son como las swaptions vanilla en el sentido de que dan al tenedor el derecho a pagar (payer swaption) o recibir (receiver swaption) la pata fija de un swap. La característica Bermudan permite al tenedor ejercer en fechas específicas.
+    \item \textbf{Bounded cap or floor:} Un cap o floor de tipo de interés cuyo pago total está acotado.
+    \item \textbf{Callable swap:} Un swap que puede ser rescatado por el pagador de la tasa fija.
+    \item \textbf{Constant Maturity Swap:} Un swap en el que una de las patas es en sí misma una tasa de swap de tenor constante (en lugar de la tasa LIBOR más estándar).
+    \item \textbf{LIBOR-in-arrears swap:} Es un swap de tipos de interés en el que el pago flotante se realiza al mismo tiempo que se fija. En el swap de vainilla simple, el tipo se fija antes del pago, de modo que un swap con pagos semestrales de LIBOR a seis meses tiene el tipo flotante fijado seis meses antes de que se pague. Esta sutil diferencia significa que el swap LIBOR-in-arrears no puede descomponerse en bonos y la valoración no es independiente del modelo. Cierto análisis muestra que habrá una ligera diferencia entre el swap de vainilla y el swap LIBOR-in-arrears. Dado que la diferencia depende de la pendiente de la curva de tipos a plazo, el swap LIBOR-in-arrears se considera a menudo como una apuesta por el empinamiento o aplanamiento de la curva de rendimientos.
+    \item \textbf{Moving average cap/floor:} Un cap/floor de tipo de interés con un pago determinado por un tipo de interés medio durante un período.
+    \item \textbf{Putable swap:} Un swap que puede ser rescatado por el pagador de la tasa flotante.
+    \item \textbf{Ratchets and one-way floaters:} Son notas a tipo flotante en las que el importe de los pagos periódicos se reajusta, normalmente de forma monotónicamente creciente (o decreciente). El importe del reajuste dependerá de un tipo de interés flotante especificado.
+    \item \textbf{Reflex cap/floor:} Como un cap o floor pero con pagos que dependen de que se alcance un activador (trigger).
+    \item \textbf{Reverse floater:} Una nota a tipo flotante con un cupón que aumenta cuando el tipo subyacente baja y viceversa.
+    \item \textbf{Rolling cap/floor:} Un cap o floor en el que la parte fuera del dinero (out-of-the-money) de cada pago se traslada al siguiente período.
+    \item \textbf{Triggers:} Son como las opciones de barrera en el sentido de que los pagos se reciben hasta (o después de) que un activo financiero especificado cotice por encima o por debajo de un nivel determinado. Por ejemplo, el trigger swap es como un swap de vainilla simple de tipo fijo y flotante hasta que el tipo LIBOR de referencia se fije por encima/debajo de un tipo especificado. Se pueden imaginar en variedades de entrada y salida, y de subida y bajada.
+\end{itemize}
 
 
 

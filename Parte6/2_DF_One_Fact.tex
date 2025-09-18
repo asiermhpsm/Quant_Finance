@@ -1,0 +1,135 @@
+\section{Diferencias finitas para modelos de un factor}
+Dados $S_\infty$ (normamente $3E$ o $4E$) y $T$, se plantea una malla de diferencias finitas del dominio acotado: dados los números naturales $N > 1$ y $M > 1$ se definen los pasos de tiempo y de activo de la malla
+\begin{equation*}
+    \Delta t = T/(N+1), \quad \Delta S = S_\infty/(M+1)
+\end{equation*}
+y los puntos (nodos) de la malla de diferencias finitas son
+\begin{equation*}
+    V_j^i = V(t_j, S_i) = (j\,\Delta t,\, i\,\Delta S), \quad j = 0, \ldots, N+1;\; i = 0, \ldots, M+1.
+\end{equation*}
+
+A continuación, se plantea el siguiente $\theta$-esquema:
+\begin{align*}
+    \frac{\partial V}{\partial t}\left(t_j, S_i\right) &\approx \frac{V_{j+1}^i - V_j^i}{\Delta t} \\
+    \frac{\partial V}{\partial S}\left(t_j, S_i\right) &\approx \theta \frac{V_j^{i+1} - V_j^i}{\Delta S} + (1-\theta) \frac{V_{j+1}^{i+1} - V_{j+1}^i}{\Delta S} \\
+    \frac{\partial^2 V}{\partial S^2}\left(t_j, S_i\right) &\approx \theta \frac{V_j^{i+1} - 2V_j^i + V_j^{i-1}}{\Delta S^2}  + (1-\theta) \frac{V_{j+1}^{i+1} - 2V_{j+1}^i + V_{j+1}^{i-1}}{\Delta S^2} \\
+    V\left(t_j, S_i\right) &\approx \theta\, V_j^i + (1-\theta)\, V_{j+1}^i
+\end{align*}
+
+Se considera ahora la EDP parabólica general:
+\begin{align*}
+    &\frac{\partial V}{\partial t} + a(t,S) \frac{\partial^2 V}{\partial S^2} + b(t,S) \frac{\partial V}{\partial S} + c(t,S) V + f(t,S) = 0 \\
+    \implies &\frac{V_{j+1}^i - V_j^i}{\Delta t} \\
+    &+ a_j^i \left( \theta \frac{V_j^{i+1} - 2V_j^i + V_j^{i-1}}{\Delta S^2}  + (1-\theta) \frac{V_{j+1}^{i+1} - 2V_{j+1}^i + V_{j+1}^{i-1}}{\Delta S^2} \right) \\
+    &+ b_j^i \left( \theta \frac{V_j^{i+1} - V_j^i}{\Delta S} + (1-\theta) \frac{V_{j+1}^{i+1} - V_{j+1}^i}{\Delta S} \right)\\
+    &+ c_j^i \left( \theta V_j^i + (1-\theta) V_{j+1}^i \right) \\
+    &+ f_j^i = 0 \\
+\end{align*}
+que agrupando por V's:
+\begin{align*}
+    &\left( \frac{\theta}{\Delta S^2} a_j^i \right)V_j^{i-1} \\
+    &+\left( -\frac{1}{\Delta t} - \frac{2\theta}{\Delta S^2}a_j^i  - \frac{\theta}{\Delta S}b_j^i + \theta c_j^i \right)V_j^i \\
+    &+\left( \frac{\theta}{\Delta S^2} a_j^i + \frac{\theta}{\Delta S}b_j^i \right)V_j^{i+1} \\
+    &+\left( \frac{1-\theta}{\Delta S^2} a_j^i \right)V_{j+1}^{i-1} \\
+    &+\left( \frac{1}{\Delta t} - \frac{2(1-\theta)}{\Delta S^2}a_j^i - \frac{(1-\theta)}{\Delta S}b_j^i + (1-\theta) c_j^i \right)V_{j+1}^i \\
+    &+\left( \frac{(1-\theta)}{\Delta S^2} a_j^i + \frac{(1-\theta)}{\Delta S}b_j^i \right)V_{j+1}^{i+1} \\
+    &+ f_j^i = 0 \\
+\end{align*}
+Se define
+\begin{equation*}
+    \alpha = \frac{1}{\Delta S^2}, \qquad \beta = \frac{1}{\Delta S}, \qquad \gamma = \frac{1}{\Delta t}
+\end{equation*}
+por lo que
+\begin{align*}
+    &\theta\left( \alpha a_j^i \right)V_j^{i-1} +\left( -\gamma - \theta (2\alpha a_j^i  + \beta b_j^i - c_j^i) \right)V_j^i +\theta\left( \alpha a_j^i + \beta b_j^i \right)V_j^{i+1} \\
+    &+(1-\theta)\left( \alpha a_j^i \right)V_{j+1}^{i-1} +\left( \gamma - (1-\theta) (2\alpha a_j^i + \beta b_j^i - c_j^i) \right)V_{j+1}^i \\
+    &+(1-\theta)\left( \alpha a_j^i + \beta b_j^i \right)V_{j+1}^{i+1} + f_j^i = 0 \\
+\end{align*}
+y dado un $j$, se considera:
+\begin{equation*}
+    \eta_i = \alpha a_j^i, \qquad \varphi_i = 2\alpha a_j^i  + \beta b_j^i - c_j^i, \qquad \psi_i = \alpha a_j^i + \beta b_j^i
+\end{equation*}
+por lo que
+\begin{align*}
+    &\theta\eta_i V_j^{i-1} +\left( -\gamma - \theta \varphi_i \right)V_j^i +\theta\left( \psi_i \right)V_j^{i+1} \\
+    &+(1-\theta)\eta_i V_{j+1}^{i-1} +\left( \gamma - (1-\theta) \varphi_i \right)V_{j+1}^i +(1-\theta)\left( \psi_i \right)V_{j+1}^{i+1} + f_j^i = 0 \\
+    \implies &\theta\eta_i V_j^{i-1} +\left( -\gamma - \theta \varphi_i \right)V_j^i +\theta\left( \psi_i \right)V_j^{i+1} \\
+    &= - (1-\theta)\eta_i V_{j+1}^{i-1} -\left( \gamma - (1-\theta) \varphi_i \right)V_{j+1}^i - (1-\theta)\left( \psi_i \right)V_{j+1}^{i+1} - f_j^i 
+\end{align*}
+es decir, para cada tiempo $j$ y empezando desde el final, se debe resolver el sistema:
+\begin{align*}
+    \begin{pmatrix}
+        A_{1,1} & \cdots & 0 \\
+        \vdots & \ddots & \vdots \\
+        0 & \cdots & A_{M,M}
+    \end{pmatrix}
+    \cdot \begin{pmatrix}
+        V_j^1 \\
+        \vdots \\
+        V_j^M
+    \end{pmatrix}
+    =&\begin{pmatrix}
+        B_{1,1} & \cdots & 0 \\
+        \vdots & \ddots & \vdots \\
+        0 & \cdots & B_{M,M}
+    \end{pmatrix}
+    \cdot \begin{pmatrix}
+        V_{j+1}^1 \\
+        \vdots \\
+        V_{j+1}^M
+    \end{pmatrix}
+    -\begin{pmatrix}
+        f_j^1 \\
+        \vdots \\
+        f_j^M
+    \end{pmatrix}
+    \\
+    &+\begin{pmatrix}
+        -\underbrace{\theta\eta_1}_{A_{1,0}} V_j^0 \underbrace{-(1-\theta)\eta_1}_{B_{1,0}} V_{j+1}^0 \\
+        0 \\
+        \vdots \\
+        0 \\
+        -\underbrace{\theta\psi_M}_{A_{M,M+1}} V_j^{M+1} \underbrace{- (1-\theta)\psi_M }_{B_{M,M+1}}V_{j+1}^{M+1}
+    \end{pmatrix}
+\end{align*}
+siendo
+\begin{align*}
+    &A_{i,i-1} = \theta\eta_{i}, && B_{i,i-1} = -(1-\theta)\eta_{i} \\
+    &A_{i,i} = -\gamma - \theta \varphi_i && B_{i,i} = -(\gamma - (1-\theta) \varphi_i)\\
+    &A_{i,i+1} = \theta\psi_{i} && B_{i,i+1} = -(1-\theta)\psi_{i} \\
+\end{align*}
+
+
+
+
+En los bordes se deben imponer las condiciones de frontera. De igual manera, el término $f$ se puede ponderar.
+
+
+
+
+
+
+
+
+\subsection{Convergencia del resultado}
+También se debe tener en cuenta que el resultado sea convergente. Lo que se suele hacer es obtener una expresion
+\begin{equation*}
+    V_i^{k+1} = A V_{i-1}^k + B V_i^k + C V_{i+1}^k,
+\end{equation*}
+sustituir usando
+\begin{equation*}
+    \boxed{V_i^k = \alpha^k e^{2\pi i \sqrt{-1}/k}}
+\end{equation*}
+y estudiar para que valores de los parámetros hace que el módulo satisfaga
+\begin{equation*}
+    \boxed{|\alpha| \leq 1}
+\end{equation*}
+Generalmente solo hace falta elegir los valores de $\delta t$ y $\delta S$ adecuadamente para asegurar la convergencia del método.
+
+
+
+
+
+
+
+

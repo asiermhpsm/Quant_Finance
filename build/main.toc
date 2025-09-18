@@ -183,7 +183,7 @@
 \contentsline {subsection}{\numberline {8.6.14}Himalayan option}{112}{subsection.8.6.14}%
 \contentsline {subsection}{\numberline {8.6.15}HYPER option}{112}{subsection.8.6.15}%
 \contentsline {part}{III\hspace {1em}Renta fija y derivados}{113}{part.3}%
-\contentsline {chapter}{\numberline {9}Modelización de instrumentos de renta fija}{115}{chapter.9}%
+\contentsline {chapter}{\numberline {9}Modelización de instrumentos de renta fija de un factor}{115}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Modelado de tasas de interés one-factor}{115}{section.9.1}%
 \contentsline {subsection}{\numberline {9.1.1}Modelización de bonos}{115}{subsection.9.1.1}%
 \contentsline {subsection}{\numberline {9.1.2}Market price of risk $\lambda (r,t)$}{117}{subsection.9.1.2}%
@@ -199,15 +199,44 @@
 \contentsline {subsection}{\numberline {9.2.3}Pros y contras del ajuste para modelos de un solo factor para ajustar yield curve}{126}{subsection.9.2.3}%
 \contentsline {section}{\numberline {9.3}Derivados de la tasa de interés}{127}{section.9.3}%
 \contentsline {subsection}{\numberline {9.3.1}Bonos callable}{127}{subsection.9.3.1}%
-\contentsline {part}{IV\hspace {1em}Apéndices}{129}{part.4}%
-\contentsline {chapter}{\numberline {A}Cálculo básico}{131}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Algunos resultados básicos de cálculo}{131}{section.Alph1.1}%
-\contentsline {chapter}{\numberline {B}Apéndices de la Parte 1}{133}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Cálculo de Itô}{133}{section.Alph2.1}%
-\contentsline {section}{\numberline {B.2}Generalizaciones sencillas de Black-Scholes}{136}{section.Alph2.2}%
-\contentsline {section}{\numberline {B.3}Opciones Make Your Mind Up}{139}{section.Alph2.3}%
-\contentsline {section}{\numberline {B.4}Media y varianza de cobertura con volatilidad implícita}{145}{section.Alph2.4}%
-\contentsline {chapter}{\numberline {C}Apéndices de la Parte 2}{155}{appendix.Alph3}%
-\contentsline {chapter}{\numberline {D}Apéndices extra}{157}{appendix.Alph4}%
-\contentsline {section}{\numberline {D.1}Blackjack y apuestas}{157}{section.Alph4.1}%
-\contentsline {subsection}{\numberline {D.1.1}Reglas del blackjack}{157}{subsection.Alph4.1.1}%
+\contentsline {subsection}{\numberline {9.3.2}Bond option}{127}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Caps y floors}{128}{subsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.3.1}Cap/Floor parity}{128}{subsubsection.9.3.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.3.2}Relación entre Caplet/Floorlet y Bond Options}{129}{subsubsection.9.3.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3.3}Collars}{129}{subsubsection.9.3.3.3}%
+\contentsline {subsection}{\numberline {9.3.4}Range Notes}{129}{subsection.9.3.4}%
+\contentsline {subsection}{\numberline {9.3.5}Swaptions, captions y floortions}{130}{subsection.9.3.5}%
+\contentsline {subsection}{\numberline {9.3.6}Spread Options}{130}{subsection.9.3.6}%
+\contentsline {subsection}{\numberline {9.3.7}Index Amortizing Rate Swaps}{131}{subsection.9.3.7}%
+\contentsline {subsection}{\numberline {9.3.8}Contratos con decisiones embebidas (Flexiswaps)}{131}{subsection.9.3.8}%
+\contentsline {subsection}{\numberline {9.3.9}Más derivados de tipos de interés}{132}{subsection.9.3.9}%
+\contentsline {section}{\numberline {9.4}Bonos convertibles}{133}{section.9.4}%
+\contentsline {subsubsection}{\numberline {9.4.0.1}Uso de los bonos convertibles en el mundo real}{133}{subsubsection.9.4.0.1}%
+\contentsline {subsection}{\numberline {9.4.1}Práctica de mercado}{134}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Valoración de bonos convertibles con interés constante}{135}{subsection.9.4.2}%
+\contentsline {subsubsection}{\numberline {9.4.2.1}Call and Put Features}{136}{subsubsection.9.4.2.1}%
+\contentsline {subsection}{\numberline {9.4.3}Valoración de bonos convertibles con tasas de interés estocásticas: modelos de dos factores}{136}{subsection.9.4.3}%
+\contentsline {subsection}{\numberline {9.4.4}Dependencia del camino en bonos convertibles}{137}{subsection.9.4.4}%
+\contentsline {subsection}{\numberline {9.4.5}Dilución en bonos convertibles}{138}{subsection.9.4.5}%
+\contentsline {part}{IV\hspace {1em}Simulación numérica}{139}{part.4}%
+\contentsline {chapter}{\numberline {10}Descripción general de la simulación numérica}{141}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Diferencias finitas}{141}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Monte Carlo}{141}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Integración numérica}{142}{section.10.3}%
+\contentsline {chapter}{\numberline {11}Diferencias finitas}{143}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Diferencias finitas para modelos de un factor}{143}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Convergencia del resultado}{145}{subsection.11.1.1}%
+\contentsline {chapter}{\numberline {12}Monte Carlo}{147}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Integración numérica}{149}{chapter.13}%
+\contentsline {part}{V\hspace {1em}Apéndices}{151}{part.5}%
+\contentsline {chapter}{\numberline {A}Cálculo básico}{153}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Algunos resultados básicos de cálculo}{153}{section.Alph1.1}%
+\contentsline {chapter}{\numberline {B}Apéndices de la Parte 1}{155}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Cálculo de Itô}{155}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Generalizaciones sencillas de Black-Scholes}{158}{section.Alph2.2}%
+\contentsline {section}{\numberline {B.3}Opciones Make Your Mind Up}{161}{section.Alph2.3}%
+\contentsline {section}{\numberline {B.4}Media y varianza de cobertura con volatilidad implícita}{167}{section.Alph2.4}%
+\contentsline {chapter}{\numberline {C}Apéndices de la Parte 2}{177}{appendix.Alph3}%
+\contentsline {chapter}{\numberline {D}Apéndices extra}{179}{appendix.Alph4}%
+\contentsline {section}{\numberline {D.1}Blackjack y apuestas}{179}{section.Alph4.1}%
+\contentsline {subsection}{\numberline {D.1.1}Reglas del blackjack}{179}{subsection.Alph4.1.1}%

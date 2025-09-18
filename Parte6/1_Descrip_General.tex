@@ -1,0 +1,56 @@
+\chapter{Descripción general de la simulación numérica}
+
+\section{Diferencias finitas}
+Se usa para obtener soluciones de ecuaciones diferenciales en una malla. Las ecuaciones suelen ser siempre de difusión o parabólica con las únicas diferencias de:
+\begin{itemize}
+    \item Número de dimensión
+    \item Forma funcional de los coeficientes (de los términos)
+    \item Condiciones de contorno y final
+    \item Características de decisión
+    \item Linealidad
+\end{itemize}
+
+Las diferencias finitas son muy eficaces para gestionar dimensiones reducidas y son el método de elección si se tiene un contrato con decisiones integradas. Son excelentes para ecuaciones diferenciales no lineales.
+
+
+
+\section{Monte Carlo}
+Se simulan los caminos aleatorios subyacentes y se obtiene la media. Tambien hay que fijarse en:
+\begin{itemize}
+    \item Número de dimensión: por cada factor aleatorio hay que simular un camino aleatorio. La complejidad es por lo tanto lineal (no está tan mal) asi que para dimensiones muy altas es mejor que las diferencias finitas.
+    \item Forma funcional de los coeficientes (de los términos): no es realmente importante
+    \item Condiciones de contorno y final: se implementan en el código
+    \item Características de decisión: si existen decisiones en el camino, Monte Carlo se vuelve engorroso y no se suele usar
+    \item Linealidad: si no hay linealidad también se presentan problemas, por lo que no se suele usar Monte Carlo.
+\end{itemize}
+
+
+
+
+
+
+\section{Integración numérica}
+En algunos casos especiales, es posible expresar el valor de una opción como una integral múltiple, interpretando el valor como la esperanza matemática del payoff bajo una función de densidad de probabilidad. Esto suele ser posible cuando la opción es europea y el modelo subyacente permite una formulación explícita e integrable. Si se puede escribir la fórmula, el problema principal es calcular el valor numérico de la integral, lo que constituye el objetivo de la integración numérica o cuadratura en finanzas cuantitativas.
+
+
+
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Aspecto}      & \textbf{DF}      & \textbf{MC}      & \textbf{Cuad.}   \\
+        \hline
+        Baja dimensión        & Bueno            & Ineficiente      & Bueno            \\
+        Alta dimensión        & Lento            & Excelente        & Bueno            \\
+        Dependencia de ruta   & Depende          & Excelente        & No bueno         \\
+        Sensibilidades (Greeks) & Excelente      & No bueno         & Excelente        \\
+        Cartera               & Ineficiente      & Muy bueno        & Muy bueno        \\
+        Decisiones            & Excelente        & Pobre            & Muy pobre        \\
+        No linealidad         & Excelente        & Pobre            & Muy pobre        \\
+        \hline
+    \end{tabular}
+    \caption{Comparación de métodos numéricos en diferentes aspectos}
+\end{table}
+

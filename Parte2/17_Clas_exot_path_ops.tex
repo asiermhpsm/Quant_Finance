@@ -170,7 +170,7 @@ Parecidas a las compound y choosers, pero en ciertos tiempos específicos, el po
 
 
 
-\subsection{Range Notes}
+\subsection{Range Notes}\label{sec:clas_range_notes}
 Se suele aplicar sobre acciones, divisas o productos de renta fija. En su forma más básica, se paga una tasa $L$ siempre que el subyacente esté en un rango $S_l \leq S \leq S_u$ i.e.\ por cada $dt$ del subyacente que esté dentro del rango, se paga $L dt$. Se define $\mathcal{I}(S)$ como una función que toma el valor 1 si $S_l \leq S \leq S_u$ y 0 en caso contrario. Entonces, el range note satisface:
 \[
     \boxed{\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - r V + L \mathcal{I}(S) = 0}
