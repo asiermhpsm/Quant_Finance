@@ -409,7 +409,7 @@ class EuropeanOption:
         """
         Compute the option speed (third derivative with respect to S) using the theta-weighted finite difference scheme:
             speed ≈ θ * (-V_{j}^{i-2} + 2V_{j}^{i-1} - 2V_{j}^{i+1} + V_{j}^{i+2}) / (8 ΔS^3)
-                  + (1 - θ) * (-V_{j+1}^{i-2} + 2V_{j+1}^{i-1} - 2V_{j+1}^{i+1} + V_{j+1}^{i+2}) / (8 ΔS^3)
+                    + (1 - θ) * (-V_{j+1}^{i-2} + 2V_{j+1}^{i-1} - 2V_{j+1}^{i+1} + V_{j+1}^{i+2}) / (8 ΔS^3)
         Returns:
             speed: Array of speed values with shape (M + 2, N + 2)
         """
@@ -437,7 +437,7 @@ class EuropeanOption:
         return plot_surface(self.S, self.t, self.speed, xlabel='S', ylabel='t', zlabel='Speed')
 
 
-    def get_vega(self, dsigma=1e-4):
+    def get_vega(self, dsigma=1e-6):
         """
         Approximate the option vega (∂V/∂σ) using central finite differences.
         Returns:
@@ -480,7 +480,7 @@ class EuropeanOption:
 
 
 
-    def get_rho_r(self, dr=1e-4):
+    def get_rho_r(self, dr=1e-6):
         """
         Approximate the option rho (∂V/∂r) using central finite differences.
         Returns:
@@ -519,7 +519,7 @@ class EuropeanOption:
         return plot_surface(self.S, self.t, self.rho_r, xlabel='S', ylabel='t', zlabel='Rho (r)')
 
 
-    def get_rho_D(self, dD=1e-4):
+    def get_rho_D(self, dD=1e-6):
         """
         Approximate the option rho_D (∂V/∂D) using central finite differences.
         Returns:
@@ -713,6 +713,61 @@ class BinaryPutEuropean(EuropeanOption):
 
 
 # ---------------------------------------------------------------------------
+# American options
+# ---------------------------------------------------------------------------
+
+class CallAmerican(CallEuropean):
+    def solve(self):
+        super().solve()
+        payoff = np.maximum(self.S - self.K, 0.0)
+        self.V = np.maximum(self.V, payoff)
+        
+    def plot(self):
+        fig, ax = super().plot()
+        ax.set_title(f"American Call Option (K={self.K})")
+        return fig, ax
+    
+
+class PutAmerican(PutEuropean):
+    def solve(self):
+        super().solve()
+        payoff = np.maximum(self.K - self.S, 0.0)
+        self.V = np.maximum(self.V, payoff)
+
+    def plot(self):
+        fig, ax = super().plot()
+        ax.set_title(f"American Put Option (K={self.K})")
+        return fig, ax
+
+
+class BinaryCallAmerican(BinaryCallEuropean):
+    def solve(self):
+        super().solve()
+        payoff = np.where(self.S > self.K, self.P, 0.0)
+        self.V = np.maximum(self.V, payoff)
+
+    def plot(self):
+        fig, ax = super().plot()
+        ax.set_title(f"American Binary Call Option (K={self.K}, P={self.P})")
+        return fig, ax
+
+
+class BinaryPutAmerican(BinaryPutEuropean):
+    def solve(self):
+        super().solve()
+        payoff = np.where(self.S < self.K, self.P, 0.0)
+        self.V = np.maximum(self.V, payoff)
+
+    def plot(self):
+        fig, ax = super().plot()
+        ax.set_title(f"American Binary Put Option (K={self.K}, P={self.P})")
+        return fig, ax
+
+
+
+
+
+# ---------------------------------------------------------------------------
 # Examples
 # ---------------------------------------------------------------------------
 
@@ -720,12 +775,11 @@ class BinaryPutEuropean(EuropeanOption):
 #divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
 divs = None
 
-opt = CallEuropean(dividends=divs)
-#opt = PutEuropean(dividends=divs)
-#opt = BinaryCallEuropean(dividends=divs)
-#opt = BinaryPutEuropean(dividends=divs)
-opt.solve()
-fig, ax = opt.plot_all()
+eur = BinaryCallEuropean(dividends=divs)
+fig_eur, ax_eur = eur.plot()
+
+amer = BinaryCallAmerican(dividends=divs)
+fig_amer, ax_amer = amer.plot()
 
 plt.show()
 
