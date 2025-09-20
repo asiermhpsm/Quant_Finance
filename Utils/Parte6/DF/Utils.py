@@ -47,12 +47,12 @@ def _thomas_solver(lower, diag, upper, d):
         x[i] = (d[i] - b[i] * x[i + 1]) / a[i]
     return x
 
-
 def DF_EDP_parabolica(a, b, c, f,
                       func_cond: callable = None,
                       T: float = 1.0, N: int = 100, S_inf: float = 10.0, M: int = 100,
                       theta: float = 0.5,
-                      dividends: list | None = None):
+                      dividends: list | None = None,
+                      early_exercise_payoff = None):
     """
     Finite-difference solver for a parabolic PDE of the form:
         V_t + a(t, S) V_SS + b(t, S) V_S + c(t, S) V + f(t, S) = 0.
@@ -66,7 +66,10 @@ def DF_EDP_parabolica(a, b, c, f,
         M: Number of spatial steps.
         theta: Theta parameter (0 = explicit, 1 = implicit, 0.5 = Crank–Nicolson).
         dividends: List of (t_i, D_i) for discrete dividend jumps at times t_i.
-                   At each t_i enforce V(S, t_i^-) = V(S - D_i, t_i^+).
+                   European:  V(S, t_i^-) = V(S - D_i, t_i^+).
+                   American (if early_exercise_payoff is provided):
+                              V(S, t_i^-) = max(V(S - D_i, t_i^+), Φ(S)).
+        early_exercise_payoff: Φ(S) callable. If not None, apply the American exercise rule on dividend dates.
 
     Returns:
         S_mesh, t_mesh: Grids for S and t.
@@ -95,7 +98,6 @@ def DF_EDP_parabolica(a, b, c, f,
             idx = int(round(ti / Dt))
             idx = max(0, min(N + 1, idx))
             div_map[idx] = div_map.get(idx, 0.0) + float(Di)
-            # Note: if ti is not on the mesh, it is snapped to the nearest index.
 
     def _eval_coef(fun, name="coef"):
         """
@@ -134,6 +136,16 @@ def DF_EDP_parabolica(a, b, c, f,
 
     # Apply boundary and terminal conditions.
     V = func_cond(S, t, V)
+
+    # Helper to evaluate Φ(S) (accepts Φ(S) or Φ(S,t)).
+    def _eval_payoff_phi(S_vec, t_val):
+        if early_exercise_payoff is None:
+            return None
+        try:
+            phi = early_exercise_payoff(S_vec, t_val)
+        except TypeError:
+            phi = early_exercise_payoff(S_vec)
+        return np.asarray(phi, dtype=float)
 
     # Time-stepping loop (backward in time).
     for j in range(N, -1, -1):
@@ -195,45 +207,88 @@ def DF_EDP_parabolica(a, b, c, f,
 
         # Solve tridiagonal system A x = rhs.
         x = _thomas_solver(A_lower, A_diag, A_upper, rhs)
-
-        # Update solution at time j.
         V[1:-1, j] = x
 
-        # Dividend jump at t_j: V(S, t_j^-) = V(S - D_j, t_j^+).
+        # Dividend jump at t_j.
         if j in div_map:
             Dj = div_map[j]
-            # Interpolate V^+(S - D_j, t_j) using the already computed column V[:, j].
-            V_plus = V[:, j].copy()
+            V_plus = V[:, j].copy()  # V(S, t_j^+)
             S_shift = S - Dj
-            V[:, j] = np.interp(S_shift, S, V_plus, left=V_plus[0], right=V_plus[-1])
+            V_jump = np.interp(S_shift, S, V_plus, left=V_plus[0], right=V_plus[-1])  # V(S - D_j, t_j^+)
+            if early_exercise_payoff is not None:
+                Phi = _eval_payoff_phi(S, t[j])  # Φ(S)
+                if Phi.shape != V_jump.shape:
+                    raise ValueError("early_exercise_payoff must return a vector of size M+2.")
+                V[:, j] = np.maximum(V_jump, Phi)
+            else:
+                V[:, j] = V_jump
 
     return S_mesh, t_mesh, V
 
 
-def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None):
+def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None, fig=None, ax=None, **surface_kwargs):
     """
-    Plot a 3D surface of V(S, t).
+    Plot a 3D surface of V(S, t). If fig/ax are provided, draw on them.
 
     Parameters:
         S, t: Meshgrid arrays for S and t.
         V: Value array.
         xlabel, ylabel, zlabel: Axis labels.
         title: Plot title.
+        fig, ax: Optional matplotlib Figure and 3D Axes to draw on.
+        surface_kwargs: Extra kwargs forwarded to ax.plot_surface (e.g., alpha, cmap).
 
     Returns:
         fig, ax: Matplotlib figure and axis objects.
     """
-    fig = plt.figure(figsize=(10, 7))
-    ax = fig.add_subplot(111, projection='3d')
-    ax.plot_surface(S, t, V, cmap='viridis')
+    created_ax = False
+    if ax is None:
+        if fig is None:
+            fig = plt.figure(figsize=(10, 7))
+        ax = fig.add_subplot(111, projection='3d')
+        created_ax = True
+    else:
+        # Ensure it's a 3D axis
+        if not hasattr(ax, "plot_surface"):
+            raise ValueError('The provided axis is not 3D. Create one with subplot_kw={"projection": "3d"}.')
+        if fig is None:
+            fig = ax.figure
+
+    # Default colormap if none given
+    if "cmap" not in surface_kwargs:
+        surface_kwargs["cmap"] = "viridis"
+
+    ax.plot_surface(S, t, V, **surface_kwargs)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_zlabel(zlabel)
     if title:
         ax.set_title(title)
-    ax.view_init(elev=30, azim=-135)
+    # Adjust view only if the axis was created here
+    if created_ax:
+        ax.view_init(elev=30, azim=-135)
     return fig, ax
 
+def plot_func(x, y, fig=None, ax=None, xlabel='x', ylabel='f(x)', **plot_kwargs):
+    """
+    Plots a function in 2D.
+    """
+    created_ax = False
+    if ax is None:
+        if fig is None:
+            fig = plt.figure(figsize=(8, 5))
+        ax = fig.add_subplot(111)
+        created_ax = True
+    else:
+        if fig is None:
+            fig = ax.figure
+
+    ax.plot(x, y, **plot_kwargs)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    if created_ax:
+        ax.grid()
+    return fig, ax
 
 # ---------------------------------------------------------------------------
 # European options
@@ -280,6 +335,7 @@ class EuropeanOption:
         """
         return V
 
+
     def solve(self):
         """
         Solve the PDE using the configured parameters and store S, t, and V.
@@ -298,13 +354,44 @@ class EuropeanOption:
             dividends=self.dividends
         )
 
-    def plot(self):
+    def plot(self, fig=None, ax=None, **surface_kwargs):
         """
-        Plot the surface V(S, t).
+        Plot the surface V(S, t). If fig/ax are provided, draw on them.
         """
         if not hasattr(self, "V"):
             self.solve()
-        return plot_surface(self.S, self.t, self.V, xlabel='S', ylabel='t', zlabel='Value')
+        return plot_surface(self.S, self.t, self.V, xlabel='S', ylabel='t', zlabel='Value', fig=fig, ax=ax, **surface_kwargs)
+
+
+    def get_value_at_S(self, S0: float):
+        """Returns (t, V(S0, t)) as 1D arrays."""
+        if not hasattr(self, "V"):
+            self.solve()
+        DS = self.S_inf / (self.M + 1)
+        idx = int(round(S0 / DS))
+        return self.t[0, :], self.V[idx, :]
+
+    def plot_value_at_S(self, S0: float, fig=None, ax=None, **plot_kwargs):
+        """
+        Plot V(S0, t) as a function of t.
+        """
+        t, V_S0 = self.get_value_at_S(S0)
+        return plot_func(t, V_S0, xlabel='t', ylabel=f'V(S={S0}, t)', fig=fig, ax=ax, **plot_kwargs)
+    
+    def get_value_at_t(self, t0: float):
+        """Returns (S, V(S, t0)) as 1D arrays."""
+        if not hasattr(self, "V"):
+            self.solve()
+        Dt = self.T / (self.M + 1)
+        j = int(round(t0 / Dt))
+        return self.S[:, 0], self.V[:, j]
+    
+    def plot_value_at_t(self, t0: float, fig=None, ax=None, **plot_kwargs):
+        """
+        Plot V(S, t0) as a function of S.
+        """
+        S, V_t0 = self.get_value_at_t(t0)
+        return plot_func(S, V_t0, xlabel='S', ylabel=f'V(S, t={t0})', fig=fig, ax=ax, **plot_kwargs)
 
 
     def get_delta(self):
@@ -335,13 +422,13 @@ class EuropeanOption:
         self.delta = delta
         return delta
     
-    def plot_delta(self):
+    def plot_delta(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the delta surface.
         """
         if not hasattr(self, "delta"):
             self.get_delta()
-        return plot_surface(self.S, self.t, self.delta, xlabel='S', ylabel='t', zlabel='Delta')
+        return plot_surface(self.S, self.t, self.delta, xlabel='S', ylabel='t', zlabel='Delta', fig=fig, ax=ax, **surface_kwargs)
 
 
     def get_gamma(self):
@@ -367,13 +454,13 @@ class EuropeanOption:
         self.gamma = gamma
         return gamma
 
-    def plot_gamma(self):
+    def plot_gamma(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the gamma surface.
         """
         if not hasattr(self, "gamma"):
             self.get_gamma()
-        return plot_surface(self.S, self.t, self.gamma, xlabel='S', ylabel='t', zlabel='Gamma')
+        return plot_surface(self.S, self.t, self.gamma, xlabel='S', ylabel='t', zlabel='Gamma', fig=fig, ax=ax, **surface_kwargs)
 
 
     def get_theta(self):
@@ -396,13 +483,13 @@ class EuropeanOption:
         self.theta_arr = theta_arr
         return theta_arr
 
-    def plot_theta(self):
+    def plot_theta(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the theta surface.
         """
         if not hasattr(self, "theta_arr"):
             self.get_theta()
-        return plot_surface(self.S, self.t, self.theta_arr, xlabel='S', ylabel='t', zlabel='Theta')
+        return plot_surface(self.S, self.t, self.theta_arr, xlabel='S', ylabel='t', zlabel='Theta', fig=fig, ax=ax, **surface_kwargs)
 
 
     def get_speed(self):
@@ -428,13 +515,13 @@ class EuropeanOption:
         self.speed = speed
         return speed
 
-    def plot_speed(self):
+    def plot_speed(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the speed surface.
         """
         if not hasattr(self, "speed"):
             self.get_speed()
-        return plot_surface(self.S, self.t, self.speed, xlabel='S', ylabel='t', zlabel='Speed')
+        return plot_surface(self.S, self.t, self.speed, xlabel='S', ylabel='t', zlabel='Speed', fig=fig, ax=ax, **surface_kwargs)
 
 
     def get_vega(self, dsigma=1e-6):
@@ -470,13 +557,13 @@ class EuropeanOption:
         self.vega = vega
         return vega
 
-    def plot_vega(self):
+    def plot_vega(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the vega surface.
         """
         if not hasattr(self, "vega"):
             self.get_vega()
-        return plot_surface(self.S, self.t, self.vega, xlabel='S', ylabel='t', zlabel='Vega')
+        return plot_surface(self.S, self.t, self.vega, xlabel='S', ylabel='t', zlabel='Vega', fig=fig, ax=ax, **surface_kwargs)
 
 
 
@@ -510,13 +597,13 @@ class EuropeanOption:
         self.rho_r = rho_r
         return rho_r
 
-    def plot_rho_r(self):
+    def plot_rho_r(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the rho (with respect to r) surface.
         """
         if not hasattr(self, "rho_r"):
             self.get_rho_r()
-        return plot_surface(self.S, self.t, self.rho_r, xlabel='S', ylabel='t', zlabel='Rho (r)')
+        return plot_surface(self.S, self.t, self.rho_r, xlabel='S', ylabel='t', zlabel='Rho (r)', fig=fig, ax=ax, **surface_kwargs)
 
 
     def get_rho_D(self, dD=1e-6):
@@ -549,13 +636,14 @@ class EuropeanOption:
         self.rho_D = rho_D
         return rho_D
 
-    def plot_rho_D(self):
+    def plot_rho_D(self, fig=None, ax=None, **surface_kwargs):
         """
         Plot the rho (with respect to D) surface.
         """
         if not hasattr(self, "rho_D"):
             self.get_rho_D()
-        return plot_surface(self.S, self.t, self.rho_D, xlabel='S', ylabel='t', zlabel='Rho (D)')
+        return plot_surface(self.S, self.t, self.rho_D, xlabel='S', ylabel='t', zlabel='Rho (D)', fig=fig, ax=ax, **surface_kwargs)
+
 
     def plot_all(self):
         """
@@ -604,8 +692,8 @@ class CallEuropean(EuropeanOption):
     """
     European call option with optional discrete dividends.
     """
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"European Call Option (K={self.K})")
         return fig, ax
 
@@ -614,14 +702,8 @@ class CallEuropean(EuropeanOption):
         payoff = lambda S: np.maximum(S - self.K, 0.0)
         V[:, -1] = np.asarray(payoff(S), dtype=float)
 
-        # Present value of discrete dividends at each time t.
-        pv_divs = np.zeros_like(t, dtype=float)
-        for ti, Di in getattr(self, "dividends", []) or []:
-            pv_divs += Di * np.exp(-self.r * np.maximum(0.0, ti - t)) * (t <= ti)
-
         # Boundary conditions.
-        # Approximation: S_inf discounted by continuous yield (if any) minus PV of future discrete dividends.
-        func_S_inf = lambda tt: self.S_inf * np.exp(-self.D * (self.T - tt)) - pv_divs - self.K * np.exp(-self.r * (self.T - tt))
+        func_S_inf = lambda tt: self.S_inf * np.exp(-self.D * (self.T - tt)) - self.K * np.exp(-self.r * (self.T - tt))
         func_S0 = lambda tt: 0.0
         V[0, :] = np.asarray(func_S0(t), dtype=float)
         V[-1, :] = np.asarray(func_S_inf(t), dtype=float)
@@ -633,8 +715,8 @@ class PutEuropean(EuropeanOption):
     """
     European put option with optional discrete dividends.
     """
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"European Put Option (K={self.K})")
         return fig, ax
 
@@ -663,8 +745,8 @@ class BinaryCallEuropean(EuropeanOption):
                          dividends=dividends, **kwargs)
         self.P = P
 
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"Binary Call Option (K={self.K}, P={self.P})")
         return fig, ax
 
@@ -673,7 +755,7 @@ class BinaryCallEuropean(EuropeanOption):
         payoff = lambda S: np.where(S > self.K, self.P, 0.0)
         V[:, -1] = np.asarray(payoff(S), dtype=float)
 
-        # Boundary conditions. Jumps due to discrete dividends are applied in the solver.
+        # Boundary conditions.
         func_S_inf = lambda tt: self.P * np.exp(-self.r * (self.T - tt))
         func_S0 = lambda tt: 0.0
         V[0, :] = np.asarray(func_S0(t), dtype=float)
@@ -693,8 +775,8 @@ class BinaryPutEuropean(EuropeanOption):
                          dividends=dividends, **kwargs)
         self.P = P
 
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"Binary Put Option (K={self.K}, P={self.P})")
         return fig, ax
 
@@ -703,7 +785,7 @@ class BinaryPutEuropean(EuropeanOption):
         payoff = lambda S: np.where(S < self.K, self.P, 0.0)
         V[:, -1] = np.asarray(payoff(S), dtype=float)
 
-        # Boundary conditions. Jumps due to discrete dividends are applied in the solver.
+        # Boundary conditions.
         func_S_inf = lambda tt: 0.0
         func_S0 = lambda tt: self.P * np.exp(-self.r * (self.T - tt))
         V[0, :] = np.asarray(func_S0(t), dtype=float)
@@ -722,8 +804,8 @@ class CallAmerican(CallEuropean):
         payoff = np.maximum(self.S - self.K, 0.0)
         self.V = np.maximum(self.V, payoff)
         
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"American Call Option (K={self.K})")
         return fig, ax
     
@@ -734,8 +816,8 @@ class PutAmerican(PutEuropean):
         payoff = np.maximum(self.K - self.S, 0.0)
         self.V = np.maximum(self.V, payoff)
 
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"American Put Option (K={self.K})")
         return fig, ax
 
@@ -746,8 +828,8 @@ class BinaryCallAmerican(BinaryCallEuropean):
         payoff = np.where(self.S > self.K, self.P, 0.0)
         self.V = np.maximum(self.V, payoff)
 
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"American Binary Call Option (K={self.K}, P={self.P})")
         return fig, ax
 
@@ -758,8 +840,8 @@ class BinaryPutAmerican(BinaryPutEuropean):
         payoff = np.where(self.S < self.K, self.P, 0.0)
         self.V = np.maximum(self.V, payoff)
 
-    def plot(self):
-        fig, ax = super().plot()
+    def plot(self, fig=None, ax=None, **surface_kwargs):
+        fig, ax = super().plot(fig=fig, ax=ax, **surface_kwargs)
         ax.set_title(f"American Binary Put Option (K={self.K}, P={self.P})")
         return fig, ax
 
@@ -772,14 +854,28 @@ class BinaryPutAmerican(BinaryPutEuropean):
 # ---------------------------------------------------------------------------
 
 # Example usage with discrete dividends for all options.
-#divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
-divs = None
+divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
+#divs = None
 
-eur = BinaryCallEuropean(dividends=divs)
-fig_eur, ax_eur = eur.plot()
+eur = PutEuropean(dividends=divs)
+amer = PutAmerican(dividends=divs)
 
-amer = BinaryCallAmerican(dividends=divs)
-fig_amer, ax_amer = amer.plot()
+# Pintar ambas superficies en el mismo gráfico 3D
+fig = plt.figure(figsize=(10, 7))
+ax = fig.add_subplot(111, projection='3d')
+
+eur.plot(fig=fig, ax=ax, alpha=0.8, cmap='viridis')
+amer.plot(fig=fig, ax=ax, alpha=0.5, cmap='plasma')
+
+
+fig2, ax2 = plt.subplots(figsize=(10, 7))
+eur.plot_value_at_S(30, fig=fig2, ax=ax2, label='European Put', color='blue')
+amer.plot_value_at_S(30, fig=fig2, ax=ax2, label='American Put', color='red')
+
+fig3, ax3 = plt.subplots(figsize=(10, 7))
+eur.plot_value_at_t(0, fig=fig3, ax=ax3, label='European Put', color='blue')
+amer.plot_value_at_t(0, fig=fig3, ax=ax3, label='American Put', color='red')
+
 
 plt.show()
 
