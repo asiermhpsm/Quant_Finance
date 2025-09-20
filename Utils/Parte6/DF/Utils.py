@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 # ---------------------------------------------------------------------------
-# Solvers
+# Auxiliary functions
 # ---------------------------------------------------------------------------
 
 def _thomas_solver(lower, diag, upper, d):
@@ -210,13 +210,38 @@ def DF_EDP_parabolica(a, b, c, f,
     return S_mesh, t_mesh, V
 
 
+def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None):
+    """
+    Plot a 3D surface of V(S, t).
+
+    Parameters:
+        S, t: Meshgrid arrays for S and t.
+        V: Value array.
+        xlabel, ylabel, zlabel: Axis labels.
+        title: Plot title.
+
+    Returns:
+        fig, ax: Matplotlib figure and axis objects.
+    """
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
+    ax.plot_surface(S, t, V, cmap='viridis')
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_zlabel(zlabel)
+    if title:
+        ax.set_title(title)
+    ax.view_init(elev=30, azim=-135)
+    return fig, ax
+
+
 # ---------------------------------------------------------------------------
 # European options
 # ---------------------------------------------------------------------------
 
 class EuropeanOption:
     """
-    Base class for European options solved via finite differences under a lognormal model.
+    Base class for European options solved via finite differences.
     """
     def __init__(self, r=0.05, K=20, D=0, T=1, S_inf=80, EDE='lognormal', N=200, M=200, theta=0.5,
                  dividends: list | None = None, **kwargs):
@@ -230,47 +255,349 @@ class EuropeanOption:
         self.M = M
         self.theta = theta
         self.dividends = dividends or []
-        if EDE == 'lognormal':
+
+        # Model-specific parameters
+        if self.EDE == 'lognormal':
             self.sigma = kwargs.get('sigma', 0.2)
+
+            # PDE coefficients stored as attributes
+            # V_t + a(t,S) V_SS + b(t,S) V_S + c(t,S) V + f(t,S) = 0
+            a = lambda t, S: 0.5 * (self.sigma ** 2) * S**2
+            b = lambda t, S: (self.r - self.D) * S
+            c = lambda t, S: -self.r
+            f = lambda t, S: 0.0
+
+            self.a = a
+            self.b = b
+            self.c = c
+            self.f = f
+        else:
+            raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
+
+    def set_conditions(self, V):
+        """
+        Placeholder to be implemented in derived classes.
+        """
+        return V
 
     def solve(self):
         """
         Solve the PDE using the configured parameters and store S, t, and V.
         """
-        if self.EDE == 'lognormal':
-            self.S, self.t, self.V = DF_EDP_parabolica(
-                a=lambda t, S: self.sigma**2 * S**2 / 2,
-                b=lambda t, S: (self.r - self.D) * S,
-                c=lambda t, S: -self.r,
-                f=lambda t, S: 0,
-                func_cond=self.set_conditions,
-                T=self.T,
-                S_inf=self.S_inf,
-                N=self.N,
-                M=self.M,
-                theta=self.theta,
-                dividends=self.dividends
-            )
-
-            
+        self.S, self.t, self.V = DF_EDP_parabolica(
+            a=self.a,
+            b=self.b,
+            c=self.c,
+            f=self.f,
+            func_cond=self.set_conditions,
+            T=self.T,
+            S_inf=self.S_inf,
+            N=self.N,
+            M=self.M,
+            theta=self.theta,
+            dividends=self.dividends
+        )
 
     def plot(self):
         """
         Plot the surface V(S, t).
         """
-        fig = plt.figure(figsize=(10, 7))
-        ax = fig.add_subplot(111, projection='3d')
-        ax.plot_surface(self.S, self.t, self.V, cmap='viridis')
-        ax.set_xlabel('S')
-        ax.set_ylabel('t')
-        ax.set_zlabel('Value')
-        return fig, ax
+        if not hasattr(self, "V"):
+            self.solve()
+        return plot_surface(self.S, self.t, self.V, xlabel='S', ylabel='t', zlabel='Value')
 
-    def set_conditions(self, S, t, V):
+
+    def get_delta(self):
         """
-        Placeholder to be implemented in derived classes.
+        Compute the option delta using the theta-weighted finite difference scheme:
+            delta ≈ θ * (V_{j}^{i+1} - V_{j}^{i}) / ΔS + (1 - θ) * (V_{j+1}^{i+1} - V_{j+1}^{i}) / ΔS
+        Returns:
+            delta: Array of delta values with shape (M + 2, N + 2)
         """
-        return V
+        # Ensure the solution is available
+        if not hasattr(self, "V"):
+            self.solve()
+
+        # Get grid sizes
+        DS = self.S_inf / (self.M + 1)
+
+        # Prepare delta array
+        delta = np.full_like(self.V, np.nan)
+
+        # Loop over all grid points except last in S and t
+        for j in range(self.V.shape[1] - 1):
+            for i in range(self.V.shape[0] - 1):
+                # Finite difference as per theta-scheme
+                d1 = (self.V[i + 1, j] - self.V[i, j]) / DS
+                d2 = (self.V[i + 1, j + 1] - self.V[i, j + 1]) / DS
+                delta[i, j] = self.theta * d1 + (1 - self.theta) * d2
+        
+        self.delta = delta
+        return delta
+    
+    def plot_delta(self):
+        """
+        Plot the delta surface.
+        """
+        if not hasattr(self, "delta"):
+            self.get_delta()
+        return plot_surface(self.S, self.t, self.delta, xlabel='S', ylabel='t', zlabel='Delta')
+
+
+    def get_gamma(self):
+        """
+        Compute the option gamma using the theta-weighted finite difference scheme:
+            gamma ≈ θ * (V_{j}^{i+1} - 2V_{j}^{i} + V_{j}^{i-1}) / ΔS^2
+                  + (1 - θ) * (V_{j+1}^{i+1} - 2V_{j+1}^{i} + V_{j+1}^{i-1}) / ΔS^2
+        Returns:
+            gamma: Array of gamma values with shape (M + 2, N + 2)
+        """
+        if not hasattr(self, "V"):
+            self.solve()
+
+        DS = self.S_inf / (self.M + 1)
+        gamma = np.full_like(self.V, np.nan)
+
+        for j in range(self.V.shape[1] - 1):
+            for i in range(1, self.V.shape[0] - 1):
+                g1 = (self.V[i + 1, j] - 2 * self.V[i, j] + self.V[i - 1, j]) / (DS ** 2)
+                g2 = (self.V[i + 1, j + 1] - 2 * self.V[i, j + 1] + self.V[i - 1, j + 1]) / (DS ** 2)
+                gamma[i, j] = self.theta * g1 + (1 - self.theta) * g2
+
+        self.gamma = gamma
+        return gamma
+
+    def plot_gamma(self):
+        """
+        Plot the gamma surface.
+        """
+        if not hasattr(self, "gamma"):
+            self.get_gamma()
+        return plot_surface(self.S, self.t, self.gamma, xlabel='S', ylabel='t', zlabel='Gamma')
+
+
+    def get_theta(self):
+        """
+        Compute the option theta using the finite difference scheme:
+            theta ≈ (V_{j+1}^{i} - V_{j}^{i}) / Δt
+        Returns:
+            theta: Array of theta values with shape (M + 2, N + 2)
+        """
+        if not hasattr(self, "V"):
+            self.solve()
+
+        Dt = self.T / (self.N + 1)
+        theta_arr = np.full_like(self.V, np.nan)
+
+        for j in range(self.V.shape[1] - 1):
+            for i in range(self.V.shape[0]):
+                theta_arr[i, j] = (self.V[i, j + 1] - self.V[i, j]) / Dt
+
+        self.theta_arr = theta_arr
+        return theta_arr
+
+    def plot_theta(self):
+        """
+        Plot the theta surface.
+        """
+        if not hasattr(self, "theta_arr"):
+            self.get_theta()
+        return plot_surface(self.S, self.t, self.theta_arr, xlabel='S', ylabel='t', zlabel='Theta')
+
+
+    def get_speed(self):
+        """
+        Compute the option speed (third derivative with respect to S) using the theta-weighted finite difference scheme:
+            speed ≈ θ * (-V_{j}^{i-2} + 2V_{j}^{i-1} - 2V_{j}^{i+1} + V_{j}^{i+2}) / (8 ΔS^3)
+                  + (1 - θ) * (-V_{j+1}^{i-2} + 2V_{j+1}^{i-1} - 2V_{j+1}^{i+1} + V_{j+1}^{i+2}) / (8 ΔS^3)
+        Returns:
+            speed: Array of speed values with shape (M + 2, N + 2)
+        """
+        if not hasattr(self, "V"):
+            self.solve()
+
+        DS = self.S_inf / (self.M + 1)
+        speed = np.full_like(self.V, np.nan)
+
+        for j in range(self.V.shape[1] - 1):
+            for i in range(2, self.V.shape[0] - 2):
+                s1 = (-self.V[i - 2, j] + 2 * self.V[i - 1, j] - 2 * self.V[i + 1, j] + self.V[i + 2, j]) / (8 * DS ** 3)
+                s2 = (-self.V[i - 2, j + 1] + 2 * self.V[i - 1, j + 1] - 2 * self.V[i + 1, j + 1] + self.V[i + 2, j + 1]) / (8 * DS ** 3)
+                speed[i, j] = self.theta * s1 + (1 - self.theta) * s2
+
+        self.speed = speed
+        return speed
+
+    def plot_speed(self):
+        """
+        Plot the speed surface.
+        """
+        if not hasattr(self, "speed"):
+            self.get_speed()
+        return plot_surface(self.S, self.t, self.speed, xlabel='S', ylabel='t', zlabel='Speed')
+
+
+    def get_vega(self, dsigma=1e-4):
+        """
+        Approximate the option vega (∂V/∂σ) using central finite differences.
+        Returns:
+            vega: Array of vega values with shape (M + 2, N + 2)
+        """
+        if self.EDE != 'lognormal':
+            raise NotImplementedError("Vega computation only implemented for lognormal model.")
+        
+        if not hasattr(self, "V"):
+            self.solve()
+
+        sigma_orig = getattr(self, "sigma", 0.2)
+
+        def _solve_with_sigma(sig):
+            self.sigma = sig
+            _, _, V_tmp = DF_EDP_parabolica(
+                a=self.a, b=self.b, c=self.c, f=self.f,
+                func_cond=self.set_conditions,
+                T=self.T, S_inf=self.S_inf,
+                N=self.N, M=self.M, theta=self.theta,
+                dividends=self.dividends
+            )
+            return V_tmp
+
+        V_p = _solve_with_sigma(sigma_orig + dsigma)
+        V_m = _solve_with_sigma(sigma_orig - dsigma)
+        self.sigma = sigma_orig
+
+        vega = (V_p - V_m) / (2 * dsigma)
+        self.vega = vega
+        return vega
+
+    def plot_vega(self):
+        """
+        Plot the vega surface.
+        """
+        if not hasattr(self, "vega"):
+            self.get_vega()
+        return plot_surface(self.S, self.t, self.vega, xlabel='S', ylabel='t', zlabel='Vega')
+
+
+
+    def get_rho_r(self, dr=1e-4):
+        """
+        Approximate the option rho (∂V/∂r) using central finite differences.
+        Returns:
+            rho_r: Array of rho values with shape (M + 2, N + 2)
+        """
+        if not hasattr(self, "V"):
+            self.solve()
+
+        r_orig = self.r
+
+        def _solve_with_r(rval):
+            self.r = rval
+            _, _, V_tmp = DF_EDP_parabolica(
+                a=self.a, b=self.b, c=self.c, f=self.f,
+                func_cond=self.set_conditions,
+                T=self.T, S_inf=self.S_inf,
+                N=self.N, M=self.M, theta=self.theta,
+                dividends=self.dividends
+            )
+            return V_tmp
+
+        V_p = _solve_with_r(r_orig + dr)
+        V_m = _solve_with_r(r_orig - dr)
+        self.r = r_orig
+
+        rho_r = (V_p - V_m) / (2 * dr)
+        self.rho_r = rho_r
+        return rho_r
+
+    def plot_rho_r(self):
+        """
+        Plot the rho (with respect to r) surface.
+        """
+        if not hasattr(self, "rho_r"):
+            self.get_rho_r()
+        return plot_surface(self.S, self.t, self.rho_r, xlabel='S', ylabel='t', zlabel='Rho (r)')
+
+
+    def get_rho_D(self, dD=1e-4):
+        """
+        Approximate the option rho_D (∂V/∂D) using central finite differences.
+        Returns:
+            rho_D: Array of rho_D values with shape (M + 2, N + 2)
+        """
+        if not hasattr(self, "V"):
+            self.solve()
+
+        D_orig = self.D
+
+        def _solve_with_D(Dval):
+            self.D = Dval
+            _, _, V_tmp = DF_EDP_parabolica(
+                a=self.a, b=self.b, c=self.c, f=self.f,
+                func_cond=self.set_conditions,
+                T=self.T, S_inf=self.S_inf,
+                N=self.N, M=self.M, theta=self.theta,
+                dividends=self.dividends
+            )
+            return V_tmp
+
+        V_p = _solve_with_D(D_orig + dD)
+        V_m = _solve_with_D(D_orig - dD)
+        self.D = D_orig
+
+        rho_D = (V_p - V_m) / (2 * dD)
+        self.rho_D = rho_D
+        return rho_D
+
+    def plot_rho_D(self):
+        """
+        Plot the rho (with respect to D) surface.
+        """
+        if not hasattr(self, "rho_D"):
+            self.get_rho_D()
+        return plot_surface(self.S, self.t, self.rho_D, xlabel='S', ylabel='t', zlabel='Rho (D)')
+
+    def plot_all(self):
+        """
+        Plot the solution and all Greeks.
+        """
+        figs = []
+        axs = []
+
+        fig, ax = self.plot()
+        figs.append(fig)
+        axs.append(ax)
+
+        fig_delta, ax_delta = self.plot_delta()
+        figs.append(fig_delta)
+        axs.append(ax_delta)
+
+        fig_gamma, ax_gamma = self.plot_gamma()
+        figs.append(fig_gamma)
+        axs.append(ax_gamma)
+
+        fig_theta, ax_theta = self.plot_theta()
+        figs.append(fig_theta)
+        axs.append(ax_theta)
+
+        fig_speed, ax_speed = self.plot_speed()
+        figs.append(fig_speed)
+        axs.append(ax_speed)
+
+        fig_vega, ax_vega = self.plot_vega()
+        figs.append(fig_vega)
+        axs.append(ax_vega)
+
+        fig_rho_r, ax_rho_r = self.plot_rho_r()
+        figs.append(fig_rho_r)
+        axs.append(ax_rho_r)
+
+        fig_rho_D, ax_rho_D = self.plot_rho_D()
+        figs.append(fig_rho_D)
+        axs.append(ax_rho_D)
+
+        return figs, axs
+
 
 
 class CallEuropean(EuropeanOption):
@@ -390,23 +717,15 @@ class BinaryPutEuropean(EuropeanOption):
 # ---------------------------------------------------------------------------
 
 # Example usage with discrete dividends for all options.
-divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
+#divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
+divs = None
 
-calleur = CallEuropean(dividends=divs)
-calleur.solve()
-fig, ax = calleur.plot()
-
-puteur = PutEuropean(dividends=divs)
-puteur.solve()
-fig, ax = puteur.plot()
-
-bincall = BinaryCallEuropean(dividends=divs)
-bincall.solve()
-fig, ax = bincall.plot()
-
-binput = BinaryPutEuropean(dividends=divs)
-binput.solve()
-fig, ax = binput.plot()
+opt = CallEuropean(dividends=divs)
+#opt = PutEuropean(dividends=divs)
+#opt = BinaryCallEuropean(dividends=divs)
+#opt = BinaryPutEuropean(dividends=divs)
+opt.solve()
+fig, ax = opt.plot_all()
 
 plt.show()
 
