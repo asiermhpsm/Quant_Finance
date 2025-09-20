@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Call eur (PYTHONPATH)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/Utils/Parte6/DF/European.py",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
