@@ -335,6 +335,14 @@ class EuropeanOption:
         """
         return V
 
+    def get_solution(self):
+        """
+        Returns S, t, V without plotting.
+        """
+        if not hasattr(self, "V"):
+            self.solve()
+        return self.S, self.t, self.V
+
 
     def solve(self):
         """
@@ -382,7 +390,7 @@ class EuropeanOption:
         """Returns (S, V(S, t0)) as 1D arrays."""
         if not hasattr(self, "V"):
             self.solve()
-        Dt = self.T / (self.M + 1)
+        Dt = self.T / (self.N + 1)
         j = int(round(t0 / Dt))
         return self.S[:, 0], self.V[:, j]
     
@@ -854,11 +862,11 @@ class BinaryPutAmerican(BinaryPutEuropean):
 # ---------------------------------------------------------------------------
 
 # Example usage with discrete dividends for all options.
-divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
-#divs = None
+#divs = [(0.25, 2), (0.5, 5), (0.75, 10)]
+divs = None
 
-eur = PutEuropean(dividends=divs)
-amer = PutAmerican(dividends=divs)
+eur = CallEuropean(dividends=divs)
+amer = CallAmerican(dividends=divs)
 
 # Pintar ambas superficies en el mismo gráfico 3D
 fig = plt.figure(figsize=(10, 7))
@@ -875,6 +883,7 @@ amer.plot_value_at_S(30, fig=fig2, ax=ax2, label='American Put', color='red')
 fig3, ax3 = plt.subplots(figsize=(10, 7))
 eur.plot_value_at_t(0, fig=fig3, ax=ax3, label='European Put', color='blue')
 amer.plot_value_at_t(0, fig=fig3, ax=ax3, label='American Put', color='red')
+
 
 
 plt.show()
