@@ -225,7 +225,6 @@
 \contentsline {section}{\numberline {10.3}Integración numérica}{142}{section.10.3}%
 \contentsline {chapter}{\numberline {11}Diferencias finitas}{143}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Diferencias finitas para modelos de un factor}{143}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}Convergencia del resultado}{145}{subsection.11.1.1}%
 \contentsline {chapter}{\numberline {12}Monte Carlo}{147}{chapter.12}%
 \contentsline {chapter}{\numberline {13}Integración numérica}{149}{chapter.13}%
 \contentsline {part}{V\hspace {1em}Apéndices}{151}{part.5}%

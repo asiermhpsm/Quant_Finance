@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.27)  16 SEP 2025 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.27)  30 SEP 2025 23:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -766,7 +766,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-<newplot.png, id=822, 1517.67pt x 724.7075pt>
+<newplot.png, id=818, 1517.67pt x 724.7075pt>
 File: newplot.png Graphic file (type png)
 <use newplot.png>
 Package pdftex.def Info: newplot.png  used on input line 85.
@@ -803,11 +803,7 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 
 LaTeX Info: Redefining \. on input line 189.
 LaTeX Info: Redefining \% on input line 189.
-[5]
-
-LaTeX Info: Redefining \. on input line 242.
-LaTeX Info: Redefining \% on input line 242.
-[6])
+[5])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -822,22 +818,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.109   \clearpage
                   % [1]
 
+LaTeX Info: Redefining \. on input line 109.
+LaTeX Info: Redefining \% on input line 109.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110   \part
-             {Fundamentos básicos de derivados, riesgo y rentabilidad} [2
-
-
-]
+l.109   \clearpage
+                  % [2]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.110 ...icos de derivados, riesgo y rentabilidad}
-                                                   [3]
+                                                   [3
+
+
+]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
@@ -859,12 +857,7 @@ l.30     \item \textbf
 
 LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.62     \item \textbf
-                      {Maintenance Margin}: mínimo que debe haber en la cue... [6])
+[6])
 
 LaTeX Info: Redefining \. on input line 114.
 LaTeX Info: Redefining \% on input line 114.
@@ -876,12 +869,12 @@ LaTeX Info: Redefining \% on input line 114.
 ]
 Cap\'{\i }tulo 2.
 (Parte1/2_Opciones.tex
-<Imagenes/Parte1/2_Derivados/PayOffCall.pdf, id=1100, 414.83543pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/PayOffCall.pdf, id=1092, 414.83543pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/PayOffCall.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/PayOffCall.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/PayOffCall.pdf  used on input line 10.
 (pdftex.def)             Requested size: 227.62206pt x 173.47952pt.
-<Imagenes/Parte1/2_Derivados/PayOffPut.pdf, id=1101, 414.83543pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/PayOffPut.pdf, id=1093, 414.83543pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/PayOffPut.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/PayOffPut.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/PayOffPut.pdf  used on input line 17.
@@ -892,12 +885,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [9 <./Imagenes/Parte1/2_Derivados/PayOffCall.pdf>]
-<Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf, id=1140, 414.83543pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf, id=1132, 414.83543pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf  used on input line 41.
 (pdftex.def)             Requested size: 204.85846pt x 156.13158pt.
-<Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf, id=1141, 414.83543pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf, id=1133, 414.83543pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf  used on input line 45.
@@ -910,12 +903,12 @@ Underfull \vbox (badness 1960) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
 [10 <./Imagenes/Parte1/2_Derivados/PayOffPut.pdf>]
-<Imagenes/Parte1/2_Derivados/BinaryCall.pdf, id=1180, 418.03488pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/BinaryCall.pdf, id=1172, 418.03488pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/BinaryCall.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/BinaryCall.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BinaryCall.pdf  used on input line 78.
 (pdftex.def)             Requested size: 204.85846pt x 154.93517pt.
-<Imagenes/Parte1/2_Derivados/BinaryPut.pdf, id=1181, 418.03488pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/BinaryPut.pdf, id=1173, 418.03488pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/BinaryPut.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/BinaryPut.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BinaryPut.pdf  used on input line 82.
@@ -928,7 +921,7 @@ Underfull \vbox (badness 2119) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 87.
 LaTeX Info: Redefining \% on input line 87.
 [11 <./Imagenes/Parte1/2_Derivados/ProfitDiagCall.pdf> <./Imagenes/Parte1/2_Derivados/ProfitDiagPut.pdf>]
-<Imagenes/Parte1/2_Derivados/BullPayoff.pdf, id=1256, 406.42903pt x 312.35081pt>
+<Imagenes/Parte1/2_Derivados/BullPayoff.pdf, id=1248, 406.42903pt x 312.35081pt>
 File: Imagenes/Parte1/2_Derivados/BullPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/BullPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BullPayoff.pdf  used on input line 100.
@@ -938,17 +931,17 @@ Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BullPayoff.pdf  used on inp
 LaTeX Info: Redefining \. on input line 105.
 LaTeX Info: Redefining \% on input line 105.
 [12 <./Imagenes/Parte1/2_Derivados/BinaryCall.pdf> <./Imagenes/Parte1/2_Derivados/BinaryPut.pdf> <./Imagenes/Parte1/2_Derivados/BullPayoff.pdf>]
-<Imagenes/Parte1/2_Derivados/BearPayoff.pdf, id=1366, 406.42903pt x 312.35081pt>
+<Imagenes/Parte1/2_Derivados/BearPayoff.pdf, id=1358, 406.42903pt x 312.35081pt>
 File: Imagenes/Parte1/2_Derivados/BearPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/BearPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BearPayoff.pdf  used on input line 108.
 (pdftex.def)             Requested size: 227.62206pt x 174.93433pt.
-<Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf, id=1367, 406.42903pt x 312.35081pt>
+<Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf, id=1359, 406.42903pt x 312.35081pt>
 File: Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf  used on input line 116.
 (pdftex.def)             Requested size: 227.62206pt x 174.93433pt.
-<Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf, id=1368, 414.83543pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf, id=1360, 414.83543pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf  used on input line 126.
@@ -958,12 +951,12 @@ Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf  used
 LaTeX Info: Redefining \. on input line 129.
 LaTeX Info: Redefining \% on input line 129.
 [13 <./Imagenes/Parte1/2_Derivados/BearPayoff.pdf> <./Imagenes/Parte1/2_Derivados/StraddlePayoff.pdf>]
-<Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf, id=1453, 406.42903pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf, id=1444, 406.42903pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf  used on input line 132.
 (pdftex.def)             Requested size: 227.62206pt x 177.06876pt.
-<Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf, id=1454, 414.83543pt x 312.35081pt>
+<Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf, id=1445, 414.83543pt x 312.35081pt>
 File: Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf  used on input line 142.
@@ -976,12 +969,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 145.
 LaTeX Info: Redefining \% on input line 145.
 [14 <./Imagenes/Parte1/2_Derivados/StrangleOTMPayoff.pdf> <./Imagenes/Parte1/2_Derivados/StrangleITMPayoff.pdf>]
-<Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf, id=1546, 414.83543pt x 312.35081pt>
+<Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf, id=1538, 414.83543pt x 312.35081pt>
 File: Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf  used on input line 149.
 (pdftex.def)             Requested size: 227.62206pt x 171.38835pt.
-<Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf, id=1547, 406.42903pt x 312.35081pt>
+<Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf, id=1539, 406.42903pt x 312.35081pt>
 File: Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/ButterflyPayoff.pdf  used on input line 157.
@@ -994,7 +987,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 160.
 LaTeX Info: Redefining \% on input line 160.
 [15 <./Imagenes/Parte1/2_Derivados/BullishRiskReversalPayoff.pdf> <./Imagenes/Parte1/2_Derivados/BearishRiskReversalPayoff.pdf>]
-<Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf, id=1641, 408.45221pt x 316.16193pt>
+<Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf, id=1633, 408.45221pt x 316.16193pt>
 File: Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf>
 Package pdftex.def Info: Imagenes/Parte1/2_Derivados/CondorsPayoff.pdf  used on input line 164.
@@ -1016,7 +1009,7 @@ LaTeX Info: Redefining \% on input line 47.
 LaTeX Info: Redefining \. on input line 101.
 LaTeX Info: Redefining \% on input line 101.
 [19]
-<Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf, id=1722, 569.7191pt x 424.47958pt>
+<Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf, id=1713, 569.7191pt x 424.47958pt>
 File: Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf>
 Package pdftex.def Info: Imagenes/Parte1/11_Prods_renta_fija/Yield_Curve.pdf  used on input line 107.
@@ -1038,7 +1031,7 @@ LaTeX Info: Redefining \% on input line 119.
 LaTeX Info: Redefining \. on input line 119.
 LaTeX Info: Redefining \% on input line 119.
 [23] (Parte1/12_swaps.tex
-<Imagenes/Parte1/12_swaps/Interest_swap.png, id=1782, 289.08pt x 142.73325pt>
+<Imagenes/Parte1/12_swaps/Interest_swap.png, id=1774, 289.08pt x 142.73325pt>
 File: Imagenes/Parte1/12_swaps/Interest_swap.png Graphic file (type png)
 <use Imagenes/Parte1/12_swaps/Interest_swap.png>
 Package pdftex.def Info: Imagenes/Parte1/12_swaps/Interest_swap.png  used on input line 12.
@@ -1048,12 +1041,12 @@ Package pdftex.def Info: Imagenes/Parte1/12_swaps/Interest_swap.png  used on inp
 LaTeX Info: Redefining \. on input line 49.
 LaTeX Info: Redefining \% on input line 49.
 [24 <./Imagenes/Parte1/12_swaps/Interest_swap.png>]
-<Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png, id=1791, 368.577pt x 260.172pt>
+<Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png, id=1783, 368.577pt x 260.172pt>
 File: Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png Graphic file (type png)
 <use Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png>
 Package pdftex.def Info: Imagenes/Parte1/12_swaps/Relacion_Swaps_Bonos.png  used on input line 70.
 (pdftex.def)             Requested size: 295.90588pt x 208.88023pt.
-<Imagenes/Parte1/12_swaps/Interes_variable_swaps.png, id=1792, 289.08pt x 264.99pt>
+<Imagenes/Parte1/12_swaps/Interes_variable_swaps.png, id=1784, 289.08pt x 264.99pt>
 File: Imagenes/Parte1/12_swaps/Interes_variable_swaps.png Graphic file (type png)
 <use Imagenes/Parte1/12_swaps/Interes_variable_swaps.png>
 Package pdftex.def Info: Imagenes/Parte1/12_swaps/Interes_variable_swaps.png  used on input line 79.
@@ -1083,17 +1076,17 @@ Cap\'{\i }tulo 3.
 (Parte1/3_ALetoriedad.tex
 
 [29]
-<Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf, id=1824, 611.26181pt x 378.79895pt>
+<Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf, id=1816, 611.26181pt x 378.79895pt>
 File: Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf  used on input line 43.
 (pdftex.def)             Requested size: 295.90588pt x 183.37047pt.
-<Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf, id=1825, 608.06236pt x 378.79895pt>
+<Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf, id=1817, 608.06236pt x 378.79895pt>
 File: Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf  used on input line 49.
 (pdftex.def)             Requested size: 295.90588pt x 184.3415pt.
-<Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf, id=1826, 601.67914pt x 378.79895pt>
+<Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf, id=1818, 601.67914pt x 378.79895pt>
 File: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf  used on input line 60.
@@ -1103,12 +1096,12 @@ Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf  u
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
 [30 <./Imagenes/Parte1/3_Aleatoriedad/BrownianMotionDrift.pdf> <./Imagenes/Parte1/3_Aleatoriedad/LognormalRandomWalk.pdf>]
-<Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf, id=1883, 339.00624pt x 341.84264pt>
+<Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf, id=1875, 339.00624pt x 341.84264pt>
 File: Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_3D.pdf  used on input line 97.
 (pdftex.def)             Requested size: 204.85846pt x 206.57288pt.
-<Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf, id=1884, 455.4271pt x 337.93816pt>
+<Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf, id=1876, 455.4271pt x 337.93816pt>
 File: Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf  used on input line 100.
@@ -1118,7 +1111,7 @@ Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/PDF_2D.pdf  used on inpu
 LaTeX Info: Redefining \. on input line 104.
 LaTeX Info: Redefining \% on input line 104.
 [31 <./Imagenes/Parte1/3_Aleatoriedad/MeanRevertingWalk.pdf>]
-<Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf, id=1921, 611.26181pt x 304.76154pt>
+<Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf, id=1912, 611.26181pt x 304.76154pt>
 File: Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf  used on input line 132.
@@ -1135,7 +1128,7 @@ LaTeX Info: Redefining \% on input line 135.
 LaTeX Info: Redefining \. on input line 186.
 LaTeX Info: Redefining \% on input line 186.
 [33 <./Imagenes/Parte1/3_Aleatoriedad/First-exit_Time.pdf>]
-<Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png, id=2029, 299.31825pt x 246.9225pt>
+<Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png, id=2021, 299.31825pt x 246.9225pt>
 File: Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png Graphic file (type png)
 <use Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/blackjack_Dist.png  used on input line 215.
@@ -1149,7 +1142,7 @@ LaTeX Info: Redefining \% on input line 224.
 LaTeX Info: Redefining \. on input line 279.
 LaTeX Info: Redefining \% on input line 279.
 [35]
-<Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png, id=2042, 233.673pt x 217.41225pt>
+<Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png, id=2034, 233.673pt x 217.41225pt>
 File: Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png Graphic file (type png)
 <use Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/Arbitraje_Cabllos.png  used on input line 324.
@@ -1250,52 +1243,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--84
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
 [46]
-<Imagenes/Parte1/6_Sols/Call/Call3D.pdf, id=2180, 300.3797pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call3D.pdf, id=2172, 300.3797pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call3D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call3D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call3D.pdf  used on input line 100.
 (pdftex.def)             Requested size: 136.57462pt x 130.90164pt.
-<Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf, id=2181, 400.0458pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf, id=2173, 400.0458pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf  used on input line 104.
 (pdftex.def)             Requested size: 136.57462pt x 111.70692pt.
-<Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf, id=2182, 412.81226pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf, id=2174, 412.81226pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf  used on input line 108.
 (pdftex.def)             Requested size: 136.57462pt x 108.25197pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf, id=2183, 298.84558pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf, id=2175, 298.84558pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf  used on input line 112.
 (pdftex.def)             Requested size: 136.57462pt x 131.57379pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf, id=2184, 297.987pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf, id=2176, 297.987pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf  used on input line 116.
 (pdftex.def)             Requested size: 136.57462pt x 131.9516pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf, id=2185, 300.08777pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf, id=2177, 300.08777pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf  used on input line 120.
 (pdftex.def)             Requested size: 136.57462pt x 131.03343pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf, id=2186, 298.15347pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf, id=2178, 298.15347pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf  used on input line 124.
 (pdftex.def)             Requested size: 136.57462pt x 131.8857pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf, id=2187, 296.75638pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf, id=2179, 296.75638pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf  used on input line 128.
 (pdftex.def)             Requested size: 136.57462pt x 132.50073pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf, id=2188, 296.24556pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf, id=2180, 296.24556pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf  used on input line 132.
 (pdftex.def)             Requested size: 136.57462pt x 132.73357pt.
-<Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf, id=2189, 301.47577pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf, id=2181, 301.47577pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf  used on input line 136.
@@ -1308,52 +1301,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 140.
 LaTeX Info: Redefining \% on input line 140.
 [47]
-<Imagenes/Parte1/6_Sols/Put/Put3D.pdf, id=2194, 300.50175pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put3D.pdf, id=2186, 300.50175pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put3D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put3D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put3D.pdf  used on input line 146.
 (pdftex.def)             Requested size: 136.57462pt x 130.84892pt.
-<Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf, id=2195, 400.0458pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf, id=2187, 400.0458pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf  used on input line 150.
 (pdftex.def)             Requested size: 136.57462pt x 111.70692pt.
-<Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf, id=2196, 412.81226pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf, id=2188, 412.81226pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf  used on input line 154.
 (pdftex.def)             Requested size: 136.57462pt x 108.25197pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf, id=2197, 301.79121pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf, id=2189, 301.79121pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf  used on input line 158.
 (pdftex.def)             Requested size: 136.57462pt x 130.2954pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf, id=2198, 297.987pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf, id=2190, 297.987pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf  used on input line 162.
 (pdftex.def)             Requested size: 136.57462pt x 131.9516pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf, id=2199, 299.78789pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf, id=2191, 299.78789pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf  used on input line 166.
 (pdftex.def)             Requested size: 136.57462pt x 131.16083pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf, id=2200, 298.15347pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf, id=2192, 298.15347pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf  used on input line 170.
 (pdftex.def)             Requested size: 136.57462pt x 131.8857pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf, id=2201, 296.75638pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf, id=2193, 296.75638pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf  used on input line 174.
 (pdftex.def)             Requested size: 136.57462pt x 132.50073pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf, id=2202, 300.12762pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf, id=2194, 300.12762pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf  used on input line 178.
 (pdftex.def)             Requested size: 136.57462pt x 131.01146pt.
-<Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf, id=2203, 296.76543pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf, id=2195, 296.76543pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf  used on input line 182.
@@ -1366,52 +1359,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 186.
 LaTeX Info: Redefining \% on input line 186.
 [48 <./Imagenes/Parte1/6_Sols/Call/Call3D.pdf> <./Imagenes/Parte1/6_Sols/Call/CallSFijo.pdf> <./Imagenes/Parte1/6_Sols/Call/CalltFIjo.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Delta.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Gamma.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Theta.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Speed.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Vega.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Rho_r.pdf> <./Imagenes/Parte1/6_Sols/Call/Call_Rho_D.pdf>]
-<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf, id=2418, 298.8458pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf, id=2410, 298.8458pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCall3D.pdf  used on input line 193.
 (pdftex.def)             Requested size: 136.57462pt x 131.57379pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf, id=2419, 422.39493pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf, id=2411, 422.39493pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCallSFijo.pdf  used on input line 197.
 (pdftex.def)             Requested size: 136.57462pt x 105.79556pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf, id=2420, 409.62848pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf, id=2412, 409.62848pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/BinaryCalltFIjo.pdf  used on input line 201.
 (pdftex.def)             Requested size: 136.57462pt x 109.09074pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf, id=2421, 298.01447pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf, id=2413, 298.01447pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Delta.pdf  used on input line 205.
 (pdftex.def)             Requested size: 136.57462pt x 131.9472pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf, id=2422, 296.56693pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf, id=2414, 296.56693pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Gamma.pdf  used on input line 209.
 (pdftex.def)             Requested size: 136.57462pt x 132.5886pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf, id=2423, 303.077pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf, id=2415, 303.077pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Theta.pdf  used on input line 213.
 (pdftex.def)             Requested size: 136.57462pt x 129.74185pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf, id=2424, 303.38377pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf, id=2416, 303.38377pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Speed.pdf  used on input line 217.
 (pdftex.def)             Requested size: 136.57462pt x 129.61006pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf, id=2425, 296.39809pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf, id=2417, 296.39809pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Vega.pdf  used on input line 221.
 (pdftex.def)             Requested size: 136.57462pt x 132.66328pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf, id=2426, 298.9333pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf, id=2418, 298.9333pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_r.pdf  used on input line 225.
 (pdftex.def)             Requested size: 136.57462pt x 131.53864pt.
-<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf, id=2427, 301.54773pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf, id=2419, 301.54773pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Call/Binary_Call_Rho_D.pdf  used on input line 229.
@@ -1424,52 +1417,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 233.
 LaTeX Info: Redefining \% on input line 233.
 [49 <./Imagenes/Parte1/6_Sols/Put/Put3D.pdf> <./Imagenes/Parte1/6_Sols/Put/PutSFijo.pdf> <./Imagenes/Parte1/6_Sols/Put/PuttFIjo.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Delta.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Gamma.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Theta.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Speed.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Vega.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Rho_r.pdf> <./Imagenes/Parte1/6_Sols/Put/Put_Rho_D.pdf>]
-<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf, id=2646, 298.8458pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf, id=2637, 298.8458pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPut3D.pdf  used on input line 239.
 (pdftex.def)             Requested size: 136.57462pt x 131.57379pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf, id=2647, 416.0117pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf, id=2638, 416.0117pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPutSFijo.pdf  used on input line 243.
 (pdftex.def)             Requested size: 136.57462pt x 107.41818pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf, id=2648, 409.62848pt x 327.20317pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf, id=2639, 409.62848pt x 327.20317pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/BinaryPuttFIjo.pdf  used on input line 247.
 (pdftex.def)             Requested size: 136.57462pt x 109.09074pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf, id=2649, 301.68501pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf, id=2640, 301.68501pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Delta.pdf  used on input line 251.
 (pdftex.def)             Requested size: 136.57462pt x 130.33932pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf, id=2650, 299.34332pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf, id=2641, 299.34332pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Gamma.pdf  used on input line 255.
 (pdftex.def)             Requested size: 136.57462pt x 131.36292pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf, id=2651, 307.62135pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf, id=2642, 307.62135pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Theta.pdf  used on input line 259.
 (pdftex.def)             Requested size: 136.57462pt x 127.82646pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf, id=2652, 303.38377pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf, id=2643, 303.38377pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Speed.pdf  used on input line 263.
 (pdftex.def)             Requested size: 136.57462pt x 129.61006pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf, id=2653, 298.70418pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf, id=2644, 298.70418pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Vega.pdf  used on input line 267.
 (pdftex.def)             Requested size: 136.57462pt x 131.63528pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf, id=2654, 301.745pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf, id=2645, 301.745pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_r.pdf  used on input line 271.
 (pdftex.def)             Requested size: 136.57462pt x 130.31296pt.
-<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf, id=2655, 305.4092pt x 287.9079pt>
+<Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf, id=2646, 305.4092pt x 287.9079pt>
 File: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf>
 Package pdftex.def Info: Imagenes/Parte1/6_Sols/Binary_Put/Binary_Put_Rho_D.pdf  used on input line 275.
@@ -1498,17 +1491,17 @@ LaTeX Info: Redefining \% on input line 135.
 LaTeX Info: Redefining \. on input line 51.
 LaTeX Info: Redefining \% on input line 51.
 [54]
-<Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf, id=3112, 422.39493pt x 315.83257pt>
+<Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf, id=3104, 422.39493pt x 315.83257pt>
 File: Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf>
 Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Volatilidad.pdf  used on input line 84.
 (pdftex.def)             Requested size: 204.85846pt x 153.17378pt.
-<Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf, id=3113, 422.39493pt x 315.83257pt>
+<Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf, id=3105, 422.39493pt x 315.83257pt>
 File: Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf>
 Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Volatilidad_Prediccion.pdf  used on input line 87.
 (pdftex.def)             Requested size: 227.62206pt x 170.19524pt.
-<Imagenes/Parte1/7_Volatilidad/Accion.pdf, id=3114, 425.57869pt x 312.02145pt>
+<Imagenes/Parte1/7_Volatilidad/Accion.pdf, id=3106, 425.57869pt x 312.02145pt>
 File: Imagenes/Parte1/7_Volatilidad/Accion.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/7_Volatilidad/Accion.pdf>
 Package pdftex.def Info: Imagenes/Parte1/7_Volatilidad/Accion.pdf  used on input line 90.
@@ -1537,7 +1530,7 @@ LaTeX Info: Redefining \% on input line 137.
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
 [59]
-<Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf, id=3262, 422.39493pt x 312.02145pt>
+<Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf, id=3254, 422.39493pt x 312.02145pt>
 File: Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Cobertura_Volat_Imp.pdf  used on input line 104.
@@ -1551,12 +1544,12 @@ LaTeX Info: Redefining \% on input line 110.
 LaTeX Info: Redefining \. on input line 139.
 LaTeX Info: Redefining \% on input line 139.
 [61] (Parte1/9_Ops_Americanas.tex
-<Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf, id=3300, 300.55858pt x 287.9079pt>
+<Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf, id=3291, 300.55858pt x 287.9079pt>
 File: Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/One_Touch_Call.pdf  used on input line 57.
 (pdftex.def)             Requested size: 159.33821pt x 152.63438pt.
-<Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf, id=3301, 295.3497pt x 287.9079pt>
+<Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf, id=3292, 295.3497pt x 287.9079pt>
 File: Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Delta_One_Touch_Call.pdf  used on input line 61.
@@ -1594,12 +1587,12 @@ Cap\'{\i }tulo 5.
 
 
 ]
-<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png, id=3387, 299.31825pt x 217.41225pt>
+<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png, id=3378, 299.31825pt x 217.41225pt>
 File: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png Graphic file (type png)
 <use Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png>
 Package pdftex.def Info: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos.png  used on input line 48.
 (pdftex.def)             Requested size: 295.90588pt x 214.93687pt.
-<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png, id=3388, 269.20575pt x 202.95825pt>
+<Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png, id=3379, 269.20575pt x 202.95825pt>
 File: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png Graphic file (type png)
 <use Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png>
 Package pdftex.def Info: Imagenes/Parte1/14_Gestion_carteras/Combinacion_activos_Free_Risk.png  used on input line 57.
@@ -1646,12 +1639,12 @@ LaTeX Info: Redefining \% on input line 150.
 [74]
 Cap\'{\i }tulo 6.
 (Parte1/16_Prediccion_mercado.tex
-<Imagenes/Parte1/16_Prediccion/Plotting.png, id=3430, 302.3295pt x 147.55125pt>
+<Imagenes/Parte1/16_Prediccion/Plotting.png, id=3422, 302.3295pt x 147.55125pt>
 File: Imagenes/Parte1/16_Prediccion/Plotting.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Plotting.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Plotting.png  used on input line 13.
 (pdftex.def)             Requested size: 295.90588pt x 144.4236pt.
-<Imagenes/Parte1/16_Prediccion/Resistance.png, id=3431, 263.7855pt x 206.57175pt>
+<Imagenes/Parte1/16_Prediccion/Resistance.png, id=3423, 263.7855pt x 206.57175pt>
 File: Imagenes/Parte1/16_Prediccion/Resistance.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Resistance.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Resistance.png  used on input line 19.
@@ -1665,12 +1658,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./Imagenes/Parte1/16_Prediccion/Plotting.png>]
-<Imagenes/Parte1/16_Prediccion/Support.png, id=3438, 251.13824pt x 206.57175pt>
+<Imagenes/Parte1/16_Prediccion/Support.png, id=3430, 251.13824pt x 206.57175pt>
 File: Imagenes/Parte1/16_Prediccion/Support.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Support.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Support.png  used on input line 25.
 (pdftex.def)             Requested size: 295.90588pt x 243.4058pt.
-<Imagenes/Parte1/16_Prediccion/Trendlines.png, id=3439, 248.127pt x 199.947pt>
+<Imagenes/Parte1/16_Prediccion/Trendlines.png, id=3431, 248.127pt x 199.947pt>
 File: Imagenes/Parte1/16_Prediccion/Trendlines.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Trendlines.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Trendlines.png  used on input line 31.
@@ -1683,12 +1676,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 34.
 LaTeX Info: Redefining \% on input line 34.
 [76 <./Imagenes/Parte1/16_Prediccion/Resistance.png> <./Imagenes/Parte1/16_Prediccion/Support.png>]
-<Imagenes/Parte1/16_Prediccion/Oscillator.png, id=3448, 284.262pt x 139.722pt>
+<Imagenes/Parte1/16_Prediccion/Oscillator.png, id=3440, 284.262pt x 139.722pt>
 File: Imagenes/Parte1/16_Prediccion/Oscillator.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Oscillator.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Oscillator.png  used on input line 43.
 (pdftex.def)             Requested size: 295.90588pt x 145.45029pt.
-<Imagenes/Parte1/16_Prediccion/Bollinger Bands.png, id=3449, 299.31825pt x 143.3355pt>
+<Imagenes/Parte1/16_Prediccion/Bollinger Bands.png, id=3441, 299.31825pt x 143.3355pt>
 File: Imagenes/Parte1/16_Prediccion/Bollinger Bands.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Bollinger Bands.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Bollinger Bands.png  used on input line 49.
@@ -1698,12 +1691,12 @@ Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Bollinger Bands.png  used
 LaTeX Info: Redefining \. on input line 52.
 LaTeX Info: Redefining \% on input line 52.
 [77 <./Imagenes/Parte1/16_Prediccion/Trendlines.png> <./Imagenes/Parte1/16_Prediccion/Oscillator.png>]
-<Imagenes/Parte1/16_Prediccion/Head and shoulders.png, id=3458, 254.75175pt x 213.79875pt>
+<Imagenes/Parte1/16_Prediccion/Head and shoulders.png, id=3450, 254.75175pt x 213.79875pt>
 File: Imagenes/Parte1/16_Prediccion/Head and shoulders.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Head and shoulders.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Head and shoulders.png  used on input line 57.
 (pdftex.def)             Requested size: 295.90588pt x 248.3362pt.
-<Imagenes/Parte1/16_Prediccion/Saucer bottom.png, id=3459, 244.5135pt x 193.9245pt>
+<Imagenes/Parte1/16_Prediccion/Saucer bottom.png, id=3451, 244.5135pt x 193.9245pt>
 File: Imagenes/Parte1/16_Prediccion/Saucer bottom.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Saucer bottom.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Saucer bottom.png  used on input line 63.
@@ -1716,17 +1709,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
 [78 <./Imagenes/Parte1/16_Prediccion/Bollinger Bands.png> <./Imagenes/Parte1/16_Prediccion/Head and shoulders.png>]
-<Imagenes/Parte1/16_Prediccion/Triple top.png, id=3468, 260.77425pt x 216.81pt>
+<Imagenes/Parte1/16_Prediccion/Triple top.png, id=3460, 260.77425pt x 216.81pt>
 File: Imagenes/Parte1/16_Prediccion/Triple top.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Triple top.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Triple top.png  used on input line 69.
 (pdftex.def)             Requested size: 295.90588pt x 246.03784pt.
-<Imagenes/Parte1/16_Prediccion/Candlestick char.png, id=3470, 302.93175pt x 157.7895pt>
+<Imagenes/Parte1/16_Prediccion/Candlestick char.png, id=3462, 302.93175pt x 157.7895pt>
 File: Imagenes/Parte1/16_Prediccion/Candlestick char.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Candlestick char.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Candlestick char.png  used on input line 76.
 (pdftex.def)             Requested size: 295.90588pt x 154.14148pt.
-<Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png, id=3471, 237.88875pt x 159.59625pt>
+<Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png, id=3463, 237.88875pt x 159.59625pt>
 File: Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png  used on input line 81.
@@ -1736,7 +1729,7 @@ Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png
 LaTeX Info: Redefining \. on input line 84.
 LaTeX Info: Redefining \% on input line 84.
 [79 <./Imagenes/Parte1/16_Prediccion/Saucer bottom.png> <./Imagenes/Parte1/16_Prediccion/Triple top.png>]
-<Imagenes/Parte1/16_Prediccion/Point Figure Chart.png, id=3482, 248.127pt x 181.8795pt>
+<Imagenes/Parte1/16_Prediccion/Point Figure Chart.png, id=3473, 248.127pt x 181.8795pt>
 File: Imagenes/Parte1/16_Prediccion/Point Figure Chart.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Point Figure Chart.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Point Figure Chart.png  used on input line 93.
@@ -1749,7 +1742,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 96.
 LaTeX Info: Redefining \% on input line 96.
 [80 <./Imagenes/Parte1/16_Prediccion/Candlestick char.png> <./Imagenes/Parte1/16_Prediccion/Meanings candlesticks.png>]
-<Imagenes/Parte1/16_Prediccion/Elliot waves.png, id=3490, 230.66174pt x 190.91325pt>
+<Imagenes/Parte1/16_Prediccion/Elliot waves.png, id=3482, 230.66174pt x 190.91325pt>
 File: Imagenes/Parte1/16_Prediccion/Elliot waves.png Graphic file (type png)
 <use Imagenes/Parte1/16_Prediccion/Elliot waves.png>
 Package pdftex.def Info: Imagenes/Parte1/16_Prediccion/Elliot waves.png  used on input line 111.
@@ -1775,7 +1768,7 @@ LaTeX Info: Redefining \% on input line 157.
 [84]
 Cap\'{\i }tulo 7.
 (Parte2/17_Clas_exot_path_ops.tex
-<Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png, id=3511, 211.38976pt x 215.00325pt>
+<Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png, id=3503, 211.38976pt x 215.00325pt>
 File: Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png Graphic file (type png)
 <use Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png>
 Package pdftex.def Info: Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png  used on input line 6.
@@ -1788,7 +1781,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [85
 
  <./Imagenes/Parte2/17_Clas_exot_path_ops/Clasif_Opt.png>]
-<Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png, id=3519, 292.09125pt x 215.6055pt>
+<Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png, id=3510, 292.09125pt x 215.6055pt>
 File: Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png Graphic file (type png)
 <use Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png>
 Package pdftex.def Info: Imagenes/Parte2/17_Clas_exot_path_ops/Jump_Condition.png  used on input line 23.
@@ -2226,21 +2219,28 @@ Underfull \vbox (badness 1817) has occurred while \output is active []
 
 ]
 
-LaTeX Info: Redefining \. on input line 114.
-LaTeX Info: Redefining \% on input line 114.
-[144])
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+[144]
+
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+[145]
+Overfull \hbox (34.33974pt too wide) detected at line 186
+[]
+ []
+
+)
 
 LaTeX Info: Redefining \. on input line 199.
 LaTeX Info: Redefining \% on input line 199.
-[145]
-
-[146
-
-]
+[146]
 Cap\'{\i }tulo 12.
 
 
-[147]
+[147
+
+]
 
 [148
 
@@ -2270,12 +2270,12 @@ Ap\'{e}ndice A.
 ]
 Ap\'{e}ndice B.
 (Apendices/Apendice Ito.tex
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3891, 364.19562pt x 273.14648pt>
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3883, 364.19562pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf  used on input line 10.
 (pdftex.def)             Requested size: 364.19473pt x 273.14581pt.
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3893, page=1, 364.19562pt x 273.14648pt>
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3885, page=1, 364.19562pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 1>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , page1 used on input line 10.
@@ -2295,7 +2295,7 @@ File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 1>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , page1 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3898, page=2, 364.19562pt x 273.14648pt>
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3890, page=2, 364.19562pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 2>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , page2 used on input line 10.
@@ -2317,7 +2317,7 @@ Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , p
 [156
 
  <./Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf> <./Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf>]
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3986, page=3, 364.19562pt x 273.14648pt>
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3978, page=3, 364.19562pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 3>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , page3 used on input line 10.
@@ -2326,7 +2326,7 @@ File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 3>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , page3 used on input line 10.
 (pdftex.def)             Requested size: 327.77303pt x 245.82956pt.
-<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3987, page=4, 364.19562pt x 273.14648pt>
+<Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, id=3979, page=4, 364.19562pt x 273.14648pt>
 File: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf, page 4>
 Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , page4 used on input line 10.
@@ -2350,7 +2350,7 @@ Package pdftex.def Info: Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf , p
  <./Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf> <./Imagenes/Parte1/3_Aleatoriedad/6-CalculoIto2425.pdf>]) (Apendices/Apendice generalizaciones.tex
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3995, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3986, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf>
 Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf  used on input line 9.
@@ -2361,7 +2361,7 @@ pdfTeX warning: pdflatex (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log_opti
 
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3997, page=1, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=3988, page=1, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, page 1>
 Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf , page1 used on input line 9.
@@ -2394,7 +2394,7 @@ Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf 
  <./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=4050, page=2, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, id=4042, page=2, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf, page 2>
 Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf , page2 used on input line 9.
@@ -2414,7 +2414,7 @@ Package pdftex.def Info: Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf 
  <./Imagenes/Parte1/8_Generalizaciones/Exp_log_options.pdf>]) (Apendices/Apendice Make Your Mind Up.tex
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4055, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4047, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf  used on input line 9.
@@ -2425,7 +2425,7 @@ pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_
 
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4057, page=1, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4049, page=1, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, page 1>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf , page1 used on input line 9.
@@ -2458,7 +2458,7 @@ Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalme
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4127, page=2, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4119, page=2, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, page 2>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf , page2 used on input line 9.
@@ -2478,7 +2478,7 @@ Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalme
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4133, page=3, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4124, page=3, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, page 3>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf , page3 used on input line 9.
@@ -2498,7 +2498,7 @@ Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalme
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4138, page=4, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4130, page=4, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, page 4>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf , page4 used on input line 9.
@@ -2518,7 +2518,7 @@ Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalme
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4143, page=5, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, id=4135, page=5, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf, page 5>
 Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf , page5 used on input line 9.
@@ -2538,7 +2538,7 @@ Package pdftex.def Info: Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalme
  <./Imagenes/Parte1/9_Americanas/Make_Your_Mind_Up_Instalment.pdf>]) (Apendices/Apendice var cob vol imp.tex
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4149, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4141, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf  used on input line 9.
@@ -2549,7 +2549,7 @@ pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura
 
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4151, page=1, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4143, page=1, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 1>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page1 used on input line 9.
@@ -2582,7 +2582,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4222, page=2, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4214, page=2, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 2>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page2 used on input line 9.
@@ -2602,7 +2602,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4228, page=3, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4219, page=3, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 3>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page3 used on input line 9.
@@ -2622,7 +2622,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4243, page=4, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4235, page=4, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 4>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page4 used on input line 9.
@@ -2642,7 +2642,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4248, page=5, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4240, page=5, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 5>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page5 used on input line 9.
@@ -2662,7 +2662,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4253, page=6, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4245, page=6, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 6>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page6 used on input line 9.
@@ -2682,7 +2682,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4258, page=7, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4250, page=7, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 7>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page7 used on input line 9.
@@ -2702,7 +2702,7 @@ Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol
  <./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf>]
 
 pdfTeX warning: pdflatex (file ./Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4263, page=8, 538.01pt x 699.61375pt>
+<Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, id=4255, page=8, 538.01pt x 699.61375pt>
 File: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf Graphic file (type pdf)
 <use Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf, page 8>
 Package pdftex.def Info: Imagenes/Parte1/10_Cobertura/Mean_Var_Cobertura_Imp_Vol.pdf , page8 used on input line 9.
@@ -2754,20 +2754,20 @@ L3 programming layer <2025-05-26>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B8F39EE3A2D5DEE39E17D747D7F71B3;40885.
+(rerunfilecheck)             Checksum: B240B9F0AA6565EB42E7923A323E285B;40684.
  ) 
 Here is how much of TeX's memory you used:
- 30985 strings out of 468219
- 618290 string characters out of 5428961
- 969273 words of memory out of 5000000
- 58398 multiletter control sequences out of 15000+600000
+ 30983 strings out of 468219
+ 618254 string characters out of 5428961
+ 971270 words of memory out of 5000000
+ 58397 multiletter control sequences out of 15000+600000
  640472 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,21n,105p,1446b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,19n,105p,1446b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Usuario Asier\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.pdf" (187 pages, 6956738 bytes).
+Output written on "c:\Users\Usuario Asier\Documents\GitHub\Quant_FInance\build\main.pdf" (186 pages, 6962439 bytes).
 PDF statistics:
- 4505 PDF objects out of 5155 (max. 8388607)
- 538 named destinations out of 1000 (max. 500000)
- 2235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4496 PDF objects out of 5155 (max. 8388607)
+ 537 named destinations out of 1000 (max. 500000)
+ 2227 words of extra memory for PDF output out of 10000 (max. 10000000)
 
