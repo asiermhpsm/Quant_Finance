@@ -1,6 +1,264 @@
 import numpy as np
+import warnings
 
-from Utils.Parte6.DF.OptionSolver import OptionSolver, _thomas_solver
+from Utils.Parte6.DF.Utils import _thomas_solver
+from Utils.Parte6.DF.OptionSolver import OptionSolver
+
+# -------------------------------------------------------------------------
+# Auxiliary solver to implement discrete dividends in European options
+# -------------------------------------------------------------------------
+
+def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: callable, 
+              S_min: float, S_max: float, T: float, 
+              known_boundaries: str = 'None', discrete_dividend: bool = False,
+              N: int = 500, M: int = 500, theta: float = 0.5,
+              **kwargs
+              ):
+    """
+    Solve the option pricing PDE using a finite-difference theta-scheme (backward in time).
+        The PDE is assumed to be:
+            V_t + a(t, S) V_SS + b(t, S) V_S + c(t, S) V + f(t, S) = 0
+    Parameters:
+        a, b, c, f (callable): Coefficient functions of the PDE.
+        F (callable): final condition function at maturity T, i.e. V(T, S)=F(S).
+        S_min, S_max (float): Spatial domain boundaries.
+        T (float): Maturity time.
+        known_boundaries (str): Known boundaries:
+            - 'Both' : V(t, S_min) and V(t, S_max) known for all t.
+            - 'S0'   : V(t, S_min) known for all t, V(t, S_max) unknown.
+            - 'Smax' : V(t, S_max) known for all t, V(t, S_min) unknown.
+            - 'None'  : Both boundaries unknown.
+        discrete_dividend (bool): If True, handle discrete dividends.
+        N (int): Number of time steps.
+        M (int): Number of spatial steps.
+        theta (float): Theta parameter for the scheme.
+        kwargs: Additional parameters for boundary conditions functions:
+            - If known_boundaries is 'Both', provide S0_func(t) and Smax_func(t).
+            - If known_boundaries is 'S0', provide S0_func(t).
+            - If known_boundaries is 'Smax', provide Smax_func(t).
+            - If discrete_dividend is True, provide dividend_times (list of times) and dividend_amounts (list of amounts).
+    Returns:
+        S_grid, t_grid: Meshgrid arrays for S and t.
+        V: 2D array of option values at each (t, S) grid point.
+    """
+    # Time and space discretization
+    dt = float(T) / (N + 1)
+    dS = float(S_max - S_min) / (M + 1)
+
+    # Coefficient multipliers
+    alpha = 1.0 / (dS * dS)
+    beta = 1.0 / dS
+    gamma = 1.0 / dt
+
+    theta = float(theta)
+    one_minus_theta = 1.0 - theta
+
+    # Mesh grids (kept for compatibility with coefficient functions that expect full mesh)
+    t = np.linspace(0.0, T, N + 2)
+    S = np.linspace(0.0, S_max, M + 2)
+    S_mesh, t_mesh = np.meshgrid(S, t, indexing="ij")
+
+    # Helper to evaluate coefficient functions on mesh and normalize shapes
+    def _eval_coef(fun, name="coef"):
+        vals = fun(t_mesh, S_mesh)
+        vals = np.asarray(vals, dtype=float)
+
+        expected_shape = (M + 2, N + 2)
+        if vals.shape != expected_shape:
+            # Allow scalar or 1-D returns and broadcast appropriately
+            if vals.shape == ():
+                vals = np.full(expected_shape, float(vals))
+            elif vals.shape == (M + 2,):
+                vals = np.tile(vals.reshape(M + 2, 1), (1, N + 2))
+            elif vals.shape == (N + 2,):
+                vals = np.tile(vals.reshape(1, N + 2), (M + 2, 1))
+            else:
+                raise ValueError(f"{name} returned array with unexpected shape {vals.shape}. Expected {expected_shape}.")
+        return vals
+
+    # Evaluate PDE coefficient fields on mesh
+    a_values = _eval_coef(a, "a")
+    b_values = _eval_coef(b, "b")
+    c_values = _eval_coef(c, "c")
+    f_values = _eval_coef(f, "f")
+
+    # Check that a(t, 0) and b(t, 0) are zero for all t
+    if known_boundaries in ['Smax', 'None']:
+        if not np.allclose(a_values[0, :], 0):
+            raise ValueError("Unknown boundary at S=0 and a(t, 0) not zero for all t is not implemented.")
+        if not np.allclose(b_values[0, :], 0):
+            raise ValueError("Unknown boundary at S=0 and b(t, 0) not zero for all t is not implemented.")
+
+    # Initialize solution array and apply boundary/final conditions
+    V = np.zeros((M + 2, N + 2), dtype=float)
+    V[:, -1] = F(S)  # Final condition V(T, S)
+    if known_boundaries == 'Both':  # Both boundaries known
+        S0_func = kwargs.get('S0_func')
+        Smax_func = kwargs.get('Smax_func')
+        if S0_func is None or Smax_func is None:
+            raise ValueError("For 'Both' known_boundaries, provide S0_func and Smax_func.")
+        V = S0_func(t, V)          # Boundary at S_min
+        V = Smax_func(t, V)       # Boundary at S_max
+    elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
+        S0_func = kwargs.get('S0_func')
+        if S0_func is None:
+            raise ValueError("For 'S0' known_boundaries, provide S0_func.")
+        V = S0_func(t, V)          # Boundary at S_min
+    elif known_boundaries == 'Smax':  # V(t, S_max) known, V(t, S_min) unknown
+        Smax_func = kwargs.get('Smax_func')
+        if Smax_func is None:
+            raise ValueError("For 'Smax' known_boundaries, provide Smax_func.")
+        V = Smax_func(t, V)       # Boundary at S_max
+
+    # Get discrete dividend times and function if applicable
+    if discrete_dividend:
+        div_map = {}
+
+        dividend_times = kwargs.get('dividend_times', [])
+        dividend_times = [float(dt) for dt in dividend_times if 0 < dt < T]
+        if len(dividend_times) == 0:
+            warnings.warn("Discrete dividends flag is true but no dividend_times provided.")
+        discrete_dividend_idx = np.round(np.asarray(dividend_times) / dt).astype(int) # time indixes
+
+        dividend_amounts = kwargs.get('dividend_amounts')
+        if dividend_amounts is None:
+            raise ValueError("For discrete_dividend=True, provide dividend_amounts.")
+        if len(dividend_amounts) != len(discrete_dividend_idx):
+            raise ValueError("Valid times in dividend_times and amounts in dividend_amounts must have the same length.")
+        
+        for td_idx, D in zip(discrete_dividend_idx, dividend_amounts):
+            div_map[td_idx] = D
+    else:
+        discrete_dividend_idx = []
+
+    # Preprocess discrete dividend times and amounts if applicable
+    if discrete_dividend:
+        times = np.asarray(kwargs.get('dividend_times', []), dtype=float)
+        valid_mask = (times > 0) & (times < T)
+        times = times[valid_mask]
+
+        if times.size == 0:
+            warnings.warn("Discrete dividends flag is true but no valid dividend_times provided.")
+            div_map = {}
+        else:
+            amounts_all = kwargs.get('dividend_amounts')
+            if amounts_all is None:
+                raise ValueError("For discrete_dividend=True, provide dividend_amounts.")
+            amounts_all = np.asarray(amounts_all, dtype=float)
+            amounts = amounts_all[valid_mask]
+
+            if amounts.shape[0] != times.shape[0]:
+                raise ValueError("Valid times in dividend_times and amounts in dividend_amounts must have the same length.")
+
+            idx = np.rint(times / dt).astype(int)
+            div_map = dict(zip(idx.tolist(), amounts.tolist()))
+        
+
+    # Preallocate arrays for tridiagonal matrix and RHS to avoid repeated allocations
+    M = M
+    A_diag = np.empty(M, dtype=float)
+    A_lower = np.empty(M - 1, dtype=float)
+    A_upper = np.empty(M - 1, dtype=float)
+
+    B_diag = np.empty(M, dtype=float)
+    B_lower = np.empty(M - 1, dtype=float)
+    B_upper = np.empty(M - 1, dtype=float)
+
+    rhs = np.empty(M, dtype=float)
+
+    # Backward time-stepping loop: j indexes time levels (from N down to 0)
+    for j in range(N, -1, -1):
+        # Adjust asset prices for discrete dividend at time t_j
+        if j in discrete_dividend_idx:
+            idx = np.round((S[1:-1] - div_map[j]) / dS).astype(int)
+            idx = np.clip(idx, 0, len(S) - 1) 
+            V[1:-1, j] = V[idx, j+1]
+            continue
+
+        # Compute time-slice coefficients (vectors over S)
+        eta_j = alpha * a_values[:, j]                    # length M+2
+        phi_j = 2.0 * alpha * a_values[:, j] + beta * b_values[:, j] - c_values[:, j]
+        psi_j = alpha * a_values[:, j] + beta * b_values[:, j]
+
+        # Extract interior node coefficients for i = 1..M (size M)
+        eta_i = eta_j[1:M+1]
+        phi_i = phi_j[1:M+1]
+        psi_i = psi_j[1:M+1]
+
+        # Assemble tridiagonal matrix A coefficients
+        # A_diag[i-1] corresponds to node i (i = 1..M)
+        A_diag[:] = -gamma - theta * phi_i
+        A_lower[:] = theta * eta_i[1:]    # subdiagonal entries for rows 2..M
+        A_upper[:] = theta * psi_i[:-1]   # superdiagonal entries for rows 1..M-1
+
+        # Assemble matrix B coefficients
+        B_diag[:] = -gamma + one_minus_theta * phi_i
+        B_lower[:] = -one_minus_theta * eta_i[1:]
+        B_upper[:] = -one_minus_theta * psi_i[:-1]
+
+        # Apply the special rows adjustments of A and B if necessary
+        if known_boundaries == 'Both':  # Both boundaries known
+            pass
+        elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
+            aux1 = (eta_j[M] - psi_j[M])
+            aux2 = (phi_j[M] - 2.0 * psi_j[M])
+
+            A_lower[-1] = theta * aux1
+            A_diag[-1] = -gamma - theta * aux2
+            B_lower[-1] = -one_minus_theta * aux1
+            B_diag[-1] = -gamma + one_minus_theta * aux2
+        elif known_boundaries == 'Smax': # V(t, S_max) known, V(t, S_min) unknown
+            B_diag[0] = - theta*eta_j[1] * (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) - one_minus_theta*eta_j[1]
+        elif known_boundaries == 'None': # Both boundaries unknown
+            aux1 = (eta_j[M] - psi_j[M])
+            aux2 = (phi_j[M] - 2.0 * psi_j[M])
+
+            A_lower[-1] = theta * aux1
+            A_diag[-1] = -gamma - theta * aux2
+            B_lower[-1] = -one_minus_theta * aux1
+            B_diag[-1] = -gamma + one_minus_theta * aux2
+            B_diag[0] = - theta*eta_j[1] * (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) - one_minus_theta*eta_j[1]
+
+
+        # Compute right-hand side: rhs = B @ V_{j+1} - F
+        y = V[1:-1, j + 1]  # solution at next time level, interior nodes (size M)
+
+        # Start with diagonal contribution
+        rhs[:] = B_diag * y
+        # Add off-diagonal contributions (vectorized)
+        rhs[:-1] += B_upper * y[1:]   # superdiagonal * next node
+        rhs[1:] += B_lower * y[:-1]   # subdiagonal * previous node
+
+        # Add source term contribution: F = theta * f(t_j, S) + (1-theta) * f(t_{j+1}, S)
+        F = (theta * f_values[1:-1, j] + one_minus_theta * f_values[1:-1, j + 1]).astype(float)
+        rhs -= F
+
+        # Apply any explicit constant adjustments
+        if known_boundaries == 'Both':  # Both boundaries known
+            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1]
+            rhs[-1] += theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
+        elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
+            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1]
+        elif known_boundaries == 'Smax': # V(t, S_max) known, V(t, S_min) unknown
+            rhs[0] += -theta*eta_j[1] * (dt)/(1 - c[0,j]*dt*theta) * f_values[0,j]
+        elif known_boundaries == 'None': # Both boundaries unknown
+            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1] - theta*eta_j[1] * (dt)/(1 - c[0,j]*dt*theta) * f_values[0,j]
+
+        # Solve tridiagonal system A * x = rhs (Thomas algorithm)
+        V[1:-1, j] = _thomas_solver(A_lower, A_diag, A_upper, rhs)
+
+    # Boundary values adjustments if necessary
+    if known_boundaries == 'Both':
+        pass
+    elif known_boundaries == 'S0':
+        V[-1, :-1] = 2.0 * V[-2, :-1] - V[-3, :-1]
+    elif known_boundaries == 'Smax':
+        V[0, :-1] = (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) * V[0, 1:] + (dt)/(1 - c[0,j]*dt*theta) * f_values[0, :-1]
+    elif known_boundaries == 'None':
+        V[-1, :-1] = 2.0 * V[-2, :-1] - V[-3, :-1]
+        V[0, :-1] = (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) * V[0, 1:] + (dt)/(1 - c[0,j]*dt*theta) * f_values[0, :-1]
+
+    return S_mesh, t_mesh, V
 
 
 
@@ -8,9 +266,11 @@ class EuropeanOption(OptionSolver):
     """
     Class for European options.
     """
+    name = "European Option"
 
     def __init__(self, r : float = 0.05, K : float = 20, D : float = 0, 
-                 T : float = 1, S_inf : float = 80,
+                 T : float = 1, 
+                 S_min : float = 0, S_max : float = 80,
                  dividend_times : list = None, dividend_amounts : list = None,
                  EDE : str = 'lognormal', 
                  N : int = 500, M : int = 500, theta : float = 0.5,
@@ -24,7 +284,10 @@ class EuropeanOption(OptionSolver):
             K (float): Strike price.
             D (float): Continuous dividend yield.
             T (float): Time to maturity.
-            S_inf (float): Maximum stock price considered in the grid.
+            S_min (float): Minimum stock price in the grid.
+            S_max (float): Maximum stock price in the grid.
+            dividend_times (list): List of times when discrete dividends are paid.
+            dividend_amounts (list): List of dividend amounts corresponding to dividend_times.
             EDE (str): Stochastic process for the underlying asset ('lognormal').
             N (int): Number of time steps steps in the grid.
             M (int): Number of stock steps in the grid.
@@ -33,17 +296,36 @@ class EuropeanOption(OptionSolver):
                 if EDE is 'lognormal':
                     sigma (float): Volatility of the underlying asset.
         """
+        print(f"[{self.name}]\t\tInitializing option...")
+
         self.r = r
         self.K = K
         self.D = D
         self.T = T
-        self.S_inf = S_inf
+        self.S_min = S_min
+        self.S_max = S_max
         self.EDE = EDE
         self.N = N
         self.M = M
         self.theta = theta
         self.dividend_times = dividend_times
         self.dividend_amounts = dividend_amounts
+
+        # Determine known boundaries based on presence of apply_S0 and apply_Smax methods
+        has_S0 = callable(getattr(self, 'apply_S0', None))
+        has_Smax = callable(getattr(self, 'apply_Smax', None))
+        if has_S0 and has_Smax:
+            self.known_boundaries = 'Both'
+        elif has_S0:
+            self.known_boundaries = 'S0'
+        elif has_Smax:
+            self.known_boundaries = 'Smax'
+        else:
+            self.known_boundaries = 'None'
+
+        # Handle discrete dividends
+        self.discrete_dividend = bool(self.dividend_times) and bool(self.dividend_amounts)
+
 
         if EDE == 'lognormal':
             self.sigma = kwargs.get('sigma', 0.2)
@@ -54,162 +336,33 @@ class EuropeanOption(OptionSolver):
             self.b = lambda t, S: (self.r - self.D) * S
             self.c = lambda t, S: -self.r
             self.f = lambda t, S: 0.0
+
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
 
     def solve(self):
-        """
-        Solve the option pricing PDE using a finite-difference theta-scheme (backward in time).
-        The PDE is assumed to be:
-            V_t + a(t, S) V_SS + b(t, S) V_S + c(t, S) V + f(t, S) = 0
-
-        The implementation builds and solves a tridiagonal linear system at each time step.
-        Preconditions:
-        - The instance provides attributes: T, N, M, S_inf, a, b, c, f, theta.
-        - The instance provides methods: apply_payoff(S, V) and apply_S0(t, V).
-        - A tridiagonal solver `_thomas_solver(lower, diag, upper, rhs)` is available.
-        """
-        # Validate required attributes
-        required_attrs = ("T", "N", "M", "S_inf", "a", "b", "c", "f", "theta")
-        for attr in required_attrs:
-            if not hasattr(self, attr):
-                raise AttributeError(f"Missing required attribute '{attr}' in OptionSolver instance.")
-
-        # Time and space discretization
-        dt = float(self.T) / (self.N + 1)
-        dS = float(self.S_inf) / (self.M + 1)
-
-        # Coefficient multipliers
-        alpha = 1.0 / (dS * dS)
-        beta = 1.0 / dS
-        gamma = 1.0 / dt
-
-        theta = float(self.theta)
-        one_minus_theta = 1.0 - theta
-
-        # Mesh grids (kept for compatibility with coefficient functions that expect full mesh)
-        t = np.linspace(0.0, float(self.T), self.N + 2)
-        S = np.linspace(0.0, float(self.S_inf), self.M + 2)
-        S_mesh, t_mesh = np.meshgrid(S, t, indexing="ij")
-
-        # Dividend handling (if applicable)
-        div_map = {}
-        if (hasattr(self, "dividend_times") and self.dividend_times is not None and
-            hasattr(self, "dividend_amounts") and self.dividend_amounts is not None):
-            if len(self.dividend_times) != len(self.dividend_amounts):
-                raise ValueError("dividend_times and dividend_amounts must have same length.")
-            for td, D in zip(self.dividend_times, self.dividend_amounts):
-                idx = self.find_closest_t_index(td)
-                div_map[idx] = D
-
-        # Helper to evaluate coefficient functions on mesh and normalize shapes
-        def _eval_coef(fun, name="coef"):
-            vals = fun(t_mesh, S_mesh)
-            vals = np.asarray(vals, dtype=float)
-
-            expected_shape = (self.M + 2, self.N + 2)
-            if vals.shape != expected_shape:
-                # Allow scalar or 1-D returns and broadcast appropriately
-                if vals.shape == ():
-                    vals = np.full(expected_shape, float(vals))
-                elif vals.shape == (self.M + 2,):
-                    vals = np.tile(vals.reshape(self.M + 2, 1), (1, self.N + 2))
-                elif vals.shape == (self.N + 2,):
-                    vals = np.tile(vals.reshape(1, self.N + 2), (self.M + 2, 1))
-                else:
-                    raise ValueError(f"{name} returned array with unexpected shape {vals.shape}. Expected {expected_shape}.")
-            return vals
-
-        # Evaluate PDE coefficient fields on mesh
-        a_values = _eval_coef(self.a, "a")
-        b_values = _eval_coef(self.b, "b")
-        c_values = _eval_coef(self.c, "c")
-        f_values = _eval_coef(self.f, "f")
-
-        # Initialize solution array and apply boundary/final conditions
-        V = np.zeros((self.M + 2, self.N + 2), dtype=float)
-        self.apply_payoff(S, V)   # Final condition V(T, S)
-        self.apply_S0(t, V)       # Boundary condition at S = 0 for all times
-
-        # Preallocate arrays for tridiagonal matrix and RHS to avoid repeated allocations
-        M = self.M
-        A_diag = np.empty(M, dtype=float)
-        A_lower = np.empty(M - 1, dtype=float)
-        A_upper = np.empty(M - 1, dtype=float)
-
-        B_diag = np.empty(M, dtype=float)
-        B_lower = np.empty(M - 1, dtype=float)
-        B_upper = np.empty(M - 1, dtype=float)
-
-        rhs = np.empty(M, dtype=float)
-
-        # Backward time-stepping loop: j indexes time levels (from N down to 0)
-        for j in range(self.N, -1, -1):
-            # Handle dividend at this time step (if any)
-            if j in div_map:
-                D_j = float(div_map[j])
-                idx = np.round((S[1:-1] - D_j - S[0]) / dS).astype(int)
-                idx = np.clip(idx, 0, len(S) - 1) 
-                V[1:-1, j] = V[idx, j+1]
-                continue
-
-            # Compute time-slice coefficients (vectors over S)
-            eta_j = alpha * a_values[:, j]                    # length M+2
-            phi_j = 2.0 * alpha * a_values[:, j] + beta * b_values[:, j] - c_values[:, j]
-            psi_j = alpha * a_values[:, j] + beta * b_values[:, j]
-
-            # Extract interior node coefficients for i = 1..M (size M)
-            eta_i = eta_j[1:M+1]
-            phi_i = phi_j[1:M+1]
-            psi_i = psi_j[1:M+1]
-
-            # Assemble tridiagonal matrix A coefficients (theta-weighted)
-            # A_diag[i-1] corresponds to node i (i = 1..M)
-            A_diag[:] = -gamma - theta * phi_i
-            A_lower[:] = theta * eta_i[1:]    # subdiagonal entries for rows 2..M
-            A_upper[:] = theta * psi_i[:-1]   # superdiagonal entries for rows 1..M-1
-
-            # Assemble matrix B coefficients ((1-theta)-weighted)
-            B_diag[:] = -gamma + one_minus_theta * phi_i
-            B_lower[:] = -one_minus_theta * eta_i[1:]
-            B_upper[:] = -one_minus_theta * psi_i[:-1]
-
-            # Apply the special-last-row adjustments to match original indexing/BC logic
-            # These override the last entries computed above
-            aux1 = (eta_j[self.M - 1] - psi_j[self.M - 1])
-            aux2 = (phi_j[self.M - 1] - 2.0 * psi_j[self.M - 1])
-            A_lower[-1] = theta * aux1
-            A_diag[-1] = -gamma - theta * aux2
-            B_lower[-1] = -one_minus_theta * aux1
-            B_diag[-1] = -gamma + one_minus_theta * aux2
-
-            # Compute right-hand side: rhs = B @ V_{j+1} - F
-            y = V[1:-1, j + 1]  # solution at next time level, interior nodes (size M)
-
-            # Start with diagonal contribution
-            rhs[:] = B_diag * y
-            # Add off-diagonal contributions (vectorized)
-            rhs[:-1] += B_upper * y[1:]   # superdiagonal * next node
-            rhs[1:] += B_lower * y[:-1]   # subdiagonal * previous node
-
-            # Add source term contribution: F = theta * f(t_j, S) + (1-theta) * f(t_{j+1}, S)
-            F = (theta * f_values[1:-1, j] + one_minus_theta * f_values[1:-1, j + 1]).astype(float)
-            rhs -= F
-
-            # Apply any explicit constant adjustments
-            rhs[0] += - theta * eta_j[1] * V[0, j] - (1 - theta) * eta_j[1] * V[0, j + 1]
-
-            # Solve tridiagonal system A * x = rhs (Thomas algorithm)
-            # The helper _thomas_solver(lower, diag, upper, rhs) must return length-M vector
-            V[1:-1, j] = _thomas_solver(A_lower, A_diag, A_upper, rhs)
-
-            # Far-field boundary at S = S_inf: linear extrapolation
-            V[-1, j] = 2.0 * V[-2, j] - V[-3, j]
-
-        # Persist solution and meshes on the instance for downstream use
-        self.V = V
-        self.t = t_mesh
-        self.S = S_mesh
+        # Override the solve method from OptionSolver to implement discrete dividends
+        print(f"[{self.name}]\t\tSolving option...")
+        self.S, self.t, self.V = solve_PDE_European(
+            a=self.a,
+            b=self.b,
+            c=self.c,
+            f=self.f,
+            F=self.payoff,
+            S_min=self.S_min,
+            S_max=self.S_max,
+            T=self.T,
+            known_boundaries=self.known_boundaries,
+            S0_func=getattr(self, 'apply_S0', None),
+            Smax_func=getattr(self, 'apply_Smax', None),
+            discrete_dividend=self.discrete_dividend,
+            dividend_times=self.dividend_times,
+            dividend_amounts=self.dividend_amounts,
+            N=self.N,
+            M=self.M,
+            theta=self.theta,
+        )
+        
 
 
 
@@ -218,6 +371,7 @@ class CallEuropean(EuropeanOption):
     European call option with optional discrete dividends.
     """
 
+    name = "European Call Option"
     def payoff(self, S):
         return np.maximum(S - self.K, 0.0)
 
@@ -228,7 +382,7 @@ class CallEuropean(EuropeanOption):
             V(t,0) = phi(0)*exp(∫_t^T c(u,0) du) + ∫_t^T f(u,0) * exp(∫_u^T c(v,0) dv) du
         '''
         if self.EDE == 'lognormal':
-            V[0, :] = self.payoff(0) * np.exp(self.r * (self.T - t))
+            V[0, :] = self.payoff(0) * np.exp( - self.r * (self.T - t))
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
@@ -238,7 +392,9 @@ class PutEuropean(EuropeanOption):
     """
     European put option with optional discrete dividends.
     """
-    
+
+    name = "European Put Option"
+
     def payoff(self, S):
         return np.maximum(self.K - S, 0.0)
 
@@ -249,7 +405,7 @@ class PutEuropean(EuropeanOption):
             V(t,0) = phi(0)*exp(∫_t^T c(u,0) du) + ∫_t^T f(u,0) * exp(∫_u^T c(v,0) dv) du
         '''
         if self.EDE == 'lognormal':
-            V[0, :] = self.payoff(0) * np.exp(self.r * (self.T - t))
+            V[0, :] = self.payoff(0) * np.exp( - self.r * (self.T - t))
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
@@ -259,6 +415,8 @@ class BinaryCallEuropean(EuropeanOption):
     """
     European binary (cash-or-nothing) call option with optional discrete dividends.
     """
+
+    name = "European Binary Call Option"
 
     def payoff(self, S):
         return np.where(S > self.K, 1.0, 0.0)
@@ -270,7 +428,7 @@ class BinaryCallEuropean(EuropeanOption):
             V(t,0) = phi(0)*exp(∫_t^T c(u,0) du) + ∫_t^T f(u,0) * exp(∫_u^T c(v,0) dv) du
         '''
         if self.EDE == 'lognormal':
-            V[0, :] = self.payoff(0) * np.exp(self.r * (self.T - t))
+            V[0, :] = self.payoff(0) * np.exp( - self.r * (self.T - t))
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
@@ -280,6 +438,8 @@ class BinaryPutEuropean(EuropeanOption):
     """
     European binary (cash-or-nothing) put option with optional discrete dividends.
     """
+
+    name = "European Binary Put Option"
 
     def payoff(self, S):
         return np.where(S < self.K, 1.0, 0.0)
@@ -291,7 +451,7 @@ class BinaryPutEuropean(EuropeanOption):
             V(t,0) = phi(0)*exp(∫_t^T c(u,0) du) + ∫_t^T f(u,0) * exp(∫_u^T c(v,0) dv) du
         '''
         if self.EDE == 'lognormal':
-            V[0, :] = self.payoff(0) * np.exp(self.r * (self.T - t))
+            V[0, :] = self.payoff(0) * np.exp( - self.r * (self.T - t))
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V

@@ -2,51 +2,34 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "European",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/Utils/Parte6/DF/AmericanOption.py",
-      "console": "integratedTerminal",
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}"
-      },
-      "cwd": "${workspaceFolder}"
+    "name": "American",
+    "type": "debugpy",
+    "request": "launch",
+    "module": "Utils.Parte6.DF.AmericanOption",
+    "console": "integratedTerminal",
+    "env": { "PYTHONPATH": "${workspaceFolder}" },
+    "cwd": "${workspaceFolder}"
     },
 
     {
-      "name": "American",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/Utils/Parte6/DF/AmericanOption.py",
-      "console": "integratedTerminal",
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}"
-      },
-      "cwd": "${workspaceFolder}"
+    "name": "Compound",
+    "type": "debugpy",
+    "request": "launch",
+    "module": "Utils.Parte6.DF.CompoundOption",
+    "console": "integratedTerminal",
+    "env": { "PYTHONPATH": "${workspaceFolder}" },
+    "cwd": "${workspaceFolder}"
     },
 
     {
-      "name": "Compound",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/Utils/Parte6/DF/CompoundOption.py",
-      "console": "integratedTerminal",
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}"
-      },
-      "cwd": "${workspaceFolder}"
+    "name": "Chooser",
+    "type": "debugpy",
+    "request": "launch",
+    "module": "Utils.Parte6.DF.ChooserOption",
+    "console": "integratedTerminal",
+    "env": { "PYTHONPATH": "${workspaceFolder}" },
+    "cwd": "${workspaceFolder}"
     },
 
-    {
-      "name": "Chooser",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/Utils/Parte6/DF/ChooserOption.py",
-      "console": "integratedTerminal",
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}"
-      },
-      "cwd": "${workspaceFolder}"
-    }
   ]
 }

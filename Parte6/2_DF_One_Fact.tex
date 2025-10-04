@@ -51,13 +51,443 @@ y dado un $j$, se considera:
 \end{equation*}
 por lo que
 \begin{align*}
-    &\theta\eta_i V_j^{i-1} +\left( -\gamma - \theta \varphi_i \right)V_j^i +\theta\left( \psi_i \right)V_j^{i+1} \\
-    &+(1-\theta)\eta_i V_{j+1}^{i-1} +\left( \gamma - (1-\theta) \varphi_i \right)V_{j+1}^i +(1-\theta)\left( \psi_i \right)V_{j+1}^{i+1} + f_j^i = 0 \\
-    \implies &\theta\eta_i V_j^{i-1} +\left( -\gamma - \theta \varphi_i \right)V_j^i +\theta\left( \psi_i \right)V_j^{i+1} \\
-    &= - (1-\theta)\eta_i V_{j+1}^{i-1} -\left( \gamma - (1-\theta) \varphi_i \right)V_{j+1}^i - (1-\theta)\left( \psi_i \right)V_{j+1}^{i+1} - f_j^i 
+    &\theta\eta_i V_j^{i-1} +\left( -\gamma - \theta \varphi_i \right)V_j^i +\theta\psi_i V_j^{i+1} \\
+    &+(1-\theta)\eta_i V_{j+1}^{i-1} +\left( \gamma - (1-\theta) \varphi_i \right)V_{j+1}^i +(1-\theta)\psi_i V_{j+1}^{i+1} + f_j^i = 0 \\
+\end{align*}
+es decir, para cada $j$ se debe resolver el sistema de ecuaciones:
+\begin{align}
+    &\bigg[ \theta\eta_i \bigg] V_j^{i-1} + \bigg[ -\gamma - \theta \varphi_i \bigg] V_j^i + \bigg[ \theta\left( \psi_i \right) \bigg] V_j^{i+1} \nonumber \\
+    &= \bigg[ - (1-\theta)\eta_i \bigg] V_{j+1}^{i-1} + \bigg[ - \gamma + (1-\theta) \varphi_i \bigg] V_{j+1}^i + \bigg[ - (1-\theta)\psi_i \bigg] V_{j+1}^{i+1} + \bigg[ - f_j^i \bigg] \label{eq:DF_theta_general}
+\end{align}
+Claramente, existe un problema a la hora de usar los valores en los bordes, $V_j^0$ y $V_j^{M+1}$, que no se conocen. Existen varias maneras de afrontar este problema.
+
+
+
+\subsection{Condiciones frontera conocidas}
+Si se conocen las condiciones frontera (en los límites de $S$, que generalmente son $S=0$ y $S\to\infty$), entonces se pueden imponer directamente. En este caso, para cada instante de tiempo $j=N, N-1, \ldots, 0$ se deben resolver el siguiente sistema de ecuaciones:
+\begin{equation*}
+    \boxed{A V_j = B V_{j+1} - f_j + C}
+\end{equation*}
+donde las matrices tridiagonales $A$ y $B$ son:
+\begin{align*}
+    &\boxed{
+        A = \begin{pmatrix}
+            A_{1,1} & A_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            A_{2,1} & A_{2,2} & A_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & A_{3,2} & A_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & A_{M-2,M-2} & A_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & A_{M-1,M-2} & A_{M-1,M-1} & A_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0  & A_{M,M-1} & A_{M,M}
+        \end{pmatrix},
+        \quad \begin{cases}
+            A_{i,i-1} = \theta\eta_i \\
+            A_{i,i} = -\gamma - \theta \varphi_i \\
+            A_{i,i+1} = \theta\psi_i \\
+        \end{cases}
+    } \\
+    & \boxed{
+        B = \begin{pmatrix}
+            B_{1,1} & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            B_{2,1} & B_{2,2} & B_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & B_{3,2} & B_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & B_{M-2,M-2} & B_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & B_{M-1,M-2} & B_{M-1,M-1} & B_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0  & B_{M,M-1} & B_{M,M}
+        \end{pmatrix}
+        \quad \begin{cases}
+            B_{i,i-1} = -(1-\theta)\eta_i \\
+            B_{i,i} = -\gamma + (1-\theta) \varphi_i \\
+            B_{i,i+1} = -(1-\theta)\psi_i \\
+        \end{cases}
+    }
+\end{align*}
+y donde
+\begin{align*}
+    &\boxed{
+        V_j = \begin{pmatrix}
+            V_j^1 \\
+            V_j^2 \\
+            \vdots \\
+            V_j^M
+        \end{pmatrix}, \quad
+        V_{j+1} = \begin{pmatrix}
+            V_{j+1}^1 \\
+            V_{j+1}^2 \\
+            \vdots \\
+            V_{j+1}^M
+        \end{pmatrix}, \quad
+        f_j = \begin{pmatrix}
+            f_j^1 \\
+            f_j^2 \\
+            \vdots \\
+            f_j^M
+        \end{pmatrix}
+    } \\
+    &\boxed{
+        C = \begin{pmatrix}
+            -\theta\eta_1 V_j^{0} - (1-\theta)\eta_1 V_{j+1}^{0} \\
+            0 \\
+            \vdots \\
+            -\theta\psi_M V_j^{M+1} - (1-\theta)\psi_M V_{j+1}^{M+1} \\
+        \end{pmatrix}
+        = \begin{pmatrix}
+            -A_{1,0}V_j^{0} + B_{1,0}V_{j+1}^{0} \\
+            0 \\
+            \vdots \\
+            -A_{M, M+1} V_j^{M+1} + B_{M, M+1} V_{j+1}^{M+1} \\
+        \end{pmatrix}
+    }
 \end{align*}
 
-Claramente, existe un problema a la hora de usar los valores en los bordes, $V_j^0$ y $V_j^{M+1}$, que no se conocen. Estos valores se pueden imponer obteniendo las condiciones frontera de forma analítica o bien aproximándolas numéricamente. Para ello se van a hacer alguna suposiciones. En primer lugar, para $S=0$, es común que se cumpla $a(t, 0)=0$, $b(t, 0)=0$ (en el caso de caminos lognormales es común que $a(t, S)=1/2\sigma^2S^2$ y $b(t,S)=rS$). Por lo tanto se tendría que en $S=0$:
+En ocasiones, sencillo conocer el valor de la opción en $S=0$. Generalmente, dicho límite es sencillo conocerlo cuando en la EDP se cumple que $a(t,0)=0$ y $b(t,0)=0$ (en la mayoría de casos, $a(t,S)=1/2\sigma^2S^2$ y $b(t,S)=rS$). En este caso, la EDP en $S=0$ se puede reducir a la EDO:\@
+\begin{align*}
+    &\frac{\partial V}{\partial t} + c(t, S) V + f(t, S) = 0 \\
+\end{align*}
+cuya solucion teniendo en cuenta un payoff $V(T,S)=\phi(S)$ es
+\begin{equation*}
+    \boxed{V(t, 0) = \phi(0) e^{\int_t^T c(u, 0)\,du} + \int_t^T f(u, 0) e^{\int_u^T c(v, 0)\,dv}\,du}
+\end{equation*}
+de igual manera, suele ser común que $f(t,S)=0$ y que $c(t,S)=-r$, por lo que la solución se reduce a:
+\begin{equation*}
+    V(t, 0) = \phi(0) e^{-r(T-t)}
+\end{equation*}
+
+Por otro lado, el valor en $S\to\infty$ se puede obtener asumiendo que en $S\to\infty$ el valor de la opción se comporta de manera lineal, es decir, que existe $A(t), B(t)$ tales que
+\begin{equation*}
+    V(t, S) = A(t) S + B(t), \quad S \to \infty
+\end{equation*}
+haciendo dicha suposición, sutituyendo en la EDP una vez se conozcan los términos de la EDP y usando el payoff cuando $S\to\infty$, se podrían obtener $A(t), B(t)$.
+
+
+
+
+\subsection{Condición de frontera conocida solo en el límite inferior}\label{sec:DF_condicion_frontera_inferior_conocida}
+En este caso el problema radica en los valores de $V_j^{M+1}$.
+
+Asumiendo que cuando $S\to\infty$ se comporta de manera lineal tal y como se ha comentado en la sección anterior:
+\begin{equation*}
+    \boxed{V(t, S) = A(t) S + B(t), \quad S \to \infty}
+\end{equation*}
+Entonces se sabe que la derivada segunda respecto al activo es nula. Por lo tanto, usando diferencias finitas hacia atrás en la segunda derivada:
+\begin{align*}
+    &0 = \frac{\partial^2 V}{\partial S^2} = \frac{V_j^{M+1} - 2V_j^{M} + V_j^{M-1}}{\Delta S^2} + O(\Delta S^2) \\
+    \implies &V_j^{M+1} = 2V_j^{M} - V_j^{M-1}
+\end{align*}
+y sustituyendo en la ecuación~\eqref{eq:DF_theta_general} para $i=M$:
+\begin{align*}
+    &\theta\eta_M V_j^{M-1} +\left( -\gamma - \theta \varphi_M \right)V_j^M +\theta\psi_M V_j^{M+1} \\
+    &= - (1-\theta)\eta_M V_{j+1}^{M-1} -\left( \gamma - (1-\theta) \varphi_M \right)V_{j+1}^M - (1-\theta)\psi_M V_{j+1}^{M+1} - f_j^M \\
+    \implies &\theta\eta_M V_j^{M-1} +\left( -\gamma - \theta \varphi_M \right)V_j^M +\theta\psi_M \left(2V_j^{M} - V_j^{M-1}\right) \\
+    &= - (1-\theta)\eta_M V_{j+1}^{M-1} -\left( \gamma - (1-\theta) \varphi_M \right)V_{j+1}^M - (1-\theta)\psi_M \left(2V_{j+1}^{M} - V_{j+1}^{M-1}\right) - f_j^M \\
+    \implies &\bigg[ \theta(\eta_M - \psi_M) \bigg] V_j^{M-1} + \bigg[ -\gamma - \theta (\varphi_M - 2\psi_M) \bigg] V_j^M\\
+    &= \bigg[ - (1-\theta)(\eta_M - \psi_M) \bigg] V_{j+1}^{M-1} + \bigg[ - \gamma + (1-\theta) (\varphi_M - 2\psi_M) \bigg] V_{j+1}^M + \bigg[ - f_j^M \bigg]
+\end{align*}
+por lo que el sistema a resolver es:
+\begin{equation*}
+    \boxed{A V_j = B V_{j+1} - f_j + C}
+\end{equation*}
+donde las matrices tridiagonales $A$ y $B$ son:
+\begin{align*}
+    &\boxed{
+        A = \begin{pmatrix}
+            A_{1,1} & A_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            A_{2,1} & A_{2,2} & A_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & A_{3,2} & A_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & A_{M-2,M-2} & A_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & A_{M-1,M-2} & A_{M-1,M-1} & A_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0 & A_{M,M-1}^* & A_{M,M}^*
+        \end{pmatrix},
+        \quad \begin{cases}
+            A_{i,i-1} = \theta\eta_i \\
+            A_{i,i} = -\gamma - \theta \varphi_i \\
+            A_{i,i+1} = \theta\psi_i \\
+            A_{M,M-1}^* = \theta(\eta_M - \psi_M)\\
+            A_{M,M}^* = -\gamma - \theta (\varphi_M - 2\psi_M)\\
+        \end{cases}
+    } \\
+    & \boxed{
+        B = \begin{pmatrix}
+            B_{1,1} & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            B_{2,1} & B_{2,2} & B_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & B_{3,2} & B_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & B_{M-2,M-2} & B_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & B_{M-1,M-2} & B_{M-1,M-1} & B_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0 & B_{M,M-1}^* & B_{M,M}^*
+        \end{pmatrix}
+        \quad \begin{cases}
+            B_{i,i-1} = -(1-\theta)\eta_i \\
+            B_{i,i} = -\gamma + (1-\theta) \varphi_i \\
+            B_{i,i+1} = -(1-\theta)\psi_i \\
+            B_{M,M-1}^* = -(1-\theta)(\eta_M - \psi_M)\\
+            B_{M,M}^* = -\gamma + (1-\theta) (\varphi_M - 2\psi_M)\\
+        \end{cases}
+    }
+\end{align*}
+y donde
+\begin{align*}
+    &\boxed{
+        V_j = \begin{pmatrix}
+            V_j^1 \\
+            V_j^2 \\
+            \vdots \\
+            V_j^M
+        \end{pmatrix}, \quad
+        V_{j+1} = \begin{pmatrix}
+            V_{j+1}^1 \\
+            V_{j+1}^2 \\
+            \vdots \\
+            V_{j+1}^M
+        \end{pmatrix}, \quad
+        f_j = \begin{pmatrix}
+            f_j^1 \\
+            f_j^2 \\
+            \vdots \\
+            f_j^M
+        \end{pmatrix}
+    } \\
+    &\boxed{
+        C = \begin{pmatrix}
+            -\theta\eta_1 V_j^{0} - (1-\theta)\eta_1 V_{j+1}^{0} \\
+            0 \\
+            \vdots \\
+            0 \\
+        \end{pmatrix}
+        = \begin{pmatrix}
+            -A_{1,0}V_j^{0} + B_{1,0}V_{j+1}^{0} \\
+            0 \\
+            \vdots \\
+            0 \\
+        \end{pmatrix}
+    }
+\end{align*}
+y teniendo en cuenta que posteriormente se debe calcular:
+\begin{equation*}
+    \boxed{V_j^{M+1} = 2V_j^{M} - V_j^{M-1}}
+\end{equation*}
+para cada instante de tiempo.
+
+
+
+
+
+\subsection{Condición de frontera conocida solo en el límite superior}\label{sec:DF_condicion_frontera_superior_conocida}
+En este caso el problema radica en los valores de $V_j^0$.
+
+Como se ha comentado anteriormente, es común que en $S=0$ se cumpla $a(t,0)=0$ y $b(t,0)=0$ (en la mayoría de casos, $a(t,S)=1/2\sigma^2S^2$ y $b(t,S)=rS$). En este caso, la EDP en $S=0$ se puede reducir a la EDO:\@
+\begin{align*}
+    &\frac{\partial V}{\partial t} + c(t, S) V + f(t, S) = 0 \\
+\end{align*}
+que sustituyendo con las fórmulas de diferencias finitas usandas en $i=0$ sería:
+\begin{align*}
+    &\frac{V_{j+1}^0 - V_j^0}{\Delta t} + c_j^0 \left( \theta V_j^0 + (1-\theta) V_{j+1}^0 \right) + f_j^0 = 0 \\
+    \implies &V_{j+1}^0 - V_j^0 + c_j^0 \Delta t \theta V_j^0 + c_j^0 \Delta t (1-\theta) V_{j+1}^0 + \Delta t f_j^0 = 0 \\
+    \implies &\bigg[ 1 - c_j^0 \Delta t \theta \bigg] V_j^0 = \bigg[ 1 + c_j^0 \Delta t (1-\theta) \bigg] V_{j+1}^0 + \Delta t f_j^0 \\
+    \implies &V_j^0 = \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0
+\end{align*}
+y sustituyendo en la ecuación~\eqref{eq:DF_theta_general} para $i=1$:
+\begin{align*}
+    &\theta\eta_1 V_j^{0} +\left( -\gamma - \theta \varphi_1 \right)V_j^1 +\theta\psi_1 V_j^{2} \\
+    &= - (1-\theta)\eta_1 V_{j+1}^{0} -\left( \gamma - (1-\theta) \varphi_1 \right)V_{j+1}^1 - (1-\theta)\psi_1 V_{j+1}^{2} - f_j^1 \\
+    \implies &\theta\eta_1 \left( \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0 \right) +\left( -\gamma - \theta \varphi_1 \right)V_j^1 +\theta\psi_1 V_j^{2} \\
+    &= - (1-\theta)\eta_1 V_{j+1}^{0} -\left( \gamma - (1-\theta) \varphi_1 \right)V_{j+1}^1 - (1-\theta)\psi_1 V_{j+1}^{2} - f_j^1 \\
+    \implies &\bigg[ -\gamma - \theta \varphi_1 \bigg]V_j^1 + \bigg[ \theta \psi_1 \bigg]V_j^{2} \\
+    &= \bigg[ -\theta\eta_1 \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta)\eta_1 \bigg] V_{j+1}^{0} + \bigg[ - \gamma + (1-\theta) \varphi_1 \bigg]V_{j+1}^1 + \bigg[ - (1-\theta)\psi_1 \bigg]V_{j+1}^{2} \\
+    &+ \bigg[- f_j^1 \bigg] + \bigg[ -\theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0 \bigg]
+\end{align*}
+por lo que el sistema a resolver es:
+\begin{equation*}
+    \boxed{A V_j = B V_{j+1} - f_j + C}
+\end{equation*}
+donde las matrices tridiagonales $A$ y $B$ son:
+\begin{align*}
+    &\boxed{
+        A = \begin{pmatrix}
+            A_{1,1} & A_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            A_{2,1} & A_{2,2} & A_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & A_{3,2} & A_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & A_{M-2,M-2} & A_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & A_{M-1,M-2} & A_{M-1,M-1} & A_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0  & A_{M,M-1} & A_{M,M}
+        \end{pmatrix},
+        \quad \begin{cases}
+            A_{i,i-1} = \theta\eta_i \\
+            A_{i,i} = -\gamma - \theta \varphi_i \\
+            A_{i,i+1} = \theta\psi_i \\
+        \end{cases}
+    } \\
+    & \boxed{
+        B = \begin{pmatrix}
+            B_{1,1}^* & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            B_{2,1} & B_{2,2} & B_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & B_{3,2} & B_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & B_{M-2,M-2} & B_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & B_{M-1,M-2} & B_{M-1,M-1} & B_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0  & B_{M,M-1} & B_{M,M}
+        \end{pmatrix}
+        \quad \begin{cases}
+            B_{1,1}^* = -\theta\eta_1 \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta)\eta_1 \\
+            B_{i,i-1} = -(1-\theta)\eta_i, \quad i=2 \\
+            B_{i,i} = -\gamma + (1-\theta) \varphi_i \\
+            B_{i,i+1} = -(1-\theta)\psi_i \\
+        \end{cases}
+    }
+\end{align*}
+y donde
+\begin{align*}
+    &\boxed{
+        V_j = \begin{pmatrix}
+            V_j^1 \\
+            V_j^2 \\
+            \vdots \\
+            V_j^M
+        \end{pmatrix}, \quad
+        V_{j+1} = \begin{pmatrix}
+            V_{j+1}^1 \\
+            V_{j+1}^2 \\
+            \vdots \\
+            V_{j+1}^M
+        \end{pmatrix}, \quad
+        f_j = \begin{pmatrix}
+            f_j^1 \\
+            f_j^2 \\
+            \vdots \\
+            f_j^M
+        \end{pmatrix}
+    } \\
+    &\boxed{
+        C = \begin{pmatrix}
+            -\theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0 \\
+            0 \\
+            \vdots \\
+            0 \\
+        \end{pmatrix}
+    }
+\end{align*}
+y teniendo en cuenta que posteriormente se debe calcular:
+\begin{equation*}
+    \boxed{V_j^0 = \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0}
+\end{equation*}
+
+
+
+
+
+
+\subsection{Condiciones frontera desconocidas}
+En este caso, los valores en los bordes $V_j^0$ y $V_j^{M+1}$ no se conocen. Por lo tanto, se deben imponer las aproximaciones descritas en las secciones~\ref{sec:DF_condicion_frontera_inferior_conocida} y~\ref{sec:DF_condicion_frontera_superior_conocida}:
+\begin{align*}
+    &V_j^0 = \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0 \\
+    &V_j^{M+1} = 2V_j^{M} - V_j^{M-1}
+\end{align*}
+lo que da una combinación de ambos casos anteriores. El sistema a resolver es:
+\begin{equation*}
+    \boxed{A V_j = B V_{j+1} - f_j + C}
+\end{equation*}
+donde las matrices tridiagonales $A$ y $B$ son:
+\begin{align*}
+    &\boxed{
+        A = \begin{pmatrix}
+            A_{1,1} & A_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            A_{2,1} & A_{2,2} & A_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & A_{3,2} & A_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & A_{M-2,M-2} & A_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & A_{M-1,M-2} & A_{M-1,M-1} & A_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0  & A_{M,M-1}^* & A_{M,M}^*
+        \end{pmatrix},
+        \quad \begin{cases}
+            A_{i,i-1} = \theta\eta_i, \quad i=2,\ldots,M-1\\
+            A_{i,i} = -\gamma - \theta \varphi_i, \quad i=2,\ldots,M-1\\
+            A_{i,i+1} = \theta\psi_i, \quad i=2,\ldots,M-1\\
+            A_{M,M-1}^* = \theta(\eta_M - \psi_M)\\
+            A_{M,M}^* = -\gamma - \theta (\varphi_M - 2\psi_M)\\
+        \end{cases}
+    } \\
+    & \boxed{
+        B = \begin{pmatrix}
+            B_{1,1}^* & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            B_{2,1} & B_{2,2} & B_{2,3} & \cdots & 0 & 0 & 0 \\
+            0 & B_{3,2} & B_{3,3} & \cdots & 0 & 0 & 0 \\
+            \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+            0 & 0 & 0 & \cdots & B_{M-2,M-2} & B_{M-2,M-1} & 0 \\
+            0 & 0 & 0 & \cdots & B_{M-1,M-2} & B_{M-1,M-1} & B_{M-1,M} \\
+            0 & 0 & 0 & \cdots & 0  & B_{M,M-1}^* & B_{M,M}^*
+        \end{pmatrix}
+        \quad \begin{cases}
+            B_{1,1}^* = -\theta\eta_1 \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta)\eta_1 \\
+            B_{i,i-1} = -(1-\theta)\eta_i, \quad i=2,\ldots,M-1\\
+            B_{i,i} = -\gamma + (1-\theta) \varphi_i, \quad i=2,\ldots,M-1\\
+            B_{i,i+1} = -(1-\theta)\psi_i, \quad i=2,\ldots,M-1\\
+            B_{M,M-1}^* = -(1-\theta)(\eta_M - \psi_M)\\
+            B_{M,M}^* = -\gamma + (1-\theta) (\varphi_M - 2\psi_M)\\
+        \end{cases}
+    }
+\end{align*}
+y donde
+\begin{align*}
+    &\boxed{
+        V_j = \begin{pmatrix}
+            V_j^1 \\
+            V_j^2 \\
+            \vdots \\
+            V_j^M
+        \end{pmatrix}, \quad
+        V_{j+1} = \begin{pmatrix}
+            V_{j+1}^1 \\
+            V_{j+1}^2 \\
+            \vdots \\
+            V_{j+1}^M
+        \end{pmatrix}, \quad
+        f_j = \begin{pmatrix}
+            f_j^1 \\
+            f_j^2 \\
+            \vdots \\
+            f_j^M
+        \end{pmatrix}
+    } \\
+    &\boxed{
+        C = \begin{pmatrix}
+            -\theta\eta_1 V_j^{0} - (1-\theta)\eta_1 V_{j+1}^{0} - \theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0\\
+            0 \\
+            \vdots \\
+            0 \\
+        \end{pmatrix}
+        = \begin{pmatrix}
+            -A_{1,0}V_j^{0} + B_{1,0}V_{j+1}^{0} - \theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0 \\
+            0 \\
+            \vdots \\
+            0 \\
+        \end{pmatrix}
+    }
+\end{align*}
+y teniendo en cuenta que posteriormente se debe calcular:
+\begin{align*}
+    &\boxed{V_j^0 = \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0} \\
+    &\boxed{V_j^{M+1} = 2V_j^{M} - V_j^{M-1}}
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+Estos valores se pueden imponer obteniendo las condiciones frontera de forma analítica o bien aproximándolas numéricamente. Para ello se van a hacer alguna suposiciones. En primer lugar, para $S=0$, es común que se cumpla $a(t, 0)=0$, $b(t, 0)=0$ (en el caso de caminos lognormales es común que $a(t, S)=1/2\sigma^2S^2$ y $b(t,S)=rS$). Por lo tanto se tendría que en $S=0$:
 \begin{align*}
     &\frac{\partial V}{\partial t} + c(t, S) V + f(t, S) = 0 \\
 \end{align*}

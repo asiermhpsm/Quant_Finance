@@ -3,141 +3,54 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from abc import ABC, abstractmethod
 
-
-def _thomas_solver(lower, diag, upper, d):
-    """
-    Thomas algorithm for a tridiagonal system.
-
-    Parameters:
-        lower: Subdiagonal (length n-1).
-        diag:  Diagonal (length n).
-        upper: Superdiagonal (length n-1).
-        d:     Right-hand side (length n).
-
-    Returns:
-        x: Solution array (length n).
-    """
-    n = diag.size
-    if n == 0:
-        return np.array([])
-
-    # Copy inputs to avoid in-place modifications.
-    a = diag.astype(float).copy()
-    b = upper.astype(float).copy()
-    c = lower.astype(float).copy()
-    d = d.astype(float).copy()
-
-    # Forward elimination: transform the matrix to upper triangular form.
-    for i in range(1, n):
-        if a[i - 1] == 0:
-            raise np.linalg.LinAlgError("Zero pivot in Thomas solver.")
-        m = c[i - 1] / a[i - 1]
-        a[i] = a[i] - m * b[i - 1]      # Update diagonal element.
-        d[i] = d[i] - m * d[i - 1]      # Update right-hand side.
-
-    # Back substitution: solve from the last equation upwards.
-    x = np.zeros(n, dtype=float)
-    if a[-1] == 0:
-        raise np.linalg.LinAlgError("Zero pivot in Thomas solver.")
-    x[-1] = d[-1] / a[-1]
-    for i in range(n - 2, -1, -1):
-        x[i] = (d[i] - b[i] * x[i + 1]) / a[i]
-    return x
-
-def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None, fig=None, ax=None, **surface_kwargs):
-    """
-    Plot a 3D surface of V(S, t). If fig/ax are provided, draw on them.
-
-    Parameters:
-        S, t: Meshgrid arrays for S and t.
-        V: Value array.
-        xlabel, ylabel, zlabel: Axis labels.
-        title: Plot title.
-        fig, ax: Optional matplotlib Figure and 3D Axes to draw on.
-        surface_kwargs: Extra kwargs forwarded to ax.plot_surface (e.g., alpha, cmap).
-
-    Returns:
-        fig, ax: Matplotlib figure and axis objects.
-    """
-    created_ax = False
-    if ax is None:
-        if fig is None:
-            fig = plt.figure(figsize=(10, 7))
-        ax = fig.add_subplot(111, projection='3d')
-        created_ax = True
-    else:
-        # Ensure it's a 3D axis
-        if not hasattr(ax, "plot_surface"):
-            raise ValueError('The provided axis is not 3D. Create one with subplot_kw={"projection": "3d"}.')
-        if fig is None:
-            fig = ax.figure
-
-    # Default colormap if none given
-    if "cmap" not in surface_kwargs:
-        surface_kwargs["cmap"] = "viridis"
-
-    ax.plot_surface(S, t, V, **surface_kwargs)
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    ax.set_zlabel(zlabel)
-    if title:
-        ax.set_title(title)
-    # Adjust view only if the axis was created here
-    if created_ax:
-        ax.view_init(elev=30, azim=-135)
-    return fig, ax
-
-def plot_func(x, y, fig=None, ax=None, xlabel='x', ylabel='f(x)', title=None, label=None, **plot_kwargs):
-    """
-    Plots a function in 2D.
-    """
-    created_ax = False
-    if ax is None:
-        if fig is None:
-            fig = plt.figure(figsize=(8, 5))
-        ax = fig.add_subplot(111)
-        created_ax = True
-    else:
-        if fig is None:
-            fig = ax.figure
-
-    # Pass label to ax.plot if provided
-    if label is not None:
-        plot_kwargs['label'] = label
-    ax.plot(x, y, **plot_kwargs)
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    if created_ax:
-        ax.grid()
-    if title:
-        ax.set_title(title)
-    # Show legend if label is provided
-    if label is not None:
-        ax.legend()
-    return fig, ax
+from Utils.Parte6.DF.Utils import plot_func, plot_surface, solve_PDE
 
 
 class OptionSolver(ABC):
     '''
     Abstract base class for finite difference option solvers.
     '''
+
+    name = "Option solver"
+
     @abstractmethod
     def __init__(self):
         pass
 
     def solve(self):
-        pass
-
-
-    @abstractmethod
-    def apply_S0(self, t, V):
         '''
-        Apply the boundary condition at S=0 for all time slices.
-        It must follow the form:
-            V(t,0) = phi(0)*exp(∫_t^T c(u,0) du) + ∫_t^T f(u,0) * exp(∫_u^T c(v,0) dv) du
-        Must be implemented in subclasses.
+        Solve the PDE using the finite difference method.
+        This method sets up the grid and calls the generic solver.
         '''
-        pass
+        print(f"[{self.name}]\t\tSolving option...")
+        # Determine known boundaries based on presence of apply_S0 and apply_Smax methods
+        has_S0 = callable(getattr(self, 'apply_S0', None))
+        has_Smax = callable(getattr(self, 'apply_Smax', None))
+        if has_S0 and has_Smax:
+            self.known_boundaries = 'Both'
+        elif has_S0:
+            self.known_boundaries = 'S0'
+        elif has_Smax:
+            self.known_boundaries = 'Smax'
+        else:
+            self.known_boundaries = 'None'
+        self.S, self.t, self.V = solve_PDE(
+            a=self.a,
+            b=self.b,
+            c=self.c,
+            f=self.f,
+            F=self.payoff,
+            S_min=self.S_min,
+            S_max=self.S_max,
+            T=self.T,
+            known_boundaries=self.known_boundaries,
+            N=self.N,
+            M=self.M,
+            theta=self.theta,
+            S0_func=self.apply_S0 if 'S0' in self.known_boundaries else None,
+            Smax_func=self.apply_Smax if 'Smax' in self.known_boundaries else None,
+        )
+
 
     def get_solution(self):
         """
@@ -156,6 +69,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"Plotting surface: {self.name}...")
         if not hasattr(self, "V"):
             self.solve()
         if not hasattr(self, "title"):
@@ -171,9 +85,10 @@ class OptionSolver(ABC):
         Returns:
             t, V(S0, t): 1D arrays of time and option value at S0.
         """
+        print(f"[{self.name}]\t\tGetting value at S={S0}...")
         if not hasattr(self, "V"):
             self.solve()
-        DS = self.S_inf / (self.M + 1)
+        DS = self.S_max / (self.M + 1)
         idx = int(round(S0 / DS))
         return self.t[0, :], self.V[idx, :]
 
@@ -187,6 +102,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting value at S={S0}...")
         t, V_S0 = self.get_value_at_S(S0)
         if not hasattr(self, "title"):
             self.title = None
@@ -200,6 +116,7 @@ class OptionSolver(ABC):
         Returns:
             S, V(S, t0): 1D arrays of asset price and option value at t0.
         """
+        print(f"[{self.name}]\t\tGetting value at t={t0}...")
         if not hasattr(self, "V"):
             self.solve()
         Dt = self.T / (self.N + 1)
@@ -216,6 +133,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting value at t={t0}...")
         S, V_t0 = self.get_value_at_t(t0)
         if not hasattr(self, "title"):
             self.title = None
@@ -229,6 +147,7 @@ class OptionSolver(ABC):
         Returns:
             delta: Array of delta values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Delta...")
         # Ensure the solution is available
         if not hasattr(self, "V"):
             self.solve()
@@ -259,6 +178,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Delta surface...")
         if not hasattr(self, "delta"):
             self.get_delta()
         if not hasattr(self, "title"):
@@ -274,6 +194,7 @@ class OptionSolver(ABC):
         Returns:
             gamma: Array of gamma values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Gamma...")
         if not hasattr(self, "V"):
             self.solve()
 
@@ -298,6 +219,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Gamma surface...")
         if not hasattr(self, "gamma"):
             self.get_gamma()
         if not hasattr(self, "title"):
@@ -312,6 +234,7 @@ class OptionSolver(ABC):
         Returns:
             theta: Array of theta values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Theta...")
         if not hasattr(self, "V"):
             self.solve()
 
@@ -334,6 +257,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Theta surface...")
         if not hasattr(self, "theta_arr"):
             self.get_theta()
         if not hasattr(self, "title"):
@@ -349,6 +273,7 @@ class OptionSolver(ABC):
         Returns:
             speed: Array of speed values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Speed...")
         if not hasattr(self, "V"):
             self.solve()
 
@@ -373,6 +298,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Speed surface...")
         if not hasattr(self, "speed"):
             self.get_speed()
         if not hasattr(self, "title"):
@@ -386,6 +312,7 @@ class OptionSolver(ABC):
         Returns:
             vega: Array of vega values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Vega...")
         if self.EDE != 'lognormal':
             raise NotImplementedError("Vega computation only implemented for lognormal model.")
 
@@ -423,6 +350,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Vega surface...")
         if not hasattr(self, "vega"):
             self.get_vega()
         if not hasattr(self, "title"):
@@ -436,6 +364,7 @@ class OptionSolver(ABC):
         Returns:
             rho_r: Array of rho values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Rho (r)...")
         if not hasattr(self, "V"):
             self.solve()
 
@@ -469,6 +398,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Rho (r) surface...")
         if not hasattr(self, "rho_r"):
             self.get_rho_r()
         if not hasattr(self, "title"):
@@ -482,6 +412,7 @@ class OptionSolver(ABC):
         Returns:
             rho_D: Array of rho_D values with shape (M + 2, N + 2)
         """
+        print(f"[{self.name}]\t\tComputing Rho (D)...")
         if not hasattr(self, "V"):
             self.solve()
 
@@ -515,6 +446,7 @@ class OptionSolver(ABC):
         Returns:
             fig, ax: Matplotlib figure and axis objects.
         """
+        print(f"[{self.name}]\t\tPlotting Rho (D) surface...")
         if not hasattr(self, "rho_D"):
             self.get_rho_D()
         if not hasattr(self, "title"):
@@ -588,7 +520,7 @@ class OptionSolver(ABC):
         Returns:
             index (int or np.ndarray): Index/indices of the closest stock price(s) in the grid.
         '''
-        DS = self.S_inf / (self.M + 1)
+        DS = self.S_max / (self.M + 1)
         if np.isscalar(S0):
             idx = int(round(S0 / DS))
             if idx < 0 or idx > self.M + 1:
