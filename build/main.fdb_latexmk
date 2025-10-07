@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 1759345836.19612 "build/main.aux" "build/main.bbl" "build/main" 1759352117.60302 0
+["bibtex build/main"] 1759345836.19612 "build/main.aux" "build/main.bbl" "build/main" 1759765729.00361 0
   "./referencias.bib" 1754057188 185 7d1ed1a5e72641dda3a92dc99b5b2198 ""
   "C:/Users/Usuario Asier/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "build/main.aux" 1759352116 47922 9192e8c15e358330c37521e4ff020164 "pdflatex"
+  "build/main.aux" 1759765727 47922 9192e8c15e358330c37521e4ff020164 "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1759352110.71706 "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" "build/main.pdf" "main" 1759352117.60389 0
+["pdflatex"] 1759765722.20764 "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" "build/main.pdf" "main" 1759765729.00438 0
   "Apendices/Apendice Calculo.tex" 1754843701 450 8fbd668c3c31aabb3021c7c051ca27fb ""
   "Apendices/Apendice Ito.tex" 1753443018 207 79f7b164e140169e84241b81d8ede33f ""
   "Apendices/Apendice Make Your Mind Up.tex" 1753443023 238 2743dc998b32508c8d8d54f21929bf60 ""
@@ -353,11 +353,11 @@
   "Parte3/26_Deriv_interes.tex" 1755542699 20110 4a242fc37e5ed932e4275b44999cbe5a ""
   "Parte3/27_Bono_Conver.tex" 1755963443 20973 f5e2fce991ef88222db21d8a2391c4f6 ""
   "Parte6/1_Descrip_General.tex" 1755967991 3061 c43c5c11bfb01219dc0dfcfc018315eb ""
-  "Parte6/2_DF_One_Fact.tex" 1759352109 30865 0d9f5a29819d22083d1adaf33780c648 ""
-  "build/main.aux" 1759352116 47922 9192e8c15e358330c37521e4ff020164 "pdflatex"
+  "Parte6/2_DF_One_Fact.tex" 1759765721 30604 8ff1407dd2596bc4d4ef3d96e6c3d20c ""
+  "build/main.aux" 1759765727 47922 9192e8c15e358330c37521e4ff020164 "pdflatex"
   "build/main.bbl" 1759345836 189 e9ea4334d9ee8ff3fbcf69838ecfe442 "bibtex build/main"
-  "build/main.out" 1759352116 41901 0cf37bd2c142d5cb8ad75c0c04c7b801 "pdflatex"
-  "build/main.toc" 1759352116 23635 c936f63d5acbd5264f2e3dacc2a4b49e "pdflatex"
+  "build/main.out" 1759765727 41901 0cf37bd2c142d5cb8ad75c0c04c7b801 "pdflatex"
+  "build/main.toc" 1759765727 23635 c936f63d5acbd5264f2e3dacc2a4b49e "pdflatex"
   "c:/Users/Usuario Asier/Documents/GitHub/Quant_FInance/main.tex" 1759267044 5383 89734b5b7024b16ee98fcac4cf45395d ""
   "datos.tex" 1751297253 145 2d409cff85cafdbdb8e75b049b65ea99 ""
   "main.tex" 1759267044 5383 89734b5b7024b16ee98fcac4cf45395d ""

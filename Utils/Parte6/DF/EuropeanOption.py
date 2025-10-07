@@ -8,7 +8,7 @@ from Utils.Parte6.DF.OptionSolver import OptionSolver
 # Auxiliary solver to implement discrete dividends in European options
 # -------------------------------------------------------------------------
 
-def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: callable, 
+def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, payoff: callable, 
               S_min: float, S_max: float, T: float, 
               known_boundaries: str = 'None', discrete_dividend: bool = False,
               N: int = 500, M: int = 500, theta: float = 0.5,
@@ -20,7 +20,7 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
             V_t + a(t, S) V_SS + b(t, S) V_S + c(t, S) V + f(t, S) = 0
     Parameters:
         a, b, c, f (callable): Coefficient functions of the PDE.
-        F (callable): final condition function at maturity T, i.e. V(T, S)=F(S).
+        payoff (callable): final condition function at maturity T, i.e. V(T, S)=payoff(S).
         S_min, S_max (float): Spatial domain boundaries.
         T (float): Maturity time.
         known_boundaries (str): Known boundaries:
@@ -55,7 +55,7 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
 
     # Mesh grids (kept for compatibility with coefficient functions that expect full mesh)
     t = np.linspace(0.0, T, N + 2)
-    S = np.linspace(0.0, S_max, M + 2)
+    S = np.linspace(S_min, S_max, M + 2)
     S_mesh, t_mesh = np.meshgrid(S, t, indexing="ij")
 
     # Helper to evaluate coefficient functions on mesh and normalize shapes
@@ -91,7 +91,7 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
 
     # Initialize solution array and apply boundary/final conditions
     V = np.zeros((M + 2, N + 2), dtype=float)
-    V[:, -1] = F(S)  # Final condition V(T, S)
+    V[:, -1] = payoff(S)  # Final condition V(T, S)
     if known_boundaries == 'Both':  # Both boundaries known
         S0_func = kwargs.get('S0_func')
         Smax_func = kwargs.get('Smax_func')
@@ -109,27 +109,6 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
         if Smax_func is None:
             raise ValueError("For 'Smax' known_boundaries, provide Smax_func.")
         V = Smax_func(t, V)       # Boundary at S_max
-
-    # Get discrete dividend times and function if applicable
-    if discrete_dividend:
-        div_map = {}
-
-        dividend_times = kwargs.get('dividend_times', [])
-        dividend_times = [float(dt) for dt in dividend_times if 0 < dt < T]
-        if len(dividend_times) == 0:
-            warnings.warn("Discrete dividends flag is true but no dividend_times provided.")
-        discrete_dividend_idx = np.round(np.asarray(dividend_times) / dt).astype(int) # time indixes
-
-        dividend_amounts = kwargs.get('dividend_amounts')
-        if dividend_amounts is None:
-            raise ValueError("For discrete_dividend=True, provide dividend_amounts.")
-        if len(dividend_amounts) != len(discrete_dividend_idx):
-            raise ValueError("Valid times in dividend_times and amounts in dividend_amounts must have the same length.")
-        
-        for td_idx, D in zip(discrete_dividend_idx, dividend_amounts):
-            div_map[td_idx] = D
-    else:
-        discrete_dividend_idx = []
 
     # Preprocess discrete dividend times and amounts if applicable
     if discrete_dividend:
@@ -152,10 +131,10 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
 
             idx = np.rint(times / dt).astype(int)
             div_map = dict(zip(idx.tolist(), amounts.tolist()))
-        
+    else:
+        div_map = {}
 
     # Preallocate arrays for tridiagonal matrix and RHS to avoid repeated allocations
-    M = M
     A_diag = np.empty(M, dtype=float)
     A_lower = np.empty(M - 1, dtype=float)
     A_upper = np.empty(M - 1, dtype=float)
@@ -169,7 +148,7 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
     # Backward time-stepping loop: j indexes time levels (from N down to 0)
     for j in range(N, -1, -1):
         # Adjust asset prices for discrete dividend at time t_j
-        if j in discrete_dividend_idx:
+        if j in div_map:
             idx = np.round((S[1:-1] - div_map[j]) / dS).astype(int)
             idx = np.clip(idx, 0, len(S) - 1) 
             V[1:-1, j] = V[idx, j+1]
@@ -197,9 +176,7 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
         B_upper[:] = -one_minus_theta * psi_i[:-1]
 
         # Apply the special rows adjustments of A and B if necessary
-        if known_boundaries == 'Both':  # Both boundaries known
-            pass
-        elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
+        if known_boundaries in ('S0', 'None'):
             aux1 = (eta_j[M] - psi_j[M])
             aux2 = (phi_j[M] - 2.0 * psi_j[M])
 
@@ -207,17 +184,6 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
             A_diag[-1] = -gamma - theta * aux2
             B_lower[-1] = -one_minus_theta * aux1
             B_diag[-1] = -gamma + one_minus_theta * aux2
-        elif known_boundaries == 'Smax': # V(t, S_max) known, V(t, S_min) unknown
-            B_diag[0] = - theta*eta_j[1] * (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) - one_minus_theta*eta_j[1]
-        elif known_boundaries == 'None': # Both boundaries unknown
-            aux1 = (eta_j[M] - psi_j[M])
-            aux2 = (phi_j[M] - 2.0 * psi_j[M])
-
-            A_lower[-1] = theta * aux1
-            A_diag[-1] = -gamma - theta * aux2
-            B_lower[-1] = -one_minus_theta * aux1
-            B_diag[-1] = -gamma + one_minus_theta * aux2
-            B_diag[0] = - theta*eta_j[1] * (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) - one_minus_theta*eta_j[1]
 
 
         # Compute right-hand side: rhs = B @ V_{j+1} - F
@@ -236,28 +202,24 @@ def solve_PDE_European(a : callable, b: callable, c: callable, f: callable, F: c
         # Apply any explicit constant adjustments
         if known_boundaries == 'Both':  # Both boundaries known
             rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1]
-            rhs[-1] += theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
+            rhs[-1] += -theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
         elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
             rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1]
         elif known_boundaries == 'Smax': # V(t, S_max) known, V(t, S_min) unknown
-            rhs[0] += -theta*eta_j[1] * (dt)/(1 - c[0,j]*dt*theta) * f_values[0,j]
+            rhs[0] += eta_j[1] * ( theta * (dt)/(1 - c_values[0,j]*dt*theta) * f_values[0,j] + ( theta*(1 + c_values[0,j]*dt*one_minus_theta)/(1 - c_values[0,j]*dt*theta) - one_minus_theta) * V[0, j + 1] )
+            rhs[-1] += -theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
         elif known_boundaries == 'None': # Both boundaries unknown
-            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1] - theta*eta_j[1] * (dt)/(1 - c[0,j]*dt*theta) * f_values[0,j]
+            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1] + eta_j[1] * ( theta * (dt)/(1 - c_values[0,j]*dt*theta) * f_values[0,j] + ( theta*(1 + c_values[0,j]*dt*one_minus_theta)/(1 - c_values[0,j]*dt*theta) - one_minus_theta) * V[0, j + 1] )
 
         # Solve tridiagonal system A * x = rhs (Thomas algorithm)
         V[1:-1, j] = _thomas_solver(A_lower, A_diag, A_upper, rhs)
 
-    # Boundary values adjustments if necessary
-    if known_boundaries == 'Both':
-        pass
-    elif known_boundaries == 'S0':
-        V[-1, :-1] = 2.0 * V[-2, :-1] - V[-3, :-1]
-    elif known_boundaries == 'Smax':
-        V[0, :-1] = (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) * V[0, 1:] + (dt)/(1 - c[0,j]*dt*theta) * f_values[0, :-1]
-    elif known_boundaries == 'None':
-        V[-1, :-1] = 2.0 * V[-2, :-1] - V[-3, :-1]
-        V[0, :-1] = (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) * V[0, 1:] + (dt)/(1 - c[0,j]*dt*theta) * f_values[0, :-1]
-
+        # Boundary values adjustments if necessary
+        if known_boundaries in ('S0', 'None'):
+            V[-1, j] = 2.0 * V[-2, j] - V[-3, j]
+        if known_boundaries in ('Smax', 'None'):
+            V[0, j] = (1 + c_values[0,j]*dt*one_minus_theta)/(1 - c_values[0,j]*dt*theta) * V[0, j+1] + (dt)/(1 - c_values[0,j]*dt*theta) * f_values[0, j]
+        
     return S_mesh, t_mesh, V
 
 
@@ -340,15 +302,31 @@ class EuropeanOption(OptionSolver):
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
 
-    def solve(self):
+    def solve(self, known_boundaries: str = None):
         # Override the solve method from OptionSolver to implement discrete dividends
         print(f"[{self.name}]\t\tSolving option...")
+
+        if known_boundaries is None:
+            # Determine known boundaries based on presence of apply_S0 and apply_Smax methods
+            has_S0 = callable(getattr(self, 'apply_S0', None))
+            has_Smax = callable(getattr(self, 'apply_Smax', None))
+            if has_S0 and has_Smax:
+                self.known_boundaries = 'Both'
+            elif has_S0:
+                self.known_boundaries = 'S0'
+            elif has_Smax:
+                self.known_boundaries = 'Smax'
+            else:
+                self.known_boundaries = 'None'
+        else:
+            self.known_boundaries = known_boundaries
+
         self.S, self.t, self.V = solve_PDE_European(
             a=self.a,
             b=self.b,
             c=self.c,
             f=self.f,
-            F=self.payoff,
+            payoff=self.payoff,
             S_min=self.S_min,
             S_max=self.S_max,
             T=self.T,
@@ -372,17 +350,28 @@ class CallEuropean(EuropeanOption):
     """
 
     name = "European Call Option"
+
     def payoff(self, S):
         return np.maximum(S - self.K, 0.0)
 
     def apply_S0(self, t, V):
         '''
         Apply the boundary condition at S=0 for all time slices.
-        It must follow the form:
+        Generally, it follows the form:
             V(t,0) = phi(0)*exp(∫_t^T c(u,0) du) + ∫_t^T f(u,0) * exp(∫_u^T c(v,0) dv) du
         '''
         if self.EDE == 'lognormal':
             V[0, :] = self.payoff(0) * np.exp( - self.r * (self.T - t))
+        else:
+            raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
+        return V
+    
+    def apply_Smax(self, t, V):
+        '''
+        Apply the boundary condition at S=S_max for all time slices.
+        '''
+        if self.EDE == 'lognormal':
+            V[-1, :] = self.S_max * np.exp(-self.D * (self.T - t)) - self.K * np.exp(-self.r * (self.T - t))
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
@@ -409,6 +398,16 @@ class PutEuropean(EuropeanOption):
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
+    
+    def apply_Smax(self, t, V):
+        '''
+        Apply the boundary condition at S=S_max for all time slices.
+        '''
+        if self.EDE == 'lognormal':
+            V[-1, :] = 0.0
+        else:
+            raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
+        return V
 
 
 class BinaryCallEuropean(EuropeanOption):
@@ -429,6 +428,16 @@ class BinaryCallEuropean(EuropeanOption):
         '''
         if self.EDE == 'lognormal':
             V[0, :] = self.payoff(0) * np.exp( - self.r * (self.T - t))
+        else:
+            raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
+        return V
+    
+    def apply_Smax(self, t, V):
+        '''
+        Apply the boundary condition at S=S_max for all time slices.
+        '''
+        if self.EDE == 'lognormal':
+            V[-1, :] = self.payoff(self.S_max) * np.exp( - self.r * (self.T - t))
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
@@ -455,7 +464,80 @@ class BinaryPutEuropean(EuropeanOption):
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
+    
+    def apply_Smax(self, t, V):
+        '''
+        Apply the boundary condition at S=S_max for all time slices.
+        '''
+        if self.EDE == 'lognormal':
+            V[-1, :] = self.payoff(self.S_max) * np.exp( - self.r * (self.T - t))
+        else:
+            raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
+        return V
 
 
 
+if __name__ == "__main__":
+    import matplotlib.pyplot as plt
+
+    from Utils.Parte1.BS_Solutions import value_call, value_put, value_bin_call, value_bin_put
+
+    option1 = PutEuropean()
+    option1.solve('None')
+    S1, t1, V1 = option1.get_solution()
+    S1_1D, V1_1D = option1.get_value_at_t(0)
+    #option1.plot()
+
+    option2 = PutEuropean()
+    option2.solve('S0')
+    S2, t2, V2 = option2.get_solution()
+    S2_1D, V2_1D = option2.get_value_at_t(0)
+    #option2.plot()
+
+    option3 = PutEuropean()
+    option3.solve('Smax')
+    S3, t3, V3 = option3.get_solution()
+    S3_1D, V3_1D = option3.get_value_at_t(0)
+    #option3.plot()
+
+    option4 = PutEuropean()
+    option4.solve('Both')
+    S4, t4, V4 = option4.get_solution()
+    S4_1D, V4_1D = option4.get_value_at_t(0)
+    #option4.plot()
+
+    solution = value_put(S1, t1, 1-t1)
+
+    dif1 = np.abs(solution - V1)
+    print(np.max(np.abs(dif1)))
+    dif2 = np.abs(solution - V2)
+    print(np.max(np.abs(dif2)))
+    dif3 = np.abs(solution - V3)
+    print(np.max(np.abs(dif3)))
+    dif4 = np.abs(solution - V4)
+    print(np.max(np.abs(dif4)))
+
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
+    ax.plot_surface(S1, t1, dif1, label='None')
+    ax.plot_surface(S2, t2, dif2, label='S0')
+    ax.plot_surface(S3, t3, dif3, label='Smax')
+    ax.plot_surface(S4, t4, dif4, label='Both')
+    ax.set_xlabel('Stock Price S')
+    ax.set_ylabel('Time to Maturity T')
+    ax.set_zlabel('Difference')
+    ax.legend()
+
+    '''
+    fig, ax = plt.subplots(figsize=(12, 10))
+    ax.grid()
+    
+    ax.plot(S1_1D, dif1, label='None')
+    ax.plot(S2_1D, dif2, label='S0')
+    ax.plot(S3_1D, dif3, label='Smax')
+    ax.plot(S4_1D, dif4, label='Both')
+    ax.legend()
+    '''
+
+    plt.show()
 

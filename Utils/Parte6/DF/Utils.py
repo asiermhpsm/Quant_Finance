@@ -114,9 +114,9 @@ def _thomas_solver(lower, diag, upper, d):
         x[i] = (d[i] - b[i] * x[i + 1]) / a[i]
     return x
 
-def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable, 
+def solve_PDE(a : callable, b: callable, c: callable, f: callable, payoff: callable, 
               S_min: float, S_max: float, T: float, 
-              known_boundaries: str = 'None', 
+              known_boundaries: str = 'None',
               N: int = 500, M: int = 500, theta: float = 0.5,
               **kwargs
               ):
@@ -126,7 +126,7 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
             V_t + a(t, S) V_SS + b(t, S) V_S + c(t, S) V + f(t, S) = 0
     Parameters:
         a, b, c, f (callable): Coefficient functions of the PDE.
-        F (callable): final condition function at maturity T, i.e. V(T, S)=F(S).
+        payoff (callable): final condition function at maturity T, i.e. V(T, S)=payoff(S).
         S_min, S_max (float): Spatial domain boundaries.
         T (float): Maturity time.
         known_boundaries (str): Known boundaries:
@@ -159,7 +159,7 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
 
     # Mesh grids (kept for compatibility with coefficient functions that expect full mesh)
     t = np.linspace(0.0, T, N + 2)
-    S = np.linspace(0.0, S_max, M + 2)
+    S = np.linspace(S_min, S_max, M + 2)
     S_mesh, t_mesh = np.meshgrid(S, t, indexing="ij")
 
     # Helper to evaluate coefficient functions on mesh and normalize shapes
@@ -195,7 +195,7 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
 
     # Initialize solution array and apply boundary/final conditions
     V = np.zeros((M + 2, N + 2), dtype=float)
-    V[:, -1] = F(S)  # Final condition V(T, S)
+    V[:, -1] = payoff(S)  # Final condition V(T, S)
     if known_boundaries == 'Both':  # Both boundaries known
         S0_func = kwargs.get('S0_func')
         Smax_func = kwargs.get('Smax_func')
@@ -215,7 +215,6 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
         V = Smax_func(t, V)       # Boundary at S_max
 
     # Preallocate arrays for tridiagonal matrix and RHS to avoid repeated allocations
-    M = M
     A_diag = np.empty(M, dtype=float)
     A_lower = np.empty(M - 1, dtype=float)
     A_upper = np.empty(M - 1, dtype=float)
@@ -251,9 +250,7 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
         B_upper[:] = -one_minus_theta * psi_i[:-1]
 
         # Apply the special rows adjustments of A and B if necessary
-        if known_boundaries == 'Both':  # Both boundaries known
-            pass
-        elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
+        if known_boundaries in ('S0', 'None'):
             aux1 = (eta_j[M] - psi_j[M])
             aux2 = (phi_j[M] - 2.0 * psi_j[M])
 
@@ -261,17 +258,6 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
             A_diag[-1] = -gamma - theta * aux2
             B_lower[-1] = -one_minus_theta * aux1
             B_diag[-1] = -gamma + one_minus_theta * aux2
-        elif known_boundaries == 'Smax': # V(t, S_max) known, V(t, S_min) unknown
-            B_diag[0] = - theta*eta_j[1] * (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) - one_minus_theta*eta_j[1]
-        elif known_boundaries == 'None': # Both boundaries unknown
-            aux1 = (eta_j[M] - psi_j[M])
-            aux2 = (phi_j[M] - 2.0 * psi_j[M])
-
-            A_lower[-1] = theta * aux1
-            A_diag[-1] = -gamma - theta * aux2
-            B_lower[-1] = -one_minus_theta * aux1
-            B_diag[-1] = -gamma + one_minus_theta * aux2
-            B_diag[0] = - theta*eta_j[1] * (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) - one_minus_theta*eta_j[1]
 
 
         # Compute right-hand side: rhs = B @ V_{j+1} - F
@@ -290,28 +276,24 @@ def solve_PDE(a : callable, b: callable, c: callable, f: callable, F: callable,
         # Apply any explicit constant adjustments
         if known_boundaries == 'Both':  # Both boundaries known
             rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1]
-            rhs[-1] += theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
+            rhs[-1] += -theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
         elif known_boundaries == 'S0':  # V(t, S_min) known, V(t, S_max) unknown
             rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1]
         elif known_boundaries == 'Smax': # V(t, S_max) known, V(t, S_min) unknown
-            rhs[0] += -theta*eta_j[1] * (dt)/(1 - c[0,j]*dt*theta) * f_values[0,j]
+            rhs[0] += eta_j[1] * ( theta * (dt)/(1 - c_values[0,j]*dt*theta) * f_values[0,j] + ( theta*(1 + c_values[0,j]*dt*one_minus_theta)/(1 - c_values[0,j]*dt*theta) - one_minus_theta) * V[0, j + 1] )
+            rhs[-1] += -theta * psi_j[M] * V[-1, j] - one_minus_theta * psi_j[M] * V[-1, j + 1]
         elif known_boundaries == 'None': # Both boundaries unknown
-            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1] - theta*eta_j[1] * (dt)/(1 - c[0,j]*dt*theta) * f_values[0,j]
+            rhs[0] += - theta * eta_j[1] * V[0, j] - one_minus_theta * eta_j[1] * V[0, j + 1] + eta_j[1] * ( theta * (dt)/(1 - c_values[0,j]*dt*theta) * f_values[0,j] + ( theta*(1 + c_values[0,j]*dt*one_minus_theta)/(1 - c_values[0,j]*dt*theta) - one_minus_theta) * V[0, j + 1] )
 
         # Solve tridiagonal system A * x = rhs (Thomas algorithm)
         V[1:-1, j] = _thomas_solver(A_lower, A_diag, A_upper, rhs)
 
-    # Boundary values adjustments if necessary
-    if known_boundaries == 'Both':
-        pass
-    elif known_boundaries == 'S0':
-        V[-1, :-1] = 2.0 * V[-2, :-1] - V[-3, :-1]
-    elif known_boundaries == 'Smax':
-        V[0, :-1] = (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) * V[0, 1:] + (dt)/(1 - c[0,j]*dt*theta) * f_values[0, :-1]
-    elif known_boundaries == 'None':
-        V[-1, :-1] = 2.0 * V[-2, :-1] - V[-3, :-1]
-        V[0, :-1] = (1 + c[0,j]*dt*one_minus_theta)/(1 - c[0,j]*dt*theta) * V[0, 1:] + (dt)/(1 - c[0,j]*dt*theta) * f_values[0, :-1]
-
+        # Boundary values adjustments if necessary
+        if known_boundaries in ('S0', 'None'):
+            V[-1, j] = 2.0 * V[-2, j] - V[-3, j]
+        if known_boundaries in ('Smax', 'None'):
+            V[0, j] = (1 + c_values[0,j]*dt*one_minus_theta)/(1 - c_values[0,j]*dt*theta) * V[0, j+1] + (dt)/(1 - c_values[0,j]*dt*theta) * f_values[0, j]
+        
     return S_mesh, t_mesh, V
 
 

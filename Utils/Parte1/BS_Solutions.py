@@ -4,9 +4,9 @@ from scipy.stats import norm
 import matplotlib.pyplot as plt
 
 # --- Parámetros generales ---
-E = 100        # Precio de ejercicio
+E = 20        # Precio de ejercicio
 r = 0.05       # Tasa libre de riesgo
-D = 0.02       # Tasa de dividendos
+D = 0.0       # Tasa de dividendos
 sigma = 0.2    # Volatilidad
 T = 1          # Tiempo hasta vencimiento
 

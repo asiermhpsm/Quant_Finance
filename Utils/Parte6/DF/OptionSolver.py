@@ -17,29 +17,35 @@ class OptionSolver(ABC):
     def __init__(self):
         pass
 
-    def solve(self):
+    def solve(self, known_boundaries: str = None):
         '''
         Solve the PDE using the finite difference method.
         This method sets up the grid and calls the generic solver.
         '''
         print(f"[{self.name}]\t\tSolving option...")
-        # Determine known boundaries based on presence of apply_S0 and apply_Smax methods
-        has_S0 = callable(getattr(self, 'apply_S0', None))
-        has_Smax = callable(getattr(self, 'apply_Smax', None))
-        if has_S0 and has_Smax:
-            self.known_boundaries = 'Both'
-        elif has_S0:
-            self.known_boundaries = 'S0'
-        elif has_Smax:
-            self.known_boundaries = 'Smax'
+
+        if known_boundaries is None:
+            # Determine known boundaries based on presence of apply_S0 and apply_Smax methods
+            has_S0 = callable(getattr(self, 'apply_S0', None))
+            has_Smax = callable(getattr(self, 'apply_Smax', None))
+            if has_S0 and has_Smax:
+                self.known_boundaries = 'Both'
+            elif has_S0:
+                self.known_boundaries = 'S0'
+            elif has_Smax:
+                self.known_boundaries = 'Smax'
+            else:
+                self.known_boundaries = 'None'
         else:
-            self.known_boundaries = 'None'
+            self.known_boundaries = known_boundaries
+
+        
         self.S, self.t, self.V = solve_PDE(
             a=self.a,
             b=self.b,
             c=self.c,
             f=self.f,
-            F=self.payoff,
+            payoff=self.payoff,
             S_min=self.S_min,
             S_max=self.S_max,
             T=self.T,

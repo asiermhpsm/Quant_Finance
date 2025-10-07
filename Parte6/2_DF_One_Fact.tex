@@ -264,7 +264,7 @@ y donde
         \end{pmatrix}
     }
 \end{align*}
-y teniendo en cuenta que posteriormente se debe calcular:
+y teniendo en cuenta que en cada iteración temporal se debe calcular:
 \begin{equation*}
     \boxed{V_j^{M+1} = 2V_j^{M} - V_j^{M-1}}
 \end{equation*}
@@ -295,8 +295,8 @@ y sustituyendo en la ecuación~\eqref{eq:DF_theta_general} para $i=1$:
     \implies &\theta\eta_1 \left( \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0 \right) +\left( -\gamma - \theta \varphi_1 \right)V_j^1 +\theta\psi_1 V_j^{2} \\
     &= - (1-\theta)\eta_1 V_{j+1}^{0} -\left( \gamma - (1-\theta) \varphi_1 \right)V_{j+1}^1 - (1-\theta)\psi_1 V_{j+1}^{2} - f_j^1 \\
     \implies &\bigg[ -\gamma - \theta \varphi_1 \bigg]V_j^1 + \bigg[ \theta \psi_1 \bigg]V_j^{2} \\
-    &= \bigg[ -\theta\eta_1 \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta)\eta_1 \bigg] V_{j+1}^{0} + \bigg[ - \gamma + (1-\theta) \varphi_1 \bigg]V_{j+1}^1 + \bigg[ - (1-\theta)\psi_1 \bigg]V_{j+1}^{2} \\
-    &+ \bigg[- f_j^1 \bigg] + \bigg[ -\theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0 \bigg]
+    &= \bigg[ - \gamma + (1-\theta) \varphi_1 \bigg]V_{j+1}^1 + \bigg[ - (1-\theta)\psi_1 \bigg]V_{j+1}^{2} \\
+    &+ \bigg[- f_j^1 \bigg] + \bigg[ \eta_1 \left( \theta\frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0 + \left( \theta \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta) \right) V_{j+1}^{0} \right) \bigg] \\
 \end{align*}
 por lo que el sistema a resolver es:
 \begin{equation*}
@@ -322,7 +322,7 @@ donde las matrices tridiagonales $A$ y $B$ son:
     } \\
     & \boxed{
         B = \begin{pmatrix}
-            B_{1,1}^* & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            B_{1,1} & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
             B_{2,1} & B_{2,2} & B_{2,3} & \cdots & 0 & 0 & 0 \\
             0 & B_{3,2} & B_{3,3} & \cdots & 0 & 0 & 0 \\
             \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
@@ -331,8 +331,7 @@ donde las matrices tridiagonales $A$ y $B$ son:
             0 & 0 & 0 & \cdots & 0  & B_{M,M-1} & B_{M,M}
         \end{pmatrix}
         \quad \begin{cases}
-            B_{1,1}^* = -\theta\eta_1 \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta)\eta_1 \\
-            B_{i,i-1} = -(1-\theta)\eta_i, \quad i=2 \\
+            B_{i,i-1} = -(1-\theta)\eta_i \\
             B_{i,i} = -\gamma + (1-\theta) \varphi_i \\
             B_{i,i+1} = -(1-\theta)\psi_i \\
         \end{cases}
@@ -362,14 +361,14 @@ y donde
     } \\
     &\boxed{
         C = \begin{pmatrix}
-            -\theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0 \\
+            \eta_1 \left( \theta\frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0 + \left( \theta \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta) \right) V_{j+1}^{0} \right) \\
             0 \\
             \vdots \\
-            0 \\
+            -\theta\psi_M V_j^{M+1} - (1-\theta)\psi_M V_{j+1}^{M+1} \\
         \end{pmatrix}
     }
 \end{align*}
-y teniendo en cuenta que posteriormente se debe calcular:
+y teniendo en cuenta que en cada iteración temporal se debe calcular:
 \begin{equation*}
     \boxed{V_j^0 = \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0}
 \end{equation*}
@@ -402,16 +401,16 @@ donde las matrices tridiagonales $A$ y $B$ son:
             0 & 0 & 0 & \cdots & 0  & A_{M,M-1}^* & A_{M,M}^*
         \end{pmatrix},
         \quad \begin{cases}
-            A_{i,i-1} = \theta\eta_i, \quad i=2,\ldots,M-1\\
-            A_{i,i} = -\gamma - \theta \varphi_i, \quad i=2,\ldots,M-1\\
-            A_{i,i+1} = \theta\psi_i, \quad i=2,\ldots,M-1\\
+            A_{i,i-1} = \theta\eta_i \\
+            A_{i,i} = -\gamma - \theta \varphi_i \\
+            A_{i,i+1} = \theta\psi_i \\
             A_{M,M-1}^* = \theta(\eta_M - \psi_M)\\
             A_{M,M}^* = -\gamma - \theta (\varphi_M - 2\psi_M)\\
         \end{cases}
     } \\
     & \boxed{
         B = \begin{pmatrix}
-            B_{1,1}^* & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
+            B_{1,1} & B_{1,2} & 0 & \cdots & 0 & 0 & 0 \\
             B_{2,1} & B_{2,2} & B_{2,3} & \cdots & 0 & 0 & 0 \\
             0 & B_{3,2} & B_{3,3} & \cdots & 0 & 0 & 0 \\
             \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
@@ -420,10 +419,9 @@ donde las matrices tridiagonales $A$ y $B$ son:
             0 & 0 & 0 & \cdots & 0  & B_{M,M-1}^* & B_{M,M}^*
         \end{pmatrix}
         \quad \begin{cases}
-            B_{1,1}^* = -\theta\eta_1 \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta)\eta_1 \\
-            B_{i,i-1} = -(1-\theta)\eta_i, \quad i=2,\ldots,M-1\\
-            B_{i,i} = -\gamma + (1-\theta) \varphi_i, \quad i=2,\ldots,M-1\\
-            B_{i,i+1} = -(1-\theta)\psi_i, \quad i=2,\ldots,M-1\\
+            B_{i,i-1} = -(1-\theta)\eta_i\\
+            B_{i,i} = -\gamma + (1-\theta) \varphi_i\\
+            B_{i,i+1} = -(1-\theta)\psi_i\\
             B_{M,M-1}^* = -(1-\theta)(\eta_M - \psi_M)\\
             B_{M,M}^* = -\gamma + (1-\theta) (\varphi_M - 2\psi_M)\\
         \end{cases}
@@ -453,20 +451,14 @@ y donde
     } \\
     &\boxed{
         C = \begin{pmatrix}
-            -\theta\eta_1 V_j^{0} - (1-\theta)\eta_1 V_{j+1}^{0} - \theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0\\
-            0 \\
-            \vdots \\
-            0 \\
-        \end{pmatrix}
-        = \begin{pmatrix}
-            -A_{1,0}V_j^{0} + B_{1,0}V_{j+1}^{0} - \theta\eta_1 \frac{\Delta t}{1 - c_j^0 \Delta t \theta}f_j^0 \\
+            -\theta\eta_1 V_j^{0} - (1-\theta)\eta_1 V_{j+1}^{0} + \eta_1 \left( \theta\frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0 + \left( \theta \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} - (1-\theta) \right) V_{j+1}^{0} \right) \\
             0 \\
             \vdots \\
             0 \\
         \end{pmatrix}
     }
 \end{align*}
-y teniendo en cuenta que posteriormente se debe calcular:
+y teniendo en cuenta que en cada iteración temporal se debe calcular:
 \begin{align*}
     &\boxed{V_j^0 = \frac{1 + c_j^0 \Delta t (1-\theta)}{1 - c_j^0 \Delta t \theta} V_{j+1}^0 + \frac{\Delta t}{1 - c_j^0 \Delta t \theta} f_j^0} \\
     &\boxed{V_j^{M+1} = 2V_j^{M} - V_j^{M-1}}
