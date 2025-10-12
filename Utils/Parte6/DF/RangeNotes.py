@@ -8,9 +8,12 @@ class RangeNotes(OptionSolver):
     Range notes option with optional discrete dividends.
     """
 
+    name = "Range Notes"
+
     def __init__(self, r : float = 0.05, L : float = 0.1, 
                  P : float = 100, S_t : float = 20, S_u : float = 30,
-                 T : float = 1, S_inf : float = 100,
+                 T : float = 1, 
+                 S_min : float = 0, S_max : float = 80,
                  EDE : str = "lognormal", 
                  M : int = 500, N : int = 500, theta : float = 0.5,
                  **kwargs
@@ -25,7 +28,8 @@ class RangeNotes(OptionSolver):
         S_t (float): Lower bound of the range.
         S_u (float): Upper bound of the range.
         T (float): Time to maturity (in years).
-        S_inf (float): Maximum asset price considered in the grid.
+        S_min (float): Minimum asset price in the finite-difference grid.
+        S_max (float): Maximum asset price in the finite-difference grid.
         EDE (str): Type of the underlying asset dynamics equation. Currently only 'lognormal' is implemented.
         M (int): Number of time steps in the finite-difference grid.
         N (int): Number of asset price steps in the finite-difference grid.
@@ -41,7 +45,8 @@ class RangeNotes(OptionSolver):
         self.S_t = S_t
         self.S_u = S_u
         self.T = T
-        self.S_inf = S_inf
+        self.S_min = S_min
+        self.S_max = S_max
         self.EDE = EDE
         self.M = M
         self.N = N
@@ -73,13 +78,25 @@ class RangeNotes(OptionSolver):
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
-        
+
+    def get_info(self):
+        res = (
+            f'{self.name}\n'
+            f'- Risk-free Rate r: {self.r}\n'
+            f'- Coupon L: {self.L}\n'
+            f'- Notional P: {self.P}\n'
+            f'- Range: [{self.S_t}, {self.S_u}]'
+        )
+        if self.EDE == 'lognormal':
+            res += f'\n- Volatility sigma: {self.sigma}'
+        return res   
 
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     rn = RangeNotes()
+    rn.plot_all()
     rn.plot_value_at_t(0)
 
     plt.show()

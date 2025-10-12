@@ -23,16 +23,20 @@ class CompoundOption(OptionSolver):
         Initializes the CompoundOption class.
 
         Parameters:
-            r (float): Risk-free interest rate.
-            T (float): Time to maturity of the underlying option.
-            S_init (float): Initial stock price.
-            EDE (str): Stochastic process for the underlying asset ('lognormal').
-            N (int): Number of time steps steps in the grid.
-            M (int): Number of stock steps in the grid.
-            theta (float): Implicitness parameter for the finite difference method.
-            **kwargs: Additional keyword arguments:
-                if EDE is 'lognormal':
-                    sigma (float): Volatility of the underlying asset.
+            underlying_option_1: The first underlying option object. Must have a 'T' attribute for maturity and a 'solve()' method.
+            underlying_option_2: The second underlying option object. Must have a 'T' attribute for maturity and a 'solve()' method.
+            K1 (float, optional): Strike price for the first underlying option. Default is 5.
+            K2 (float, optional): Strike price for the second underlying option. Default is 5.
+            r (float, optional): Risk-free interest rate. Default is 0.05.
+            T (float, optional): Maturity of the compound option. Default is 0.5.
+            S_min (float, optional): Minimum value of the underlying asset price grid. Default is 0.
+            S_max (float, optional): Maximum value of the underlying asset price grid. Default is 80.
+            EDE (str, optional): Model for the underlying asset dynamics. Default is 'lognormal'.
+            N (int, optional): Number of grid points for the asset price. Default is 500.
+            M (int, optional): Number of grid points for the time discretization. Default is 500.
+            theta (float, optional): Theta parameter for the numerical scheme (e.g., Crank-Nicolson). Default is 0.5.
+            **kwargs: Additional keyword arguments.
+                sigma (float, optional): Volatility of the underlying asset, required if EDE is 'lognormal'. Default is 0.2.
         """
         if T >= underlying_option_1.T:
             raise ValueError("The maturity of the compound option 1 cannot be greater than or equal to that of the underlying option.")
@@ -89,6 +93,18 @@ class CompoundOption(OptionSolver):
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         return V
     
+    def get_info(self):
+        res = (
+            f'{self.name}\n'
+            f'- Risk-free Rate r: {self.r}\n'
+            f'- Strike Prices K1, K2: {self.K1}, {self.K2}\n'
+        )
+        if self.EDE == 'lognormal':
+            res += f'- Volatility sigma: {self.sigma}\n'
+        res += self.underlying_option_1.get_info() + "\n"
+        res += self.underlying_option_2.get_info()
+        return res
+    
 
 
 
@@ -108,7 +124,7 @@ if __name__ == "__main__":
     fig, ax = plt.subplots(figsize=(12, 10))
     ax.grid()
     chooser.plot_value_at_t(T_Ch, fig=fig, ax=ax, label="Chooser Call Option")
-    call.plot_value_at_t(T_Ch, fig=fig, ax=ax, label="Call Option")
-    put.plot_value_at_t(T_Ch, fig=fig, ax=ax, label="Put Option")
+    call.plot_value_at_t(T_Ch, fig=fig, ax=ax, label="Call Option", print_text=False)
+    put.plot_value_at_t(T_Ch, fig=fig, ax=ax, label="Put Option", print_text=False)
 
     plt.show()

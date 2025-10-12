@@ -42,5 +42,25 @@
     "cwd": "${workspaceFolder}"
     },
 
+    {
+    "name": "Range Note",
+    "type": "debugpy",
+    "request": "launch",
+    "module": "Utils.Parte6.DF.RangeNotes",
+    "console": "integratedTerminal",
+    "env": { "PYTHONPATH": "${workspaceFolder}" },
+    "cwd": "${workspaceFolder}"
+    },
+
+    {
+    "name": "Barrier Option",
+    "type": "debugpy",
+    "request": "launch",
+    "module": "Utils.Parte6.DF.BarrierOption",
+    "console": "integratedTerminal",
+    "env": { "PYTHONPATH": "${workspaceFolder}" },
+    "cwd": "${workspaceFolder}"
+    },
+
   ]
 }

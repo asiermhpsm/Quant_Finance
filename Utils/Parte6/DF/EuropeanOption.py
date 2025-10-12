@@ -273,18 +273,6 @@ class EuropeanOption(OptionSolver):
         self.dividend_times = dividend_times
         self.dividend_amounts = dividend_amounts
 
-        # Determine known boundaries based on presence of apply_S0 and apply_Smax methods
-        has_S0 = callable(getattr(self, 'apply_S0', None))
-        has_Smax = callable(getattr(self, 'apply_Smax', None))
-        if has_S0 and has_Smax:
-            self.known_boundaries = 'Both'
-        elif has_S0:
-            self.known_boundaries = 'S0'
-        elif has_Smax:
-            self.known_boundaries = 'Smax'
-        else:
-            self.known_boundaries = 'None'
-
         # Handle discrete dividends
         self.discrete_dividend = bool(self.dividend_times) and bool(self.dividend_amounts)
 
@@ -340,7 +328,22 @@ class EuropeanOption(OptionSolver):
             M=self.M,
             theta=self.theta,
         )
-        
+
+    def get_info(self):
+        res = (
+            f'{self.name}\n'
+            f'- Strike Price K: {self.K}\n'
+            f'- Risk-free Rate r: {self.r}\n'
+            f'- Dividend Yield D: {self.D}'
+        )
+        if self.EDE == 'lognormal':
+            res += f'\n- Volatility sigma: {self.sigma}'
+        if self.dividend_times and self.dividend_amounts:
+            res += f'\n- Discrete Dividends at times\n'
+            res += f'   {self.dividend_times}\n'
+            res += f'- with amounts\n'
+            res += f'   {self.dividend_amounts}'
+        return res
 
 
 

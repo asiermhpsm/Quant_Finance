@@ -59,6 +59,16 @@ class CompoundOption(OptionSolver):
         else:
             raise NotImplementedError(f"EDE '{self.EDE}' not implemented.")
         
+    def get_info(self):
+        res = (
+            f'{self.name}\n'
+            f'- Strike Price K: {self.K}\n'
+            f'- Risk-free Rate r: {self.r}'
+        )
+        if self.EDE == 'lognormal':
+            res += f'\n- Volatility sigma: {self.sigma}'
+        return res
+        
 
 
 class CallCompoundOption(CompoundOption):

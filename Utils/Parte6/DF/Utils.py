@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None, fig=None, ax=None, **surface_kwargs):
+def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None, fig=None, ax=None, info=None, **surface_kwargs):
     """
     Plot a 3D surface of V(S, t). If fig/ax are provided, draw on them.
 
@@ -45,9 +45,20 @@ def plot_surface(S, t, V, xlabel='S', ylabel='t', zlabel='Value', title=None, fi
     # Adjust view only if the axis was created here
     if created_ax:
         ax.view_init(elev=30, azim=-135)
+
+    # Add text box if text is provided
+    if info:
+        fig.subplots_adjust(right=0.75)
+        fig.text(
+            0.78, 0.5,
+            info,
+            va='center', ha='left',
+            fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='whitesmoke', edgecolor='gray')
+        )
     return fig, ax
 
-def plot_func(x, y, fig=None, ax=None, xlabel='x', ylabel='f(x)', title=None, label=None, **plot_kwargs):
+def plot_func(x, y, fig=None, ax=None, xlabel='x', ylabel='f(x)', title=None, label=None, info=None, **plot_kwargs):
     """
     Plots a function in 2D.
     """
@@ -71,6 +82,21 @@ def plot_func(x, y, fig=None, ax=None, xlabel='x', ylabel='f(x)', title=None, la
     # Show legend if label is provided
     if label is not None:
         ax.legend()
+
+    # Add text box if text is provided
+    if info:
+        fig.subplots_adjust(right=0.75)
+        fig.text(
+            0.78, 0.5,
+            info,
+            va='center', ha='left',
+            fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='whitesmoke', edgecolor='gray')
+        )
+    
+
+
+    
     return fig, ax
 
 

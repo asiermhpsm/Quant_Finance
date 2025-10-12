@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from abc import ABC, abstractmethod
+import warnings
 
 from Utils.Parte6.DF.Utils import plot_func, plot_surface, solve_PDE
 
@@ -66,7 +67,7 @@ class OptionSolver(ABC):
             self.solve()
         return self.S, self.t, self.V
 
-    def plot(self, fig=None, ax=None, **surface_kwargs):
+    def plot(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the surface V(S, t). If fig/ax are provided, draw on them.
         Parameters:
@@ -78,9 +79,8 @@ class OptionSolver(ABC):
         print(f"Plotting surface: {self.name}...")
         if not hasattr(self, "V"):
             self.solve()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.V, xlabel='S', ylabel='t', zlabel='Value', fig=fig, ax=ax, title=self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.V, xlabel='S', ylabel='t', zlabel='Value', fig=fig, ax=ax, title=self.name, info=info, **surface_kwargs)
 
 
     def get_value_at_S(self, S0: float):
@@ -110,9 +110,7 @@ class OptionSolver(ABC):
         """
         print(f"[{self.name}]\t\tPlotting value at S={S0}...")
         t, V_S0 = self.get_value_at_S(S0)
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_func(t, V_S0, xlabel='t', ylabel=f'V(S={S0}, t)', fig=fig, ax=ax, title=self.title, **plot_kwargs)
+        return plot_func(t, V_S0, xlabel='t', ylabel=f'V(S={S0}, t)', fig=fig, ax=ax, title=self.name, **plot_kwargs)
 
     def get_value_at_t(self, t0: float):
         """
@@ -128,8 +126,8 @@ class OptionSolver(ABC):
         Dt = self.T / (self.N + 1)
         j = int(round(t0 / Dt))
         return self.S[:, 0], self.V[:, j]
-    
-    def plot_value_at_t(self, t0: float, fig=None, ax=None, **plot_kwargs):
+
+    def plot_value_at_t(self, t0: float, fig=None, ax=None, print_text: bool = True, **plot_kwargs):
         """
         Plot V(S, t0) as a function of S.
         Parameters:
@@ -141,9 +139,8 @@ class OptionSolver(ABC):
         """
         print(f"[{self.name}]\t\tPlotting value at t={t0}...")
         S, V_t0 = self.get_value_at_t(t0)
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_func(S, V_t0, xlabel='S', ylabel=f'V(S, t={t0})', fig=fig, ax=ax, title=self.title, **plot_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_func(S, V_t0, xlabel='S', ylabel=f'V(S, t={t0})', fig=fig, ax=ax, title=self.name, info=info, **plot_kwargs)
 
 
     def get_delta(self):
@@ -159,7 +156,7 @@ class OptionSolver(ABC):
             self.solve()
 
         # Get grid sizes
-        DS = self.S_inf / (self.M + 1)
+        DS = (self.S_max-self.S_min) / (self.M + 1)
 
         # Prepare delta array
         delta = np.full_like(self.V, np.nan)
@@ -175,7 +172,7 @@ class OptionSolver(ABC):
         self.delta = delta
         return delta
     
-    def plot_delta(self, fig=None, ax=None, **surface_kwargs):
+    def plot_delta(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the delta surface.
         Parameters:
@@ -187,9 +184,8 @@ class OptionSolver(ABC):
         print(f"[{self.name}]\t\tPlotting Delta surface...")
         if not hasattr(self, "delta"):
             self.get_delta()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.delta, xlabel='S', ylabel='t', zlabel='Delta', fig=fig, ax=ax, title='Delta ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.delta, xlabel='S', ylabel='t', zlabel='Delta', fig=fig, ax=ax, title='Delta ' + self.name, info=info, **surface_kwargs)
 
 
     def get_gamma(self):
@@ -204,7 +200,7 @@ class OptionSolver(ABC):
         if not hasattr(self, "V"):
             self.solve()
 
-        DS = self.S_inf / (self.M + 1)
+        DS = (self.S_max - self.S_min) / (self.M + 1)
         gamma = np.full_like(self.V, np.nan)
 
         for j in range(self.V.shape[1] - 1):
@@ -216,7 +212,7 @@ class OptionSolver(ABC):
         self.gamma = gamma
         return gamma
 
-    def plot_gamma(self, fig=None, ax=None, **surface_kwargs):
+    def plot_gamma(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the gamma surface.
         Parameters:
@@ -228,9 +224,8 @@ class OptionSolver(ABC):
         print(f"[{self.name}]\t\tPlotting Gamma surface...")
         if not hasattr(self, "gamma"):
             self.get_gamma()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.gamma, xlabel='S', ylabel='t', zlabel='Gamma', fig=fig, ax=ax, title='Gamma ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.gamma, xlabel='S', ylabel='t', zlabel='Gamma', fig=fig, ax=ax, title='Gamma ' + self.name, info=info, **surface_kwargs)
 
 
     def get_theta(self):
@@ -254,7 +249,7 @@ class OptionSolver(ABC):
         self.theta_arr = theta_arr
         return theta_arr
 
-    def plot_theta(self, fig=None, ax=None, **surface_kwargs):
+    def plot_theta(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the theta surface.
         Parameters:
@@ -266,9 +261,8 @@ class OptionSolver(ABC):
         print(f"[{self.name}]\t\tPlotting Theta surface...")
         if not hasattr(self, "theta_arr"):
             self.get_theta()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.theta_arr, xlabel='S', ylabel='t', zlabel='Theta', fig=fig, ax=ax, title='Theta ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.theta_arr, xlabel='S', ylabel='t', zlabel='Theta', fig=fig, ax=ax, title='Theta ' + self.name, info=info, **surface_kwargs)
 
 
     def get_speed(self):
@@ -283,7 +277,7 @@ class OptionSolver(ABC):
         if not hasattr(self, "V"):
             self.solve()
 
-        DS = self.S_inf / (self.M + 1)
+        DS = (self.S_max - self.S_min) / (self.M + 1)
         speed = np.full_like(self.V, np.nan)
 
         for j in range(self.V.shape[1] - 1):
@@ -295,7 +289,7 @@ class OptionSolver(ABC):
         self.speed = speed
         return speed
 
-    def plot_speed(self, fig=None, ax=None, **surface_kwargs):
+    def plot_speed(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the speed surface.
         Parameters:
@@ -307,9 +301,8 @@ class OptionSolver(ABC):
         print(f"[{self.name}]\t\tPlotting Speed surface...")
         if not hasattr(self, "speed"):
             self.get_speed()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.speed, xlabel='S', ylabel='t', zlabel='Speed', fig=fig, ax=ax, title='Speed ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.speed, xlabel='S', ylabel='t', zlabel='Speed', fig=fig, ax=ax, title='Speed ' + self.name, info=info, **surface_kwargs)
 
 
     def get_vega(self, dsigma=1e-6):
@@ -347,7 +340,7 @@ class OptionSolver(ABC):
         self.vega = vega
         return vega
 
-    def plot_vega(self, fig=None, ax=None, **surface_kwargs):
+    def plot_vega(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the vega surface.
         Parameters:
@@ -359,9 +352,8 @@ class OptionSolver(ABC):
         print(f"[{self.name}]\t\tPlotting Vega surface...")
         if not hasattr(self, "vega"):
             self.get_vega()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.vega, xlabel='S', ylabel='t', zlabel='Vega', fig=fig, ax=ax, title='Vega ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.vega, xlabel='S', ylabel='t', zlabel='Vega', fig=fig, ax=ax, title='Vega ' + self.name, info=info, **surface_kwargs)
 
 
     def get_rho_r(self, dr=1e-6):
@@ -395,7 +387,7 @@ class OptionSolver(ABC):
         self.rho_r = rho_r
         return rho_r
 
-    def plot_rho_r(self, fig=None, ax=None, **surface_kwargs):
+    def plot_rho_r(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the rho (with respect to r) surface.
         Parameters:
@@ -407,9 +399,8 @@ class OptionSolver(ABC):
         print(f"[{self.name}]\t\tPlotting Rho (r) surface...")
         if not hasattr(self, "rho_r"):
             self.get_rho_r()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.rho_r, xlabel='S', ylabel='t', zlabel='Rho (r)', fig=fig, ax=ax, title='Rho (r) ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.rho_r, xlabel='S', ylabel='t', zlabel='Rho (r)', fig=fig, ax=ax, title='Rho (r) ' + self.name, info=info, **surface_kwargs)
 
 
     def get_rho_D(self, dD=1e-6):
@@ -419,6 +410,10 @@ class OptionSolver(ABC):
             rho_D: Array of rho_D values with shape (M + 2, N + 2)
         """
         print(f"[{self.name}]\t\tComputing Rho (D)...")
+
+        if not hasattr(self, "D"):
+            warnings.warn("No dividends (D) defined; cannot compute Rho (D).")
+            return 
         if not hasattr(self, "V"):
             self.solve()
 
@@ -443,7 +438,7 @@ class OptionSolver(ABC):
         self.rho_D = rho_D
         return rho_D
 
-    def plot_rho_D(self, fig=None, ax=None, **surface_kwargs):
+    def plot_rho_D(self, fig=None, ax=None, print_text: bool = True, **surface_kwargs):
         """
         Plot the rho (with respect to D) surface.
         Parameters:
@@ -453,11 +448,14 @@ class OptionSolver(ABC):
             fig, ax: Matplotlib figure and axis objects.
         """
         print(f"[{self.name}]\t\tPlotting Rho (D) surface...")
+
+        if not hasattr(self, "D"):
+            warnings.warn("No dividends (D) defined; cannot compute Rho (D).")
+            return 
         if not hasattr(self, "rho_D"):
             self.get_rho_D()
-        if not hasattr(self, "title"):
-            self.title = None
-        return plot_surface(self.S, self.t, self.rho_D, xlabel='S', ylabel='t', zlabel='Rho (D)', fig=fig, ax=ax, title='Rho (D) ' + self.title, **surface_kwargs)
+        info = self.get_info() if print_text and hasattr(self, "get_info") and callable(getattr(self, "get_info")) else None
+        return plot_surface(self.S, self.t, self.rho_D, xlabel='S', ylabel='t', zlabel='Rho (D)', fig=fig, ax=ax, title='Rho (D) ' + self.name, info=info, **surface_kwargs)
 
 
     def plot_all(self):
@@ -495,9 +493,10 @@ class OptionSolver(ABC):
         figs.append(fig_rho_r)
         axs.append(ax_rho_r)
 
-        fig_rho_D, ax_rho_D = self.plot_rho_D()
-        figs.append(fig_rho_D)
-        axs.append(ax_rho_D)
+        if hasattr(self, "D"):
+            fig_rho_D, ax_rho_D = self.plot_rho_D()
+            figs.append(fig_rho_D)
+            axs.append(ax_rho_D)
 
         return figs, axs
 
